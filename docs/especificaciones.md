@@ -51,10 +51,16 @@ Informar al alumno de la privacidad de sus datos personales.
 
 
 #### 6. REQUISITOS NO FUNCIONALES
-   - **Accecible:**
-   - **Responsivo:**
-   - **Seguridad:**
-   - **Página sin fricción:**
+
+| **Categoría**              |   **Requisito**                                                                    |
+|----------------------------|------------------------------------------------------------------------------------|
+|  **Accecible:**            | La web debe ser amigable a la vista, lo que significa                              |
+|                            | tener un contraste adecuado entre texto y fondo, de igual forma integrará imágenes |
+|                            | y vídeos.                                                                          |
+|----------------------------|------------------------------------------------------------------------------------|
+|  **Responsivo:**           | 
+|  **Seguridad:**            |
+|  **Página sin fricción:**  |
 #### 7. ARQUITECTURA DE LA INFORMACIÓN Y UX
 
 #### 8. ESPECIFICACIONES TÉCNICAS
