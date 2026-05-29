@@ -44,7 +44,7 @@
 
 #### 5. ESPECIFICACIONES FUNCIONALES
 |**Módulo**|**Descripción**|**Criterio de Aceptación**|
-|:---------|:-------------:|--------..............---:|
+|----------|---------------|--------------------------|
 |Perfil    |El usuario accede con su Nombre, Núm de cuenta, Correo, Contraseña, Recuperar contraseña| El usuario crea un perfil 
 
 #### 6. REQUISITOS NO FUNCIONALES
