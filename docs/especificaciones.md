@@ -48,8 +48,13 @@
 
 #### 7. ARQUITECTURA DE LA INFORMACIÓN Y UX
 
+- **Diseño Visual:** 
+    * Se permitirá.
+
 #### 8. ESPECIFICACIONES TÉCNICAS
 
 - **Frontend:** 
+    * CSS para el sistema de diseño responsivo y adecuado para una página de la UNAM
 - **Backend:** 
 - **Base de Datos:**
+    * MariaDB para relacionar alumnos,calificaciones y aprendizajes de manera estructurada.
