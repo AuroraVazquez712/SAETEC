@@ -45,7 +45,10 @@
 #### 5. ESPECIFICACIONES FUNCIONALES
 
 #### 6. REQUISITOS NO FUNCIONALES
-
+   - **Accecible:**
+   - **Responsivo:**
+   - **Seguridad:**
+   - **Página sin fricción:**
 #### 7. ARQUITECTURA DE LA INFORMACIÓN Y UX
 
 - **Diseño Visual:** 
