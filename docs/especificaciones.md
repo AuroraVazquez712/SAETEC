@@ -52,12 +52,9 @@ Informar al alumno de la privacidad de sus datos personales.
 
 #### 6. REQUISITOS NO FUNCIONALES
 
-| **Categoría**              |   **Requisito**                                                                    |
-|----------------------------|------------------------------------------------------------------------------------|
-|  **Accecible:**            | La web debe ser amigable a la vista, lo que significa                              |
-|                            | tener un contraste adecuado entre texto y fondo, de igual forma integrará imágenes |
-|                            | y vídeos.                                                                          |
-|----------------------------|------------------------------------------------------------------------------------|
+| **Categoría**| **Requisito**| 
+|--------------|--------------|
+|Accesible     |La web debe ser amigable a la vista, lo que significa tener un contraste adecuado entre texto y fondo, de igual forma integrará imágenes y vídeos|
 |  **Responsivo:**           | 
 |  **Seguridad:**            |
 |  **Página sin fricción:**  |
@@ -65,7 +62,7 @@ Informar al alumno de la privacidad de sus datos personales.
 
 - **Diseño Visual:** 
     * Se permitirá.
-
+    
 #### 8. ESPECIFICACIONES TÉCNICAS
 
 - **Frontend:** 
