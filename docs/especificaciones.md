@@ -22,11 +22,25 @@
     * Brindar apoyo a los estudiantes con recomendaciones y material extra a fin de evitar la deserción del estudio técnico. 
 
 #### 3. PÚBLICO OBJETIVO (UX)
+- Estudiantes de entre 16 y 18 años que busquen mejorar su experiencia y aprendizaje el Estudio Técnico Especializado en Computación. 
+
 
 #### 4. PROPÓSITO Y ALCANCE
 - **En alcance (Entregables):**
+    * Creación de un perfil 
+    * Formulario sobre el alumno 
+    * Registro de alumnos y sus calificaciones
+    * Espacio de opiniones, dudas y comentarios para el profesor
+    * Espacio para tips
+    * Diseño congruente a las páginas de la UNAM
+    * Documentos de seguridad   
 
 - **Fuera de alcance:**
+    * Análisis de datos 
+    * Módulos completos de quinto año
+    * Panel o foro informativo 
+    * Espacio para tips (de externos)
+
 
 #### 5. ESPECIFICACIONES FUNCIONALES
 
