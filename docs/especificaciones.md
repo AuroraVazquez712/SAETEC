@@ -54,15 +54,15 @@ Informar al alumno de la privacidad de sus datos personales.
 
 | **Categoría**| **Requisito**| 
 |--------------|--------------|
-|Accesible     |La web debe ser amigable a la vista, lo que significa tener un contraste adecuado entre texto y fondo, de igual forma integrará imágenes y vídeos|
-|  **Responsivo:**           | 
-|  **Seguridad:**            |
-|  **Página sin fricción:**  |
+|Accesible     |La web debe ser amigable a la vista, lo que significa tener un contraste adecuado entre texto y fondo, de igual forma integrará imágenes y vídeos.|
+|Responsivo:   |El diseño de la web debe adaptarse correctamente a las diferentes pantallas de los dispositivos, ya sea en móviles u ordenadores.|
+|Seguridad:    |El usuario debe conocer el uso que se le dará a los datos que proporcione, así como de la política de seguridad para el tratamiento de los mismos.|
+|Página sin fricción:|La página debe ser lo más amigable posible con el usuario, de forma que sea fácil de utilizar y visualmente agradable.|
 #### 7. ARQUITECTURA DE LA INFORMACIÓN Y UX
 
 - **Diseño Visual:** 
     * Se permitirá.
-    
+
 #### 8. ESPECIFICACIONES TÉCNICAS
 
 - **Frontend:** 
