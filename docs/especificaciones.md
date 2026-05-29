@@ -43,9 +43,9 @@
 
 
 #### 5. ESPECIFICACIONES FUNCIONALES
-|**Módulo**|**Descripción**|**Criterio de Aceptación**|
-|----------|---------------|--------------------------|
-|Perfil    |El usuario accede con su Nombre, Núm de cuenta, Correo, Contraseña, Recuperar           contraseña| El usuario crea un perfil 
+|**Módulo**|**Descripción**|
+|----------|---------------|
+|Perfil    |El usuario accede con su Nombre, Núm de cuenta, Correo, Contraseña, Recuperar           contraseña|
 |Fórmulario para el alumno| En caso de que el usuario sea alumno, la primera vista será un apartado para configurar el perfil, el título es “Queremos conocerte más” y subtítulo “Acaba de configurar tu perfil”. De este modo, lo que se pedirá es: Número de cuenta, nombre, fecha de nacimiento, grupo, correo electrónico, intereses (personales), condiciones de estudio (número de compus, acceso internet, experiencia previa), Hábitos de estudio y estilo de aprendizaje, ¿Por qué me metí? y ¿Qué dificultades tengo?|El alumno ingresó sus datos y se guardan en la DB|
 |Perfil del estudiante:|El alumno podrá consultar las calificaciones y los avances, además de contar con la opción de editar información personal. También se incluyen las tareas, el contacto del profesor y un espacio para dudas. Al final de cada semana, se presenta un breve cuestionario para expresar cómo te sientes con la clase, utilizando caritas coloreables que reflejan tu estado de ánimo: excelente, bien, regular, mal o muy mal.|
 |Foro informativo| Espacio donde se comparten las novedades y recursos para los estudiantes. Incluye información sobre las causas de deserción, avisos importantes como finales, módulos y entregas de proyectos, además de tips para sobrevivir a la ETE con recomendaciones. También reúne el documento de privacidad y los lineamientos que orientan la participación en este espacio.|
