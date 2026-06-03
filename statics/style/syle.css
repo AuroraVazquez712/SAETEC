@@ -12,4 +12,25 @@ header{
     height: 70px;
     display: flex;
     gap: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#titulo_encabezado{
+    color: #0D1650;
+    align-self: center;
+    font-size: 3.5rem;
+    font-weight:150;
+    margin-left: 620%;
+    margin-right: 880%;
+}
+#iconos_ete {
+    width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+    margin: 10px;
+}
+#iconos_ete .iconos{
+    margin: 10px;
 }
