@@ -1,8 +1,15 @@
+body{
+    margin: 0px;
+}
 header{
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
+
 }
 
 .iconos {
-    width: 70px;
+    width: 50px;
+    height: 70px;
+    display: flex;
+    gap: 10px;
 }
