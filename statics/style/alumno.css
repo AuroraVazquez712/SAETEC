@@ -1,0 +1,70 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+/*===========================HEADER================================*/
+header {
+    background-color: #E6E8E9;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;             
+    align-items: center;        
+    justify-content: space-between;
+}
+
+.iconos {
+    width: 70px;
+    height: 70px;
+}
+
+#titulo_encabezado {
+    color: #0D1650;
+    font-size: 3.5rem;
+    font-weight: 400;         
+}
+
+#titulo_encabezado p {
+    margin: 0; 
+}
+
+#iconos_ete {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#iconos_ete .iconos {
+    width: 70px;
+    height: 50px;
+}
+
+/*===========================BODY================================*/
+main{
+    display: flex;
+    justify-content: space-around;
+}
+#contenido{
+    align-items: center;
+    transition: 0.3s ease;
+}
+#forms:hover{
+    transform: scale(0.9);
+}
+.extras:hover{
+    transform: scale(0.9);
+}
+.contacto:hover{
+    transform: scale(0.9);
+}
+#coments:hover{
+    transform: scale(0.9);  
+}
+#material{
+    display: flex;
+    justify-content: space-around;
+}
+
+#perfil{
+    background-color: #C4C5C5;
+    box-shadow: 2px 2px 8px rgb(4, 5, 53);
+    width: 45%;
+}
