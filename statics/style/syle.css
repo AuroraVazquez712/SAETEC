@@ -1,8 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 header{
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
 }
 
 .iconos {
     width: 70px;
+    height: 80px;
+}
+
+#titulo_encabezado{
+    color: #0D1650;
+    align-self: center;
+    font-size: 3.5rem;
+    font-weight:150;
+}
+#iconos_ete{
+    width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
