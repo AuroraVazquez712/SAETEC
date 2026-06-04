@@ -6,9 +6,7 @@
 
 /*------------Estilo de etiquetas generales------------*/
 body{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: left;
+    padding: 0%;
     margin: 0px 0px 0px 0px;
 }
 header{
@@ -16,37 +14,47 @@ header{
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
     position: fixed;
     display: flex;
-    gap: 10px;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 11%;
-    max-width: 100%;
-    margin-bottom: 8%;
+}
+input{
+    width: 180px;
+    height: 40px;
+    border-radius: 20% 20% 20% 20%;
+    font-size: 20px;
 }
 /*------------Barra de búsqueda------------*/
+.barraBusqueda{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+}
 .iconos {
     width: 50px;
     height: 70px;
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
 }
 #titulo_encabezado {
     color: #0D1650;
-    align-self: center;
     font-size: 3.5rem;
-    font-weight:150;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
+    font-weight: 400;
+}
+#titulo_encabezado p{
+    margin: 0;
 }
 #iconos_ete {
-    width: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#iconos_ete .iconos {
+    width: 70px;
+    height: 50px;
 }
 /*------------Inicio de sesión------------*/
-.inicio-sesion{
+.inicio-sesion{ 
+    /*-----div, contiene el formulario-----*/
     background-color: #0D1650;
     color: #E6E8E9;
     width: 100%;    
@@ -59,7 +67,28 @@ header{
     height: 618px;
     width: 550px;
 }
+#img-puma{
+    background-color: white;
+    padding: 0px 130px 0px 130px;
+}
+/*-----Formulario, y texto-----*/
 #form-inisesion{
     font-family: 'subtemas', sans-serif;
-    font-size: 30px;
+    font-size: 32px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 150px 0px 0px;
+}
+#form-inisesion .crea-cuenta{
+    font-size: 16px;
+    color: #FF671D;
+}
+#form-inisesion .crea-cuenta:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+#form-inisesion .tienes-cuenta{
+    font-size: 16px;
 }
