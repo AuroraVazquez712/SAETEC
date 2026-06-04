@@ -1,38 +1,39 @@
-body{
-    margin: 0px;
+body {
+    margin: 0%;
+    padding: 0%;
 }
-header{
+
+header {
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
-
+    display: flex;             
+    align-items: center;        
+    justify-content: space-between;
 }
 
 .iconos {
-    width: 50px;
+    width: 70px;
     height: 70px;
-    display: flex;
-    gap: 10px;
-    display: flex;
-    justify-content: space-between;
 }
-#titulo_encabezado{
+
+#titulo_encabezado {
     color: #0D1650;
-    align-self: center;
     font-size: 3.5rem;
-    font-weight:150;
-    margin-left: 620%;
-    margin-right: 880%;
+    font-weight: 400;         
 }
+
+#titulo_encabezado p {
+    margin: 0; 
+}
+
 #iconos_ete {
-    width: 230px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 200px;
-    margin: 10px;
+    gap: 8px;
 }
-#iconos_ete .iconos{
-    margin: 10px;
+#iconos_ete .iconos {
+    width: 70px;
+    height: 50px;
 }
 #seleccion-perf {
     color:black;
@@ -62,3 +63,5 @@ header{
 .bloque:hover{
     transform: scale(1.1);
 }
+
+
