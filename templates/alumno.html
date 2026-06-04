@@ -9,6 +9,7 @@
     <title>SAETEC: Alumno</title>
 </head>
 <body>
+    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <img class="iconos"src="../statics/img/logo-escudo-unam.png" alt="Escuedo de la UNAM">
@@ -25,15 +26,53 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
-    <nav>
-        <br>
-        <a href="./index.html">Inicio</a>
+
+    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+    <nav class="nav">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <nav class="menu">
+                <a href="./index.html">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Blog</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
     </nav>
     <br>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <aside>
+        <div class="capa"> </div>
+        <!--	--------------->
+        <input type="checkbox" id="btn-menu"/>
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <h2>324308734</h2>
+                    <a href="#">Mi perfil</a>
+                    <hr>
+                    <a href="#">Mis calificaciones</a>
+                    <hr>
+                    <a href="#">Mis actividades</a>
+                    <hr>
+                    <a href="#">¿Cómo te has sentido?</a>
+                    <hr>
+                    <a href="../docs/2019_Acuerdo_Rectoria_02.pdf">Políticas de seguridad</a>
+                    <hr>
+                    <a href="#">Modificar datos</a>
+                </nav>
+                <label for="btn-menu">✖️</label>
+            </div>
+        </div>
+    </aside>
+    <!----------------------------------------CONTENIDO------------------------------------------->
+    
     <main>
         <div id="contenido">
             <div id="forms">
-                <img src="../statics/img/forms.png" alt="Imagen animada de un puma que te pide completar tu perfil">
+                <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
             </div>
             <div id="material">
                 <div class="extras">
@@ -47,9 +86,8 @@
                 <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
             </div>
         </div>
-        <div id="perfil">
-            <p>Holiiiii</p>
-        </div>
+        
     </main>
+    
 </body>
 </html>
