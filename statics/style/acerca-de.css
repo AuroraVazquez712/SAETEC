@@ -9,6 +9,9 @@
     src: url(../fonts/times-sans-serif.ttf) format(truetype);
 }
 /*------------Estilo de etiquetas generales------------*/
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0%;
     padding: 0%;
@@ -93,12 +96,23 @@ header {
     width: 550px;
     height: 500px;
 }
-
-.cont-general{
+/*-----------Estilo de contenedores-----------*/
+#cont-general{
+    display: block;
+    align-items: center;
+    gap: 8px;
+}
+#cont-acerca-de{
     display: flex;
     align-items: center;
     gap: 8px;
 }
+#cont-info{
+    display: inline-block;
+    align-items: center;
+    gap: 8px;
+}
+/*-----------Estilo de textos-----------*/
 .acerca-de{
     font-family: 'acerca-de', sans-serif;
     color: #0D1650;
