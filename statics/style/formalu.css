@@ -1,0 +1,43 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+/*===========================HEADER================================*/
+header {
+    background-color: #E6E8E9;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;             
+    align-items: center;        
+    justify-content: space-between;
+}
+
+.iconos {
+    width: 70px;
+    height: 70px;
+}
+
+#titulo_encabezado {
+    color: #0D1650;
+    font-size: 3.5rem;
+    font-weight: 400;         
+}
+
+#titulo_encabezado p {
+    margin: 0; 
+}
+
+#iconos_ete {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#iconos_ete .iconos {
+    width: 70px;
+    height: 55px;
+}
+
+.input-group {
+    padding: 1%;
+    align-items: center;
+}
