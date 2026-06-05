@@ -81,9 +81,10 @@ header {
 }
 .container-menu {
     position: absolute;
-    background: #0d16507e;;
+    background: #0d16507e;
+    z-index: 2;
     width: 100%;
-    height: 100vh;
+    height: 125vh;
     top: 0;
     left: 0;
     transition: all 1000ms ease;
@@ -95,7 +96,7 @@ header {
 .cont-menu {
     max-width: 350px;
     background: #dad9d9;
-    height: 100vh;
+    height: 110vh;
     transition: all 2000ms ease;
     transform: translateX(-100%);
     box-shadow: 2px 2px 8px rgb(4, 5, 53);
@@ -139,12 +140,18 @@ header {
 main{
     display: flex;
     justify-content: space-around;
+    z-index: 0;
 }
 
 
 #contenido{
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 100vh;
+    max-width: 100vh;
     transition: 0.3s ease;
 }
 .lista_alum:hover{
@@ -168,4 +175,6 @@ main{
 }
 #calendario{
     background-color: #0D1650;
+    z-index: 0;
+
 }
