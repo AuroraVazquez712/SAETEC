@@ -13,7 +13,6 @@
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    margin-top: 76px;
 }
 #img-inisesion{
     height: 618px;
@@ -52,8 +51,12 @@
     margin-top: 20px;
     border-radius: 20% 20% 20% 20%;
     font-size: 16px;
+    transition: 0.5s;
 }
 #envio-datos:hover{
     cursor: pointer;
     font-weight: bold;
+    width: 86px;
+    height: 35px;
+    font-size: 18px;
 }

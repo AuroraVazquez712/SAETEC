@@ -24,12 +24,7 @@ input{
     border-radius: 20% 20% 20% 20%;
     font-size: 20px;
 }
-/*------------Barra de búsqueda------------*/
-.barraBusqueda{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: left;
-}
+/*------------Barra de búsqueda------------*/   
 .iconos {
     width: 70px;
     height: 70px;
@@ -41,7 +36,7 @@ input{
 }
 
 #titulo_encabezado p {
-    margin: 0; 
+    margin: 0%; 
 }
 
 #iconos_ete {
