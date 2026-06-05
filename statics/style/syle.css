@@ -3,7 +3,10 @@
     font-family: 'subtemas';
     src: url("../fonts/hack-regular.ttf") format(truetype);
 }
-
+@font-face {
+    font-family: 'nom-usuario';
+    src: url();
+}
 /*------------Estilo de etiquetas generales------------*/
 body{
     padding: 0%;
@@ -53,7 +56,7 @@ input{
     height: 50px;
 }
 /*------------Inicio de sesión------------*/
-.inicio-sesion{ 
+.cont-general{ 
     /*-----div, contiene el formulario-----*/
     background-color: #0D1650;
     color: #E6E8E9;
@@ -91,4 +94,25 @@ input{
 }
 #form-inisesion .tienes-cuenta{
     font-size: 16px;
+}
+#envio-datos{
+    background-color:#FF671D;
+    color: white;
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 20% 20% 20% 20%;
+    font-size: 16px;
+}
+#envio-datos:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+/*-----Perfil alumno-----*/
+#perfil .cont-general{
+    background-color: white;
+    
+}
+#form-inisesion .nomusuario-cont{
+
 }
