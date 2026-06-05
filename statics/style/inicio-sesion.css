@@ -1,0 +1,62 @@
+/*------------Estilo de fuentes------------*/
+@font-face {
+    font-family: 'subtemas';
+    src: url("../fonts/hack-regular.ttf") format(truetype);
+}
+
+/*------------Inicio de sesión------------*/
+.cont-general{ 
+    /*-----div, contiene el formulario-----*/
+    background-color: #0D1650;
+    color: #E6E8E9;
+    width: 100%;    
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+#img-inisesion{
+    height: 618px;
+    width: 550px;
+}
+#img-puma{
+    background-color: white;
+    padding: 0px 130px 0px 130px;
+}
+/*-----Formulario, y texto-----*/
+#form-inisesion{
+    font-family: 'subtemas', sans-serif;
+    font-size: 32px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 150px 0px 0px;
+}
+#form-inisesion .crea-cuenta{
+    font-size: 16px;
+    color: #FF671D;
+}
+#form-inisesion .crea-cuenta:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+#form-inisesion .tienes-cuenta{
+    font-size: 16px;
+}
+#envio-datos{
+    background-color:#FF671D;
+    color: white;
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 20% 20% 20% 20%;
+    font-size: 16px;
+    transition: 0.5s;
+}
+#envio-datos:hover{
+    cursor: pointer;
+    font-weight: bold;
+    width: 86px;
+    height: 35px;
+    font-size: 18px;
+}

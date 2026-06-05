@@ -1,3 +1,11 @@
+/*------------Estilo de fuentes------------*/
+@font-face {
+    font-family: 'nom-usuario';
+    src: url(../fonts/monofonto.otf) format(truetype);
+}
+
+/*------------Estilo de etiquetas generales------------*/
+
 body {
     margin: 0%;
     padding: 0%;
@@ -10,20 +18,25 @@ header {
     align-items: center;        
     justify-content: space-between;
 }
-
+input{
+    width: 180px;
+    height: 40px;
+    border-radius: 20% 20% 20% 20%;
+    font-size: 20px;
+}
+/*------------Barra de búsqueda------------*/   
 .iconos {
     width: 70px;
     height: 70px;
 }
-
 #titulo_encabezado {
     color: #0D1650;
     font-size: 3.5rem;
-    font-weight: 400;         
+    font-weight: 400;
 }
 
 #titulo_encabezado p {
-    margin: 0; 
+    margin: 0%; 
 }
 
 #iconos_ete {
@@ -35,6 +48,18 @@ header {
     width: 70px;
     height: 50px;
 }
+
+/*-----Perfil alumno-----*/
+#perfil-usuariol .cont-general{
+    background-color:#FF671D;
+    color: black;
+}
+#nombre-usuario{
+    font-family: 'nom-usuario', sans-serif;
+    font-size: 55px;
+}
+
+
 #seleccion-perf {
     color:black;
     text-align: center;
