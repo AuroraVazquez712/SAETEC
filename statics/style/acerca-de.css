@@ -105,6 +105,7 @@ header {
 #cont-acerca-de{
     display: flex;
     align-items: center;
+    width: 100%;
     gap: 8px;
 }
 #cont-info{
@@ -126,4 +127,9 @@ header {
     color: #FF671D;
     font-size: 90px;
 
+}
+.que-es{
+    background-color: #0D1650;
+    color: white;
+    padding: 10px 10px 10px 10px;
 }
