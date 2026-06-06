@@ -139,8 +139,8 @@ header {
     border: 1px solid #0D1650;
     background-color: #E6B72D;
     border-radius: 10px;
-    width: 400px;
-    height: 380px;
+    width: 30%;
+    height: 40%;
     transition: all 0.5s ease;
     font-size: 17px;
 }
@@ -160,4 +160,14 @@ header {
 .subtemas h3{
     font-size: 43px;
     text-align: center;
+}
+/*--------------------------FOOTER--------------------------*/
+footer{
+    background-color: #0D1650;
+    width: 100%;
+    text-align: left;
+    color: #FFF;
+    font: bold 15px sans-serif;
+    padding: 55px 50px;
+    margin-top: 80px;
 }
