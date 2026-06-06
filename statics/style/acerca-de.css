@@ -105,12 +105,16 @@ header {
 #cont-acerca-de{
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;  
     width: 100%;
     gap: 8px;
 }
 #cont-info{
-    display: inline-block;
-    align-items: center;
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
+    width: 100%;
     gap: 8px;
 }
 /*-----------Estilo de textos-----------*/
@@ -118,7 +122,7 @@ header {
     font-family: 'acerca-de', sans-serif;
     color: #0D1650;
     font-size: 90px;
-}
+}   
 #nombres-saetec p{
     margin: 0%;
 }
@@ -128,8 +132,32 @@ header {
     font-size: 90px;
 
 }
-.que-es{
+.subtemas{
+    color: black;
+    margin: 17px;
+    padding: 25px;
+    border: 1px solid #0D1650;
+    background-color: #E6B72D;
+    border-radius: 10px;
+    width: 400px;
+    height: 380px;
+    transition: all 0.5s ease;
+    font-size: 17px;
+}
+.subtemas:nth-child(1){
     background-color: #0D1650;
-    color: white;
-    padding: 10px 10px 10px 10px;
+    color: #FFFFFF;
+}
+.subtemas:nth-child(3){
+    background-color: #FF671D;
+    color: #000000;
+}
+.subtemas:hover{
+    transform: scale(1.05);
+    background-color: #1226AA;
+    color: #FFFFFF;
+}
+.subtemas h3{
+    font-size: 43px;
+    text-align: center;
 }
