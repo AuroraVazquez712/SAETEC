@@ -42,11 +42,11 @@
             <div class="cont-menu">
                 <nav>
                     <h2>324308734</h2>
-                    <a href="./perfil-alumno.html">Mi perfil</a>
+                    <a href="./perfil-alumno.php">Mi perfil</a>
                     <hr>
-                    <a href="vista-perf-alumnos.html">Mis calificaciones</a>
+                    <a href="vista-perf-alumnos.php">Mis calificaciones</a>
                     <hr>
-                    <a href="vista-perf-alumnos.html">Mis actividades</a>
+                    <a href="vista-perf-alumnos.php">Mis actividades</a>
                     <hr>
                     <a href="#">¿Cómo te has sentido?</a>
                     <hr>
