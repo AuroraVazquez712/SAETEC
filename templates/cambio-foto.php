@@ -68,8 +68,22 @@
             </div>
         </aside>
         <!-------------------------------------CAMBIO DE FOTO----------------------------------------->
-        <div>
-            
+        <div class="contenedor-general" style="margin-top: 50px;">
+            <header class="form-header">
+                <h2>Edición de Perfil</h2>
+            </header>
+            <div class="contenedor-foto-perfil">
+
+            <!-- Aquí va el PHP para mostrar la foto de perfil actual en grande-->
+
+            </div>
+            <!-- otro atributo? -->
+            <form action="guardar.php" method="POST" enctype="multipart/form-data">
+
+                <input type="file" name="foto_perfil" id="ipt-foto_perfil" accept="image/png, image/jpeg">
+
+                <button type="submit" class="btn-submit">Cambiar foto</button>
+            </form>
         </div>
 </body>
 </html>
