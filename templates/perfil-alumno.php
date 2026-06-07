@@ -29,25 +29,9 @@
             </div>
         </header>
         <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-<<<<<<< HEAD:templates/perfil-alumno.html
-        <nav class="nav">
-            <div class="container">
-                <div class="btn-menu">
-                    <label for="btn-menu">☰</label>
-                </div>
-                <nav class="menu">
-                    <a href="./index.html">Inicio</a>
-                    <a href="#">Perfil</a>
-                    <a href="#">Acerca</a>
-                    <a href="#">Contacto</a>
-                </nav>
-            </div>
-        </nav>
-=======
         <?php
             include 'barrapro.php';
         ?>
->>>>>>> f77ae3b11149cbd932033fc98a807e37737bd60c:templates/perfil-alumno.php
         <!-------------------------------------BARRA LATERAL----------------------------------------->
         <aside>
             <div class="capa"> </div>

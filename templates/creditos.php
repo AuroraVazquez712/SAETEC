@@ -29,23 +29,9 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN------------------------>
-<<<<<<< HEAD:templates/creditos.html
-    <nav class="nav">
-        <div class="container">
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./alumno.html">Alumno</a>
-                <a href="./profesor.html">Profesor</a>
-                <a href="#">Admin</a>
-            </nav>
-        </div>
-    </nav>
-    <!------------------------CRÉDITOS------------------------>
-=======
     <?php
             include 'barrapro.php';
     ?>
->>>>>>> f77ae3b11149cbd932033fc98a807e37737bd60c:templates/creditos.php
     <br>
     <h1>StatHorses</h1>
     <div id="equipo">

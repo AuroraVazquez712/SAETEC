@@ -69,6 +69,72 @@
     font-size: 55px;
 }
 /*--------------------------PERFIL ALUMNO----------------------------------*/
+#cont-general{
+    display: flex;
+    width: 100%;
+}
+#cont-general p{
+    font-size: 20px;
+}
+#datos-alumno{
+    display: block;
+    border: 1px solid #000000;
+    margin: 10px;
+    padding: 30px;
+}
+#datos-alumno h3{
+    background-color: #0D1650;
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-family: 'nom-usuario';
+    font-size: 50px;
+    padding: 18px;
+    padding-left: 30px;
+}
+#datos-alumno p{
+    padding-left: 60px;
+    font-size: 30px;
+}
+#datos-alumno{
+    width: 1000px;
+    height: 100%;
+    padding-left: 100px;
+}
+#datos-alumno p{
+    background-color: #0D1650;
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 15px;
+    padding-left: 30px;
+}
+/*--------------------------BARRA LATERAL, PERFIL--------------------------*/
+#barra-lateral{
+    width: 600px;
+    height: 100%;
+    background-color: #0D1650;
+    color: #FFFFFF;
+    padding: 30px;
+    margin-right: 20px;
+    font-size: 30px;
+}
+#barra-lateral p{
+    margin-left: 40px;
+}
+#barra-lateral button{
+    background-color: #FF671D;
+    color: #FFFFFF;
+    font-size: 15px;
+    border-radius: 15px;
+    margin-left: 40px;
+    padding: 10px;
+    cursor: pointer;
+}
+.alumno-icon{
+    border-radius: 100px;
+    margin: 20px;
+    margin-left: 40px;
+}
 /*--------------------------FOOTER--------------------------*/
 footer{
     background-color: #0D1650;
