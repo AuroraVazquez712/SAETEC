@@ -78,7 +78,11 @@
                 </div>
             </div>
             <div id="coments">
-                <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                <div id="tips">
+                    <a href="./tips.php">
+                        <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                    </a>
+                </div>
             </div>
         </div>
         
