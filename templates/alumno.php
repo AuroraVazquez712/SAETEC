@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Aurora Vazquez">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/profesor.css">
+    <link rel="stylesheet" href="../statics/style/alumno.css">
     <title>SAETEC: Alumno</title>
 </head>
 <body>
@@ -28,20 +28,9 @@
     </header>
 
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./perfil-alumno.html">Perfil</a>
-                <a href="./acerca-de.html">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
-    <br>
+    <?php
+            include 'barrapro.php';
+        ?>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <aside>
         <div class="capa"> </div>
@@ -71,22 +60,17 @@
     
     <main>
         <div id="contenido">
-            <div id="lista">
-                <div class="lista_alum">
-                    <a href="./lista-alumnos.html">
-                        <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos">
-                    </a>
-                </div>
-                <div class="tarea">
-                    <img src="../statics/img/publi_tarea.png" alt="Imagen con texto publicar tarea">
-
-                </div>
+            <div id="forms">
+                <a  href="./formalu.html">
+                    <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
+                </a>
             </div>
             <div id="material">
                 <div class="extras">
                     <a href="./material_extra.html">
                         <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
-                    </a>                </div>
+                    </a>
+                </div>
                 <div class="contacto">
                     <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
                 </div>
@@ -96,15 +80,6 @@
             </div>
         </div>
         
-        <div id="calendario">
-            <div id="cal">
-                <img src="../statics/img/calendario.png" alt="Calenadrio enp">
-            </div>
-            <div>
-                <p>Algo mash</p>
-            </div>
-        </div>
-    
     </main>
     
 </body>

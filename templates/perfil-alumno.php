@@ -29,20 +29,9 @@
             </div>
         </header>
         <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-        <nav class="nav">
-            <div class="container">
-                <div class="btn-menu">
-                    <label for="btn-menu">☰</label>
-                </div>
-                <nav class="menu">
-                    <a href="./index.html">Inicio</a>
-                    <a href="./perfil-alumno.html">Perfil</a>
-                    <a href="./acerca-de.html">Acerca</a>
-                    <a href="#">Contacto</a>
-                </nav>
-            </div>
-        </nav>
-        <br>
+        <?php
+            include 'barrapro.php';
+        ?>
         <!-------------------------------------BARRA LATERAL----------------------------------------->
         <aside>
             <div class="capa"> </div>
