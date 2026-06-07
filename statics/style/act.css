@@ -1,0 +1,92 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+/*===========================HEADER================================*/
+header {
+    background-color: #E6E8E9;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;             
+    align-items: center;        
+    justify-content: space-between;
+}
+
+.iconos {
+    width: 70px;
+    height: 70px;
+}
+
+#titulo_encabezado {
+    color: #0D1650;
+    font-size: 3.5rem;
+    font-weight: 400;         
+}
+
+#titulo_encabezado p {
+    margin: 0; 
+}
+
+#iconos_ete {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#iconos_ete .iconos {
+    width: 70px;
+    height: 55px;
+}
+
+.cuadrado {
+    width: 1600px;
+    height: 200px;
+    background-color: #0D1650;
+    margin-top: 1%;
+    margin-left: 2%;
+    color: white;
+    font-size: 70px;
+    line-height: 200px;
+    text-align: center;
+}
+
+.grupo {
+    width: 180px;
+    height: 60px;
+    font-size: 28px;
+    margin: 0.75%;
+    margin-top: 1.5%;
+    margin-left: 2%;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 1cm;
+    background-color: #E6B72D;
+}
+
+.button {
+    width: 800px;
+    height: 80px;
+    color: #0D1650;
+    font-size: 20px;
+    border-color: #E6E8E9;
+    outline-color: #E6E8E9;
+    background-color: #E6E8E9;
+    margin: 0.75%;
+    margin-left: 2%;
+}
+
+.button:hover {
+    transform: scale(0.9);
+}
+
+.info {
+    width: 800px;
+    height: 250px;
+    color: #0D1650;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FF671D;
+    text-align: center;
+    margin: 0.75%;
+    margin-bottom: 1.5%;
+    margin-left: 2%;
+}
