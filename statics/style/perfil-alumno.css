@@ -3,10 +3,6 @@
     font-family: 'nom-usuario';
     src: url(../fonts/times-sans-serif.ttf) format(truetype);
 }
-@font-face {
-    font-family: 'info-general';
-    src: url(../fonts/monofonto.otf) format(truetype);
-}
 /*===========================================ASIDE=================================================*/
 #btn-menu {
     display: none;
