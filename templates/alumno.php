@@ -31,45 +31,24 @@
 
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-            include 'barrapro.php';
-        ?>
+        include 'barrapro.php';
+    ?>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <aside>
-        <div class="capa"> </div>
-        <!--	--------------->
-        <input type="checkbox" id="btn-menu"/>
-        <div class="container-menu">
-            <div class="cont-menu">
-                <nav>
-                    <h2>324308734</h2>
-                    <a href="./perfil-alumno.html">Mi perfil</a>
-                    <hr>
-                    <a href="vista-perf-alumnos.html">Mis calificaciones</a>
-                    <hr>
-                    <a href="vista-perf-alumnos.html">Mis actividades</a>
-                    <hr>
-                    <a href="#">¿Cómo te has sentido?</a>
-                    <hr>
-                    <a href="../docs/2019_Acuerdo_Rectoria_02.pdf">Políticas de seguridad</a>
-                    <hr>
-                    <a href="#">Modificar datos</a>
-                </nav>
-                <label for="btn-menu">✖️</label>
-            </div>
-        </div>
-    </aside>
+    <?php
+        include 'barra-lateral.php';
+    ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
     
     <main>
         <div id="contenido">
             <div id="forms">
-                <a  href="./formalu.html">
+                <a  href="./formalu.php">
                     <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
                 </a>
             </div>
             <div id="material">
                 <div class="extras">
-                    <a href="./material_extra.html">
+                    <a href="./material_extra.php">
                         <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
                     </a>
                 </div>

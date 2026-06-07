@@ -32,38 +32,17 @@
             include 'barrapro.php';
     ?>
     <br>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <aside>
-        <div class="capa"> </div>
-        <!--	--------------->
-        <input type="checkbox" id="btn-menu"/>
-        <div class="container-menu">
-            <div class="cont-menu">
-                <nav>
-                    <h2>324308734</h2>
-                    <a href="./perfil-alumno.html">Mi perfil</a>
-                    <hr>
-                    <a href="vista-perf-alumnos.html">Mis calificaciones</a>
-                    <hr>
-                    <a href="vista-perf-alumnos.html">Mis actividades</a>
-                    <hr>
-                    <a href="#">¿Cómo te has sentido?</a>
-                    <hr>
-                    <a href="../docs/2019_Acuerdo_Rectoria_02.pdf">Políticas de seguridad</a>
-                    <hr>
-                    <a href="#">Modificar datos</a>
-                </nav>
-                <label for="btn-menu">✖️</label>
-            </div>
-        </div>
-    </aside>
+   <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
     
     <main>
         <div id="contenido">
             <div id="lista">
                 <div class="lista_alum">
-                    <a href="./lista-alumnos.html">
+                    <a href="./lista-alumnos.php">
                         <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos">
                     </a>
                 </div>
@@ -74,7 +53,7 @@
             </div>
             <div id="material">
                 <div class="extras">
-                    <a href="./material_extra.html">
+                    <a href="./material_extra.php">
                         <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
                     </a>                </div>
                 <div class="contacto">
@@ -82,8 +61,9 @@
                 </div>
             </div>
             <div id="coments">
-                <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
-            </div>
+                <a href="./tips.php">
+                    <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                </a>            
         </div>
         
         <div id="calendario">

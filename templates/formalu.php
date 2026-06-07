@@ -26,17 +26,11 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./perfil-alumno.html">Perfil</a>
-                <a href="./acerca-de.html">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
+    <?php
+            include 'barrapro.php';
+    ?> 
     <br>
+    <!-------------------------------------------FORMS------------>
     <form action=" " method="POST">
         <div class="form-grid">
 
