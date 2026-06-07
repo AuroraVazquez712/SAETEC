@@ -25,6 +25,38 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
+    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+    <?php
+            include 'barrapro.php';
+    ?>
+    <br>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <aside>
+        <div class="capa"> </div>
+        <!--	--------------->
+        <input type="checkbox" id="btn-menu"/>
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <h2>324308734</h2>
+                    <a href="./perfil-alumno.html">Mi perfil</a>
+                    <hr>
+                    <a href="vista-perf-alumnos.html">Mis calificaciones</a>
+                    <hr>
+                    <a href="vista-perf-alumnos.html">Mis actividades</a>
+                    <hr>
+                    <a href="#">¿Cómo te has sentido?</a>
+                    <hr>
+                    <a href="../docs/2019_Acuerdo_Rectoria_02.pdf">Políticas de seguridad</a>
+                    <hr>
+                    <a href="#">Modificar datos</a>
+                </nav>
+                <label for="btn-menu">✖️</label>
+            </div>
+        </div>
+    </aside>
+    <!----------------------------------------CONTENIDO------------------------------------------->
+    
     <main>
         <div id="margen">
             <div id="nom-alumn">
@@ -78,5 +110,9 @@
                 </div>
         </div>
     </main>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>

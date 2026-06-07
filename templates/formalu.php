@@ -26,17 +26,11 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="#">Perfil</a>
-                <a href="#">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
+    <?php
+            include 'barrapro.php';
+    ?> 
     <br>
+    <!-------------------------------------------FORMS------------>
     <form action=" " method="POST">
         <div class="form-grid">
 
@@ -79,5 +73,9 @@
         
         <button type="submit" class="btn-submit">Confirmar</button>
     </form>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>

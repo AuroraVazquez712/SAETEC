@@ -47,3 +47,18 @@ h1{
     font-size: 55px;
     margin-top: 10px;
 }
+/*--------------------------FOOTER--------------------------*/
+footer{
+    background-color: #0D1650;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    color: #FFF;
+    font: bold 15px sans-serif;
+    padding: 55px 50px;
+    margin-top: 80px;
+}
+.link a{
+    color: #FFFFFF;
+    text-decoration: none;
+}

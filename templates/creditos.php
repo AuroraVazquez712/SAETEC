@@ -29,6 +29,7 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN------------------------>
+<<<<<<< HEAD:templates/creditos.html
     <nav class="nav">
         <div class="container">
             <nav class="menu">
@@ -40,6 +41,11 @@
         </div>
     </nav>
     <!------------------------CRÉDITOS------------------------>
+=======
+    <?php
+            include 'barrapro.php';
+    ?>
+>>>>>>> f77ae3b11149cbd932033fc98a807e37737bd60c:templates/creditos.php
     <br>
     <h1>StatHorses</h1>
     <div id="equipo">
@@ -56,5 +62,9 @@
             <p>López Morales Fernando Samuel</p>
         </div>
     </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>

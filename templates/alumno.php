@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Aurora Vazquez">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/profesor.css">
+    <link rel="stylesheet" href="../statics/style/alumno.css">
+    <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
+
     <title>SAETEC: Alumno</title>
 </head>
 <body>
@@ -28,20 +30,9 @@
     </header>
 
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="#">Perfil</a>
-                <a href="#">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
-    <br>
+    <?php
+            include 'barrapro.php';
+        ?>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <aside>
         <div class="capa"> </div>
@@ -51,11 +42,11 @@
             <div class="cont-menu">
                 <nav>
                     <h2>324308734</h2>
-                    <a href="./perfil-alumno.html">Mi perfil</a>
+                    <a href="./perfil-alumno.php">Mi perfil</a>
                     <hr>
-                    <a href="#">Mis calificaciones</a>
+                    <a href="vista-perf-alumnos.php">Mis calificaciones</a>
                     <hr>
-                    <a href="#">Mis actividades</a>
+                    <a href="vista-perf-alumnos.php">Mis actividades</a>
                     <hr>
                     <a href="#">¿Cómo te has sentido?</a>
                     <hr>
@@ -71,40 +62,34 @@
     
     <main>
         <div id="contenido">
-            <div id="lista">
-                <div class="lista_alum">
-                    <a href="./lista-alumnos.html">
-                        <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos">
-                    </a>
-                </div>
-                <div class="tarea">
-                    <img src="../statics/img/publi_tarea.png" alt="Imagen con texto publicar tarea">
-
-                </div>
+            <div id="forms">
+                <a  href="./formalu.php">
+                    <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
+                </a>
             </div>
             <div id="material">
                 <div class="extras">
-                    <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
+                    <a href="./material_extra.php">
+                        <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
+                    </a>
                 </div>
                 <div class="contacto">
                     <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
                 </div>
             </div>
             <div id="coments">
-                <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                <div id="tips">
+                    <a href="./tips.php">
+                        <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                    </a>
+                </div>
             </div>
         </div>
         
-        <div id="calendario">
-            <div id="cal">
-                <img src="../statics/img/calendario.png" alt="Calenadrio enp">
-            </div>
-            <div>
-                <p>Algo mash</p>
-            </div>
-        </div>
-    
     </main>
+    <?php
+            include 'footer.php';
+    ?>
     
 </body>
 </html>

@@ -28,17 +28,9 @@
             </div>
         </header>
         <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-        <nav class="nav">
-            <div class="container">
-                <nav class="menu">
-                    <a href="./index.html">Inicio</a>
-                    <a href="./alumno.html">Alumno</a>
-                    <a href="./profesor.html">Profesor</a>
-                    <a href="#">Admin</a>
-                </nav>
-            </div>
-        </nav>
-        <br>
+        <?php
+            include 'barrapro.php';
+        ?>
         <!------------------------ACERCA DE SAETEC------------------------>
         <div id="cont-general">
             <div id="cont-acerca-de">
@@ -75,6 +67,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD:templates/acerca-de.html
         <footer>
             <div id="iconos_unam">
                 <h3>
@@ -93,5 +86,11 @@
                 
             </div>
         </footer>
+=======
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
+>>>>>>> f77ae3b11149cbd932033fc98a807e37737bd60c:templates/acerca-de.php
     </body>
 </html>

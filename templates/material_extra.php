@@ -28,19 +28,9 @@
     </header>
 
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="#">Perfil</a>
-                <a href="#">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
+    <?php
+            include 'barrapro.php';
+    ?>
     <br>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <aside>
@@ -53,9 +43,9 @@
                     <h2>324308734</h2>
                     <a href="./perfil-alumno.html">Mi perfil</a>
                     <hr>
-                    <a href="#">Mis calificaciones</a>
+                    <a href="vista-perf-alumnos.html">Mis calificaciones</a>
                     <hr>
-                    <a href="#">Mis actividades</a>
+                    <a href="vista-perf-alumnos.html">Mis actividades</a>
                     <hr>
                     <a href="#">¿Cómo te has sentido?</a>
                     <hr>
@@ -127,5 +117,9 @@
             </div>
         </div>
     </main>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>
