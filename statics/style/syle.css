@@ -115,4 +115,19 @@ input{
     border-bottom: 6px solid #E6E8E9;
     padding-bottom: 3px;
 }
+/*--------------------------FOOTER--------------------------*/
+footer{
+    background-color: #0D1650;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    color: #FFF;
+    font: bold 15px sans-serif;
+    padding: 55px 50px;
+    margin-top: 80px;
+}
+.link a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
 

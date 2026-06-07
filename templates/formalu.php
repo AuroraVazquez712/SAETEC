@@ -79,5 +79,9 @@
         
         <button type="submit" class="btn-submit">Confirmar</button>
     </form>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>

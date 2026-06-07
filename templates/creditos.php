@@ -48,5 +48,9 @@
             <p>López Morales Fernando Samuel</p>
         </div>
     </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>
