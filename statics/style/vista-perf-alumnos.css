@@ -304,5 +304,20 @@ main{
     font-size: 30px;
     color: white ;
 } 
+/*--------------------------FOOTER--------------------------*/
+footer{
+    background-color: #0D1650;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    color: #FFF;
+    font: bold 15px sans-serif;
+    padding: 55px 50px;
+    margin-top: 80px;
+}
+.link a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
 
 

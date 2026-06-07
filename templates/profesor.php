@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Frida Garcia">
-    <meta name="description" content="Lista de Alumnos">
-    <link rel="stylesheet" href="../statics/style/vista-perf-alumnos.css">
-    <title>SAETEC: Lista de alumnos</title>
+    <meta name="autor" content="Equipo 4: Aurora Vazquez">
+    <meta name="description" content="Vista del Alumno">
+    <link rel="stylesheet" href="../statics/style/profesor.css">
+    <title>SAETEC: Alumno</title>
 </head>
 <body>
+    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <img class="iconos"src="../statics/img/logo-escudo-unam.png" alt="Escuedo de la UNAM">
@@ -25,20 +26,11 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
+
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./perfil-alumno.html">Perfil</a>
-                <a href="./acerca-de.html">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
+    <?php
+            include 'barrapro.php';
+    ?>
     <br>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <aside>
@@ -68,57 +60,45 @@
     <!----------------------------------------CONTENIDO------------------------------------------->
     
     <main>
-        <div id="margen">
-            <div id="nom-alumn">
-                <h2>Nombre del alumno</h2>
+        <div id="contenido">
+            <div id="lista">
+                <div class="lista_alum">
+                    <a href="./lista-alumnos.html">
+                        <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos">
+                    </a>
+                </div>
+                <div class="tarea">
+                    <img src="../statics/img/publi_tarea.png" alt="Imagen con texto publicar tarea">
+
+                </div>
             </div>
-
-            <div id="bloq-info">
-                <div id="info">
-                    <div class="datos"> 
-                        <p> E-mail:</p>
-                    </div>
-                    <div class="datos"> 
-                        <p> No. de cuenta:</p>
-                    </div>
-                    <div class="datos">
-                        <p>Telefono:</p>
-                    </div>
+            <div id="material">
+                <div class="extras">
+                    <a href="./material_extra.html">
+                        <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
+                    </a>                </div>
+                <div class="contacto">
+                    <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
                 </div>
-
-                <div class="boton-ayuda">
-                    <p>No. de ayudas: </p>
-                </div>
-
-                <div class="result-week">
-                    <p>Resultados encuestas semanales:</p>
-                    <p> Semana 1</p>
-                    <p> Semana 2</p>
-                    <p> Semana 3 </p>
-                </div>
-                <div class="otros-datos">
-                <p>Otros datos</p>
-            </div>            
-
             </div>
-
-
-            <div id="escolar">
-                <div class="tareas">
-                    <h3>Tareas</h3>
-                    <p>Entregadas:</p>
-                    <p>Faltantes:</p>
-                </div>
-
-            <div class="Calificaciones">
-                <h3>Calificaciones</h3>
-                    <p>Modulo 1:</p>
-                    <p>Modulo 2:</p>
-                    <p>Modulo 3:</p>
-                    <p>Modulo 4:</p>
-                    <p>Modulo 5:</p>
-                </div>
+            <div id="coments">
+                <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+            </div>
         </div>
+        
+        <div id="calendario">
+            <div id="cal">
+                <img src="../statics/img/calendario.png" alt="Calenadrio enp">
+            </div>
+            <div>
+                <p>Algo mash</p>
+            </div>
+        </div>
+    
     </main>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>

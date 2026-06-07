@@ -29,17 +29,9 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN------------------------>
-    <nav class="nav">
-        <div class="container">
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./alumno.html">Alumno</a>
-                <a href="./profesor.html">Profesor</a>
-                <a href="#">Admin</a>
-            </nav>
-        </div>
-    </nav>
-    <!------------------------CRÉDITOS------------------------>
+    <?php
+            include 'barrapro.php';
+    ?>
     <br>
     <h1>StatHorses</h1>
     <div id="equipo">
@@ -56,5 +48,9 @@
             <p>López Morales Fernando Samuel</p>
         </div>
     </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>

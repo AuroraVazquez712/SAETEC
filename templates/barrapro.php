@@ -1,11 +1,14 @@
 <nav class="nav">
-    <div class="container">
-        <nav class="menu">
-            <a href="./index.html">Inicio</a>
-            <a href="./perfil-alumno.html">Perfil</a>
-            <a href="./acerca-de.html">Acerca</a>
-            <a href="#">Contacto</a>
-            <a href=./creditos.html>Créditos </a>
-        </nav>
-    </div>
-</nav>
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <nav class="menu">
+                <a href="./index.html">Inicio</a>
+                <a href="./perfil-alumno.php">Perfil</a>
+                <a href="./acerca-de.php">Acerca</a>
+                <a href="./creditos.php">Creditos</a>
+            </nav>
+        </div>
+    </nav>
+<br>
