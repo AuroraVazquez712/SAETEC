@@ -28,17 +28,9 @@
             </div>
         </header>
         <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-        <nav class="nav">
-            <div class="container">
-                <nav class="menu">
-                    <a href="./index.html">Inicio</a>
-                    <a href="./alumno.html">Alumno</a>
-                    <a href="./profesor.html">Profesor</a>
-                    <a href="#">Admin</a>
-                </nav>
-            </div>
-        </nav>
-        <br>
+        <?php
+            include 'barrapro.php';
+        ?>
         <!------------------------ACERCA DE SAETEC------------------------>
         <div id="cont-general">
             <div id="cont-acerca-de">
