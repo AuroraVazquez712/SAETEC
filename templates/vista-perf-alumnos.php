@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Frida Garcia">
     <meta name="description" content="Lista de Alumnos">
-    <link rel="stylesheet" href="../statics/style/lista-alumnos.css">
+    <link rel="stylesheet" href="../statics/style/vista-perf-alumnos.css">
     <title>SAETEC: Lista de alumnos</title>
 </head>
 <body>
@@ -26,19 +26,9 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./perfil-alumno.html">Perfil</a>
-                <a href="./acerca-de.html">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
+    <?php
+            include 'barrapro.php';
+    ?>
     <br>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <aside>
@@ -65,53 +55,59 @@
             </div>
         </div>
     </aside>
-    <!--------------------------------------------------CONTENIDO---------------------------------->
+    <!----------------------------------------CONTENIDO------------------------------------------->
+    
     <main>
-        <div id="bloque-list">
-            <div class="lista_alum">
-                <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos" title="añadir alumno">
+        <div id="margen">
+            <div id="nom-alumn">
+                <h2>Nombre del alumno</h2>
+            </div>
+
+            <div id="bloq-info">
+                <div id="info">
+                    <div class="datos"> 
+                        <p> E-mail:</p>
+                    </div>
+                    <div class="datos"> 
+                        <p> No. de cuenta:</p>
+                    </div>
+                    <div class="datos">
+                        <p>Telefono:</p>
+                    </div>
+                </div>
+
+                <div class="boton-ayuda">
+                    <p>No. de ayudas: </p>
+                </div>
+
+                <div class="result-week">
+                    <p>Resultados encuestas semanales:</p>
+                    <p> Semana 1</p>
+                    <p> Semana 2</p>
+                    <p> Semana 3 </p>
+                </div>
+                <div class="otros-datos">
+                <p>Otros datos</p>
+            </div>            
 
             </div>
 
-            <div id="grupos">
-                <div class="boton-grupos">
-                    <p>Grupo: </p> 
-                </div>
-                <div class="boton">
-                    <img src="../statics/img/boton-list-alumn.png">
-                </div>
-            </div>
-            <div id="lista-alumnos">
-                <div class="alumno">
-                    <p>Alumno 1</p>
-                </div>
-                <div class="alumno">
-                    <p>Alumno 2</p>
-                </div>
-                <div class="alumno">
-                    <p> Fersita good </p>
-                </div>
-                <div class="alumno">
-                    <p>Beto deidad </p>
-                </div>
-                <div class="alumno">
-                    <p> Auro</p>
-                </div><div class="alumno">
-                    <p>Faty</p>
-                </div>
-                <div class="alumno">
-                    <p>Diegood</p>
-                </div>
-            </div>
-        </div>
 
-        <div id="barra-lateral">
-            <div class="perfil_prof">
-                <p>PERFIL DEL PROFESOR </p>
-            </div>
-            <div  class="calendario">
-                <img src="../statics/img/Calendario-2027.png">
-            </div>
+            <div id="escolar">
+                <div class="tareas">
+                    <h3>Tareas</h3>
+                    <p>Entregadas:</p>
+                    <p>Faltantes:</p>
+                </div>
+
+            <div class="Calificaciones">
+                <h3>Calificaciones</h3>
+                    <p>Modulo 1:</p>
+                    <p>Modulo 2:</p>
+                    <p>Modulo 3:</p>
+                    <p>Modulo 4:</p>
+                    <p>Modulo 5:</p>
+                </div>
         </div>
     </main>
 </body>

@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
-    <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/alumno.css">
-    <title>SAETEC: Alumno</title>
+    <meta name="autor" content="Equipo 4: Frida Garcia">
+    <meta name="description" content="Lista de Alumnos">
+    <link rel="stylesheet" href="../statics/style/lista-alumnos.css">
+    <title>SAETEC: Lista de alumnos</title>
 </head>
 <body>
-    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <img class="iconos"src="../statics/img/logo-escudo-unam.png" alt="Escuedo de la UNAM">
@@ -26,21 +25,10 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
-
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./perfil-alumno.html">Perfil</a>
-                <a href="./acerca-de.html">Acerca</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
-    </nav>
+    <?php
+            include 'barrapro.php';
+    ?>
     <br>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <aside>
@@ -67,35 +55,54 @@
             </div>
         </div>
     </aside>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    
+    <!--------------------------------------------------CONTENIDO---------------------------------->
     <main>
-        <div id="contenido">
-            <div id="forms">
-                <a  href="./formalu.html">
-                    <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
-                </a>
+        <div id="bloque-list">
+            <div class="lista_alum">
+                <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos" title="añadir alumno">
+
             </div>
-            <div id="material">
-                <div class="extras">
-                    <a href="./material_extra.html">
-                        <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
-                    </a>
+
+            <div id="grupos">
+                <div class="boton-grupos">
+                    <p>Grupo: </p> 
                 </div>
-                <div class="contacto">
-                    <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
+                <div class="boton">
+                    <img src="../statics/img/boton-list-alumn.png">
                 </div>
             </div>
-            <div id="coments">
-                <div id="tips">
-                    <a href="./tips.html">
-                        <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
-                    </a>
+            <div id="lista-alumnos">
+                <div class="alumno">
+                    <p>Alumno 1</p>
+                </div>
+                <div class="alumno">
+                    <p>Alumno 2</p>
+                </div>
+                <div class="alumno">
+                    <p> Fersita good </p>
+                </div>
+                <div class="alumno">
+                    <p>Beto deidad </p>
+                </div>
+                <div class="alumno">
+                    <p> Auro</p>
+                </div><div class="alumno">
+                    <p>Faty</p>
+                </div>
+                <div class="alumno">
+                    <p>Diegood</p>
                 </div>
             </div>
         </div>
-        
+
+        <div id="barra-lateral">
+            <div class="perfil_prof">
+                <p>PERFIL DEL PROFESOR </p>
+            </div>
+            <div  class="calendario">
+                <img src="../statics/img/Calendario-2027.png">
+            </div>
+        </div>
     </main>
-    
 </body>
 </html>

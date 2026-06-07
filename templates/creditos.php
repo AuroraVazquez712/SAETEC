@@ -29,16 +29,9 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN------------------------>
-    <nav class="nav">
-        <div class="container">
-            <nav class="menu">
-                <a href="./index.html">Inicio</a>
-                <a href="./alumno.html">Alumno</a>
-                <a href="./profesor.html">Profesor</a>
-                <a href="#">Admin</a>
-            </nav>
-        </div>
-    </nav>
+    <?php
+            include 'barrapro.php';
+    ?>
     <br>
     <h1>StatHorses</h1>
     <div id="equipo">
