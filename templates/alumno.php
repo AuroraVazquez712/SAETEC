@@ -53,7 +53,9 @@
                     </a>
                 </div>
                 <div class="contacto">
-                    <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
+                    <a href="./contacta-profe.php"> 
+                        <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
+                    </a>
                 </div>
             </div>
             <div id="coments">
