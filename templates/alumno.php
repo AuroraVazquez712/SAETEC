@@ -63,13 +63,13 @@
     <main>
         <div id="contenido">
             <div id="forms">
-                <a  href="./formalu.html">
+                <a  href="./formalu.php">
                     <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
                 </a>
             </div>
             <div id="material">
                 <div class="extras">
-                    <a href="./material_extra.html">
+                    <a href="./material_extra.php">
                         <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
                     </a>
                 </div>
@@ -78,7 +78,11 @@
                 </div>
             </div>
             <div id="coments">
-                <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                <div id="tips">
+                    <a href="./tips.php">
+                        <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                    </a>
+                </div>
             </div>
         </div>
         
