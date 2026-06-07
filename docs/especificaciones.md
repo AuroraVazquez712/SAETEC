@@ -1,9 +1,9 @@
 #### 1. INFORMACIÓN INICIAL
 - **Autor:** StatHorses: 
-    * García Hernández FridaRosales 
-    * Tecuapetla Fatima Elvira
+    * García Hernández Frida 
+    * Rosales Tecuapetla Fatima Elvira
     * Salcedo Pérez Diego Iván
-    * Vázquez Robles Aurora Betshabé **  
+    * Vázquez Robles Aurora Betshabé  
 - **Título del proyecto:** SAETEC
 - **Fecha de inicio:** 26 de mayo 2026
 
