@@ -26,9 +26,15 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
+    <!------------------------BARRA DE NAVEGACIÓN------------------------------->
     <?php
             include 'barrapro.php';
     ?>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
+    <!--------------------------------CONTENIDO------------------------------------->
     <main>
         <div id="margen-content">
             <div id="tit-tips">

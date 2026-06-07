@@ -33,30 +33,9 @@
             include 'barrapro.php';
         ?>
         <!-------------------------------------BARRA LATERAL----------------------------------------->
-        <aside>
-            <div class="capa"> </div>
-            <!--  --------------->
-            <input type="checkbox" id="btn-menu"/>
-            <div class="container-menu">
-                <div class="cont-menu">
-                    <nav>
-                        <h2>324308734</h2>
-                        <a href="./perfil-alumno.html">Mi perfil</a>
-                        <hr>
-                        <a href="vista-perf-alumnos.html">Mis calificaciones</a>
-                        <hr>
-                        <a href="vista-perf-alumnos.html">Mis actividades</a>
-                        <hr>
-                        <a href="#">¿Cómo te has sentido?</a>
-                        <hr>
-                        <a href="../docs/2019_Acuerdo_Rectoria_02.pdf">Políticas de seguridad</a>
-                        <hr>
-                        <a href="#">Modificar datos</a>
-                    </nav>
-                    <label for="btn-menu">✖️</label>
-                </div>
-            </div>
-        </aside>
+        <?php
+            include 'barra-lateral.php';
+        ?>
         <!----------------------------------------CONTENIDO------------------------------------------->
         <div id="cont-general">
             <div id="barra-lateral">

@@ -31,6 +31,10 @@
         <?php
             include 'barrapro.php';
         ?>
+        <!-------------------------------------BARRA LATERAL----------------------------------------->
+        <?php
+            include 'barra-lateral.php';
+        ?>
         <!------------------------ACERCA DE SAETEC------------------------>
         <div id="cont-general">
             <div id="cont-acerca-de">

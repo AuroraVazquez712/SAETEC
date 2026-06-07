@@ -32,6 +32,11 @@
     <?php
             include 'barrapro.php';
     ?>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
+    <!------------------------------CONTENIDO------------------------------------->
     <br>
     <h1>StatHorses</h1>
     <div id="equipo">
