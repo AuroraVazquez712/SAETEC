@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'encabezado' ;
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
 body {
     margin: 0%;
     padding: 0%;
 }
+
 /*==============================================HEADER========================================================*/
 header {
     background-color: #E6E8E9;
@@ -138,30 +143,48 @@ header {
     font-size: 25px;
 }
 /*================================================BODY=============================================*/
-main{
-    display:flex;
-    align-content: center;
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
 }
-#contenedor{
-    width: 130vb;
-    height: 60vb;
+#contenedor {
+    width: 80vw;
+    height: 70vh;
     background-color: #0D1650;
     color: #FFFFFF;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction:row;
 }
 #alumno{
     display:flex;
-    padding-top: 4%;
-    padding-left:20%;
-    flex-direction: row;
+    padding-top: 1.5%;
+    flex-direction: column;
+    padding-left: 3%;
+
 }
 #img_perfil{
-    padding-left: 2%;
-    left: 5px;
+    padding-left: 4%;
+    padding-top: 10%;
+    transform: scale(1.4);
+}
+#datos{
+    margin-left: 10%;
+    
+}
+.titulo{
+    font-size: 6.2vb;
+    font-family: 'encabezado';
+    width: 60vh;
+}
+.correo{
+    font-size: 30px;
 }
 #comentario{
-    margin-left: 10%;
-    padding-top: 2%;
-    padding-left: 24%;
+    padding-left: 10vh;
+    font-size: 25px;
 }
 /*--------------------------FOOTER--------------------------*/
 footer{

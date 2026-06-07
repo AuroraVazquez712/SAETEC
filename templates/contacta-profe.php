@@ -32,24 +32,24 @@
             include 'barrapro.php';
     ?>
     <br>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <!------------------------------------BARRA LATERAL----------------------------------------->
     <?php
         include 'barra-lateral.php';
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
     <div id="contenedor">
+        <div id="img_perfil">
+                <img src="../statics/img/puma.png" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
+        </div>  
         <div id="alumno">
-            <div id="img_perfil">
-                <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
-            </div>
             <div id="datos">
-                <h1>Contacta a tu profesor</h1>    
-                    <p>superduperultramegacoolemail.com</p>
-                <h1>Mensaje </h1>
+                <p class="titulo">Contacta a tu profesor</p>    
+                    <p class="correo">super_duper_ultra_mega_cool_email.com</p>
+                <p class="titulo">Mensaje </p>
             </div>
-        </div>
-        <div id="comentario">
-            <p>Los amo Angie y Carlos, bsos</p>
+            <div id="comentario">
+                <p>Los amo Angie y Carlos, bsos</p>
+            </div>
         </div>
     </div>
     <!------------------------FOOTER --------------------------------->
