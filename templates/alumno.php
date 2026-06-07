@@ -6,6 +6,8 @@
     <meta name="autor" content="Equipo 4: Aurora Vazquez">
     <meta name="description" content="Vista del Alumno">
     <link rel="stylesheet" href="../statics/style/alumno.css">
+    <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
+
     <title>SAETEC: Alumno</title>
 </head>
 <body>
@@ -85,6 +87,9 @@
         </div>
         
     </main>
+    <?php
+            include 'footer.php';
+    ?>
     
 </body>
 </html>
