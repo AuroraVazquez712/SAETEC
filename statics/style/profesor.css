@@ -2,7 +2,7 @@ body {
     margin: 0%;
     padding: 0%;
 }
-/*===========================HEADER================================*/
+/*==============================================HEADER========================================================*/
 header {
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -29,18 +29,14 @@ header {
 #iconos_ete {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 #iconos_ete .iconos {
     width: 70px;
-    height: 55px;
+    height: 50px;
 }
 
-.input-group {
-    padding: 1%;
-    align-items: center;
-}
 /*============================================BARRA DE NAVEGACIÓN===========================================*/
 .nav{
     width: 100%;
@@ -88,7 +84,7 @@ header {
     background: #0d16507e;
     z-index: 2;
     width: 100%;
-    height: 150vh;
+    height: 125vh;
     top: 0;
     left: 0;
     transition: all 1000ms ease;
@@ -100,7 +96,7 @@ header {
 .cont-menu {
     max-width: 350px;
     background: #dad9d9;
-    height: 135vh;
+    height: 110vh;
     transition: all 2000ms ease;
     transform: translateX(-100%);
     box-shadow: 2px 2px 8px rgb(4, 5, 53);
@@ -139,6 +135,48 @@ header {
     top: 20px;
     cursor: pointer;
     font-size: 25px;
+}
+/*================================================BODY=============================================*/
+main{
+    display: flex;
+    justify-content: space-around;
+    z-index: 0;
+}
+
+
+#contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 100vh;
+    max-width: 100vh;
+    transition: 0.3s ease;
+}
+.lista_alum:hover{
+    transform: scale(0.9);
+}
+.tarea:hover{
+    transform:scale(0.9);
+}
+.extras:hover{
+    transform: scale(0.9);
+}
+.contacto:hover{
+    transform: scale(0.9);
+}
+#coments:hover{
+    transform: scale(0.9);  
+}
+#material{
+    display: flex;
+    justify-content: space-around;
+}
+#calendario{
+    background-color: #0D1650;
+    z-index: 0;
+
 }
 /*--------------------------FOOTER--------------------------*/
 footer{

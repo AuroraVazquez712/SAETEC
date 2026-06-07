@@ -25,6 +25,12 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
+    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+    <?php
+            include 'barrapro.php';
+    ?> 
+    <br>
+    <!-------------------------------------------FORMS------------>
     <form action=" " method="POST">
         <div class="form-grid">
 
@@ -67,5 +73,9 @@
         
         <button type="submit" class="btn-submit">Confirmar</button>
     </form>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>

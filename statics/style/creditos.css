@@ -1,45 +1,15 @@
-body {
-    margin: 0%;
-    padding: 0%;
+/*------------Estilo de fuentes------------*/
+@font-face {
+    font-family: 'titulo';
+    src: url(../fonts/times-sans-serif.ttf) format(truetype);
 }
-/*===========================HEADER================================*/
-header {
-    background-color: #E6E8E9;
-    box-shadow: 2px 2px 5px rgb(0, 0, 0);
-    display: flex;             
-    align-items: center;        
-    justify-content: space-between;
+@font-face {
+    font-family: 'sutbitulo';
+    src: url(../fonts/BebasNeue-Regular.ttf) format(truetype);
 }
-
-.iconos {
-    width: 70px;
-    height: 70px;
-}
-
-#titulo_encabezado {
-    color: #0D1650;
-    font-size: 3.5rem;
-    font-weight: 400;         
-}
-
-#titulo_encabezado p {
-    margin: 0; 
-}
-
-#iconos_ete {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#iconos_ete .iconos {
-    width: 70px;
-    height: 55px;
-}
-
-.input-group {
-    padding: 1%;
-    align-items: center;
+@font-face {
+    font-family: 'general';
+    src: url(../fonts/hack-regular.ttf) format(truetype);
 }
 /*============================================BARRA DE NAVEGACIÓN===========================================*/
 .nav{
@@ -83,6 +53,7 @@ header {
 #btn-menu {
     display: none;
 }
+
 .container-menu {
     position: absolute;
     background: #0d16507e;
@@ -139,6 +110,43 @@ header {
     top: 20px;
     cursor: pointer;
     font-size: 25px;
+}
+
+/*------------Creditos------------*/
+#equipo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#equipo div{
+    border: 1px solid #000000;
+    padding: 20px 40px 20px 40px;
+    margin: 40px;
+    border-radius: 15px;
+    background-color: #0D1650;
+    color: #ffffff;
+    font-size: 15px;
+    transition: transform 0.6s ease-in-out;
+}
+#equipo div:hover{
+    transform: scale(1.2);
+}
+#equipo h2{
+    font-family: 'subtitulo';
+    font-size: 35px;
+}
+#equipo p{
+    font-family: 'subtitulo';
+    font-size: 20px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'titulo';
+    font-size: 55px;
+    margin-top: 10px;
 }
 /*--------------------------FOOTER--------------------------*/
 footer{

@@ -6,9 +6,12 @@
     <meta name="autor" content="Equipo 4: Aurora Vazquez">
     <meta name="description" content="Vista del Alumno">
     <link rel="stylesheet" href="../statics/style/alumno.css">
+    <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
+
     <title>SAETEC: Alumno</title>
 </head>
 <body>
+    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <img class="iconos"src="../statics/img/logo-escudo-unam.png" alt="Escuedo de la UNAM">
@@ -25,31 +28,47 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
-    <nav>
-        <br>
-        <a href="./index.html">Inicio</a>
-    </nav>
-    <br>
+
+    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+    <?php
+        include 'barrapro.php';
+    ?>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
+    <!----------------------------------------CONTENIDO------------------------------------------->
+    
     <main>
         <div id="contenido">
             <div id="forms">
-                <img src="../statics/img/forms.png" alt="Imagen animada de un puma que te pide completar tu perfil">
+                <a  href="./formalu.php">
+                    <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
+                </a>
             </div>
             <div id="material">
                 <div class="extras">
-                    <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
+                    <a href="./material_extra.php">
+                        <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
+                    </a>
                 </div>
                 <div class="contacto">
                     <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
                 </div>
             </div>
             <div id="coments">
-                <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                <div id="tips">
+                    <a href="./tips.php">
+                        <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
+                    </a>
+                </div>
             </div>
         </div>
-        <div id="perfil">
-            <p>Holiiiii</p>
-        </div>
+        
     </main>
+    <?php
+            include 'footer.php';
+    ?>
+    
 </body>
 </html>
