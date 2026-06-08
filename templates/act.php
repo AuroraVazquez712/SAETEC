@@ -25,6 +25,40 @@
             <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
         </div>
     </header>
+<<<<<<< HEAD
+    <div class="cuadrado">Mis actividades</div>
+    <div id="columna">
+        <div class="grupo">Grupo 61D</div>
+        <div id="listact">
+            <div><button class="button" type="activ">Actividad 1</button></div>
+            <div><button class="button" type="activ">Actividad 2</button></div>
+            <div><button class="button" type="activ">Actividad 3</button></div>
+            <div><button class="button" type="activ">Actividad 4</button></div>
+            <div><button class="button" type="activ">Actividad 5</button></div>
+            <div><button class="button" type="activ">Actividad 6</button></div>
+        </div>
+        <div id="actividades">
+            <div class="tareas">
+                <h1>Tareas</h1>
+                <p>Entregadas:</p>
+                <p>Faltantes:</p>
+            </div>
+
+            <div class="calificaciones">
+                <h1>Calificaciones</h1>
+                    <p>Modulo 1:</p>
+                    <p>Modulo 2:</p>
+                    <p>Modulo 3:</p>
+                    <p>Modulo 4:</p>
+                    <p>Modulo 5:</p>
+            </div>
+        </div>
+    </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
+=======
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
         include 'barrapro.php';
@@ -57,5 +91,6 @@
     <?php
             include 'footer.php';
     ?>
+>>>>>>> 044bf468edcf2891bdf7e02dc45c568896fe9aa7
 </body>
 </html>

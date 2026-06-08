@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: StatHorses">
+    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
     <meta name="description" content="Mi página de encabezado">
     <link rel="stylesheet" href="../statics/style/formalu.css">
     <title>Formulario del alumno</title>
