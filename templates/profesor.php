@@ -47,15 +47,17 @@
                     </a>
                 </div>
                 <div class="tarea">
-                    <img src="../statics/img/publi_tarea.png" alt="Imagen con texto publicar tarea">
-
+                    <a href="./publi-tarea.php">
+                        <img src="../statics/img/publi_tarea.png" alt="Imagen con texto publicar tarea">
+                    </a>
                 </div>
             </div>
             <div id="material">
                 <div class="extras">
                     <a href="./material_extra.php">
                         <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
-                    </a>                </div>
+                    </a>                
+                </div>
                 <div class="contacto">
                     <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
                 </div>
@@ -64,7 +66,7 @@
                 <a href="./tips.php">
                     <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
                 </a>            
-        </div>
+            </div>
         
         <div id="calendario">
             <div id="cal">
