@@ -39,7 +39,18 @@
         <!----------------------------------------CONTENIDO------------------------------------------->
         <div id="cont-general">
             <div id="barra-lateral">
+                <?php
+                    $ruta_imagen="";
+                    if(file_exists("../statics/img/perfil_usuario.jpg")){
+                        $ruta_imagen= "../statics/img/perfil_usuario.jpg";
+                    }else{
+                        $ruta_imagen="../statics/img/imagen-predeterminada.jpg";
+                    }
+                    echo "<img src= '$ruta_imagen' class= 'alumno-icon' alt='Foto del alumno'>";
+                ?>
+                <!--
                 <img src="../statics/img/imagen-predeterminada.jpeg" alt="Foto del alumno" class="alumno-icon">
+                -->
                 <a href="cambio-foto.php">
                     <button>Cambiar imagen del perfil</button>
                 </a>
