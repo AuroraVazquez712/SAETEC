@@ -6,12 +6,12 @@
     <meta name="autor" content="Equipo 4: StatHorses">
     <meta name="description" content="Mi página de encabezado">
     <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
-    <link rel="stylesheet" href="../statics/style/perfil-alumno.css">
+    <link rel="stylesheet" href="../statics/style/cambio-foto.css">
     
     <title>SAETEC</title>
 </head>
-    <body>
-        <!--Barra de búsqueda-->
+<body>
+    <!<!-------------------------------------BARRA DE BUSQUEDA----------------------------------------->
         <header>
             <div id="iconos_unam">
                 <img class="iconos" src="../statics/img/logo-escudo-unam.png" alt="Escudo de la UNAM">
@@ -28,17 +28,38 @@
                 <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
             </div>
         </header>
-        <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-        <?php
+        <!------------------------BARRA DE NAVEGACIÓN------------------------>
+    <?php
             include 'barrapro.php';
-        ?>
-        <!-------------------------------------BARRA LATERAL----------------------------------------->
-        <?php
-            include 'barra-lateral.php';
-        ?>
-        <!----------------------------------------CONTENIDO------------------------------------------->
-        <div id="cont-general">
-            <div id="barra-lateral">
+    ?>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
+        <!-------------------------------------CAMBIO DE FOTO----------------------------------------->
+        <div class="contenedor-general" style="margin-top: 50px;">
+            <header class="form-header">
+                <h2>Edición de foto de perfil</h2>
+                <form href="#contenedor-general">
+
+                    <input type="file" name="foto_perfil" class="btn-perfil" accept="image/png, image/jpeg">
+                    <button type="submit" class="btn-perfil">Cambiar foto</button>
+
+                </form>
+            </header>
+            <?php   
+                if(isset($_FILES['foto_perfil']))
+                {
+                    $archivo = $_FILES['foto_perfil'];
+                    $nombre_archivo = $archivo['name'];
+                    $ruta_temporal = $archivo['tmp_name'];
+
+                    $tamanio = getimagesize($ruta_temporal);
+                    var_dump($tamanio);
+                    move_uploaded_file($ruta_temporal, '../statics/img/perfil_usuario.jpg');
+                }
+            ?>
+            <div class="vista-previa">
                 <?php
                     $ruta_imagen="";
                     if(file_exists("../statics/img/perfil_usuario.jpg")){
@@ -46,30 +67,15 @@
                     }else{
                         $ruta_imagen="../statics/img/imagen-predeterminada.jpg";
                     }
-                    echo "<img src= '$ruta_imagen' class= 'alumno-icon' alt='Foto del alumno'>";
+                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
                 ?>
-                <!--
-                <img src="../statics/img/imagen-predeterminada.jpeg" alt="Foto del alumno" class="alumno-icon">
-                -->
-                <a href="cambio-foto.php">
-                    <button>Cambiar imagen del perfil</button>
-                </a>
-                <p>Historial académico</p>
-                <p>Actualización de datos</p>
-                <p>Grupo</p>
-            </div>
-            <div id="datos-alumno">
-                <div >
-                    <h3>Fatima Elvira Rosales Tecuapetla</h3>
-                    <p name="correo-usuario">Email: ssss@gmail.com</p>
-                    <p name="no-cuenta">No. de cuenta: 320300287</p>
-                    <p name="telefono">Teléfono: 55 5538383837</p>
-                </div>
+
+                <a href="perfil-alumno.php" class="btn-editar">Regresar al perfil</a>
             </div>
         </div>
         <!------------------------FOOTER --------------------------------->
         <?php
                 include 'footer.php';
         ?> 
-    </body>
+</body>
 </html>

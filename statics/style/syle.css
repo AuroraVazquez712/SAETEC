@@ -5,7 +5,6 @@
 }
 
 /*------------Estilo de etiquetas generales------------*/
-
 body {
     margin: 0%;
     padding: 0%;
@@ -17,12 +16,6 @@ header {
     display: flex;             
     align-items: center;        
     justify-content: space-between;
-}
-input{
-    width: 180px;
-    height: 40px;
-    border-radius: 20% 20% 20% 20%;
-    font-size: 20px;
 }
 /*------------Barra de búsqueda------------*/   
 .iconos {

@@ -6,7 +6,7 @@
             <img class="iconos" src="../statics/img/logo_enp.svg" alt="Escudo de la ENP">
         </h3>
         <p class="link">
-            <a href="https://www.ete.enp.unam.mx/">CONTACTO</a>
+            <a href="https://www.ete.enp.unam.mx/" target="_blank">CONTACTO</a>
             <strong> · </strong>
             <a href="https://www.ete.enp.unam.mx/" target="_blank">HORARIOS</a>
             <strong> · </strong>
