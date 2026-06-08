@@ -26,17 +26,36 @@
         </div>
     </header>
     <div class="cuadrado">Mis actividades</div>
-    <div class="grupo">Grupo 61D</div>
-    <div><button class="button" type="activ">Actividad 1</button></div>
-    <div><button class="button" type="activ">Actividad 2</button></div>
-    <div><button class="button" type="activ">Actividad 3</button></div>
-    <div><button class="button" type="activ">Actividad 4</button></div>
-    <div><button class="button" type="activ">Actividad 5</button></div>
-    <div><button class="button" type="activ">Actividad 6</button></div>
-    <div class="info">
-        <p>Tareas</p>
-        <p>Entregadas</p>
-        <p>No entregadas</p>
+    <div id="columna">
+        <div class="grupo">Grupo 61D</div>
+        <div id="listact">
+            <div><button class="button" type="activ">Actividad 1</button></div>
+            <div><button class="button" type="activ">Actividad 2</button></div>
+            <div><button class="button" type="activ">Actividad 3</button></div>
+            <div><button class="button" type="activ">Actividad 4</button></div>
+            <div><button class="button" type="activ">Actividad 5</button></div>
+            <div><button class="button" type="activ">Actividad 6</button></div>
+        </div>
+        <div id="actividades">
+            <div class="tareas">
+                <h1>Tareas</h1>
+                <p>Entregadas:</p>
+                <p>Faltantes:</p>
+            </div>
+
+            <div class="calificaciones">
+                <h1>Calificaciones</h1>
+                    <p>Modulo 1:</p>
+                    <p>Modulo 2:</p>
+                    <p>Modulo 3:</p>
+                    <p>Modulo 4:</p>
+                    <p>Modulo 5:</p>
+            </div>
+        </div>
     </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
 </body>
 </html>
