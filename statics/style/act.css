@@ -274,8 +274,7 @@ header {
     color: white ;
 } 
 
-/*============================================FOOTER================================================*/
-footer{
+footer {
     background-color: #0D1650;
     display: flex;
     justify-content: space-between;
@@ -288,6 +287,7 @@ footer{
     margin-bottom: 1.5%;
     margin-left: 2%;
 }
+
 .link a{
     color: #FFFFFF;
     text-decoration: none;
