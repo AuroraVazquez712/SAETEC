@@ -54,8 +54,6 @@
                     $nombre_archivo = $archivo['name'];
                     $ruta_temporal = $archivo['tmp_name'];
 
-                    $tamanio = getimagesize($ruta_temporal);
-                    var_dump($tamanio);
                     move_uploaded_file($ruta_temporal, '../statics/img/perfil_usuario.jpg');
                 }
             ?>
