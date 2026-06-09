@@ -19,74 +19,18 @@ VALUES ("constancia"),
 ("estudio individual"),
 ("práctica constante");
 
-
--- TABLA PERFIL
-CREATE TABLE perfil (
-    id_perfil INT PRIMARY KEY AUTO_INCREMENT,
-    rol CHAR(1) DEFAULT 'E',
-    nombre VARCHAR(30) NOT NULL,
-    apellido_paterno VARCHAR(30) NOT NULL,
-    apellido_materno VARCHAR(30),
-    fecha_nacimiento DATE NOT NULL,
-    correo CHAR(50) NOT NULL,
-    contrasenha VARCHAR(100)
+-- TABLA GRUPO
+CREATE TABLE grupo (
+    id_grupo INT PRIMARY KEY AUTO_INCREMENT,
+    id_profesor INT NOT NULL,
+    FOREIGN KEY (id_profesor) 
+    REFERENCES profesor(id_profesor),
+    nombre_grupo VARCHAR(3) NOT NULL,
+    plantel VARCHAR(50) NOT NULL,
+    cupo INT NOT NULL,
+    salon VARCHAR(6) NOT NULL
 );
 
-INSERT INTO perfil 
-(nombre, apellido_materno, apellido_paterno,
-fecha_nacimiento, correo, contrasenha)
-VALUES 
-("Diego", "Pérez", "Salcedo", "2009-03-21", 
-"diegod@saetec.com", "21032009");
-
-INSERT INTO perfil 
-(nombre, apellido_materno, apellido_paterno,
-fecha_nacimiento, correo, contrasenha)
-VALUES 
-("Frida", "Hernández", "García", "2009-07-07", 
-"friifayer@saetec.com", "07072009");
-
-
-CREATE TABLE estudiante (
-    id_estudiante INT PRIMARY KEY,
-    FOREIGN KEY (id_estudiante)
-    REFERENCES perfil(id_perfil),
-    id_grupo INT NOT NULL,
-    FOREIGN KEY (id_grupo)
-    REFERENCES grupo(id_grupo),
-    id_interes INT NOT NULL,
-    FOREIGN KEY (id_interes)
-    REFERENCES interes(id_interes),
-    id_dificultad INT NOT NULL,
-    FOREIGN KEY (id_dificultad)
-    REFERENCES dificultad(id_dificultad),
-    id_razon INT NOT NULL,
-    FOREIGN KEY (id_razon)
-    REFERENCES razon_ingreso(id_razon),
-    id_habito INT NOT NULL,
-    FOREIGN KEY (id_habito) 
-    REFERENCES habito_estudio(id_habito),
-    nocta CHAR(9) UNIQUE
-);
-
-INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
-id_dificultad, id_razon, id_habito, nocta)
-VALUES (1, 2, 3, 5, 2, 4, "325156992");
-
-
-INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
-id_dificultad, id_razon, id_habito, nocta)
-VALUES (2, 1, 2, 5, 2, 2, "325295949");
-
--- TABLA PROFESOR
-CREATE TABLE profesor(
-    id_profesor INT PRIMARY KEY,
-    FOREIGN KEY (id_profesor) REFERENCES perfil(id_perfil),
-    no_trabajador INT UNIQUE
-);
-
-INSERT INTO profesor (no_trabajador)
-VALUES ("322244589");
 
 -- TABLA DIFICULTAD
 CREATE TABLE dificultad (
@@ -125,6 +69,87 @@ VALUES ("deportes"),
 ("artes"), 
 ("tecnología"),
 ("espectáculo");
+
+
+-- TABLA PERFIL
+CREATE TABLE perfil (
+    id_perfil INT PRIMARY KEY AUTO_INCREMENT,
+    rol CHAR(1) DEFAULT 'E',
+    nombre VARCHAR(30) NOT NULL,
+    apellido_paterno VARCHAR(30) NOT NULL,
+    apellido_materno VARCHAR(30),
+    fecha_nacimiento DATE NOT NULL,
+    correo CHAR(50) NOT NULL,
+    contrasenha VARCHAR(100)
+);
+
+INSERT INTO perfil 
+(nombre, apellido_materno, apellido_paterno,
+fecha_nacimiento, correo, contrasenha)
+VALUES 
+("Diego", "Pérez", "Salcedo", "2009-03-21", 
+"diegod@saetec.com", "21032009");
+
+INSERT INTO perfil 
+(nombre, apellido_materno, apellido_paterno,
+fecha_nacimiento, correo, contrasenha)
+VALUES 
+("Frida", "Hernández", "García", "2009-07-07", 
+"friifayer@saetec.com", "07072009");
+
+
+-- TABLA PROFESOR
+CREATE TABLE profesor(
+    id_profesor INT PRIMARY KEY AUTO_INCREMENT,
+    FOREIGN KEY (id_profesor) 
+    REFERENCES perfil(id_perfil),
+    no_trabajador INT UNIQUE
+);
+
+INSERT INTO profesor (no_trabajador)
+VALUES ("322244589");
+
+INSERT INTO grupo
+(id_profesor, nombre_grupo, plantel, cupo, salon)
+VALUES 
+(1, "61B","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
+
+INSERT INTO grupo
+(id_profesor, nombre_grupo, plantel, cupo, salon)
+VALUES 
+(1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
+
+
+CREATE TABLE estudiante (
+    id_estudiante INT PRIMARY KEY,
+    FOREIGN KEY (id_estudiante)
+    REFERENCES perfil(id_perfil),
+    id_grupo INT NOT NULL,
+    FOREIGN KEY (id_grupo)
+    REFERENCES grupo(id_grupo),
+    id_interes INT NOT NULL,
+    FOREIGN KEY (id_interes)
+    REFERENCES interes(id_interes),
+    id_dificultad INT NOT NULL,
+    FOREIGN KEY (id_dificultad)
+    REFERENCES dificultad(id_dificultad),
+    id_razon INT NOT NULL,
+    FOREIGN KEY (id_razon)
+    REFERENCES razon_ingreso(id_razon),
+    id_habito INT NOT NULL,
+    FOREIGN KEY (id_habito) 
+    REFERENCES habito_estudio(id_habito),
+    nocta CHAR(9) UNIQUE
+);
+
+INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
+id_dificultad, id_razon, id_habito, nocta)
+VALUES (1, 2, 3, 5, 2, 4, "325156992");
+
+
+INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
+id_dificultad, id_razon, id_habito, nocta)
+VALUES (2, 1, 2, 5, 2, 2, "325295949");
 
 
 -- TABLA COMENTARIO
@@ -193,28 +218,6 @@ INSERT INTO actividad
 (id_profesor, nombre_actividad, fecha_entrega)
 VALUES 
 (1, "Serie de Karel","2026-06-08");
-
--- TABLA GRUPO
-CREATE TABLE grupo (
-    id_grupo INT PRIMARY KEY AUTO_INCREMENT,
-    id_profesor INT NOT NULL,
-    FOREIGN KEY (id_profesor) 
-    REFERENCES profesor(id_profesor),
-    nombre_grupo VARCHAR(3) NOT NULL,
-    plantel VARCHAR(50) NOT NULL,
-    cupo INT NOT NULL,
-    salon VARCHAR(6) NOT NULL
-);
-
-INSERT INTO grupo
-(id_profesor, nombre_grupo, plantel, cupo, salon)
-VALUES 
-(1, "61B","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
-
-INSERT INTO grupo
-(id_profesor, nombre_grupo, plantel, cupo, salon)
-VALUES 
-(1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
 
 
 -- TABLA ASIGNACION
