@@ -19,18 +19,6 @@ VALUES ("constancia"),
 ("estudio individual"),
 ("práctica constante");
 
--- TABLA GRUPO
-CREATE TABLE grupo (
-    id_grupo INT PRIMARY KEY AUTO_INCREMENT,
-    id_profesor INT NOT NULL,
-    FOREIGN KEY (id_profesor) 
-    REFERENCES profesor(id_profesor),
-    nombre_grupo VARCHAR(3) NOT NULL,
-    plantel VARCHAR(50) NOT NULL,
-    cupo INT NOT NULL,
-    salon VARCHAR(6) NOT NULL
-);
-
 
 -- TABLA DIFICULTAD
 CREATE TABLE dificultad (
@@ -118,6 +106,18 @@ INSERT INTO grupo
 (id_profesor, nombre_grupo, plantel, cupo, salon)
 VALUES 
 (1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
+
+-- TABLA GRUPO
+CREATE TABLE grupo (
+    id_grupo INT PRIMARY KEY AUTO_INCREMENT,
+    id_profesor INT NOT NULL,
+    FOREIGN KEY (id_profesor) 
+    REFERENCES profesor(id_profesor),
+    nombre_grupo VARCHAR(3) NOT NULL,
+    plantel VARCHAR(50) NOT NULL,
+    cupo INT NOT NULL,
+    salon VARCHAR(6) NOT NULL
+);
 
 
 CREATE TABLE estudiante (
