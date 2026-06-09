@@ -10,7 +10,7 @@
 </head>
 <body>
     <!---------------ENCABEZADO--------------------------->
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -52,7 +52,6 @@
             </div>
         </div>
     </header>
-
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
             include 'barrapro.php';
