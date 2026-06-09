@@ -7,7 +7,7 @@
     <meta name="description" content="Vista del Alumno">
     <link rel="stylesheet" href="../statics/style/admin.css">
 
-    <title>SAETEC: Alumno</title>
+    <title>SAETEC: Admin</title>
 </head>
 <body>
     <!---------------ENCABEZADO--------------------------->
@@ -63,9 +63,34 @@
         include 'barra-lateral.php';
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
-    
     <main>
-
+        <div id="contenedor">
+            <div class="titulos">
+                <div id="alumn">
+                    <p><u>CONSULTA ALUMNOS</u></p>
+                </div>
+                <div id="prof">
+                    <a href="./admin-consulta-profe.php">
+                        <p><u>CONSULTA PROFESORES</u></p>
+                    </a>
+                </div>
+            </div>
+            <div class="extras">
+                <div id="material">
+                    <a href="./material_extra.php">
+                            <p>Material extra</p>
+                    </a>
+                </div>
+                <div id="tips">
+                    <a href="./tips.php">
+                        <p>¡¡Asegura el éxito en la ETE!!</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="calendario">
+            <img src="../statics/img/calendario.png" alt="Calendario de la ENP 2024-2025"> 
+        </div>
     </main>
     <?php
             include 'footer.php';
