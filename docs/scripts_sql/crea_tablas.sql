@@ -51,28 +51,34 @@ CREATE TABLE estudiante (
     id_estudiante INT PRIMARY KEY,
     FOREIGN KEY (id_estudiante)
     REFERENCES perfil(id_perfil),
-    -- cambiar FK a la forma que tiene habito_estudio, 
-    -- cuando dichas tablas se creen
-    id_grupo INT NULL,
-    id_interes INT NULL,
-    id_dificultad INT NULL,
-    id_razon INT NULL,
-
-    -- la sig forma es la correcta:
-    id_habito INT NULL,
+    id_grupo INT NOT NULL,
+    FOREIGN KEY (id_grupo)
+    REFERENCES grupo(id_grupo),
+    id_interes INT NOT NULL,
+    FOREIGN KEY (id_interes)
+    REFERENCES interes(id_interes),
+    id_dificultad INT NOT NULL,
+    FOREIGN KEY (id_dificultad)
+    REFERENCES dificultad(id_dificultad),
+    id_razon INT NOT NULL,
+    FOREIGN KEY (id_razon)
+    REFERENCES razon_ingreso(id_razon),
+    id_habito INT NOT NULL,
     FOREIGN KEY (id_habito) 
     REFERENCES habito_estudio(id_habito),
     nocta CHAR(9) UNIQUE
 );
 
-INSERT INTO estudiante (id_estudiante, id_habito, nocta)
-VALUES (1, 4, "325156992");
+INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
+id_dificultad, id_razon, id_habito, nocta)
+VALUES (1, 2, 3, 5, 2, 4, "325156992");
 
 
-INSERT INTO estudiante (id_estudiante, id_habito, nocta)
-VALUES (2, 2, "325295949");
+INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
+id_dificultad, id_razon, id_habito, nocta)
+VALUES (2, 1, 2, 5, 2, 2, "325295949");
 
-
+-- TABLA PROFESOR
 CREATE TABLE profesor(
     id_profesor INT PRIMARY KEY,
     FOREIGN KEY (id_profesor) REFERENCES perfil(id_perfil),
@@ -91,7 +97,7 @@ VALUES ("tiempo"),
 ("desconocimiento"),
 ("falta de computadora"),
 ("grupo demandante"),
-("Motivos personales");
+("motivos personales");
 
 
 -- TABLA RAZÓN DE INGRESO
@@ -122,7 +128,7 @@ VALUES ("deportes"),
 -- TABLA COMENTARIO
 CREATE TABLE comentario (
     id_comentario INT PRIMARY KEY AUTO_INCREMENT,
-    id_estudiante INT NULL,
+    id_estudiante INT NOT NULL,
     FOREIGN KEY (id_estudiante) 
     REFERENCES estudiante(id_estudiante),
     comentario VARCHAR(100) NOT NULL,
@@ -138,7 +144,7 @@ VALUES
 -- TABLA RESPUESTA
 CREATE TABLE respuesta (
     id_respuesta INT PRIMARY KEY AUTO_INCREMENT,
-    id_comentario INT NULL,
+    id_comentario INT NOT NULL,
     FOREIGN KEY (id_comentario) 
     REFERENCES comentario(id_comentario),
     comentario VARCHAR(100) NOT NULL,
@@ -154,7 +160,7 @@ VALUES
 -- TABLA CUESTIONARIO
 CREATE TABLE cuestionario (
     id_cuestionario INT PRIMARY KEY AUTO_INCREMENT,
-    id_estudiante INT NULL,
+    id_estudiante INT NOT NULL,
     FOREIGN KEY (id_estudiante) 
     REFERENCES estudiante(id_estudiante),
     areas_oportunidad VARCHAR(40) NOT NULL,
@@ -172,7 +178,7 @@ VALUES
 -- TABLA ACTIVIDAD
 CREATE TABLE actividad (
     id_actividad INT PRIMARY KEY AUTO_INCREMENT,
-    id_profesor INT NULL,
+    id_profesor INT NOT NULL,
     FOREIGN KEY (id_profesor) 
     REFERENCES profesor(id_profesor),
     nombre_actividad VARCHAR(30) NOT NULL,
@@ -188,7 +194,7 @@ VALUES
 -- TABLA GRUPO
 CREATE TABLE grupo (
     id_grupo INT PRIMARY KEY AUTO_INCREMENT,
-    id_profesor INT NULL,
+    id_profesor INT NOT NULL,
     FOREIGN KEY (id_profesor) 
     REFERENCES profesor(id_profesor),
     nombre_grupo VARCHAR(3) NOT NULL,
@@ -211,10 +217,10 @@ VALUES
 -- TABLA ASIGNACION
 CREATE TABLE asignacion (
     id_asignacion INT PRIMARY KEY AUTO_INCREMENT,
-    id_actividad INT NULL,
+    id_actividad INT NOT NULL,
     FOREIGN KEY (id_actividad) 
     REFERENCES actividad(id_actividad),
-    id_estudiante INT NULL,
+    id_estudiante INT NOT NULL,
     FOREIGN KEY (id_estudiante) 
     REFERENCES estudiante(id_estudiante),
     calificacion INT NOT NULL,
