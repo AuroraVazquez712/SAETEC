@@ -9,7 +9,7 @@
     <title>Formulario del alumno</title>
 </head>
 <body>
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -57,7 +57,7 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action=" " method="POST">
+    <form action="formalu-confirmar.php" method="POST">
         <div class="form-grid">
 
             <div class="input-group">
