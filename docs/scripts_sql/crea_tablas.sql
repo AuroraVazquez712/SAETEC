@@ -172,7 +172,8 @@ CREATE TABLE cuestionario (
 );
 
 INSERT INTO cuestionario
-(id_estudiante, comentario, fecha_publicacion)
+(id_estudiante, areas_oportunidad, sentir_estudiante, 
+cuesta_trabajo, fecha_emision)
 VALUES 
 (1, "Hola mundo", "2026-06-08");
 
