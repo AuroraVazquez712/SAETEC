@@ -154,7 +154,7 @@ CREATE TABLE respuesta (
 );
 
 INSERT INTO respuesta 
-(id_estudiante, comentario, fecha_publicacion)
+(id_comentario, comentario, fecha_publicacion)
 VALUES 
 (1, "Hola equipo", "2026-06-08");
 
