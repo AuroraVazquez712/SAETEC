@@ -97,16 +97,6 @@ CREATE TABLE profesor(
 INSERT INTO profesor (no_trabajador)
 VALUES ("322244589");
 
-INSERT INTO grupo
-(id_profesor, nombre_grupo, plantel, cupo, salon)
-VALUES 
-(1, "61B","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
-
-INSERT INTO grupo
-(id_profesor, nombre_grupo, plantel, cupo, salon)
-VALUES 
-(1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
-
 -- TABLA GRUPO
 CREATE TABLE grupo (
     id_grupo INT PRIMARY KEY AUTO_INCREMENT,
@@ -118,6 +108,16 @@ CREATE TABLE grupo (
     cupo INT NOT NULL,
     salon VARCHAR(6) NOT NULL
 );
+
+INSERT INTO grupo
+(id_profesor, nombre_grupo, plantel, cupo, salon)
+VALUES 
+(1, "61B","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
+
+INSERT INTO grupo
+(id_profesor, nombre_grupo, plantel, cupo, salon)
+VALUES 
+(1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
 
 
 CREATE TABLE estudiante (
