@@ -77,8 +77,9 @@
             </div>
             <div class="extras">
                 <div id="material">
-                    <img class="puma" src="../statics/img/puma.png">
-                    <p>Material extra</p>
+                    <a href="./material_extra.php">
+                            <p>Material extra</p>
+                    </a>
                 </div>
                 <div id="tips">
                     <a href="./tips.php">

@@ -6,7 +6,7 @@
     <meta name="autor" content="Equipo 4: Aurora Vazquez">
     <meta name="description" content="Vista del Alumno">
     <link rel="stylesheet" href="../statics/style/material_extra.css">
-    <title>SAETEC: Alumno</title>
+    <title>SAETEC: Material extra</title>
 </head>
 <body>
     <!---------------ENCABEZADO--------------------------->
@@ -69,12 +69,31 @@
             <div id="modulo">
                 <div class="titulo_modulo">Módulo 1: Aplicaciones de uso general</div>
                 <div class="ejercicio">
-                    <h3> Ejercicios: </h3>
-                        <p>Aquí va el ejercicio UwU</p>
+                    <h3>Bibliografía: </h3>
+                        <ul>
+                            <li><a href="https://www.pol.una.py/wp-content/uploads/2022/09/4.-Manual-de-Word.pdf">
+                                Universidad Nacional de Asunción, Facultad Politécnica. (s. f.). 
+                                Manual de Microsoft Word básico. FP-UNA.</a></li>
+                            <li><a href="https://share.google/2W9EIXQIRSOBJcn70">
+                                Microsoft Corporation. (s. f.). Fundamentos de PowerPoint [Tutorial].
+                                Microsoft Office para Mac 2011.</a></li>
+                            <li><a href="https://www.campus-virtual.mineria.unam.mx/Mineria/Cursos/INExcelb/Documentos/--Unidad2.pdf">
+                                Universidad Nacional Autónoma de México. (s. f.). Unidad 2. 
+                                Facultad de Ingeniería, Palacio de Minería.</a></li>
+                        </ul>
                 </div>
                 <div class="video">
-                    <h3>Videos de Apoyo:</h3>
-                        <p>Link al super video</p>
+                    <h3> Ejercicios: </h3>
+                        <ul>
+                            <li><a href="https://jsequeiros.com/archivos/computacion/word2007/ejword2007/ejpractico01word.pdf">
+                                Práctica de Word.</a></li>
+                            <li><a href="https://jsequeiros.com/archivos/computacion/word2007/ejword2007/ejpractico09word.pdf">
+                                Práctica de Word 2.</a></li>
+                            <li><a href="https://superalumnos.net/files/ejercicios_powerpoint.pdf">
+                                Práctica de Power Point.</a></li>
+                            <li><a href="https://www.calzadadecalatrava.es/attachments/article/1665/Ejercicios%20practicos%20Gr%C3%A1ficos%20Excel.pdf">
+                                Práctica de Excel.</a></li>
+                        </ul>
                 </div>
             </div>
             <div id="modulo">
@@ -89,10 +108,6 @@
                             <li><a href="http://fcasua.contad.unam.mx/apuntes/interiores/docs/2005/informatica/1/1167.pdf">
                                 Kanagusico, D. (s.f.). Apunte Introducción a la Programación. Páginas: 4-5 </a></li>
                         </ul>
-                </div>
-                <div class="video">
-                    <h3>Videos de Apoyo:</h3>
-                        <p>Link al super video</p>
                 </div>
             </div>
             <div id="modulo">
@@ -127,21 +142,51 @@
                         <ul>
                             <li><a href="https://triton.astroscu.unam.mx/fruiz/introduccion/clases/so/SO.pdf">
                                 Ruiz Sala, F. (s. f.). Sistema operativo. Instituto de Astronomía, Universidad Nacional Autónoma de México.</a></li>
+                            <li><a href="https://youtu.be/_edVsrfb8Jw](https://youtu.be/_edVsrfb8Jw">
+                                Rolando R.(2021, 2 de abril). ¿QUE ES CMD? SIMBOLO DEL SISTEMA Windows | 
+                                Concepto básicos comandos (tutorial 2021) [Video]. YouTube</a></li>
+                            <li><a href="https://es.slideshare.net/slideshow/sistema-jerarquico/54285235">
+                                Quiroga Gaona, H., Pullupaxi, M., Torres, J., & Chichande, C. (2015–2016). Sistema jerárquico 
+                                [Presentación de diapositivas]. SlideShare. </a></li>
+                        </ul>
+                </div>
+                <div class="ejercicio">
+                    <h3> Ejercicios: </h3>
+                        <ul>
+                            <li><a href="https://profesorweb.es/wp-content/uploads/2020/03/Pra%CC%81ctica-2-CMD.pdf">
+                                Práctica de CMD.</a></li>
                         </ul>
                 </div>
                 <div class="video">
                     <h3>Videos de Apoyo:</h3>
-                        <p>Link al super video</p>
+                        <ul>
+                            <li><a href="https://youtu.be/_edVsrfb8Jw](https://youtu.be/_edVsrfb8Jw">
+                                Rolando R.(2021, 2 de abril). ¿QUE ES CMD? SIMBOLO DEL SISTEMA Windows | 
+                                Concepto básicos comandos (tutorial 2021) [Video]. YouTube</a></li>
+                            <li><a href="https://youtu.be/erKosEQaaFc?si=r7kNsQO5riv4EXoP">
+                               SylverSOFT. (2022, 27 de octubre). Comandos básicos e intermedios CMD [Video]. YouTube</a></li>
+                        </ul>
                 </div>
             </div>
             <div id="modulo">
                 <div class="titulo_modulo">Módulo 5: Solución de problemas y tecns. progr.</div>
                 <div class="ejercicio">
-                    <h3> Ejercicios: </h3>
-                        <p>Aquí va el ejercicio UwU</p>
+                   <h3> Bibliografía: </h3>
+                        <ul>
+                            <li><a href="https://www.olimpiadadeinformatica.org.mx/OMI/OMIPS/material/EntrenamientoOMIKarel/Varios/Tutorial-de-Karel-Final.pdf">
+                                Cepeda, C. (2015, abril). Tutorial de Karel el Robot. Olimpiada Mexicana de Informática.</a></li>
+                            <li><a href="https://omegaup.com/karel.js/manual/Karel.html">
+                                OmegaUp. (s. f.). Tutorial de Karel.</a></li>
+                        </ul>
                 </div>
                 <div class="video">
-                    <h3>Videos de Apoyo:</h3>
+                     <h3> Ejercicios: </h3>
+                        <ul>
+                            <li><a href="https://share.google/Zs82ApZjuJKXTXI0h">
+                                Práctica de Karel 1.</a></li>
+                            <li><a href="https://docs.ropensci.org/karel/articles/e_examples_es.html">
+                                Práctica de Karel 2.</a></li>
+                        </ul>
                         
                 </div>
             </div>
