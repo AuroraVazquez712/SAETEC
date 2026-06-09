@@ -57,48 +57,36 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action="formalu-confirmar.php" method="POST">
-        <div class="form-grid">
+    <div class="container" style="margin-top: 50px;">
+        <header class="form-header">
+            <h2>¡Alumno Registrado!</h2>
+        </header>
 
-            <div class="input-group">
-                <label for="id_perfil">Número de cuenta:</label>
-                <input type="text" name="id_perfil" id="ipt-id_perfil" placeholder="123456789" required>
-            </div>
+        <div class="alumno-registro" style="background: #f8f9fa; padding: 20px; border-left: 5px solid #3f2f83; border-radius: 5px;">
+            <h3>Datos del alumno:</h3>
+            
+            <!-- Aquí va el PHP para mostrar los datos recibidos -->
+            <?php
+                $id_perfil= $_POST["id_perfil"];
+                $nombre= $_POST["nombre"];
+                $apellido_paterno= $_POST["apellidopat"];
+                $apellido_materno= $_POST["apellidomat"];
+                $correo= $_POST["correo"];
+                $fecha_nacimiento= $_POST["fecha_nacimiento"];
+                $grupo= $_POST["grupo"];
 
-            <div class="input-group">
-                <label for="nombre">Nombre(s):</label>
-                <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
-            </div>
-
-            <div class="input-group">
-                <label for="apellidopat">Apellido paterno:</label>
-                <input type="text" name="apellidopat" id="ipt-apellidopat" placeholder="Escribe tu apellido" required>
-            </div>
-
-            <div class="input-group">
-                <label for="apellidomat">Apellido materno:</label>
-                <input type="text" name="apellidomat" id="ipt-apellidomat" placeholder="Escribe tu apellido">
-            </div>
-
-            <div class="input-group">
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="ipt-correo" placeholder="hola@gmail.com" required>
-            </div>
-
-            <div class="input-group">
-                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                <input type="date" name="fecha_nacimiento" id="ipt-fecha_nacimiento" required>
-            </div>
-
-            <div class="input-group">
-                <label for="grupo">Grupo:</label>
-                <input type="text" name="grupo" id="ipt-grupo">
-            </div>
-
+                echo "<p> Perfil: $id_perfil </p>";
+                echo "<p> Nombre: $nombre</p>";
+                echo "<p> Apellido Paterno: $apellido_paterno </p>";
+                echo "<p> Apellido Materno: $apellido_materno</p>";
+                echo "<p> Correo: $correo</p>";
+                echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
+                echo "<p> Grupo: $grupo</p>";
+            ?>
         </div>
         
-        <button type="submit" class="btn-submit">Confirmar</button>
-    </form>
+        <br>
+    </div>
     <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
