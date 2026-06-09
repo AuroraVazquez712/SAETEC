@@ -66,7 +66,7 @@
     <div class="contenedor-general" style="margin-top: 50px;">
         <header class="form-header">
             <h2>Edición de foto de perfil</h2>
-            <form action="guardar-foto.php" method="POST" enctype="multipart/form/data">
+            <form action="guardar-foto.php" method="POST" enctype="multipart/form-data">
 
                 <input type="file" name="foto_perfil" class="btn-perfil" accept="image/png, image/jpeg">
                 <button type="submit" class="btn-perfil">Cambiar foto</button>

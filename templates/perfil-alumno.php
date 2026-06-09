@@ -68,16 +68,13 @@
             <div id="barra-lateral">
                 <?php
                     $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil_usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil_usuario.jpg";
+                    if(file_exists("../statics/img/perfil-usuario.jpg")){
+                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
                     }else{
                         $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
                     }
-                    echo "<img src= '$ruta_imagen' class= 'alumno-icon' alt='Foto del alumno'>";
+                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
                 ?>
-                <!--
-                <img src="../statics/img/imagen-predeterminada.jpeg" alt="Foto del alumno" class="alumno-icon">
-                -->
                 <a href="cambio-foto.php">
                     <button>Cambiar imagen del perfil</button>
                 </a>
