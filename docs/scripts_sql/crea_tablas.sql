@@ -71,3 +71,9 @@ VALUES (1, 4, "325156992");
 
 INSERT INTO estudiante (id_estudiante, id_habito, nocta)
 VALUES (2, 2, "325295949");
+
+CREATE TABLE profesor(
+    id_profesor INT PRIMARY KEY,
+    FOREIGN KEY (id_profesor) REFERENCES perfil(id_perfil),
+    no_trabajador INT UNIQUE
+);
