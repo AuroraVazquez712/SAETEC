@@ -66,36 +66,17 @@
     <div class="contenedor-general" style="margin-top: 50px;">
         <header class="form-header">
             <h2>Edición de foto de perfil</h2>
-            <form href="#contenedor-general">
+            <form action="guardar-foto.php" method="POST" enctype="multipart/form/data">
 
-                <input type="file" name="foto-perfil" class="btn-perfil" accept="image/png, image/jpeg">
+                <input type="file" name="foto_perfil" class="btn-perfil" accept="image/png, image/jpeg">
                 <button type="submit" class="btn-perfil">Cambiar foto</button>
 
             </form>
         </header>
-        <?php   
-            if(isset($_FILES['foto-perfil']))
-            {
-                $archivo = $_FILES['foto-perfil'];
-                $nombre_archivo = $archivo['name'];
-                $ruta_temporal = $archivo['tmp_name'];
-
-                move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
-            }
-        ?>
-        <div class="vista-previa">
-            <?php
-                $ruta_imagen="";
-                if(file_exists("../statics/img/perfil-usuario.jpg")){
-                    $ruta_imagen= "../statics/img/perfil-usuario.jpg";
-                }else{
-                    $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
-                }
-                echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
-            ?>
-
-            <a href="perfil-alumno.php" class="btn-editar">Regresar al perfil</a>
-        </div>
     </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?>
 </body>
 </html>
