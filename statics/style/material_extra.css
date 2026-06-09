@@ -188,18 +188,18 @@ header {
     font-size: 34px;
     margin-left: 6%;
 }
-.ejercicio p{
+.ejercicio li{
     font-size: 21px;
     margin-left: 10%;
 }
 .video{
-        background-color: #dad9d975;
+    background-color: #dad9d975;
 }
 .video h3{
     font-size: 34px;
     margin-left: 6%;
 }
-.video p{
+.video li{
     font-size: 21px;
     margin-left: 10%;
 }
