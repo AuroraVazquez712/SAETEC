@@ -11,6 +11,58 @@
     font-family: 'general';
     src: url(../fonts/hack-regular.ttf) format(truetype);
 }
+
+/*------------Estilo de etiquetas generales------------*/
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+header {
+    background-color: #E6E8E9;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;             
+    align-items: center;        
+    justify-content: space-between;
+}
+/*------------Barra de búsqueda------------*/   
+.iconos {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+#iconos_unam {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#iconos_unam .iconos{
+    width: 70px;
+    height: 70px;
+}
+#titulo_encabezado {
+    color: #0D1650;
+    font-size: 3.5rem;
+    font-weight: 400;
+    flex: 1;
+    text-align: center;
+}
+
+#titulo_encabezado p {
+    margin: 0%; 
+}
+
+#iconos_ete {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+#iconos_ete .iconos {
+    width: 70px;
+    height: 50px;
+}
+
 /*============================================BARRA DE NAVEGACIÓN===========================================*/
 .nav{
     width: 100%;
