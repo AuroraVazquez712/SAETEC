@@ -42,15 +42,15 @@
     <div id="equipo">
         <div>
             <h2>Desarrolladores</h2>
-            <p>García Hernández Frida</p>
-            <p>Rosales Tecuapetla Fatima Elvira</p>
-            <p>Salcedo Pérez Diego Iván<p>
-            <p>Vázquez Robles Aurora Betshabé</p>
+            <a href="https://github.com/Frida-ghdzz" target="_blank">García Hernández Frida</a>
+            <a href="https://github.com/Faty1108" target="_blank">Rosales Tecuapetla Fatima Elvira</a>
+            <a href="https://github.com/DiegoISP21" target="_blank">Salcedo Pérez Diego Iván<a>
+            <a href="https://github.com/AuroraVazquez712" target="_blank">Vázquez Robles Aurora Betshabé</a>
         </div>
         <div>
             <h2>Asesores</h2>
-            <p>Gonzalez Falcon Jorge Alberto</p>
-            <p>López Morales Fernando Samuel</p>
+            <a href="https://github.com/AlbertoFalcon" target="_blank">Gonzalez Falcon Jorge Alberto</a>
+            <a href="https://github.com/TheUniqueFersa" target="_blank">López Morales Fernando Samuel</a>
         </div>
     </div>
     <!------------------------FOOTER --------------------------------->
