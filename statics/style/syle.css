@@ -21,11 +21,23 @@ header {
 .iconos {
     width: 70px;
     height: 70px;
+    object-fit: contain;
+}
+#iconos_unam {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#iconos_unam .iconos{
+    width: 70px;
+    height: 70px;
 }
 #titulo_encabezado {
     color: #0D1650;
     font-size: 3.5rem;
     font-weight: 400;
+    flex: 1;
+    text-align: center;
 }
 
 #titulo_encabezado p {
@@ -36,6 +48,7 @@ header {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0;
 }
 #iconos_ete .iconos {
     width: 70px;
