@@ -32,14 +32,11 @@
     <?php
             include 'barrapro.php';
     ?>
-<<<<<<< HEAD
-=======
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <?php
         include 'barra-lateral.php';
     ?>
     <!------------------------------CONTENIDO------------------------------------->
->>>>>>> feature/fatima
     <br>
     <h1>StatHorses</h1>
     <div id="equipo">
