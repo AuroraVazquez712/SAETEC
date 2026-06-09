@@ -200,7 +200,7 @@ INSERT INTO cuestionario
 (id_estudiante, areas_oportunidad, sentir_estudiante, 
 cuesta_trabajo, fecha_emision)
 VALUES 
-(1, "Diseño", "Feliz", "Diseñar con CSS", "2026-06-08");
+(1, "Disenho", "Feliz", "Disenhar con CSS", "2026-06-08");
 
 
 -- TABLA ACTIVIDAD
