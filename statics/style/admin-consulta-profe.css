@@ -6,7 +6,7 @@ body {
     margin: 0%;
     padding: 0%;
 }
-/*==============================================HEADER========================================================*/
+/*===========================HEADER================================*/
 header {
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -40,7 +40,6 @@ header {
     width: 70px;
     height: 50px;
 }
-
 /*============================================BARRA DE NAVEGACIÓN===========================================*/
 .nav{
     width: 100%;
@@ -83,13 +82,12 @@ header {
 #btn-menu {
     display: none;
 }
-
 .container-menu {
     position: absolute;
     background: #0d16507e;
     z-index: 2;
     width: 100%;
-    height: 150vh;
+    height: 125vh;
     top: 0;
     left: 0;
     transition: all 1000ms ease;
@@ -101,7 +99,7 @@ header {
 .cont-menu {
     max-width: 350px;
     background: #dad9d9;
-    height: 135vh;
+    height: 110vh;
     transition: all 2000ms ease;
     transform: translateX(-100%);
     box-shadow: 2px 2px 8px rgb(4, 5, 53);
@@ -141,7 +139,7 @@ header {
     cursor: pointer;
     font-size: 25px;
 }
-/*================================================BODY=============================================*/
+/*===========================BODY================================*/
 main{
     display: flex;
     flex-direction: row;
@@ -151,25 +149,7 @@ main{
     flex-direction: column;
     width: 70%;
 }
-
-.titulos #alumn{
-    background-color: #0D1650;
-    font-family: 'encabezado';
-    width: 100%;
-    height: 25vh;
-    color: #FFFFFF;
-    font-size: 3vh;
-    text-align: center;
-    font-size: 10vh;
-    box-shadow: 2px 2px 5px rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.titulos #alumn:hover{
-        transform: scale(0.9);
-}
-.titulos #prof{
+#prof{
     background-color: #0D1650;
     font-family: 'encabezado';
     width: 100%;
@@ -184,52 +164,65 @@ main{
     align-items: center;
     justify-content: center;
 }
-.titulos #prof:hover{
-        transform: scale(0.9);
-}
-#material{
-    background-color:#E5B62B;
-    text-align:end;
-    width: 100%;
-    height: 20vh;
-    font-size: 6vh;
-    margin-top: 3%; 
-    border-color: #0e0202;
-    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+.botones{
     display: flex;
-    align-items: center;
-    justify-content:space-around;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    flex-direction: row;
+    margin-left: 6%;
+    margin-bottom: 4%;
+}
+#añade{
+    background-color: #0D1650;
+    font-size: 25px;
     color: #FFFF;
-}
-#material:hover{
-    transform: scale(0.9);
-}
-#tips{
-    background-color: #1226AA;
-    width: 100%;
-    height: 20vh;
-    color:#FFFFFF;
-    text-align: center;
-    font-size: 5.5vh;
-    margin-top: 3%;  
-    border-color: #0e0202;
+    margin-top: 8%;
+    width: 8vh;
+    height: 8vb;
+    border-radius: 100%;
+    border-color: #FFFFFF;
+    margin-right: 7%;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-#tips:hover{
-    transform: scale(0.9);
+#borra{
+    background-color: #0D1650;
+    font-size: 25px;
+    color: #FFFF;
+    margin-top: 8%;
+    width: 8vh;
+    height: 8vb;
+    border-radius: 100%;
+    border-color: #FFFFFF;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-img{
-    width: 60vb;
-    height: 60vb;
+#lista-profes {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+    align-items:center;
 }
-.puma{
-    width:18%;
-    height: auto;
+.profe{
+    background-color: rgb(210, 210, 210);
+    box-shadow: 3px 3px 8px rgb(163, 163, 163);
+    width: 95%;
+    margin-bottom: 20px;
+}
+.profe p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 15px;
+}
+#datos-profe{
+    display: flex;
+    flex-direction: column;
+    background-color: #E6E8E9;
+    width: 40%;
+    height: 65vh;
+    margin: 2%;
 }
 /*--------------------------FOOTER--------------------------*/
 footer{
@@ -246,4 +239,3 @@ footer{
     color: #FFFFFF;
     text-decoration: none;
 }
-

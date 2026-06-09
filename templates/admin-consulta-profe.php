@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Aurora Vazquez">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/admin.css">
+    <link rel="stylesheet" href="../statics/style/admin-consulta-profe.css">
 
     <title>SAETEC: Admin</title>
 </head>
@@ -39,30 +39,27 @@
     <!----------------------------------------CONTENIDO------------------------------------------->
     <main>
         <div id="contenedor">
-            <div class="titulos">
-                <div id="alumn">
-                    <p><u>CONSULTA ALUMNOS</u></p>
+            <div id="prof">
+                <p><u>CONSULTA PROFESORES</u></p>
+            </div>
+            <div class="botones">
+                <div id="añade">
+                    <p><strong>+</strong></p>
                 </div>
-                <div id="prof">
-                    <a href="./admin-consulta-profe.php">
-                        <p><u>CONSULTA PROFESORES</u></p>
-                    </a>
+                <div id="borra">
+                    <p><strong>-</strong></p>
                 </div>
             </div>
-            <div class="extras">
-                <div id="material">
-                    <img class="puma" src="../statics/img/puma.png">
-                    <p>Material extra</p>
+            <div id="lista-profes">
+                <div class="profe">
+                    <p>Angie</p>
                 </div>
-                <div id="tips">
-                    <a href="./tips.php">
-                        <p>¡¡Asegura el éxito en la ETE!!</p>
-                    </a>
+                <div class="profe">
+                    <p>Carlos</p>
                 </div>
             </div>
         </div>
-        <div id="calendario">
-            <img src="../statics/img/calendario.png" alt="Calendario de la ENP 2024-2025"> 
+        <div id="datos-profe">
         </div>
     </main>
     <?php
