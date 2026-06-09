@@ -79,6 +79,8 @@ CREATE TABLE profesor(
     no_trabajador INT UNIQUE
 );
 
+INSERT INTO profesor (id_profesor, no_trabajador)
+VALUES (04, "322244589");
 
 -- TABLA DIFICULTAD
 CREATE TABLE dificultad (
