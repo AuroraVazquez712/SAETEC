@@ -12,20 +12,46 @@
 </head>
 <body>
     <!------------------------Barra de búsqueda------------------------>
-    <header>
+     <header>
         <div id="iconos_unam">
-            <img class="iconos" src="../statics/img/logo-escudo-unam.png" alt="Escudo de la UNAM">
-            <img class="iconos" src="../statics/img/logo_enp.jpeg" alt="Escudo de la ENP">
-            <img class="iconos" src="../statics/img/logo-prepa6.png" alt="Escudo de la ENP6">
-            <img class="iconos" src="../statics/img/logo-475años.png" alt="Escudo de la 475-años">
+            <div class="logo-unam">
+                <a href="https://www.unam.mx/">
+                    <img class="iconos"src="../statics/img/logo-escudo-unam.png" alt="Escuedo de la UNAM">
+                </a>
+            </div>
+            <div class="logo-enp">
+                <a href="http://enp.unam.mx/">
+                    <img class="iconos"src="../statics/img/logo_enp.jpeg" alt="Escuedo de la UNAM">
+                </a>
+            </div>
+            <div class="logo-enp6">
+                <a href="https://www.prepa6.unam.mx/ENP6/_P6/">
+                    <img class="iconos"src="../statics/img/logo-prepa6.png" alt="Escuedo de la UNAM">
+                </a>
+            </div>
+            <div class="logo-475años">
+                <img class="iconos"src="../statics/img/logo-475años.png" alt="Escuedo de la UNAM">
+            </div>
         </div>
         <div id="titulo_encabezado">
-            <p>SAETEC</p>
+            <a href="./index.html">
+                <p>SAETEC</p>
+            </a>
         </div>
         <div id="iconos_ete">
-            <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
-            <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
-            <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
+            <div class="logo-compu">
+                <a href="https://www.ete.enp.unam.mx/">
+                    <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
+                </a>
+            </div>
+            <div class="logo-ete"></div>
+                <a href="https://www.ete.enp.unam.mx/CM.html">
+                    <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
+                </a>
+            </div>
+            <div class="logo-40años"></div>
+                    <img class="iconos" src="../statics/img/logo-ete-40años.png" alt="Escudo de los 40 años Estudios Tecnicos de la UNAM"> 
+            </div>
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN------------------------>
