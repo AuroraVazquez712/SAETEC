@@ -44,7 +44,7 @@
                     if(file_exists("../statics/img/perfil_usuario.jpg")){
                         $ruta_imagen= "../statics/img/perfil_usuario.jpg";
                     }else{
-                        $ruta_imagen="../statics/img/imagen-predeterminada.jpg";
+                        $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
                     }
                     echo "<img src= '$ruta_imagen' class= 'alumno-icon' alt='Foto del alumno'>";
                 ?>

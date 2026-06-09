@@ -29,71 +29,41 @@
             </div>
         </header>
         <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-        <nav class="nav">
-            <div class="container">
-                <div class="btn-menu">
-                    <label for="btn-menu">☰</label>
-                </div>
-                <nav class="menu">
-                    <a href="./index.html">Inicio</a>
-                    <a href="#">Perfil</a>
-                    <a href="#">Acerca</a>
-                    <a href="#">Contacto</a>
-                </nav>
-            </div>
-        </nav>
+        <?php
+            include 'barrapro.php';
+        ?>
         <!-------------------------------------BARRA LATERAL----------------------------------------->
-        <aside>
-            <div class="capa"> </div>
-            <!--  --------------->
-            <input type="checkbox" id="btn-menu"/>
-            <div class="container-menu">
-                <div class="cont-menu">
-                    <nav>
-                        <h2>324308734</h2>
-                        <a href="./perfil-alumno.html">Mi perfil</a>
-                        <hr>
-                        <a href="#">Mis calificaciones</a>
-                        <hr>
-                        <a href="#">Mis actividades</a>
-                        <hr>
-                        <a href="#">¿Cómo te has sentido?</a>
-                        <hr>
-                        <a href="../docs/2019_Acuerdo_Rectoria_02.pdf">Políticas de seguridad</a>
-                        <hr>
-                        <a href="#">Modificar datos</a>
-                    </nav>
-                    <label for="btn-menu">✖️</label>
-                </div>
-            </div>
-        </aside>
+        <?php
+            include 'barra-lateral.php';
+        ?>
         <!-------------------------------------CAMBIO DE FOTO----------------------------------------->
         <div class="contenedor-general" style="margin-top: 50px;">
             <header class="form-header">
                 <h2>Edición de foto de perfil</h2>
                 <form href="#contenedor-general">
 
-                    <input type="file" name="foto_perfil" class="btn-perfil" accept="image/png, image/jpeg">
+                    <input type="file" name="foto-perfil" class="btn-perfil" accept="image/png, image/jpeg">
                     <button type="submit" class="btn-perfil">Cambiar foto</button>
 
                 </form>
             </header>
             <?php   
-                if(isset($_FILES['foto_perfil']))
+                if(isset($_FILES['foto-perfil']))
                 {
-                    $archivo = $_FILES['foto_perfil'];
+                    $archivo = $_FILES['foto-perfil'];
                     $nombre_archivo = $archivo['name'];
                     $ruta_temporal = $archivo['tmp_name'];
-                    move_uploaded_file($ruta_temporal, '../statics/img/perfil_usuario.jpg');
+
+                    move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
                 }
             ?>
             <div class="vista-previa">
                 <?php
                     $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil_usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil_usuario.jpg";
+                    if(file_exists("../statics/img/perfil-usuario.jpg")){
+                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
                     }else{
-                        $ruta_imagen="../statics/img/imagen-predeterminada.jpg";
+                        $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
                     }
                     echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
                 ?>
