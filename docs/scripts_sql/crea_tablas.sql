@@ -185,7 +185,7 @@ CREATE TABLE actividad (
     REFERENCES profesor(id_profesor),
     nombre_actividad VARCHAR(30) NOT NULL,
     descripcion VARCHAR(100) NULL,
-    fecha_entrega DATE NOT NULL,
+    fecha_entrega DATE NOT NULL
 );
 
 INSERT INTO actividad 
@@ -202,7 +202,7 @@ CREATE TABLE grupo (
     nombre_grupo VARCHAR(3) NOT NULL,
     plantel VARCHAR(50) NOT NULL,
     cupo INT NOT NULL,
-    salon VARCHAR(6) NOT NULL,
+    salon VARCHAR(6) NOT NULL
 );
 
 INSERT INTO grupo
@@ -225,10 +225,10 @@ CREATE TABLE asignacion (
     id_estudiante INT NOT NULL,
     FOREIGN KEY (id_estudiante) 
     REFERENCES estudiante(id_estudiante),
-    calificacion INT NOT NULL,
+    calificacion INT NOT NULL
 );
 
-INSERT INTO grupo
+INSERT INTO asignacion
 (id_actividad, id_estudiante, calificacion)
 VALUES 
 (1, 2, 10);
