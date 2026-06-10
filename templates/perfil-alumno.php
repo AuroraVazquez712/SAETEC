@@ -18,6 +18,7 @@
     $grupo =  $_SESSION["grupo"];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
