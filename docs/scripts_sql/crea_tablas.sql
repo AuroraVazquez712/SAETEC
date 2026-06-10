@@ -85,6 +85,13 @@ VALUES
 ("Frida", "Hernández", "García", "2009-07-07", 
 "friifayer@saetec.com", "07072009");
 
+INSERT INTO perfil 
+(nombre, apellido_materno, apellido_paterno,
+fecha_nacimiento, correo, contrasenha)
+VALUES 
+("Fatima", "Rosales", "Tecuapetla", "2008-11-03", 
+"fm455878@saetec.com", "03112008");
+
 
 -- TABLA PROFESOR
 CREATE TABLE profesor(
@@ -119,7 +126,12 @@ INSERT INTO grupo
 VALUES 
 (1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
 
+INSERT INTO grupo
+(id_profesor, nombre_grupo, plantel, cupo, salon)
+VALUES 
+(1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
 
+-- TABLA ESTUDIANTE
 CREATE TABLE estudiante (
     id_estudiante INT PRIMARY KEY,
     FOREIGN KEY (id_estudiante)
@@ -149,8 +161,11 @@ VALUES (1, 2, 3, 5, 2, 4, "325156992");
 
 INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
 id_dificultad, id_razon, id_habito, nocta)
-VALUES (2, 1, 2, 5, 2, 2, "325295949");
+VALUES (2,1, 2, 5, 2, 2, "325295949");
 
+INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
+id_dificultad, id_razon, id_habito, nocta)
+VALUES (2, 1, 2, 5, 2, 2, "324039564");
 
 -- TABLA COMENTARIO
 CREATE TABLE comentario (
@@ -206,13 +221,8 @@ VALUES
 -- TABLA ACTIVIDAD
 CREATE TABLE actividad (
     id_actividad INT PRIMARY KEY AUTO_INCREMENT,
-<<<<<<< HEAD
     id_profesor INT NOT NULL,
     FOREIGN KEY (id_profesor) 
-=======
-    id_profesor INT NULL,
-    FOREIGN KEY (id_profesor)
->>>>>>> bd4c64c986d992ce2ba3c1f7a991b6eeafc52c8f
     REFERENCES profesor(id_profesor),
     nombre_actividad VARCHAR(30) NOT NULL,
     descripcion VARCHAR(100) NULL,
@@ -224,8 +234,6 @@ INSERT INTO actividad
 VALUES 
 (1, "Serie de Karel","2026-06-08");
 
-<<<<<<< HEAD
-=======
 -- TABLA GRUPO
 CREATE TABLE grupo (
     id_grupo INT PRIMARY KEY AUTO_INCREMENT,
@@ -248,7 +256,6 @@ INSERT INTO grupo
 VALUES 
 (1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
 
->>>>>>> bd4c64c986d992ce2ba3c1f7a991b6eeafc52c8f
 
 -- TABLA ASIGNACION
 CREATE TABLE asignacion (
