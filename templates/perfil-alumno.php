@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $id_perfil= $_POST["id_perfil"];
     $nombre= $_POST["nombre"];
     $correo= $_POST["correo"];
@@ -95,7 +96,7 @@
                 <div >
                     <h3><?php echo "Nombre: $nombre";?></h3>
                     <p name="correo-usuario"><?php echo "Correo: $correo"; ?> </p>
-                    <p name="no-cuenta"><?php echo "Perfil: $id_perfil"; ?></p>
+                    <p name="no-cuenta"><?php echo "Perfil: " . $_SESSION["id_perfil"] ; ?></p>
                     <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
                 </div>
             </div>

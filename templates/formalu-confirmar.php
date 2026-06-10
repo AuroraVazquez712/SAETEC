@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,6 +70,7 @@
             
             <!-- Aquí va el PHP para mostrar los datos recibidos -->
             <?php
+                // logica de validacion de los datos y guardado de estos
                 $id_perfil= $_POST["id_perfil"];
                 $nombre= $_POST["nombre"];
                 $apellido_paterno= $_POST["apellidopat"];
@@ -75,6 +79,18 @@
                 $fecha_nacimiento= $_POST["fecha_nacimiento"];
                 $grupo= $_POST["grupo"];
 
+                // Guardado en base de datos
+
+
+
+                // Guardar las variables que usaremos en otras vistas en variables de sesion
+                $_SESSION["id_perfil"] = $id_perfil;
+
+
+
+
+
+
                 echo "<p> Perfil: $id_perfil </p>";
                 echo "<p> Nombre: $nombre</p>";
                 echo "<p> Apellido Paterno: $apellido_paterno </p>";
@@ -82,6 +98,11 @@
                 echo "<p> Correo: $correo</p>";
                 echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
                 echo "<p> Grupo: $grupo</p>";
+
+                echo "<form action = './perfil-alumno.php' method='post'>
+                        <input type = 'submit'>
+                        </form>
+                ";
             ?>
         </div>
         
