@@ -75,9 +75,9 @@
         <div id="columna">
             <div class="grupo">Grupo 61D</div>
         <?php
-                $tarea_publicada = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+                $filtra = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
-                while($tarea = mysqli_fetch_assoc($tarea_publicada)) {
+                while($tarea = mysqli_fetch_assoc($filtra)) {
                     echo "
                         <div id='listact'>
                         <p>Actividad: </p>    

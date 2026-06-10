@@ -202,13 +202,7 @@ main{
     margin-left: 10px;
 
 }
-#lista-alumnos {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    width: 100%;
-    align-items:center;
-}
+
 .alumno{
     background-color: rgb(210, 210, 210);
     box-shadow: 3px 3px 8px rgb(163, 163, 163);
@@ -217,6 +211,7 @@ main{
 }
 .alumno p{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
     margin-left: 15px;
 }
 #barra-lateral {

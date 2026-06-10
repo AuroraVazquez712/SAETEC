@@ -1,3 +1,12 @@
+<?php
+    
+    $servidor = "localhost";
+    $user = "root";
+    $password = "";
+    $data_base = "saetec";
+
+    $link = mysqli_connect ($servidor, $user, $password, $data_base);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -76,28 +85,18 @@
                     <img src="../statics/img/boton-list-alumn.png">
                 </div>
             </div>
-            <div id="lista-alumnos">
-                <div class="alumno">
-                    <p>Alumno 1</p>
-                </div>
-                <div class="alumno">
-                    <p>Alumno 2</p>
-                </div>
-                <div class="alumno">
-                    <p> Fersita good </p>
-                </div>
-                <div class="alumno">
-                    <p>Beto deidad </p>
-                </div>
-                <div class="alumno">
-                    <p> Auro</p>
-                </div><div class="alumno">
-                    <p>Faty</p>
-                </div>
-                <div class="alumno">
-                    <p>Diegood</p>
-                </div>
-            </div>
+            <?php
+                $filtra = mysqli_query($link, "SELECT * FROM perfil WHERE rol = 'E'");
+
+                while($perfil = mysqli_fetch_assoc($filtra)) {
+                    echo "
+                        <div class='alumno'> 
+                        <p>" . $perfil['nombre'] . "
+                        " . $perfil['apellido_paterno'] . "
+                        " . $perfil['apellido_materno'] . "</p>
+                        </div>";
+                }
+            ?>
         </div>
 
         <div id="barra-lateral">
