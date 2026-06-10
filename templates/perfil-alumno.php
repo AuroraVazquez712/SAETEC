@@ -1,21 +1,21 @@
 <?php
-// Corrobora si INICIO SESIÓN
-session_start();
+    // Corrobora si INICIO SESIÓN
+    session_start();
 
-if (isset($_SESSION['rol']) ){
-    if ($_SESSION['rol'] == "E"){
-        header("Location: alumno.php");
+    if (isset($_SESSION['rol']) ){
+        if ($_SESSION['rol'] == "E"){
+            header("Location: alumno.php");
+        }
+
+    } else {
+        // no tiene rol, pal login
+        header("Location: login.php");
     }
 
-} else {
-    // no tiene rol, pal login
-    header("Location: login.php");
-}
-
-$nombre = $_SESSION["nombre_completo"];
-$correo = $_SESSION["correo"];
-$nocta = $_SESSION["nocta"];
-$grupo =  $_SESSION["grupo"];
+    $nombre = $_SESSION["nombre_completo"];
+    $correo = $_SESSION["correo"];
+    $nocta = $_SESSION["nocta"];
+    $grupo =  $_SESSION["grupo"];
 
 ?>
 <!DOCTYPE html>
@@ -100,7 +100,7 @@ $grupo =  $_SESSION["grupo"];
                 </a>
                 <p>Historial académico</p>
                 <p>Actualización de datos</p>
-                <p>Grupo</p>
+                <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
             </div>
             <div id="datos-alumno">
                 <div>

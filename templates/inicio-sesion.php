@@ -23,7 +23,7 @@
 
         //CONSULTA DE GRUPO, TABLE GRUPO
         $id_grupo = $registro1["id_grupo"];
-        $query3 = "SELECT id_grupo FROM grupo WHERE id_grupo = '$id_grupo'";
+        $query3 = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_grupo = '$id_grupo'";
         $result3 = mysqli_query( $con, $query3);
         $registro3 = mysqli_fetch_assoc($result3);
 
@@ -32,7 +32,7 @@
             $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
             $_SESSION["correo"] = $registro2["correo"];
             $_SESSION["nocta"] = $registro1["nocta"];
-            $_SESSION["grupo"] = $registro3["id_grupo"];
+            $_SESSION["grupo"] = $registro3["nombre_grupo"];
             setcookie("usuario", $registro1["nocta"], time() + (86400)); // 1 dia = 86400 segundos, expirará en un dia
             header("Location: perfil-alumno.php");
             exit();
