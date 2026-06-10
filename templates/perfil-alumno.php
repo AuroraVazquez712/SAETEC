@@ -1,14 +1,8 @@
 <?php
-<<<<<<< HEAD
-    session_start();
-    $id_perfil= $_POST["id_perfil"];
-    $nombre= $_POST["nombre"];
-    $correo= $_POST["correo"];
-    $grupo= $_POST["grupo"];
-=======
-    // Corrobora si INICIO SESIÓN
-    session_start();
 
+    session_start();
+    // Corrobora si INICIO SESIÓN
+/*
     if (isset($_SESSION['rol']) ){
         if ($_SESSION['rol'] == "E"){
             header("Location: alumno.php");
@@ -16,15 +10,14 @@
 
     } else {
         // no tiene rol, pal login
-        header("Location: login.php");
+        header("Location: formalu.php");
     }
 
     $nombre = $_SESSION["nombre_completo"];
     $correo = $_SESSION["correo"];
     $nocta = $_SESSION["nocta"];
-    $grupo =  $_SESSION["grupo"];
+    $grupo =  $_SESSION["grupo"];*/
 
->>>>>>> main
 ?>
 
 <!DOCTYPE html>
@@ -112,21 +105,13 @@
                 <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
             </div>
             <div id="datos-alumno">
-<<<<<<< HEAD
                 <div >
-                    <h3><?php echo "Nombre: $nombre";?></h3>
-                    <p name="correo-usuario"><?php echo "Correo: $correo"; ?> </p>
+                    <h3><?php echo "Nombre: " . $_SESSION["nombre"];?></h3>
+                    <p name="correo-usuario"><?php echo "Correo: " . $_SESSION["correo"] ; ?> </p>
                     <p name="no-cuenta"><?php echo "Perfil: " . $_SESSION["id_perfil"] ; ?></p>
-                    <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
-=======
-                <div>
+                    <p name="grupo"><?php echo "Grupo: " . $_SESSION["grupo"] ; ?></p>
 
->>>>>>> main
-                </div>
-                <h3><?php echo "Nombre: $nombre";?></h3>
-                <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
-                <p name="no-cuenta"><?php echo "No. de cuenta: $nocta"; ?></p>
-                <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
+                <div>
             </div>
         </div>
         <!------------------------FOOTER --------------------------------->

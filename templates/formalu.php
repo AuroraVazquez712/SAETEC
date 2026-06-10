@@ -58,7 +58,6 @@
     <br>
     <!-------------------------------------------FORMS------------>
     <form action="formalu-confirmar.php" method="POST">
-    <!--<form action="formalu-confirmar.php" method="POST">--->
         <div class="form-grid">
 
             <div class="input-group">

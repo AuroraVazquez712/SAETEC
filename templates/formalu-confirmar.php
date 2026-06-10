@@ -82,14 +82,14 @@
                 // Guardado en base de datos
 
 
-
                 // Guardar las variables que usaremos en otras vistas en variables de sesion
                 $_SESSION["id_perfil"] = $id_perfil;
-
-
-
-
-
+                $_SESSION["nombre"] = $nombre;
+                $_SESSION["apellidopat"]=$apellido_paterno;
+                $_SESSION["apellidomat"]=$apellido_materno;
+                $_SESSION["correo"]=$correo;
+                $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
+                $_SESSION["grupo"]=$grupo;
 
                 echo "<p> Perfil: $id_perfil </p>";
                 echo "<p> Nombre: $nombre</p>";
@@ -101,7 +101,7 @@
 
                 echo "<form action = './perfil-alumno.php' method='post'>
                         <input type = 'submit'>
-                        </form>
+                    </form>
                 ";
             ?>
         </div>
