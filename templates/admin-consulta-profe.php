@@ -1,3 +1,10 @@
+<?php
+    $nombre= $_POST["nombre"];
+    $apellido_paterno= $_POST["apellidopat"];
+    $correo= $_POST["correo"];
+    $rfc=$_POST["rfc"];
+    $grupo= $_POST["grupo"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,7 +51,9 @@
             </div>
             <div class="botones">
                 <div id="añade">
-                    <p><strong>+</strong></p>
+                    <a href="./forms-profe.php">
+                        <p><strong>+</strong></p>
+                    </a>
                 </div>
                 <div id="borra">
                     <p><strong>-</strong></p>
@@ -60,6 +69,18 @@
             </div>
         </div>
         <div id="datos-profe">
+            <div id="nombre">
+                <h1><?php echo "Nombre: $nombre";?></h1>
+            </div>
+            <div id="datos-profe_esp">
+                <div>
+                    <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
+                    <p name="rfc"><?php echo "RFC: $rfc";?></p>
+                </div>
+            </div>
+            <div id="grupo">
+                <p name="grupo"><?php echo "Grupo: $grupo";?></p>
+            <div>
         </div>
     </main>
     <?php

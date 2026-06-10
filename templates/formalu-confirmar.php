@@ -1,4 +1,3 @@
-<!---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -68,10 +67,6 @@
             
             <!-- Aquí va el PHP para mostrar los datos recibidos -->
             <?php
-                if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-                    header("Location: formalu.php");
-                    exit();
-                }
                 $id_perfil= $_POST["id_perfil"];
                 $nombre= $_POST["nombre"];
                 $apellido_paterno= $_POST["apellidopat"];
@@ -91,8 +86,6 @@
         </div>
         
         <br>
-        <br>
-        <a href="formalu.php" class="btn-submit" style="text-align: center; display: block; text-decoration: none; margin-top: 15px; font-size: 25px;">Hacer otro registro</a>
     </div>
     <!------------------------FOOTER --------------------------------->
     <?php
