@@ -1,8 +1,4 @@
 <?php
-    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        header("Location: formalu.php");
-        exit();
-    }
     $id_perfil= $_POST["id_perfil"];
     $nombre= $_POST["nombre"];
     $correo= $_POST["correo"];
