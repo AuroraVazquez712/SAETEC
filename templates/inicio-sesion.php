@@ -26,6 +26,7 @@
         $query3 = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_grupo = '$id_grupo'";
         $result3 = mysqli_query( $con, $query3);
         $registro3 = mysqli_fetch_assoc($result3);
+        
 
         if ($registro1 && $registro2)
         {
