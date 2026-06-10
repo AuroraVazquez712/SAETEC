@@ -17,7 +17,7 @@ INSERT INTO habito_estudio (nombre_habito)
 VALUES ("constancia"),
 ("tiempo dedicado"), 
 ("estudio individual"),
-("práctica constante");
+("practica constante");
 
 
 -- TABLA DIFICULTAD
