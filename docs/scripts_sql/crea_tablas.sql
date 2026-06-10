@@ -131,6 +131,7 @@ INSERT INTO grupo
 VALUES 
 (1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
 
+
 -- TABLA ESTUDIANTE
 CREATE TABLE estudiante (
     id_estudiante INT PRIMARY KEY,
