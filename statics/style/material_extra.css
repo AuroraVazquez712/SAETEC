@@ -18,24 +18,35 @@ header {
 .iconos {
     width: 70px;
     height: 70px;
+    object-fit: contain;
 }
-
+#iconos_unam {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#iconos_unam .iconos{
+    width: 70px;
+    height: 70px;
+}
 #titulo_encabezado {
     color: #0D1650;
     font-size: 3.5rem;
-    font-weight: 400;         
+    font-weight: 400;
+    flex: 1;
+    text-align: center;
 }
 
 #titulo_encabezado p {
-    margin: 0; 
+    margin: 0%; 
 }
 
 #iconos_ete {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0;
 }
-
 #iconos_ete .iconos {
     width: 70px;
     height: 50px;
@@ -177,18 +188,18 @@ header {
     font-size: 34px;
     margin-left: 6%;
 }
-.ejercicio p{
+.ejercicio li{
     font-size: 21px;
     margin-left: 10%;
 }
 .video{
-        background-color: #dad9d975;
+    background-color: #dad9d975;
 }
 .video h3{
     font-size: 34px;
     margin-left: 6%;
 }
-.video p{
+.video li{
     font-size: 21px;
     margin-left: 10%;
 }
