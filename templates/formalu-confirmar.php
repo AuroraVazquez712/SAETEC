@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
-    <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/admin.css">
-
-    <title>SAETEC: Admin</title>
+    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
+    <meta name="description" content="Mi página de encabezado">
+    <link rel="stylesheet" href="../statics/style/formalu.css">
+    <title>Formulario del alumno</title>
 </head>
 <body>
-    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
@@ -53,48 +51,45 @@
             </div>
         </div>
     </header>
-
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-        include 'barrapro.php';
-    ?>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <?php
-        include 'barra-lateral.php';
-    ?>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    <main>
-        <div id="contenedor">
-            <div class="titulos">
-                <div id="alumn">
-                    <p><u>CONSULTA ALUMNOS</u></p>
-                </div>
-                <div id="prof">
-                    <a href="./admin-consulta-profe.php">
-                        <p><u>CONSULTA PROFESORES</u></p>
-                    </a>
-                </div>
-            </div>
-            <div class="extras">
-                <div id="material">
-                    <a href="./material_extra.php">
-                            <p>Material extra</p>
-                    </a>
-                </div>
-                <div id="tips">
-                    <a href="./tips.php">
-                        <p>¡¡Asegura el éxito en la ETE!!</p>
-                    </a>
-                </div>
-            </div>
+            include 'barrapro.php';
+    ?> 
+    <br>
+    <!-------------------------------------------FORMS------------>
+    <div class="container" style="margin-top: 50px;">
+        <header class="form-header">
+            <h2>¡Alumno Registrado!</h2>
+        </header>
+
+        <div class="alumno-registro" style="background: #f8f9fa; padding: 20px; border-left: 5px solid #3f2f83; border-radius: 5px;">
+            <h3>Datos del alumno:</h3>
+            
+            <!-- Aquí va el PHP para mostrar los datos recibidos -->
+            <?php
+                $id_perfil= $_POST["id_perfil"];
+                $nombre= $_POST["nombre"];
+                $apellido_paterno= $_POST["apellidopat"];
+                $apellido_materno= $_POST["apellidomat"];
+                $correo= $_POST["correo"];
+                $fecha_nacimiento= $_POST["fecha_nacimiento"];
+                $grupo= $_POST["grupo"];
+
+                echo "<p> Perfil: $id_perfil </p>";
+                echo "<p> Nombre: $nombre</p>";
+                echo "<p> Apellido Paterno: $apellido_paterno </p>";
+                echo "<p> Apellido Materno: $apellido_materno</p>";
+                echo "<p> Correo: $correo</p>";
+                echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
+                echo "<p> Grupo: $grupo</p>";
+            ?>
         </div>
-        <div id="calendario">
-            <img src="../statics/img/calendario.png" alt="Calendario de la ENP 2024-2025"> 
-        </div>
-    </main>
+        
+        <br>
+    </div>
+    <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
-    ?>
-    
+    ?> 
 </body>
 </html>
