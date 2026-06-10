@@ -1,3 +1,13 @@
+<?php
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+        header("Location: formalu.php");
+        exit();
+    }
+    $id_perfil= $_POST["id_perfil"];
+    $nombre= $_POST["nombre"];
+    $correo= $_POST["correo"];
+    $grupo= $_POST["grupo"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +22,7 @@
 </head>
     <body>
         <!--Barra de búsqueda-->
-         <header>
+        <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -87,10 +97,10 @@
             </div>
             <div id="datos-alumno">
                 <div >
-                    <h3>Fatima Elvira Rosales Tecuapetla</h3>
-                    <p name="correo-usuario">Email: ssss@gmail.com</p>
-                    <p name="no-cuenta">No. de cuenta: 320300287</p>
-                    <p name="telefono">Teléfono: 55 5538383837</p>
+                    <h3><?php echo "Nombre: $nombre";?></h3>
+                    <p name="correo-usuario"><?php echo "Correo: $correo"; ?> </p>
+                    <p name="no-cuenta"><?php echo "Perfil: $id_perfil"; ?></p>
+                    <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
                 </div>
             </div>
         </div>
