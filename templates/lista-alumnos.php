@@ -9,7 +9,7 @@
     <title>SAETEC: Lista de alumnos</title>
 </head>
 <body>
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">

@@ -1,3 +1,13 @@
+<?php
+    
+    $servidor = "localhost";
+    $user = "root";
+    $password = "";
+    $data_base = "saetec";
+
+    $link = mysqli_connect ($servidor, $user, $password, $data_base);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +22,7 @@
 </head>
 <body>
     <!---------------ENCABEZADO--------------------------->
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -81,38 +91,55 @@
                 </div>
                 
                 <div id="text-tarea">
-                    <textarea placeholder="Nueva tarea:"> </textarea>
-                    <button class="publicar">Publicar</button>
+                    <form method="POST" action="">
+                        <label class="name_desc" >Nombre actividad:</label><br>
+                        <input type="text" id="nombre_actividad" name="nombre_actividad"><br>
+                        <label class="name_desc" >Descripción:</label><br>
+                        <textarea placeholder="Descripcion de nueva tarea:" id="descripcion" name="descripcion" > </textarea>
+                        <br><label class="name_desc" >Fecha de entrega:</label><br>
+                        <input type="date" id="fecha_entrega" name="fecha_entrega"><br>
+                        <br><input class="publicar" type="submit" name="crea_act" value="Publicar ">
+                    </form>
                 </div>
             </div>
             <div id="tarea-publi"> 
-                <div class="publicadas">
-                    <h3>Tareas publicadas:</h3>
+                <div id="bloque"></div>
+                    <div class="publicadas">
+                        <h3>Tareas publicadas:</h3>
                     </div>
-                <div class="tareas"> 
-                    <p>Tarea 1</p>
                 </div>
-                <div class="tareas">
-                    <p>Tarea 2</p>
-                </div>
-                <div class="tareas">
-                    <p> Tarea 3 </p>
-                </div>
-                <div class="tareas">
-                    <p>Tarea 4 </p>
-                </div>
-                <div class="tareas">
-                    <p> Tarea 5</p>
-                </div><div class="tareas">
-                    <p>Tarea 6</p>
-                </div>
-                <div class="tareas">
-                    <p>Tarea 7</p>
-                </div>
-                    </div>
+            <?php
+                $tarea_publicada = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+
+                while($tarea = mysqli_fetch_assoc($tarea_publicada)) {
+                    echo "
+                        <div id='tareas'>
+                        <p>Actividad: </p>    
+                        <p>" . $tarea['nombre_actividad'] . "</p>
+                        <p>Descripcion: </p>
+                        <p>" . $tarea['descripcion'] . "</p>
+                        <p>Fecha entrega: </p>
+                        <p>" . $tarea['fecha_entrega'] . "</p>
+                        </div>";
+                }
+?>
             </div>
         </div>
     </main>
+
+        
+    <?php
+
+        if(isset($_POST['crea_act'])) {
+            $nombre_actividad= $_POST['nombre_actividad'];
+            $descripcion= $_POST['descripcion'];
+            $fecha_entrega= $_POST['fecha_entrega'];
+
+            $insertar_datos = "INSERT INTO actividad (id_profesor,nombre_actividad ,descripcion ,fecha_entrega ) VALUES (4, '$nombre_actividad','$descripcion','$fecha_entrega')";
+            
+            $ejecutar_insertar = mysqli_query ($link,$insertar_datos);
+        }
+    ?>
     <!-------------------------FOOTER------------------------------------------------------>
     <?php
             include 'footer.php';

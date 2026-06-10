@@ -198,26 +198,21 @@ header {
 #listact {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    width: 100%;
-    align-items: center;
+    padding: 5px;
+    width: 90%;
+    margin-left:5%;
+    margin-right: 5%;
+    background-color: rgb(210, 210, 210);
+    box-shadow: 3px 3px 8px rgb(163, 163, 163);
+    cursor: pointer;
+    margin-bottom: 20px;ss
+}
+#listact p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-left: 15px;
 }
 
-.button {
-    width: 800px;
-    height: 80px;
-    color: #0D1650;
-    font-size: 20px;
-    border-color: #E6E8E9;
-    outline-color: #E6E8E9;
-    background-color: #E6E8E9;
-    margin: 0.75%;
-    margin-left: 2%;
-}
-
-.button:hover {
-    transform: scale(0.9);
-}
 
 #actividades {
     width: 50%;
