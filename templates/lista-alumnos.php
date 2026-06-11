@@ -1,7 +1,3 @@
-<?php
-
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +9,7 @@
     <title>SAETEC: Lista de alumnos</title>
 </head>
 <body>
-    <header>
+     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -76,18 +72,16 @@
                 <div class="boton-grupos">
                     <p>Grupo: </p> 
                 </div>
-                <div >
-                    <a  id="anade" href="./formalu.php">
-                        <p><strong>+</strong></p>
+                <div class="boton">
+                    <a href="./formalu.php">
+                        <img src="../statics/img/boton-list-alumn.png">
                     </a>
                 </div>
             </div>
             <div id="lista-alumnos">
-                <a class="alumno" href="./perfil-alumno.php">
-                    <div >
-                        <p><?php echo $_SESSION["nombre"];?></p>
-                    </div>
-                </a>
+                <div class="alumno">
+                    <p>Alumno 1</p>
+                </div>
                 <div class="alumno">
                     <p>Alumno 2</p>
                 </div>
