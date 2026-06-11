@@ -1,3 +1,13 @@
+<?php   
+    if(isset($_FILES['foto_perfil']))
+    {
+        $archivo = $_FILES['foto_perfil'];
+        $nombre_archivo = $archivo['name'];
+        $ruta_temporal = $archivo['tmp_name'];
+
+        move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +15,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: StatHorses">
     <meta name="description" content="Mi página de encabezado">
-    <link rel="stylesheet" href="../statics/style/inicio-sesion.css">
-    <link rel="stylesheet" href="../statics/style/syle.css">
-
+    <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
+    <link rel="stylesheet" href="../statics/style/cambio-foto.css">
+    
     <title>SAETEC</title>
 </head>
-<!--Barra de búsqueda-->
 <body>
-     <header>
+    <!<!-------------------------------------BARRA DE BUSQUEDA----------------------------------------->
+        < <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -54,6 +64,7 @@
             </div>
         </div>
     </header>
+<<<<<<<< HEAD:templates/inicio-sesion.php
     <!--Cuerpo después de la barra de busqueda-->
     <div class="cont-general">
         <div id="img-puma">
@@ -62,20 +73,50 @@
         <div id="form-inisesion">
             <p>INICIO DE SESIÓN</p>
             <!--Formulario de ingreso de datos-->
-            <form>
+            <form method="POST">
                 <p>Ingrese su usuario:</p>
                 <input type="text" placeholder="no. de cuenta">
                 <p>Ingrese su contraseña:</p>
                 <input type="text" placeholder="dd/mm/aaaa">
                 <br>
                 <button type="submit" id="envio-datos">Enviar</button>
-            </form>
+            </form method="POST">
             <br>
             <div>
                 <p class="tienes-cuenta">¿No tienes una cuenta?</p>
                 <p  class="crea-cuenta">Crea una</p>
+========
+        <!------------------------BARRA DE NAVEGACIÓN------------------------>
+    <?php
+            include 'barrapro.php';
+    ?>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
+    <div class="contenedor-general" style="margin-top: 50px;">
+        <header class="form-header">
+            <h2>Edición de foto de perfil</h2>
+        </header>
+            
+            <div class="vista-previa">
+                <?php
+                    $ruta_imagen="";
+                    if(file_exists("../statics/img/perfil-usuario.jpg")){
+                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
+                    }else{
+                        $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
+                    }
+                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
+                ?>
+
+                <a href="perfil-alumno.php" class="btn-editar">Regresar al perfil</a>
+>>>>>>>> 76d027077be124cfddca986a76f86fa57ca3b088:templates/guardar-foto.php
             </div>
-        </div>
     </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?>
 </body>
 </html>

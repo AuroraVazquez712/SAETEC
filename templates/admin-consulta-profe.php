@@ -1,9 +1,20 @@
 <?php
-    $nombre= $_POST["nombre"];
-    $apellido_paterno= $_POST["apellidopat"];
-    $correo= $_POST["correo"];
-    $rfc=$_POST["rfc"];
-    $grupo= $_POST["grupo"];
+        $nombre= "";
+        $apellido_paterno= "";
+        $correo= "";
+        $rfc="";
+        $grupo="";
+    if(isset($_POST["nombre"])){
+        $nombre= $_POST["nombre"];
+        $apellido_paterno= $_POST["apellidopat"];
+        $correo= $_POST["correo"];
+        $rfc=$_POST["rfc"];
+        $grupo= $_POST["grupo"];
+
+        //Base de datos, aquí guardamos o algo así =)
+    }else{
+        echo "No hemos enviado el form aún";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -61,7 +72,7 @@
             </div>
             <div id="lista-profes">
                 <div class="profe">
-                    <p>Angie</p>
+                    <p><i><?php echo "$nombre";?></i></p>
                 </div>
                 <div class="profe">
                     <p>Carlos</p>
@@ -70,7 +81,7 @@
         </div>
         <div id="datos-profe">
             <div id="nombre">
-                <h1><?php echo "Nombre: $nombre";?></h1>
+                <h1>Nombre: <i><?php echo "$nombre";?></i></h1>
             </div>
             <div id="datos-profe_esp">
                 <div>
