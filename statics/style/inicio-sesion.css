@@ -84,32 +84,20 @@ input{
     align-items: center;
     margin: 25px 150px 0px 0px;
 }
-#form-inisesion .crea-cuenta{
-    font-size: 16px;
-    color: #FF671D;
-}
-#form-inisesion .crea-cuenta:hover{
-    text-decoration: underline;
-    font-weight: bold;
-    cursor: pointer;
-}
-#form-inisesion .tienes-cuenta{
-    font-size: 16px;
-}
 #envio-datos{
     background-color:#FF671D;
     color: white;
-    width: 80px;
+    width: 100px;
     height: 30px;
     margin-top: 20px;
     border-radius: 20%;
-    font-size: 16px;
+    font-size: 20px;
     transition: 0.5s;
 }
 #envio-datos:hover{
     cursor: pointer;
     font-weight: bold;
-    width: 86px;
+    width: 100px;
     height: 35px;
     font-size: 18px;
 }

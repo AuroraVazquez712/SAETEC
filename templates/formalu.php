@@ -57,8 +57,7 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action="perfil-alumno.php" method="POST">
-    <!--<form action="formalu-confirmar.php" method="POST">--->
+    <form action="formalu-confirmar.php" method="POST">
         <div class="form-grid">
 
             <div class="input-group">

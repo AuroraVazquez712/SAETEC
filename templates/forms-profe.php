@@ -78,12 +78,12 @@
 
             <div class="input-group">
                 <label for="rfc">RFC</label>
-                <input type="text" name="rfc" id="ipt-rfc" required>
+                <input type="text" name="rfc" id="ipt-rfc" placeholder="ABC1234"  required>
             </div>
 
             <div class="input-group">
                 <label for="grupo">Grupos:</label>
-                <input type="text" name="grupo" id="ipt-grupo">
+                <input type="text" name="grupo" id="ipt-grupo" required>
             </div>
 
         </div>
