@@ -104,10 +104,9 @@
                     </form>
                 ";
 
-                echo "<form action = './lista-alumnos.php' method='post'>
-                        <input type = 'submit'>
-                    </form>
-                ";
+                echo "<form action='./lista-alumnos.php' method='post' style='display:none'>
+                        <input type='submit'>
+                    </form>";
             ?>
         </div>
         
