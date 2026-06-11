@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
-    <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/admin.css">
-
-    <title>SAETEC: Admin</title>
+    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
+    <meta name="description" content="Mi página de encabezado">
+    <link rel="stylesheet" href="../statics/style/formalu.css">
+    <title>Formulario del profesor</title>
 </head>
 <body>
-    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
@@ -53,50 +51,48 @@
             </div>
         </div>
     </header>
-
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-        include 'barrapro.php';
-    ?>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <?php
-        include 'barra-lateral.php';
-    ?>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    <main>
-        <div id="contenedor">
-            <div class="titulos">
-                <div id="alumn">
-                    <a href="./lista-alumnos.php">
-                        <p><u>CONSULTA ALUMNOS</u></p>
-                    </a>
-                </div>
-                <div id="prof">
-                    <a href="./admin-consulta-profe.php">
-                        <p><u>CONSULTA PROFESORES</u></p>
-                    </a>
-                </div>
+            include 'barrapro.php';
+    ?> 
+    <br>
+    <!-------------------------------------------FORMS------------>
+    <form action="admin-consulta-profe.php" method="POST">
+    <!--<form action="formalu-confirmar.php" method="POST">--->
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label for="nombre">Nombre(s):</label>
+                <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
             </div>
-            <div class="extras">
-                <div id="material">
-                    <a href="./material_extra.php">
-                            <p>Material extra</p>
-                    </a>
-                </div>
-                <div id="tips">
-                    <a href="./tips.php">
-                        <p>¡¡Asegura el éxito en la ETE!!</p>
-                    </a>
-                </div>
+
+            <div class="input-group">
+                <label for="apellidopat">Apellido paterno:</label>
+                <input type="text" name="apellidopat" id="ipt-apellidopat" placeholder="Escribe tu apellido" required>
             </div>
+
+            <div class="input-group">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" name="correo" id="ipt-correo" placeholder="hola@gmail.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="rfc">RFC</label>
+                <input type="text" name="rfc" id="ipt-rfc" placeholder="ABC1234"  required>
+            </div>
+
+            <div class="input-group">
+                <label for="grupo">Grupos:</label>
+                <input type="text" name="grupo" id="ipt-grupo" required>
+            </div>
+
         </div>
-        <div id="calendario">
-            <img src="../statics/img/calendario.png" alt="Calendario de la ENP 2024-2025"> 
-        </div>
-    </main>
+        
+        <button type="submit" class="btn-submit">Confirmar</button>
+    </form>
+    <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
-    ?>
-    
+    ?> 
 </body>
 </html>

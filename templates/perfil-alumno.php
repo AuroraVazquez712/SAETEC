@@ -1,3 +1,25 @@
+<?php
+
+    session_start();
+    // Corrobora si INICIO SESIÓN
+/*
+    if (isset($_SESSION['rol']) ){
+        if ($_SESSION['rol'] == "E"){
+            header("Location: alumno.php");
+        }
+
+    } else {
+        // no tiene rol, pal login
+        header("Location: formalu.php");
+    }
+
+    $nombre = $_SESSION["nombre_completo"];
+    $correo = $_SESSION["correo"];
+    $nocta = $_SESSION["nocta"];
+    $grupo =  $_SESSION["grupo"];*/
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,25 +34,25 @@
 </head>
     <body>
         <!--Barra de búsqueda-->
-         <header>
+        <header>
         <div id="iconos_unam">
             <div class="logo-unam">
-                <a href="https://www.unam.mx/">
-                    <img class="iconos"src="../statics/img/logo-escudo-unam.png" alt="Escuedo de la UNAM">
+                <a href="https://www.unam.mx/" target="_blank">
+                    <img class="iconos"src="../statics/img/logo-escudo-unam.png" alt="Escudo de la UNAM">
                 </a>
             </div>
             <div class="logo-enp">
-                <a href="http://enp.unam.mx/">
-                    <img class="iconos"src="../statics/img/logo_enp.jpeg" alt="Escuedo de la UNAM">
+                <a href="http://enp.unam.mx/" target="_blank">
+                    <img class="iconos"src="../statics/img/logo_enp.jpeg" alt="Escudo de la UNAM">
                 </a>
             </div>
             <div class="logo-enp6">
-                <a href="https://www.prepa6.unam.mx/ENP6/_P6/">
-                    <img class="iconos"src="../statics/img/logo-prepa6.png" alt="Escuedo de la UNAM">
+                <a href="https://www.prepa6.unam.mx/ENP6/_P6/" target="_blank">
+                    <img class="iconos"src="../statics/img/logo-prepa6.png" alt="Escudo de la UNAM">
                 </a>
             </div>
             <div class="logo-475años">
-                <img class="iconos"src="../statics/img/logo-475años.png" alt="Escuedo de la UNAM">
+                <img class="iconos"src="../statics/img/logo-475años.png" alt="Escudo de la UNAM">
             </div>
         </div>
         <div id="titulo_encabezado">
@@ -40,12 +62,12 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/">
+                <a href="https://www.ete.enp.unam.mx/" target="_blank">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html">
+                <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -68,30 +90,28 @@
             <div id="barra-lateral">
                 <?php
                     $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil_usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil_usuario.jpg";
+                    if(file_exists("../statics/img/perfil-usuario.jpg")){
+                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
                     }else{
-                        $ruta_imagen="../statics/img/imagen-predeterminada.jpg";
+                        $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
                     }
-                    echo "<img src= '$ruta_imagen' class= 'alumno-icon' alt='Foto del alumno'>";
+                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
                 ?>
-                <!--
-                <img src="../statics/img/imagen-predeterminada.jpeg" alt="Foto del alumno" class="alumno-icon">
-                -->
                 <a href="cambio-foto.php">
                     <button>Cambiar imagen del perfil</button>
                 </a>
                 <p>Historial académico</p>
                 <p>Actualización de datos</p>
-                <p>Grupo</p>
+                <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
             </div>
             <div id="datos-alumno">
                 <div >
-                    <h3>Fatima Elvira Rosales Tecuapetla</h3>
-                    <p name="correo-usuario">Email: ssss@gmail.com</p>
-                    <p name="no-cuenta">No. de cuenta: 320300287</p>
-                    <p name="telefono">Teléfono: 55 5538383837</p>
-                </div>
+                    <h3><?php echo "Nombre: " . $_SESSION["nombre"];?></h3>
+                    <p name="correo-usuario"><?php echo "Correo: " . $_SESSION["correo"] ; ?> </p>
+                    <p name="no-cuenta"><?php echo "Perfil: " . $_SESSION["id_perfil"] ; ?></p>
+                    <p name="grupo"><?php echo "Grupo: " . $_SESSION["grupo"] ; ?></p>
+
+                <div>
             </div>
         </div>
         <!------------------------FOOTER --------------------------------->

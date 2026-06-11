@@ -9,6 +9,7 @@
         return $conexion;
     } 
     $conexion = connect ();
+<<<<<<< HEAD
 
     $con = connect();
 
@@ -37,3 +38,7 @@
         echo "<br>";
     }
     ?>
+=======
+    ?>
+    
+>>>>>>> 76d027077be124cfddca986a76f86fa57ca3b088
