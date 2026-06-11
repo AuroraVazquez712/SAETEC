@@ -1,7 +1,14 @@
 <?php
+<<<<<<< HEAD
     // Corrobora si INICIO SESIÓN
     session_start();
 
+=======
+
+    session_start();
+    // Corrobora si INICIO SESIÓN
+/*
+>>>>>>> main
     if (isset($_SESSION['rol']) ){
         if ($_SESSION['rol'] == "E"){
             header("Location: alumno.php");
@@ -9,13 +16,21 @@
 
     } else {
         // no tiene rol, pal login
+<<<<<<< HEAD
         header("Location: login.php");
+=======
+        header("Location: formalu.php");
+>>>>>>> main
     }
 
     $nombre = $_SESSION["nombre_completo"];
     $correo = $_SESSION["correo"];
     $nocta = $_SESSION["nocta"];
+<<<<<<< HEAD
     $grupo =  $_SESSION["grupo"];
+=======
+    $grupo =  $_SESSION["grupo"];*/
+>>>>>>> main
 
 ?>
 
@@ -104,6 +119,7 @@
                 <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
             </div>
             <div id="datos-alumno">
+<<<<<<< HEAD
                 <div>
 
                 </div>
@@ -111,6 +127,15 @@
                 <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
                 <p name="no-cuenta"><?php echo "No. de cuenta: $nocta"; ?></p>
                 <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
+=======
+                <div >
+                    <h3><?php echo "Nombre: " . $_SESSION["nombre"];?></h3>
+                    <p name="correo-usuario"><?php echo "Correo: " . $_SESSION["correo"] ; ?> </p>
+                    <p name="no-cuenta"><?php echo "Perfil: " . $_SESSION["id_perfil"] ; ?></p>
+                    <p name="grupo"><?php echo "Grupo: " . $_SESSION["grupo"] ; ?></p>
+
+                <div>
+>>>>>>> main
             </div>
         </div>
         <!------------------------FOOTER --------------------------------->

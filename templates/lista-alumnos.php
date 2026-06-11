@@ -82,7 +82,9 @@
                     <p>Grupo: </p> 
                 </div>
                 <div class="boton">
-                    <img src="../statics/img/boton-list-alumn.png">
+                    <a href="./formalu.php">
+                        <img src="../statics/img/boton-list-alumn.png">
+                    </a>
                 </div>
             </div>
             <?php
