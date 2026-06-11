@@ -62,39 +62,21 @@
     <?php
         include 'barra-lateral.php';
     ?>
-        <!-------------------------------------CAMBIO DE FOTO----------------------------------------->
-        <div class="contenedor-general" style="margin-top: 50px;">
-            <header class="form-header">
-                <h2>Edición de foto de perfil</h2>
-                <form href="#contenedor-general">
+    <!-------------------------------------CAMBIO DE FOTO----------------------------------------->
+    <div class="contenedor-general" style="margin-top: 50px;">
+        <header class="form-header">
+            <h2>Edición de foto de perfil</h2>
+            <form action="guardar-foto.php" method="POST" enctype="multipart/form-data">
 
-                    <input type="file" name="foto_perfil" class="btn-perfil" accept="image/png, image/jpeg">
-                    <button type="submit" class="btn-perfil">Cambiar foto</button>
+                <input type="file" name="foto_perfil" class="btn-perfil" accept="image/png, image/jpeg">
+                <button type="submit" class="btn-perfil">Cambiar foto</button>
 
-                </form>
-            </header>
-            <?php   
-                if(isset($_FILES['foto_perfil']))
-                {
-                    $archivo = $_FILES['foto_perfil'];
-                    $nombre_archivo = $archivo['name'];
-                    $ruta_temporal = $archivo['tmp_name'];
-                    move_uploaded_file($ruta_temporal, '../statics/img/perfil_usuario.jpg');
-                }
-            ?>
-            <div class="vista-previa">
-                <?php
-                    $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil_usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil_usuario.jpg";
-                    }else{
-                        $ruta_imagen="../statics/img/imagen-predeterminada.jpg";
-                    }
-                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
-                ?>
-
-                <a href="perfil-alumno.php" class="btn-editar">Regresar al perfil</a>
-            </div>
-        </div>
+            </form>
+        </header>
+    </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?>
 </body>
 </html>

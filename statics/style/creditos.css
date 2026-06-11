@@ -188,9 +188,11 @@ header {
     font-family: 'subtitulo';
     font-size: 35px;
 }
-#equipo p{
+#equipo a{
+    text-decoration: none;
     font-family: 'subtitulo';
     font-size: 20px;
+    color: #FFFFFF;
 }
 h1{
     display: flex;
