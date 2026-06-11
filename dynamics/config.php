@@ -10,9 +10,6 @@
     } 
     $conexion = connect ();
 
-    // conexion o config
-    //require './conexion.php';
-    // nos conectamos
     $con = connect();
 
     $nocta = "325156992";
