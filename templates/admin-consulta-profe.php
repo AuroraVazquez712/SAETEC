@@ -1,4 +1,9 @@
 <?php
+
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: forms-profe.php");
+    exit();
+}
     $nombre= $_POST["nombre"];
     $apellido_paterno= $_POST["apellidopat"];
     $correo= $_POST["correo"];
@@ -61,7 +66,7 @@
             </div>
             <div id="lista-profes">
                 <div class="profe">
-                    <p>Angie</p>
+                    <p><i><?php echo "$nombre";?></i></p>
                 </div>
                 <div class="profe">
                     <p>Carlos</p>
@@ -70,7 +75,7 @@
         </div>
         <div id="datos-profe">
             <div id="nombre">
-                <h1><?php echo "Nombre: $nombre";?></h1>
+                <h1>Nombre: <i><?php echo "$nombre";?></i></h1>
             </div>
             <div id="datos-profe_esp">
                 <div>
