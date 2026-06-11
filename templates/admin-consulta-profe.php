@@ -1,9 +1,4 @@
 <?php
-
-    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: forms-profe.php");
-    exit();
-}
     $nombre= $_POST["nombre"];
     $apellido_paterno= $_POST["apellidopat"];
     $correo= $_POST["correo"];

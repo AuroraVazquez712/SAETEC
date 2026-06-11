@@ -103,6 +103,11 @@
                         <input type = 'submit'>
                     </form>
                 ";
+
+                echo "<form action = './lista-alumnos.php' method='post'>
+                        <input type = 'submit'>
+                    </form>
+                ";
             ?>
         </div>
         
