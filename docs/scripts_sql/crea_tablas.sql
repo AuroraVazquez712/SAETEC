@@ -206,8 +206,13 @@ VALUES
 -- TABLA ACTIVIDAD
 CREATE TABLE actividad (
     id_actividad INT PRIMARY KEY AUTO_INCREMENT,
+<<<<<<< HEAD
     id_profesor INT NOT NULL,
     FOREIGN KEY (id_profesor) 
+=======
+    id_profesor INT NULL,
+    FOREIGN KEY (id_profesor)
+>>>>>>> bd4c64c986d992ce2ba3c1f7a991b6eeafc52c8f
     REFERENCES profesor(id_profesor),
     nombre_actividad VARCHAR(30) NOT NULL,
     descripcion VARCHAR(100) NULL,
@@ -219,6 +224,31 @@ INSERT INTO actividad
 VALUES 
 (1, "Serie de Karel","2026-06-08");
 
+<<<<<<< HEAD
+=======
+-- TABLA GRUPO
+CREATE TABLE grupo (
+    id_grupo INT PRIMARY KEY AUTO_INCREMENT,
+    id_profesor INT NULL,
+    FOREIGN KEY (id_profesor) 
+    REFERENCES profesor(id_profesor),
+    nombre_grupo VARCHAR(3) NOT NULL,
+    plantel VARCHAR(50) NOT NULL,
+    cupo INT NOT NULL,
+    salon VARCHAR(6) NOT NULL
+);
+
+INSERT INTO grupo
+(id_profesor, nombre_grupo, plantel, cupo, salon)
+VALUES 
+(1, "61B","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
+
+INSERT INTO grupo
+(id_profesor, nombre_grupo, plantel, cupo, salon)
+VALUES 
+(1, "61D","Escuela Nacional Preparatoria No. 6 Antonio Caso", 50, "LACEC");
+
+>>>>>>> bd4c64c986d992ce2ba3c1f7a991b6eeafc52c8f
 
 -- TABLA ASIGNACION
 CREATE TABLE asignacion (
