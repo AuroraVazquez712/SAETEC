@@ -37,7 +37,7 @@ VALUES ("tiempo"),
 -- TABLA RAZÓN DE INGRESO
 CREATE TABLE razon_ingreso (
     id_razon INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_razon VARCHAR(20)
+    nombre_razon VARCHAR(30)
 );
 
 INSERT INTO razon_ingreso (nombre_razon)
