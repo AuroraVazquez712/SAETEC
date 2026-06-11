@@ -36,14 +36,14 @@
         <div id="form-inisesion">
             <p>INICIO DE SESIÓN</p>
             <!--Formulario de ingreso de datos-->
-            <form>
+            <form method="POST">
                 <p>Ingrese su usuario:</p>
                 <input type="text" placeholder="no. de cuenta">
                 <p>Ingrese su contraseña:</p>
                 <input type="text" placeholder="dd/mm/aaaa">
                 <br>
                 <button type="submit" id="envio-datos">Enviar</button>
-            </form>
+            </form method="POST">
             <br>
             <div>
                 <p class="tienes-cuenta">¿No tienes una cuenta?</p>
