@@ -1,6 +1,9 @@
 <?php
-    // Corrobora si INICIO SESIÓN
+    // Corrobora si INICIÓ SESIÓN
     session_start();
+
+    require  '../dynamics/config.php';
+    $con = connect();
 
     if (isset($_SESSION['rol']) ){
         if ($_SESSION['rol'] == "E"){
@@ -8,14 +11,15 @@
         }
 
     } else {
-        // no tiene rol, pal login
-        header("Location: login.php");
+        // REGRESA A LOGIN
+        header("Location: inicio-sesion.php");
     }
 
     $nombre = $_SESSION["nombre_completo"];
     $correo = $_SESSION["correo"];
     $nocta = $_SESSION["nocta"];
     $grupo =  $_SESSION["grupo"];
+    $id_perfil = $_SESSION["id_perfil"];
 
 ?>
 <!DOCTYPE html>
@@ -88,8 +92,16 @@
             <div id="barra-lateral">
                 <?php
                     $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil-usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
+
+                    //CONSULTA
+                    $consulta = "SELECT foto_perfil FROM perfil WHERE id_perfil = $id_perfil";
+                    $conecta = mysqli_query($con, $consulta);
+                    $consulta_fotoperfil = mysqli_fetch_assoc($conecta);
+
+                    $ruta = $consulta_fotoperfil['foto_perfil'];
+
+                    if(file_exists("$ruta")){
+                        $ruta_imagen= "$ruta";
                     }else{
                         $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
                     }

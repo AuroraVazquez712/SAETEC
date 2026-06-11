@@ -1,12 +1,29 @@
 <?php   
+    // Corrobora si INICIO SESIÓN
+    session_start();
+
+    require  '../dynamics/config.php';
+    $con = connect();
+
+    // VARIABLES DE SESIÓN
+    $usuario = $_SESSION["nocta"];
+    $id_perfil_ini = $_SESSION["id_perfil"];
+    
+    
+    $ruta = '../statics/img/' . $usuario . '-foto-perfil.jpg';
+
     if(isset($_FILES['foto_perfil']))
     {
         $archivo = $_FILES['foto_perfil'];
         $nombre_archivo = $archivo['name'];
         $ruta_temporal = $archivo['tmp_name'];
 
-        move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
+        move_uploaded_file($ruta_temporal, $ruta);
+
+        $guarda_ruta = "UPDATE perfil SET foto_perfil = '$ruta' WHERE id_perfil = $id_perfil_ini";
+        mysqli_query( $con, $guarda_ruta);
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,8 +97,8 @@
             <div class="vista-previa">
                 <?php
                     $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil-usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
+                    if(file_exists("$ruta")){
+                        $ruta_imagen= "$ruta";
                     }else{
                         $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
                     }

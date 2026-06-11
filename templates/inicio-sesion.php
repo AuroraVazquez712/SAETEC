@@ -17,7 +17,7 @@
         $registro1 = mysqli_fetch_assoc($result1);
 
         //consulta 2 para contrasenha
-        $query2 = "SELECT  nombre, apellido_paterno, apellido_materno, correo, contrasenha FROM perfil WHERE contrasenha = '$contrasenha'";
+        $query2 = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno, correo, contrasenha FROM perfil WHERE contrasenha = '$contrasenha'";
         $result2 = mysqli_query( $con, $query2);
         $registro2 = mysqli_fetch_assoc($result2);
 
@@ -33,6 +33,7 @@
             $_SESSION["correo"] = $registro2["correo"];
             $_SESSION["nocta"] = $registro1["nocta"];
             $_SESSION["grupo"] = $registro3["nombre_grupo"];
+            $_SESSION["id_perfil"] = $registro2["id_perfil"];
             setcookie("usuario", $registro1["nocta"], time() + (86400)); // 1 dia = 86400 segundos, expirará en un dia
             header("Location: perfil-alumno.php");
             exit();
