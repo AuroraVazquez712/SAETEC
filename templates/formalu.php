@@ -61,7 +61,7 @@
         <div class="form-grid">
 
             <div class="input-group">
-                <label for="id_perfil">Número de cuenta:</label>
+                <label for="nocta">Número de cuenta:</label>
                 <input type="text" name="nocta" id="ipt-id_perfil" placeholder="123456789" required>
             </div>
 

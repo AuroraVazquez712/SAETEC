@@ -92,8 +92,8 @@
             </div>
 
             <div class="input-group">
-                <label for="rfc">RFC</label>
-                <input type="text" name="rfc" id="ipt-rfc" placeholder="ABC1234"  required>
+                <label for="no_trabajador">No. de trabajador</label>
+                <input type="text" name="no_trabajador" id="no_trabajador" placeholder="ABC1234"  required>
             </div>
 
             <div class="input-group">
