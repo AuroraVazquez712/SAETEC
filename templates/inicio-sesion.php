@@ -8,7 +8,7 @@
 
         move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
     }
-
+?>
 <?php
     session_start();
 
