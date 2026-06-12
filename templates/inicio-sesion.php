@@ -12,13 +12,15 @@
     }
         $tipo_usuario = $_SESSION["tipo_usuario"];
         
+        // Verifica si USUARIO, que es el no. de cuenta que ingreso, no esta vacío
         if (isset($_POST["usuario"]))
         {
+            // USUARIO, CONTRASEÑA Y HASHEO para los datos ingresados en el login
             $usuario = trim($_POST["usuario"]);
             $contrasenha = trim($_POST["contrasenha"]);
             $hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
 
-
+            // Cambia entre los diferentes tipos de usuario para realizar la consulta
             switch($tipo_usuario){
                 case "estudiante":
                     // Query para buscar si el usuario está en 'estudiante'
