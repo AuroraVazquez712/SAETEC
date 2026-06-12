@@ -9,12 +9,9 @@
         return $conexion;
     } 
     $conexion = connect ();
-<<<<<<< HEAD
     ?>
     
-=======
-<<<<<<< HEAD
-
+    <? php
     $con = connect();
 
     $nocta = "325156992";
@@ -42,8 +39,3 @@
         echo "<br>";
     }
     ?>
-=======
-    ?>
-    
->>>>>>> 76d027077be124cfddca986a76f86fa57ca3b088
->>>>>>> main

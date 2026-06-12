@@ -1,12 +1,15 @@
 <?php
-    
-    $servidor = "localhost";
-    $user = "root";
-    $password = "";
-    $data_base = "saetec";
+    const DBHOST = "localhost";
+    const DBUSER = "root";
+    const PASSWORD = "";
+    const DB = "saetec";
 
-    $link = mysqli_connect ($servidor, $user, $password, $data_base);
-?>
+    function connect () {
+        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
+        return $conexion;
+    } 
+    $conexion = connect ();
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +78,7 @@
         <div id="columna">
             <div class="grupo">Grupo 61D</div>
         <?php
-                $filtra = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
                 while($tarea = mysqli_fetch_assoc($filtra)) {
                     echo "

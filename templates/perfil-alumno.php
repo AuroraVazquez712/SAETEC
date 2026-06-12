@@ -1,14 +1,8 @@
 <?php
-<<<<<<< HEAD
-    // Corrobora si INICIO SESIÓN
-    session_start();
-
-=======
 
     session_start();
     // Corrobora si INICIO SESIÓN
 /*
->>>>>>> main
     if (isset($_SESSION['rol']) ){
         if ($_SESSION['rol'] == "E"){
             header("Location: alumno.php");
@@ -16,21 +10,13 @@
 
     } else {
         // no tiene rol, pal login
-<<<<<<< HEAD
-        header("Location: login.php");
-=======
         header("Location: formalu.php");
->>>>>>> main
     }
 
     $nombre = $_SESSION["nombre_completo"];
     $correo = $_SESSION["correo"];
     $nocta = $_SESSION["nocta"];
-<<<<<<< HEAD
-    $grupo =  $_SESSION["grupo"];
-=======
     $grupo =  $_SESSION["grupo"];*/
->>>>>>> main
 
 ?>
 

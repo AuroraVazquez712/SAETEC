@@ -1,11 +1,14 @@
 <?php
-    
-    $servidor = "localhost";
-    $user = "root";
-    $password = "";
-    $data_base = "saetec";
+    const DBHOST = "localhost";
+    const DBUSER = "root";
+    const PASSWORD = "";
+    const DB = "SAETEC";
 
-    $link = mysqli_connect ($servidor, $user, $password, $data_base);
+    function connect () {
+        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
+        return $conexion;
+    } 
+    $conexion = connect ();
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +112,7 @@
                     </div>
                 </div>
             <?php
-                $filtra = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
                 while($tarea = mysqli_fetch_assoc($filtra)) {
                     echo "
@@ -137,7 +140,7 @@
 
             $insertar_datos = "INSERT INTO actividad (id_profesor,nombre_actividad ,descripcion ,fecha_entrega ) VALUES (4, '$nombre_actividad','$descripcion','$fecha_entrega')";
             
-            $ejecutar_insertar = mysqli_query ($link,$insertar_datos);
+            $ejecutar_insertar = mysqli_query ($conexion,$insertar_datos);
         }
     ?>
     <!-------------------------FOOTER------------------------------------------------------>

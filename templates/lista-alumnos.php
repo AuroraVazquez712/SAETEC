@@ -1,12 +1,15 @@
 <?php
-    
-    $servidor = "localhost";
-    $user = "root";
-    $password = "";
-    $data_base = "saetec";
+    const DBHOST = "localhost";
+    const DBUSER = "root";
+    const PASSWORD = "";
+    const DB = "SAETEC";
 
-    $link = mysqli_connect ($servidor, $user, $password, $data_base);
-?>
+    function connect () {
+        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
+        return $conexion;
+    } 
+    $conexion = connect ();
+    ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -82,13 +85,11 @@
                     <p>Grupo: </p> 
                 </div>
                 <div class="boton">
-                    <a href="./formalu.php">
-                        <img src="../statics/img/boton-list-alumn.png">
-                    </a>
+                    <img src="../statics/img/boton-list-alumn.png">
                 </div>
-            </div>
+            </div>          
             <?php
-                $filtra = mysqli_query($link, "SELECT * FROM perfil WHERE rol = 'E'");
+                $filtra = mysqli_query($conexion, "SELECT * FROM perfil WHERE rol = 'E'");
 
                 while($perfil = mysqli_fetch_assoc($filtra)) {
                     echo "
@@ -115,4 +116,3 @@
             include 'footer.php';
     ?> 
 </body>
-</html>
