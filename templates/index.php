@@ -1,15 +1,5 @@
 <?php
     session_start();
-
-    if(isset($_POST["usuario"])){
-
-        require  '../dynamics/config.php';
-        $con = connect();
-
-        $_SESSION["tipo_usuario"] = $_POST["usuario"];
-
-        header("Location: inicio-sesion.php");
-    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -79,27 +69,34 @@
     </nav>
     <br>
     <main>
-        <form action="inicio-sesion.php" method="POST">
-            <div id="seleccion-perf">
-                <h2>¿Quien anda ahí?</h2>
-            </div>
+        <div id="seleccion-perf">
+            <h2>¿Quien anda ahí?</h2>
+        </div>
+        <form action="inicio-sesion.php" method="POST"> 
             <div class="fila">
+                <div class="bloque">
+                    <input type="radio" id="administrador" name="tipo_usuario" value="administrador" hidden onchange="this.form.submit()">
+                    <label for="administrador">
+                        <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 60%;">
+                        <p>Administrador</p>
+                    </label>
+                </div>
+
+                <div class="bloque">
+                    <input type="radio" id="estudiante" name="tipo_usuario" value="estudiante" hidden onchange="this.form.submit()">
+                    <label for="estudiante">
+                        <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 60%;">
+                        <p>Estudiante</p>
+                    </label>
+                </div>
                 
-                <button class="bloque">
-                    <input type="submit" name="usuario" value="administrador" hidden>
-                    <label for="administrador"><img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 60%;"></label>
-                    <p>Administrador</p>
-                </button>
-                <button class="bloque">
-                    <input type="submit" name="usuario" value="estudiante" hidden>
-                    <label for="estudiante"><img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 60%;"></label>
-                    <p>Estudiante</p>
-                </button>
-                <button class="bloque">
-                    <input type="submit" name="usuario" value="profesor" hidden>
-                    <label for="profesor"><img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 60%;"></label>
-                    <p>Profesor</p>
-                </button>
+                <div class="bloque">
+                    <input type="radio" id="profesor" name="tipo_usuario" value="profesor" hidden onchange="this.form.submit()">
+                    <label for="profesor">
+                        <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 60%;">
+                        <p>Profesor</p>
+                    </label>
+                </div>
             </div>
         </form>
     </main>

@@ -97,6 +97,7 @@ button{
 }
 .bloque:hover{
     transform: scale(1.1);
+    cursor: pointer;
 }
 .nav{
     width: 100%;

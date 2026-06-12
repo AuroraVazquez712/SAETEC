@@ -4,15 +4,20 @@
     require  '../dynamics/config.php';
     $con = connect();
 
-    $tipo_usuario = $_SESSION["tipo_usuario"];
-    var_dump($tipo_usuario);
-    if(isset($_SESSION["tipo_usuario"]))
+    // Verificar si el tipo de usuario fue seleccionado
+    var_dump($_POST["tipo_usuario"]);
+    if(isset($_POST["tipo_usuario"]))
     {
+        $_SESSION["tipo_usuario"] = $_POST["tipo_usuario"];
+    }
+        $tipo_usuario = $_SESSION["tipo_usuario"];
+        
         if (isset($_POST["usuario"]))
         {
             $usuario = trim($_POST["usuario"]);
             $contrasenha = trim($_POST["contrasenha"]);
             $hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
+
 
             switch($tipo_usuario){
                 case "estudiante":
@@ -34,6 +39,11 @@
                         $result2 = mysqli_query( $con, $query2);
                         $registro2 = mysqli_fetch_assoc($result2);
 
+                        // ACTUALIZA CONTRASEÑA CON HASH
+                        $actualiza_contrasenha = 
+                        "UPDATE perfil SET contrasenha = '$hasheo' WHERE contrasenha = '$contrasenha'";
+                        mysqli_query($con, $actualiza_contrasenha);
+                        
                         //CONSULTA DE GRUPO, TABLE GRUPO
                         $id_grupo = $registro1["id_grupo"];
                         $query3 = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_grupo = '$id_grupo'";
@@ -51,6 +61,7 @@
                         header("Location: perfil-alumno.php");
                     }
                     break;
+
                 case "profesor":
                     // Query para corroborar que sea prpofesor
                     $query = "SELECT * FROM profesor WHERE no_trabajador = '$usuario'";
@@ -63,12 +74,15 @@
                         header("Location: profesor.php");
                     }
                     break;
+
                 case "administrador":
 
                     break;
             }
+        } else{
+            header("Location: inicio-sesion.php");
         }
-    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
