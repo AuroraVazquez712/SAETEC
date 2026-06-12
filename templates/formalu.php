@@ -101,7 +101,7 @@
 
         </div>
         
-        <button type="submit" class="btn-submit">Confirmar</button>
+        <button type="submit" name="registro" class="btn-submit">Confirmar</button>
     </form>
     <!------------------------FOOTER --------------------------------->
     <?php

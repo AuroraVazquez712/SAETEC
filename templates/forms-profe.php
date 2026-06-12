@@ -1,3 +1,8 @@
+<?php 
+    include '../dynamics/config.php';
+    $conexion = connect();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -72,6 +77,16 @@
             </div>
 
             <div class="input-group">
+                <label for="apellidopat">Apellido materno:</label>
+                <input type="text" name="apellidomat" id="ipt-apellidomat" placeholder="Escribe tu apellido" required>
+            </div>
+
+            <div class="input-group">
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                <input type="date" name="fecha_nacimiento" id="ipt-fecha_nacimiento" required>
+            </div>
+
+            <div class="input-group">
                 <label for="correo">Correo electrónico:</label>
                 <input type="email" name="correo" id="ipt-correo" placeholder="hola@gmail.com" required>
             </div>
@@ -82,14 +97,21 @@
             </div>
 
             <div class="input-group">
-                <label for="grupo">Grupos:</label>
-                <input type="text" name="grupo" id="ipt-grupo" required>
+                <label for="grupo">Grupo:</label>
+                <select name="grupo" id="ipt-grupo" required>
+                    <option value="" disabled selected>Elige tu grupo...</option>
+                    <option value="61B">61B</option>
+                    <option value="61D">61D</option>
+                </select>
             </div>
 
         </div>
         
-        <button type="submit" class="btn-submit">Confirmar</button>
+        <button type="submit" class="btn-submit" name="registro">Confirmar</button>
+
     </form>
+    <!-------------------------CONEXION A BASE----------------------->
+
     <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';

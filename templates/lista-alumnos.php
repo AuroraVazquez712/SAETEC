@@ -77,31 +77,55 @@
         <div id="bloque-list">
             <div class="lista_alum">
                 <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos" title="añadir alumno">
-
             </div>
 
-            <div id="grupos">
-                <div class="boton-grupos">
-                    <p>Grupo: 61B</p> 
-                </div>
-                <div class="boton">
-                    <img src="../statics/img/boton-list-alumn.png">
-                </div>
-            </div>          
-            <?php
-                $filtra = mysqli_query($conexion, "SELECT * FROM perfil WHERE rol = 'E'");
-
-                while($perfil = mysqli_fetch_assoc($filtra)) {
-                    echo "
-                        <div class='alumno'> 
-                        <a href='vista-perf-alumnos.php'>
-                        <p>" . $perfil['nombre'] . "
-                        " . $perfil['apellido_paterno'] . "
-                        " . $perfil['apellido_materno'] . "</p>
+            <div id="bloque-grupos">
+                <div id="grupos">
+                    <div class="boton-grupos">
+                        <p>Grupo: 61B</p> 
+                    </div>
+                    <div class="boton">
+                        <a href="./formalu.php">
+                            <img class="sub" src="../statics/img/boton-list-alumn.png">
                         </a>
-                        </div>";
-                }
-            ?>
+                    </div>
+                </div>
+                <?php
+                    //$grupo = mysqli_query($conexion, "SELECT * FROM estudiante WHERE id_grupo = '1'");
+                    $filtra = mysqli_query($conexion, "SELECT * FROM perfil WHERE rol = 'E'");
+                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                        echo "<div class='alumno'>
+                                <a href='vista-perf-alumnos.php'>
+                                    <p>" . $perfil['nombre'] . " " . $perfil['apellido_paterno'] . " " . $perfil['apellido_materno'] . "</p>
+                                </a>
+                            </div>";
+                    }
+                ?>
+            </div>
+
+            <div class="bloque-grupos">
+                <div id="grupos">
+                    <div class="boton-grupos">
+                        <p>Grupo: 61D</p> 
+                    </div>
+                    <div class="boton">
+                        <a href="./formalu.php">
+                            <img class="sub" src="../statics/img/boton-list-alumn.png">
+                        </a>
+                    </div>
+                </div>
+                <?php
+                    //$grupo = mysqli_query($conexion, "SELECT * FROM estudiante WHERE id_grupo = '2'");
+                    $filtra = mysqli_query($conexion, "SELECT * FROM perfil WHERE rol = 'E'");
+                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                        echo "<div class='alumno'>
+                                <a href='vista-perf-alumnos.php'>
+                                    <p>" . $perfil['nombre'] . " " . $perfil['apellido_paterno'] . " " . $perfil['apellido_materno'] . "</p>
+                                </a>
+                            </div>";
+                    }
+                ?>
+            </div>
         </div>
 
         <div id="barra-lateral">
