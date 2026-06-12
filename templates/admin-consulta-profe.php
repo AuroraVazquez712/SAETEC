@@ -32,9 +32,33 @@
                     VALUES ($id_perfil, $grupo);
                     ";
             $query3= mysqli_query($conexion, $sql3);
-
+            
+        
         }else{
             echo "No hemos enviado el form aún";
+        }
+        //Cambiar la vista por cada profe
+        if (isset($_POST["ver_profe"])){
+
+            $id_perfil=($_POST["id_perfil"]);
+
+            $sql4 = mysqli_query($conexion, "SELECT * FROM perfil WHERE id_perfil=$id_perfil AND rol = 'P'");
+            $query4 = mysqli_fetch_assoc($sql4);
+
+            $sql5 = mysqli_query($conexion, "SELECT * FROM profesor WHERE id_profesor=$id_perfil");
+            $query5 = mysqli_fetch_assoc($sql5);
+
+            $sql6 = mysqli_query($conexion, "SELECT * FROM grupo WHERE id_profesor=$id_perfil");
+            $query6 = mysqli_fetch_assoc($sql6);
+
+            if ($query4 && $query5 && $query6)
+            {
+                $nombre= $query4['nombre'];
+                $apellido_paterno= $query4['apellido_paterno'];
+                $correo= $query4['correo'];
+                $no_trabajador= $query5['no_trabajador'];
+                $grupo= $query6['nombre_grupo'];
+            }   
         }
 ?>
 
@@ -93,18 +117,21 @@
                 </div>
             </div>
             <div id="lista-profes">
-                <?php    
+                <?php   
                     $sql = "SELECT * FROM perfil WHERE rol = 'P'";
                     $filtra = mysqli_query($conexion, $sql);
 
                     while($perfil = mysqli_fetch_assoc($filtra)) {
                         echo "
-                            <div class='alumno'> 
-                            <p>" . $perfil['nombre'] . "
-                            " . $perfil['apellido_paterno'] . "
-                            " . $perfil['apellido_materno'] . "</p>
-                            </div>";
-                    }
+                        <form method='POST' action=''>
+                            <input type='hidden' name='id_perfil' value='" . $perfil['id_perfil'] . "'>
+                            <button type='submit' class='alumno' name='ver_profe'>
+                                    <p>" . $perfil['nombre'] . " 
+                                    " . $perfil['apellido_paterno'] . " 
+                                    " . $perfil['apellido_materno'] . "</p> 
+                            </button>
+                        </form>";
+                    }    
                 ?>
             </div>
         </div>
