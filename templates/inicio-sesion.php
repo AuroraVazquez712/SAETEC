@@ -10,12 +10,12 @@
     {
         $_SESSION["tipo_usuario"] = $_POST["tipo_usuario"];
     }
-        $tipo_usuario = isset($_SESSION["tipo_usuario"]) ? $_SESSION["tipo_usuario"] : null;
+        $tipo_usuario = $_SESSION["tipo_usuario"];
         
         // Verifica si USUARIO, que es el no. de cuenta que ingreso, no esta vacío
-        if (isset($_POST["usuario"]) && isset($_POST["contrasenha"]))
+        if (isset($_POST["usuario"]))
         {
-            // USUARIO, CONTRASEÑA Y HASHEO para los datos ingresados en el login
+            // USUARIO, CONTRASEÑA Y HASHEO para los datos ingresados 
             $usuario = trim($_POST["usuario"]);
             $contrasenha = trim($_POST["contrasenha"]);
             $hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
