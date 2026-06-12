@@ -5,7 +5,7 @@
         $nombre= "";
         $apellido_paterno= "";
         $correo= "";
-        $rfc="";
+        $no_trabajador="";
         $grupo="";
         if(isset($_POST["registro"])){
             $nombre= $_POST["nombre"];
@@ -13,13 +13,25 @@
             $apellido_materno= $_POST["apellidomat"];
             $correo= $_POST["correo"];
             $fecha_nacimiento= $_POST["fecha_nacimiento"];
-            $rfc=$_POST["rfc"];
+            $no_trabajador=$_POST["no_trabajador"];
             $grupo= $_POST["grupo"];
 
-        //Base de datos, aquí guardamos o algo así 
-        $insertar_datos= "INSERT INTO perfil (rol, nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
-                            VALUES('P','$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
-        $inster= mysqli_query($conexion, $insertar_datos);
+            //Base de datos, aquí guardamos o algo así 
+            $insertar_datos= "INSERT INTO perfil (rol, nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
+                                VALUES('P','$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
+            $inster= mysqli_query($conexion, $insertar_datos);
+
+            $id_perfil = mysqli_insert_id($conexion);
+            // Ahora insertamos el resto de los datos en la tabla 
+            $sql2 = "INSERT INTO profesor (id_profesor, no_trabajador)
+                    VALUES ($id_perfil, '$no_trabajador');
+                    ";
+            $query2 = mysqli_query($conexion, $sql2);
+
+            $sql3=" INSERT INTO grupo (id_profesor, nombre_grupo)
+                    VALUES ($id_perfil, $grupo);
+                    ";
+            $query3= mysqli_query($conexion, $sql3);
 
         }else{
             echo "No hemos enviado el form aún";
@@ -103,7 +115,7 @@
             <div id="datos-profe_esp">
                 <div>
                     <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
-                    <p name="rfc"><?php echo "RFC: $rfc";?></p>
+                    <p name="rfc"><?php echo "No. trabajador: $no_trabajador";?></p>
                 </div>
             </div>
             <div id="grupo">
