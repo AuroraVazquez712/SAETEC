@@ -75,6 +75,7 @@
                 if (isset($_POST['registro'])){
                     // logica de validacion de los datos y guardado de estos
                     $id_perfil= $_POST["id_perfil"];
+                    $nocta = $_POST["nocta"];
                     $nombre= $_POST["nombre"];
                     $apellido_paterno= $_POST["apellidopat"];
                     $apellido_materno= $_POST["apellidomat"];
@@ -88,6 +89,19 @@
                                     VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
 
                     $inster= mysqli_query($conexion, $insertar_datos);
+
+                    // nos preguntamos si sí se insertó el registro
+                    //if($inster){
+
+                    //}
+                    // El ultimo id insertado en la base
+                    // $last_id
+                    $id_perfil = mysqli_insert_id($conexion);
+
+                    // Ahora insertamos el resto de los datos en la tabla 
+                    // estudiante. Acá ya usamos el nocta, id_grupo y id_perfil
+                    $query2 = "INSERT INTO estudiante () ...";
+                    // mysqli_query despues
 
                     // Guardar las variables que usaremos en otras vistas en variables de sesion
                     $_SESSION["id_perfil"] = $id_perfil;
