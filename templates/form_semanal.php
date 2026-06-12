@@ -1,3 +1,7 @@
+<?php
+    include '../dynamics/config.php';
+    $id_estudiante = 1;
+?> 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +15,7 @@
 </head>
 <body>
     <!---------------ENCABEZADO--------------------------->
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -39,12 +43,12 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/">
+                <a href="https://www.ete.enp.unam.mx/CM.html">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html">
+                <a href="https://www.ete.enp.unam.mx/">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -67,41 +71,67 @@
     
     <main>
         <form id="contenido">
-            <div id=""emociones>
+            <div id=""sentir_estudiante>
                 <label>Esta semana me sentí:</label>
                     <div class="radio-group">
-                        <input type="radio" name="emociones" id="ipt-feliz" value="feliz" hidden>
-                        <label for="ipt-feliz"> <img src="../statics/img/emocion_feliz.png" alt="Feliz"> </label>
+                        <input type="radio" name="emocion" id="ipt-feliz" value="1" hidden>
+                        <label for="ipt-feliz"> <img src="../statics/img/emocion_feliz.png" alt="feliz"> </label>
                             
-                        <input type="radio" name="emociones" id="ipt-maso" value="maso" hidden>
-                        <label for="ipt-maso"> <img src="../statics/img/emocion_maso.png" alt="Mas o menos"> </label>
+                        <input type="radio" name="emocion" id="ipt-maso" value="2" hidden>
+                        <label for="ipt-maso"> <img src="../statics/img/emocion_maso.png" alt="mas o menos"> </label>
                             
-                        <input type="radio" name="emociones" id="ipt-triste" value="triste" hidden>
-                        <label for="ipt-triste"> <img src="../statics/img/emocion_triste.png" alt="Triste"> </label>
+                        <input type="radio" name="emocion" id="ipt-triste" value="3" hidden>
+                        <label for="ipt-triste"> <img src="../statics/img/emocion_triste.png" alt="triste"> </label>
 
-                        <input type="radio" name="emociones" id="ipt-cansado" value="cansado" hidden>
+                        <input type="radio" name="emocion" id="ipt-cansado" value="4" hidden>
                         <label for="ipt-cansado"> <img src="../statics/img/emocion_cansado.png" alt="cansado"> </label>
                     </div>
             </div>
             <div id="preguntas">
                 <div class="resp">
-                    <label for="trabajo">¿Qué te cuesta trabajo?:</label>
-                    <textarea name="trabajo" id="txta-instrucciones" rows="4" placeholder="Me cuesta..."></textarea>
+                    <label for="cuesta_trabajo">¿Qué te cuesta trabajo?:</label>
+                    <textarea name="cuesta_trabajo" id="txta-instrucciones" rows="4" placeholder="Me cuesta..." required></textarea>
                 </div>
                 <div class="resp">
-                    <label for="reforzar">¿Qué debo reforzar?:</label>
-                    <textarea name="reforzar" id="txta-instrucciones" rows="4" placeholder="Debería repasar..."></textarea>
+                    <label for="areas_oportunidad">¿Qué debo reforzar?:</label>
+                    <textarea name="areas_oportunidad" id="txta-instrucciones" rows="4" placeholder="Debería repasar..." required></textarea>
                 </div>
                 <div class="resp">
                     <label for="explicacion">¿Qué no entendí:</label>
-                    <textarea name="explicacion" id="txta-instrucciones" rows="4" placeholder="Me gustaría que me explicaran..."></textarea>
+                    <textarea name="explicacion" id="txta-instrucciones" rows="4" placeholder="Me gustaría que me explicaran..." required></textarea>
+                </div>
+                <div class="resp">
+                    <label for="fecha_emision">Fecha de envio:</label>
+                    <input type="date" name="fecha_emision" id="ipt-fecha_nacimiento" required>
                 </div>
             </div>
-            <div id="subir">
+            <div id="enviar">
                 <button type="submit" class="btn-submit">Subir</button>
             </div>
         </form>
-        
+        <?php
+        if (isset($_POST["cuesta_trabajo"])) {
+            var_dump($_POST);
+            $id_emocion = $_POST["emocion"];
+            $cuesta_trabajo = $_POST["cuesta_trabajo"];
+            $areas_oportunidad = $_POST["areas_oportunidad"];
+            $explicacion = $_POST["explicacion"];
+            $fecha_emision = $_POST["fecha_emision"];
+            $query = "insert into cuestionario (id_emocion, cuesta_trabajo, 
+            areas_oportunidad, explicacion, fecha_emision)
+            values ('$id_emocion', '$cuesta_trabajo', '$areas_oportunidad', 
+            '$explicacion', '$fecha_emision') where id_estudiante = $id_estudiante";
+            //echo "<br>$query";
+            $result = mysqli_query($conexion, $query);
+            if ($result) {
+                echo "Se envió";
+            } else {
+                echo "Nada";
+            }
+        } else {
+            echo "No se ha enviado nada";
+        }
+        ?>
     </main>
     <?php
             include 'footer.php';
