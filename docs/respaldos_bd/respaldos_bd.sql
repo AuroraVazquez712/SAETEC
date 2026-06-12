@@ -130,7 +130,7 @@ CREATE TABLE `cuestionario` (
 LOCK TABLES `cuestionario` WRITE;
 /*!40000 ALTER TABLE `cuestionario` DISABLE KEYS */;
 
-INSERT INTO `cuestionario` VALUES (1,1,'Disenho','Feliz','Disenhar con CSS','2026-06-08');
+--INSERT INTO `cuestionario` VALUES (1,1,'Disenho','Feliz','Disenhar con CSS','2026-06-08');
 
 /*!40000 ALTER TABLE `cuestionario` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -196,7 +196,6 @@ CREATE TABLE `estudiante` (
   `id_dificultad` int(11) DEFAULT NULL,
   `id_razon` int(11) DEFAULT NULL,
   `id_habito` int(11) DEFAULT NULL,
->>>>>>> feature/diego
   `nocta` int(9) DEFAULT NULL,
   PRIMARY KEY (`id_estudiante`),
   UNIQUE KEY `nocta` (`nocta`),
