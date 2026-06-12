@@ -100,7 +100,12 @@
 
                     // Ahora insertamos el resto de los datos en la tabla 
                     // estudiante. Acá ya usamos el nocta, id_grupo y id_perfil
-                    $query2 = "INSERT INTO estudiante () ...";
+                    $sql2 = "INSERT INTO estudiante (id_estudiante, id_grupo, nocta)
+                        VALUES ($id_perfil, $grupo, $nocta);
+                    ";
+                    $query2 = mysqli_query($conexion, $sql2);
+
+                    
                     // mysqli_query despues
 
                     // Guardar las variables que usaremos en otras vistas en variables de sesion
