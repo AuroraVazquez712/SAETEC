@@ -2,6 +2,30 @@
     include '../dynamics/config.php';
     $id_estudiante = 1;
 ?> 
+<?php
+    if (isset($_POST["cuesta_trabajo"])) {
+        var_dump($_POST);
+        $id_emocion = $_POST["emocion"];
+        $cuesta_trabajo = $_POST["cuesta_trabajo"];
+        $areas_oportunidad = $_POST["areas_oportunidad"];
+        $explicacion = $_POST["explicacion"];
+        $fecha_emision = $_POST["fecha_emision"];
+        $query = "insert into cuestionario (id_estudiante, id_emocion, cuesta_trabajo, 
+        areas_oportunidad, explicacion, fecha_emision)
+        values ('$id_estudiante', '$id_emocion', '$cuesta_trabajo', '$areas_oportunidad', 
+        '$explicacion', '$fecha_emision')";
+        //echo "<br>$query";
+        $result = mysqli_query($conexion, $query);
+        if ($result) {
+            header("Location: ./gracias.php");
+            exit;
+        } else {
+            echo "Nada";
+        }
+    } else {
+        echo "No se ha enviado nada";
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,7 +81,6 @@
             </div>
         </div>
     </header>
-    </header>
 
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
@@ -70,7 +93,7 @@
     <!----------------------------------------CONTENIDO------------------------------------------->
     
     <main>
-        <form id="contenido">
+        <form id="contenido" method="POST">
             <div id=""sentir_estudiante>
                 <label>Esta semana me sentí:</label>
                     <div class="radio-group">
@@ -109,29 +132,6 @@
                 <button type="submit" class="btn-submit">Subir</button>
             </div>
         </form>
-        <?php
-        if (isset($_POST["cuesta_trabajo"])) {
-            var_dump($_POST);
-            $id_emocion = $_POST["emocion"];
-            $cuesta_trabajo = $_POST["cuesta_trabajo"];
-            $areas_oportunidad = $_POST["areas_oportunidad"];
-            $explicacion = $_POST["explicacion"];
-            $fecha_emision = $_POST["fecha_emision"];
-            $query = "insert into cuestionario (id_emocion, cuesta_trabajo, 
-            areas_oportunidad, explicacion, fecha_emision)
-            values ('$id_emocion', '$cuesta_trabajo', '$areas_oportunidad', 
-            '$explicacion', '$fecha_emision') where id_estudiante = $id_estudiante";
-            //echo "<br>$query";
-            $result = mysqli_query($conexion, $query);
-            if ($result) {
-                echo "Se envió";
-            } else {
-                echo "Nada";
-            }
-        } else {
-            echo "No se ha enviado nada";
-        }
-        ?>
     </main>
     <?php
             include 'footer.php';
