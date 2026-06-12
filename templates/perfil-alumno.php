@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: text/html; charset=utf-8');
     // Corrobora si INICIÓ SESIÓN
     session_start();
 
@@ -7,7 +8,7 @@
 
     if (isset($_SESSION["rol"]) ){
         if ($_SESSION['rol'] == "E"){
-            header("Location: alumno.php");
+            //header("Location: alumno.php");
         }
 
     } else {
