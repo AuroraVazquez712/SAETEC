@@ -41,6 +41,14 @@
                         $result2 = mysqli_query( $con, $query2);
                         $registro2 = mysqli_fetch_assoc($result2);
 
+                        // Esta actualización del correo hasheado no debería realizarse aquí.
+                        // Debemos suponer que el correo que tenemos guardado en la base de datos 
+                        // ya está hasheado y solo compararemos hashes. Entonces, el hasheo de la 
+                        // contraseña recibida del formulario que hiciste en la línea 21 
+                        // está perfecto, por lo que solo falta comparar hashes para determinar 
+                        // que las contraseñas sean las mismas.
+
+
                         // ACTUALIZA CONTRASEÑA CON HASH
                         $actualiza_contrasenha = 
                         "UPDATE perfil SET contrasenha = '$hasheo' WHERE contrasenha = '$contrasenha'";
