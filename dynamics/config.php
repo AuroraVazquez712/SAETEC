@@ -8,10 +8,6 @@
         $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
         return $conexion;
     } 
-<<<<<<< HEAD
-?>
-=======
     $conexion = connect ();
 
     ?>
->>>>>>> feature/diego
