@@ -29,7 +29,7 @@
             $query2 = mysqli_query($conexion, $sql2);
 
             $sql3=" INSERT INTO grupo (id_profesor, nombre_grupo)
-                    VALUES ($id_perfil, $grupo);
+                    VALUES ($id_perfil, '$grupo');
                     ";
             $query3= mysqli_query($conexion, $sql3);
             
