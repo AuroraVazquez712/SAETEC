@@ -8,16 +8,19 @@
 
         $usuario = trim($_POST["usuario"]);
         $contrasenha = trim($_POST["contrasenha"]);
+        $hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
 
         //Debe agregarse un usuario administrador, y profesor para checar credenciales
 
-        //PERFIL DE ESTUDIANTE consulta 1
+        //TABLA ESDUDIANTE CONSULTA 1
         $query1 = "SELECT nocta, id_grupo FROM estudiante WHERE nocta = '$usuario'";
         $result1 = mysqli_query( $con, $query1);
         $registro1 = mysqli_fetch_assoc($result1);
 
-        //consulta 2 para contrasenha
-        $query2 = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno, correo, contrasenha FROM perfil WHERE contrasenha = '$contrasenha'";
+        // TABLA PERFIL CONSULTA 2
+        $query2 = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno, correo, contrasenha 
+        FROM perfil WHERE contrasenha = '$contrasenha'";
+        //Cambiar el contrsenha a hasheo, después de hacer el formulario
         $result2 = mysqli_query( $con, $query2);
         $registro2 = mysqli_fetch_assoc($result2);
 
@@ -27,6 +30,8 @@
         $result3 = mysqli_query( $con, $query3);
         $registro3 = mysqli_fetch_assoc($result3);
 
+        
+        // Verificar ci es E, A o P
         if ($registro1 && $registro2)
         {
             $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];

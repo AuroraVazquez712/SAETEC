@@ -2,10 +2,10 @@
     // Corrobora si INICIÓ SESIÓN
     session_start();
 
-    require  '../dynamics/config.php';
+    require '../dynamics/config.php';
     $con = connect();
 
-    if (isset($_SESSION['rol']) ){
+    if (isset($_SESSION["rol"]) ){
         if ($_SESSION['rol'] == "E"){
             header("Location: alumno.php");
         }
@@ -36,7 +36,7 @@
 </head>
     <body>
         <!--Barra de búsqueda-->
-        <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/" target="_blank">
@@ -78,55 +78,54 @@
             </div>
         </div>
     </header>
-        </header>
-        <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-        <?php
-            include 'barrapro.php';
-        ?>
-        <!-------------------------------------BARRA LATERAL----------------------------------------->
-        <?php
-            include 'barra-lateral.php';
-        ?>
-        <!----------------------------------------CONTENIDO------------------------------------------->
-        <div id="cont-general">
-            <div id="barra-lateral">
-                <?php
-                    $ruta_imagen="";
+    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+    <?php
+        include 'barrapro.php';
+    ?>
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
+    <!----------------------------------------CONTENIDO------------------------------------------->
+    <div id="cont-general">
+        <div id="barra-lateral">
+            <?php
+                $ruta_imagen="";
 
-                    //CONSULTA
-                    $consulta = "SELECT foto_perfil FROM perfil WHERE id_perfil = $id_perfil";
-                    $conecta = mysqli_query($con, $consulta);
-                    $consulta_fotoperfil = mysqli_fetch_assoc($conecta);
+                //CONSULTA
+                $consulta = "SELECT foto_perfil FROM perfil WHERE id_perfil = $id_perfil";
+                $conecta = mysqli_query($con, $consulta);
+                $consulta_fotoperfil = mysqli_fetch_assoc($conecta);
 
-                    $ruta = $consulta_fotoperfil['foto_perfil'];
+                $ruta = $consulta_fotoperfil['foto_perfil'];
 
-                    if(file_exists("$ruta")){
-                        $ruta_imagen= "$ruta";
-                    }else{
-                        $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
-                    }
-                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
-                ?>
-                <a href="cambio-foto.php">
-                    <button>Cambiar imagen del perfil</button>
-                </a>
-                <p>Historial académico</p>
-                <p>Actualización de datos</p>
-                <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
-            </div>
-            <div id="datos-alumno">
-                <div>
-
-                </div>
-                <h3><?php echo "Nombre: $nombre";?></h3>
-                <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
-                <p name="no-cuenta"><?php echo "No. de cuenta: $nocta"; ?></p>
-                <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
-            </div>
+                if(file_exists("$ruta")){
+                    $ruta_imagen= "$ruta";
+                }else{
+                    $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
+                }
+                echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
+            ?>
+            <a href="cambio-foto.php">
+                <button>Cambiar imagen del perfil</button>
+            </a>
+            <p>Historial académico</p>
+            <p>Actualización de datos</p>
+            <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
         </div>
-        <!------------------------FOOTER --------------------------------->
-        <?php
-                include 'footer.php';
-        ?> 
+        <div id="datos-alumno">
+            <div>
+
+            </div>
+            <h3><?php echo "Nombre: $nombre";?></h3>
+            <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
+            <p name="no-cuenta"><?php echo "No. de cuenta: $nocta"; ?></p>
+            <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
+        </div>
+    </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
     </body>
 </html>
