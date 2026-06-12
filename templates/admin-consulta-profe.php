@@ -4,14 +4,14 @@
         $correo= "";
         $rfc="";
         $grupo="";
-    if(isset($_POST["nombre"])){
-        $nombre= $_POST["nombre"];
-        $apellido_paterno= $_POST["apellidopat"];
-        $correo= $_POST["correo"];
-        $rfc=$_POST["rfc"];
-        $grupo= $_POST["grupo"];
+        if(isset($_POST["nombre"])){
+            $nombre= $_POST["nombre"];
+            $apellido_paterno= $_POST["apellidopat"];
+            $correo= $_POST["correo"];
+            $rfc=$_POST["rfc"];
+            $grupo= $_POST["grupo"];
 
-        //Base de datos, aquí guardamos o algo así =)
+        //Base de datos, aquí guardamos o algo así 
     }else{
         echo "No hemos enviado el form aún";
     }
