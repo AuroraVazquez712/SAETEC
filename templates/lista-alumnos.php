@@ -83,7 +83,7 @@
                 </div>
                 <div class="boton">
                     <a href="./formalu.php">
-                        <img src="../statics/img/boton-list-alumn.png">
+                        <img class="sub" src="../statics/img/boton-list-alumn.png">
                     </a>
                 </div>
             </div>
