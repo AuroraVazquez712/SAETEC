@@ -112,11 +112,11 @@ DROP TABLE IF EXISTS `cuestionario`;
 CREATE TABLE `cuestionario` (
   `id_cuestionario` int(11) NOT NULL AUTO_INCREMENT,
   `id_estudiante` int(11) NOT NULL,
-  `areas_oportunidad` varchar(40) NULL,
-  `sentir_estudiante` varchar(40) NULL,
-  `cuesta_trabajo` varchar(40) NULL,
-  `explicacion` varchar(100) NULL,
-  `fecha_emision` date NULL,
+  `areas_oportunidad` varchar(40) DEFAULT NULL,
+  `id_emocion` int(1) NOT NULL,
+  `cuesta_trabajo` varchar(40) DEFAULT NULL,
+  `explicacion` varchar(100) DEFAULT NULL,
+  `fecha_emision` date DEFAULT NULL,
   PRIMARY KEY (`id_cuestionario`),
   KEY `id_estudiante` (`id_estudiante`),
   CONSTRAINT `cuestionario_ibfk_1` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiante` (`id_estudiante`)
@@ -129,7 +129,9 @@ CREATE TABLE `cuestionario` (
 
 LOCK TABLES `cuestionario` WRITE;
 /*!40000 ALTER TABLE `cuestionario` DISABLE KEYS */;
+
 INSERT INTO `cuestionario` VALUES (1,1,'Disenho','Feliz','Disenhar con CSS','2026-06-08');
+
 /*!40000 ALTER TABLE `cuestionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,6 +160,29 @@ INSERT INTO `dificultad` VALUES (1,'tiempo'),(2,'desconocimiento'),(3,'falta de 
 UNLOCK TABLES;
 
 --
+
+-- Table structure for table `emocion`
+--
+
+DROP TABLE IF EXISTS `emocion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `emocion` (
+  `id_emocion` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_emocion` text NOT NULL,
+  PRIMARY KEY (`id_emocion`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `emocion`
+--
+
+LOCK TABLES `emocion` WRITE;
+/*!40000 ALTER TABLE `emocion` DISABLE KEYS */;
+INSERT INTO `emocion` VALUES (1,'feliz'),(2,'mas o menos'),(3,'triste'),(4,'cansado');
+/*!40000 ALTER TABLE `emocion` ENABLE KEYS */;
+UNLOCK TABLES;
 -- Table structure for table `estudiante`
 --
 
@@ -167,10 +192,11 @@ DROP TABLE IF EXISTS `estudiante`;
 CREATE TABLE `estudiante` (
   `id_estudiante` int(11) NOT NULL,
   `id_grupo` int(11) NOT NULL,
-  `id_interes` int(11),
-  `id_dificultad` int(11),
-  `id_razon` int(11),
-  `id_habito` int(11),
+  `id_interes` int(11) DEFAULT NULL,
+  `id_dificultad` int(11) DEFAULT NULL,
+  `id_razon` int(11) DEFAULT NULL,
+  `id_habito` int(11) DEFAULT NULL,
+>>>>>>> feature/diego
   `nocta` int(9) DEFAULT NULL,
   PRIMARY KEY (`id_estudiante`),
   UNIQUE KEY `nocta` (`nocta`),
@@ -194,7 +220,7 @@ CREATE TABLE `estudiante` (
 
 LOCK TABLES `estudiante` WRITE;
 /*!40000 ALTER TABLE `estudiante` DISABLE KEYS */;
-INSERT INTO `estudiante` VALUES (1,2,3,5,2,4,'325156992'),(2,1,2,5,2,2,'325295949');
+INSERT INTO `estudiante` VALUES (1,2,3,5,2,4,325156992),(2,1,2,5,2,2,325295949);
 /*!40000 ALTER TABLE `estudiante` ENABLE KEYS */;
 UNLOCK TABLES;
 
