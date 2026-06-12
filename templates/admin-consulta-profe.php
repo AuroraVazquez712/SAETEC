@@ -45,16 +45,20 @@
             $sql4= "SELECT * FROM perfil WHERE id_perfil=$id_perfil AND rol = 'P'";
             $query4 = mysqli_query($conexion, $sql4);
             $resp4 = mysqli_fetch_assoc($query4);
-            echo "<br>" ;
-            var_dump($resp4);
+            //echo "<br>" ;
+            //var_dump($resp4);
 
             $sql5= "SELECT * FROM profesor WHERE id_profesor=$id_perfil";
             $query5 = mysqli_query($conexion, $sql5);
             $resp5 = mysqli_fetch_assoc($query5);
+            //echo "<br>" ;
+            //var_dump($resp5);
 
             $sql6= "SELECT * FROM grupo WHERE id_profesor=$id_perfil";
             $query6 = mysqli_query($conexion, $sql6 );
             $resp6 = mysqli_fetch_assoc($query6);
+            //echo "<br>" ;
+            //var_dump($resp6);
 
             if ($resp4 && $resp5 && $resp6)
             {
