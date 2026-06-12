@@ -1,3 +1,30 @@
+<?php
+    include '../dynamics/config.php';
+    $nocta ="325156992";
+    $grupo ="61D";
+    $id_estudiante = 1;
+?> 
+<?php
+    if (isset($_POST["interes"])) {
+        var_dump($_POST);
+        $id_interes = $_POST["interes"];
+        $id_dificultad = $_POST["dificultad"];
+        $id_razon = $_POST["razon_ingreso"];
+        $id_habito = $_POST["habito_estudio"];
+        $query = "update estudiante set id_interes = '$id_interes', id_dificultad = '$id_dificultad', 
+        id_razon = '$id_razon', id_habito = '$id_habito' where id_estudiante = $id_estudiante";
+        //echo "<br>$query";
+        $result = mysqli_query($conexion, $query);
+        if ($result) {
+            header("Location: ./gracias.php");
+            exit;
+        } else {
+            echo "Nada";
+        }
+    } else {
+        echo "No se ha enviado nada";
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +36,7 @@
     <title>Formulario del alumno</title>
 </head>
 <body>
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -64,17 +91,14 @@
                 <label for="nocta">Número de cuenta:</label>
                 <input type="text" name="nocta" id="ipt-nocta" placeholder="123456789" required>
             </div>
-            <?php
-                
-            ?>
 
             <div class="input-group full-width">
                 <label>Grupo:</label>
                 <div class="radio-group">
-                    <input type="radio" name="grupo" value="61B" required>
+                    <input type="radio" name="grupo" value="1" required>
                     <label for="61B">61B</label>
                             
-                    <input type="radio" name="grupo" value="61D">
+                    <input type="radio" name="grupo" value="2">
                     <label for="61D">61D</label>
                 </div>
             </div>
@@ -82,16 +106,16 @@
             <div class="input-group full-width">
                 <label>¿Qué campo te interesa más?</label>
                 <div class="radio-group">
-                    <input type="radio" name="interes" value="deportes" required>
+                    <input type="radio" name="interes" value="1" required>
                     <label for="deportes">Deportes</label>
                             
-                    <input type="radio" name="interes" value="artes">
+                    <input type="radio" name="interes" value="2">
                     <label for="artes">Artes</label>
 
-                    <input type="radio" name="interes" value="tecnologia">
+                    <input type="radio" name="interes" value="3">
                     <label for="tecnologia">Tecnología</label>
 
-                    <input type="radio" name="interes" value="espectaculo">
+                    <input type="radio" name="interes" value="4">
                     <label for="espectaculo">Espectáculo</label>
                 </div>
             </div>
@@ -99,19 +123,19 @@
             <div class="input-group full-width">
                 <label>¿Qué dificultad puede ser un obstáculo para tu desempeño en el ETE?</label>
                 <div class="radio-group">
-                    <input type="radio" name="dificultad" value="tiempo" required>
+                    <input type="radio" name="dificultad" value="1" required>
                     <label for="tiempo">Tiempo</label>
                             
-                    <input type="radio" name="dificultad" value="desconocimiento">
+                    <input type="radio" name="dificultad" value="2">
                     <label for="desconocimiento">Desconocimiento</label>
 
-                    <input type="radio" name="dificultad" value="falta_computadora">
+                    <input type="radio" name="dificultad" value="3">
                     <label for="falta_computadora">Falta de computadora</label>
 
-                    <input type="radio" name="dificultad" value="grupo_demandante">
+                    <input type="radio" name="dificultad" value="4">
                     <label for="grupo_demandante">Grupo demandante</label>
 
-                    <input type="radio" name="dificultad" value="motivos_personales">
+                    <input type="radio" name="dificultad" value="5">
                     <label for="motivos_personales">Motivos personales</label>
                 </div>
             </div>
@@ -119,13 +143,13 @@
             <div class="input-group full-width">
                 <label>¿Qué te motivó a inscribirte en la ETE?</label>
                 <div class="radio-group">
-                    <input type="radio" name="razon_ingreso" value="curiosidad" required>
+                    <input type="radio" name="razon_ingreso" value="1" required>
                     <label for="curiosidad">Curiosidad</label>
                             
-                    <input type="radio" name="razon_ingreso" value="interes_previo">
+                    <input type="radio" name="razon_ingreso" value="2">
                     <label for="interes_previo">Interés previo</label>
 
-                    <input type="radio" name="razon_ingreso" value="relacion_carrera">
+                    <input type="radio" name="razon_ingreso" value="3">
                     <label for="relacion_carrera">Relación con la carrera</label>
                 </div>
             </div>
@@ -133,23 +157,24 @@
             <div class="input-group full-width">
                 <label>¿Qué hábito de estudio tienes?</label>
                 <div class="radio-group">
-                    <input type="radio" name="habito_estudio" value="constancia" required>
+                    <input type="radio" name="habito_estudio" value="1" required>
                     <label for="constancia">Constancia</label>
                             
-                    <input type="radio" name="habito_estudio" value="tiempo_dedicado">
+                    <input type="radio" name="habito_estudio" value="2">
                     <label for="tiempo_dedicado">Tiempo dedicado</label>
 
-                    <input type="radio" name="habito_estudio" value="estudio_individual">
+                    <input type="radio" name="habito_estudio" value="3">
                     <label for="estudio_individual">Estudio individual</label>
 
-                    <input type="radio" name="habito_estudio" value="practica">
+                    <input type="radio" name="habito_estudio" value="4">
                     <label for="practica">Práctica constante</label>
                 </div>
             </div>
         </div>
-        
         <button type="submit" class="btn-submit">Confirmar</button>
     </form>
+    
+    <a href="../gracias.php"></a>
     <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';

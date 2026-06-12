@@ -140,19 +140,19 @@ CREATE TABLE estudiante (
     id_grupo INT NOT NULL,
     FOREIGN KEY (id_grupo)
     REFERENCES grupo(id_grupo),
-    id_interes INT NOT NULL,
+    id_interes INT NULL,
     FOREIGN KEY (id_interes)
     REFERENCES interes(id_interes),
-    id_dificultad INT NOT NULL,
+    id_dificultad INT NULL,
     FOREIGN KEY (id_dificultad)
     REFERENCES dificultad(id_dificultad),
-    id_razon INT NOT NULL,
+    id_razon INT NULL,
     FOREIGN KEY (id_razon)
     REFERENCES razon_ingreso(id_razon),
-    id_habito INT NOT NULL,
+    id_habito INT NULL,
     FOREIGN KEY (id_habito) 
     REFERENCES habito_estudio(id_habito),
-    nocta CHAR(9) UNIQUE
+    nocta INT(9) UNIQUE
 );
 
 INSERT INTO estudiante (id_estudiante, id_grupo, id_interes, 
@@ -267,7 +267,7 @@ CREATE TABLE asignacion (
     id_estudiante INT NOT NULL,
     FOREIGN KEY (id_estudiante) 
     REFERENCES estudiante(id_estudiante),
-    calificacion INT NOT NULL
+    calificacion INT NULL
 );
 
 INSERT INTO asignacion
