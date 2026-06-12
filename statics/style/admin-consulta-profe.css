@@ -203,14 +203,13 @@ main{
     display: flex;
     flex-direction: column;
     padding: 15px;
-    width: 100%;
-    align-items:center;
 }
 .alumno{
     background-color: rgb(210, 210, 210);
     box-shadow: 3px 3px 8px rgb(163, 163, 163);
     width: 100%;
     margin-bottom: 20px;
+    text-align: left;
 }
 .alumno:hover{
     background-color: #E6B72D;
