@@ -1,4 +1,6 @@
 <?php 
+    include '../dynamics/config.php';
+    $conexion = connect();
     session_start();
 ?>
 <!DOCTYPE html>
@@ -70,39 +72,63 @@
             
             <!-- Aquí va el PHP para mostrar los datos recibidos -->
             <?php
-                // logica de validacion de los datos y guardado de estos
-                $id_perfil= $_POST["id_perfil"];
-                $nombre= $_POST["nombre"];
-                $apellido_paterno= $_POST["apellidopat"];
-                $apellido_materno= $_POST["apellidomat"];
-                $correo= $_POST["correo"];
-                $fecha_nacimiento= $_POST["fecha_nacimiento"];
-                $grupo= $_POST["grupo"];
+                if (isset($_POST['registro'])){
+                    // logica de validacion de los datos y guardado de estos
+                    $id_perfil= $_POST["id_perfil"];
+                    $nocta = $_POST["nocta"];
+                    $nombre= $_POST["nombre"];
+                    $apellido_paterno= $_POST["apellidopat"];
+                    $apellido_materno= $_POST["apellidomat"];
+                    $correo= $_POST["correo"];
+                    $fecha_nacimiento= $_POST["fecha_nacimiento"];
+                    $grupo= $_POST["grupo"];
 
-                // Guardado en base de datos
+                    //Guardar en base de datos 
 
+                    $insertar_datos= "INSERT INTO perfil (nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
+                                    VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
 
-                // Guardar las variables que usaremos en otras vistas en variables de sesion
-                $_SESSION["id_perfil"] = $id_perfil;
-                $_SESSION["nombre"] = $nombre;
-                $_SESSION["apellidopat"]=$apellido_paterno;
-                $_SESSION["apellidomat"]=$apellido_materno;
-                $_SESSION["correo"]=$correo;
-                $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
-                $_SESSION["grupo"]=$grupo;
+                    $inster= mysqli_query($conexion, $insertar_datos);
 
-                echo "<p> Perfil: $id_perfil </p>";
-                echo "<p> Nombre: $nombre</p>";
-                echo "<p> Apellido Paterno: $apellido_paterno </p>";
-                echo "<p> Apellido Materno: $apellido_materno</p>";
-                echo "<p> Correo: $correo</p>";
-                echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
-                echo "<p> Grupo: $grupo</p>";
+                    // nos preguntamos si sí se insertó el registro
+                    //if($inster){
+
+                    //}
+                    // El ultimo id insertado en la base
+                    // $last_id
+                    $id_perfil = mysqli_insert_id($conexion);
+
+                    // Ahora insertamos el resto de los datos en la tabla 
+                    // estudiante. Acá ya usamos el nocta, id_grupo y id_perfil
+                    $query2 = "INSERT INTO estudiante () ...";
+                    // mysqli_query despues
+
+                    // Guardar las variables que usaremos en otras vistas en variables de sesion
+                    $_SESSION["id_perfil"] = $id_perfil;
+                    $_SESSION["nombre"] = $nombre;
+                    $_SESSION["apellidopat"]=$apellido_paterno;
+                    $_SESSION["apellidomat"]=$apellido_materno;
+                    $_SESSION["correo"]=$correo;
+                    $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
+                    $_SESSION["grupo"]=$grupo;
+
+                    echo "<p> Perfil: $id_perfil </p>";
+                    echo "<p> Nombre: $nombre</p>";
+                    echo "<p> Apellido Paterno: $apellido_paterno </p>";
+                    echo "<p> Apellido Materno: $apellido_materno</p>";
+                    echo "<p> Correo: $correo</p>";
+                    echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
+                    echo "<p> Grupo: $grupo</p>";
+                }
 
                 echo "<form action = './perfil-alumno.php' method='post'>
                         <input type = 'submit'>
                     </form>
                 ";
+
+                echo "<form action='./lista-alumnos.php' method='post' style='display:none'>
+                        <input type='submit'>
+                    </form>";
             ?>
         </div>
         

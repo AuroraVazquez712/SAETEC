@@ -57,11 +57,95 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action=" " method="POST">
+    <form action="" method="POST">
         <div class="form-semanal">
 
-            
+            <div class="input-group">
+                <label for="nocta">Número de cuenta:</label>
+                <input type="text" name="nocta" id="ipt-nocta" placeholder="123456789" required>
+            </div>
+            <?php
+                
+            ?>
 
+            <div class="input-group full-width">
+                <label>Grupo:</label>
+                <div class="radio-group">
+                    <input type="radio" name="grupo" value="61B" required>
+                    <label for="61B">61B</label>
+                            
+                    <input type="radio" name="grupo" value="61D">
+                    <label for="61D">61D</label>
+                </div>
+            </div>
+
+            <div class="input-group full-width">
+                <label>¿Qué campo te interesa más?</label>
+                <div class="radio-group">
+                    <input type="radio" name="interes" value="deportes" required>
+                    <label for="deportes">Deportes</label>
+                            
+                    <input type="radio" name="interes" value="artes">
+                    <label for="artes">Artes</label>
+
+                    <input type="radio" name="interes" value="tecnologia">
+                    <label for="tecnologia">Tecnología</label>
+
+                    <input type="radio" name="interes" value="espectaculo">
+                    <label for="espectaculo">Espectáculo</label>
+                </div>
+            </div>
+
+            <div class="input-group full-width">
+                <label>¿Qué dificultad puede ser un obstáculo para tu desempeño en el ETE?</label>
+                <div class="radio-group">
+                    <input type="radio" name="dificultad" value="tiempo" required>
+                    <label for="tiempo">Tiempo</label>
+                            
+                    <input type="radio" name="dificultad" value="desconocimiento">
+                    <label for="desconocimiento">Desconocimiento</label>
+
+                    <input type="radio" name="dificultad" value="falta_computadora">
+                    <label for="falta_computadora">Falta de computadora</label>
+
+                    <input type="radio" name="dificultad" value="grupo_demandante">
+                    <label for="grupo_demandante">Grupo demandante</label>
+
+                    <input type="radio" name="dificultad" value="motivos_personales">
+                    <label for="motivos_personales">Motivos personales</label>
+                </div>
+            </div>
+
+            <div class="input-group full-width">
+                <label>¿Qué te motivó a inscribirte en la ETE?</label>
+                <div class="radio-group">
+                    <input type="radio" name="razon_ingreso" value="curiosidad" required>
+                    <label for="curiosidad">Curiosidad</label>
+                            
+                    <input type="radio" name="razon_ingreso" value="interes_previo">
+                    <label for="interes_previo">Interés previo</label>
+
+                    <input type="radio" name="razon_ingreso" value="relacion_carrera">
+                    <label for="relacion_carrera">Relación con la carrera</label>
+                </div>
+            </div>
+
+            <div class="input-group full-width">
+                <label>¿Qué hábito de estudio tienes?</label>
+                <div class="radio-group">
+                    <input type="radio" name="habito_estudio" value="constancia" required>
+                    <label for="constancia">Constancia</label>
+                            
+                    <input type="radio" name="habito_estudio" value="tiempo_dedicado">
+                    <label for="tiempo_dedicado">Tiempo dedicado</label>
+
+                    <input type="radio" name="habito_estudio" value="estudio_individual">
+                    <label for="estudio_individual">Estudio individual</label>
+
+                    <input type="radio" name="habito_estudio" value="practica">
+                    <label for="practica">Práctica constante</label>
+                </div>
+            </div>
         </div>
         
         <button type="submit" class="btn-submit">Confirmar</button>

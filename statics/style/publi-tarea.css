@@ -232,24 +232,29 @@ main{
     width: 98%;
 }
 
+
 #text-tarea textarea{
-    width: 100%;
+    width: 90%;
     height: 120px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .publicar{
     color:white;
     background-color: #E6B72D;
-    font-size: 25px;
-    border-radius: 20px;
-    border: none;
     cursor: pointer;
-
+    border: none;
+    font-size: 18px;
+    border-radius: 20px;
 }
 
 #toggle:checked ~ #publi-nueva-tarea #text-tarea{
     display: block
+}
+
+.name_desc{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #tarea-publi {
@@ -258,9 +263,11 @@ main{
     margin-right: 5%;
     margin-top: 10px;
 }
-
+.bloque{
+    width: 35%;
+}
 .publicadas {
-    width: 30%;
+    width: fit-content;
     display: flex;
     padding: 1px;
     border-radius: 45px;
@@ -270,19 +277,20 @@ main{
 
 .publicadas h3{
     font-size: 30px;
-    margin-left: 25px;
+    margin-left: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-.tareas{
+#tareas{
+    width: 90%;
+    margin-left:5%;
+    margin-right: 5%;
     background-color: rgb(210, 210, 210);
     box-shadow: 3px 3px 8px rgb(163, 163, 163);
-    width: 100%;
     cursor: pointer;
     margin-bottom: 20px;
 }
-.tareas p{
+#tareas p{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     margin-left: 15px;
 }

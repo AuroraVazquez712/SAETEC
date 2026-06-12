@@ -1,3 +1,13 @@
+<?php
+    
+    $servidor = "localhost";
+    $user = "root";
+    $password = "";
+    $data_base = "saetec";
+
+    $link = mysqli_connect ($servidor, $user, $password, $data_base);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +19,7 @@
     <title>Mis actividades</title>
 </head>
 <body>
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -64,14 +74,20 @@
         <div class="cuadrado">Mis actividades</div>
         <div id="columna">
             <div class="grupo">Grupo 61D</div>
-            <div id="listact">
-                <div><button class="button" type="activ">Actividad 1</button></div>
-                <div><button class="button" type="activ">Actividad 2</button></div>
-                <div><button class="button" type="activ">Actividad 3</button></div>
-                <div><button class="button" type="activ">Actividad 4</button></div>
-                <div><button class="button" type="activ">Actividad 5</button></div>
-                <div><button class="button" type="activ">Actividad 6</button></div>
-        </div>
+        <?php
+                $filtra = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+
+                while($tarea = mysqli_fetch_assoc($filtra)) {
+                    echo "
+                        <div id='listact'>
+                        <p>Actividad: </p>    
+                        <p>" . $tarea['nombre_actividad'] . "</p>
+                        <p>" . $tarea['descripcion'] . "</p>
+                        <p>Fecha entrega:" . $tarea['fecha_entrega'] . "</p>
+                        </div>";
+                }
+        ?>
+
         <div id="actividades">
             <div class="tareas">
                 <h1>Tareas</h1>
