@@ -74,7 +74,7 @@
             <?php
                 if (isset($_POST['registro'])){
                     // logica de validacion de los datos y guardado de estos
-                    $id_perfil= $_POST["id_perfil"];
+                    //$id_perfil= $_POST["id_perfil"];
                     $nocta = $_POST["nocta"];
                     $nombre= $_POST["nombre"];
                     $apellido_paterno= $_POST["apellidopat"];
@@ -89,10 +89,6 @@
                                     VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
 
                     $inster= mysqli_query($conexion, $insertar_datos);
-
-                    // nos preguntamos si sí se insertó el registro
-                    //if($inster){
-
                     //}
                     // El ultimo id insertado en la base
                     // $last_id
@@ -105,25 +101,26 @@
                     ";
                     $query2 = mysqli_query($conexion, $sql2);
 
-                    
-                    // mysqli_query despues
+                    // nos preguntamos si sí se insertó el registro
+                    if($inster){
+                        // Guardar las variables que usaremos en otras vistas en variables de sesion
+                        $_SESSION["id_perfil"] = $id_perfil;
+                        $_SESSION["nocta"]=$nocta;
+                        $_SESSION["nombre"] = $nombre;
+                        $_SESSION["apellidopat"]=$apellido_paterno;
+                        $_SESSION["apellidomat"]=$apellido_materno;
+                        $_SESSION["correo"]=$correo;
+                        $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
+                        $_SESSION["grupo"]=$grupo;
 
-                    // Guardar las variables que usaremos en otras vistas en variables de sesion
-                    $_SESSION["id_perfil"] = $id_perfil;
-                    $_SESSION["nombre"] = $nombre;
-                    $_SESSION["apellidopat"]=$apellido_paterno;
-                    $_SESSION["apellidomat"]=$apellido_materno;
-                    $_SESSION["correo"]=$correo;
-                    $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
-                    $_SESSION["grupo"]=$grupo;
-
-                    echo "<p> Perfil: $id_perfil </p>";
-                    echo "<p> Nombre: $nombre</p>";
-                    echo "<p> Apellido Paterno: $apellido_paterno </p>";
-                    echo "<p> Apellido Materno: $apellido_materno</p>";
-                    echo "<p> Correo: $correo</p>";
-                    echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
-                    echo "<p> Grupo: $grupo</p>";
+                        echo "<p> No. de cuenta: $nocta </p>";
+                        echo "<p> Nombre: $nombre</p>";
+                        echo "<p> Apellido Paterno: $apellido_paterno </p>";
+                        echo "<p> Apellido Materno: $apellido_materno</p>";
+                        echo "<p> Correo: $correo</p>";
+                        echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
+                        echo "<p> Grupo: $grupo</p>";
+                    }
                 }
 
                 echo "<form action = './perfil-alumno.php' method='post'>

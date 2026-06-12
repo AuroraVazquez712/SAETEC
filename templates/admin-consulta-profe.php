@@ -81,9 +81,19 @@
                 </div>
             </div>
             <div id="lista-profes">
-                <div class="profe">
-                    <p><i><?php echo "$nombre";?></i></p>
-                </div>
+                <?php    
+                    $sql = "SELECT * FROM perfil WHERE rol = 'P'";
+                    $filtra = mysqli_query($conexion, $sql);
+
+                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                        echo "
+                            <div class='alumno'> 
+                            <p>" . $perfil['nombre'] . "
+                            " . $perfil['apellido_paterno'] . "
+                            " . $perfil['apellido_materno'] . "</p>
+                            </div>";
+                    }
+                ?>
             </div>
         </div>
         <div id="datos-profe">
