@@ -9,7 +9,7 @@
     <title>SAETEC: Lista de alumnos</title>
 </head>
 <body>
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -100,9 +100,11 @@
 
             <div id="escolar">
                 <div class="tareas">
+                    <a href="calif-tareas.php">
                     <h3>Tareas</h3>
                     <p>Entregadas:</p>
                     <p>Faltantes:</p>
+                    </a>
                 </div>
 
             <div class="Calificaciones">

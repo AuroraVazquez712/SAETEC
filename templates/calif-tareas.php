@@ -2,7 +2,7 @@
     const DBHOST = "localhost";
     const DBUSER = "root";
     const PASSWORD = "";
-    const DB = "SAETEC";
+    const DB = "saetec";
 
     function connect () {
         $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
@@ -10,15 +10,16 @@
     } 
     $conexion = connect ();
     ?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Frida Garcia">
-    <meta name="description" content="Lista de Alumnos">
-    <link rel="stylesheet" href="../statics/style/lista-alumnos.css">
-    <title>SAETEC: Lista de alumnos</title>
+    <meta name="autor" content="Equipo 4: StatHorses">
+    <meta name="description" content="Mi página de encabezado">
+    <link rel="stylesheet" href="../statics/style/calif-tareas.css">
+    <title>Mis actividades</title>
 </head>
 <body>
     <header>
@@ -65,56 +66,38 @@
     </header>
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-            include 'barrapro.php';
+        include 'barrapro.php';
     ?>
-    <br>
     <!-------------------------------------BARRA LATERAL----------------------------------------->
     <?php
         include 'barra-lateral.php';
     ?>
-    <!--------------------------------------------------CONTENIDO---------------------------------->
+    <!----------------------------------------CONTENIDO------------------------------------------->
     <main>
-        <div id="bloque-list">
-            <div class="lista_alum">
-                <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos" title="añadir alumno">
+        <div id="tit-tips">
+                <h1>Actividades del alumno:</h1>
+        </div>
+        <div id="columna">
+            <div class="grupo">Grupo:</div>
+        <?php
+                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
-            </div>
-
-            <div id="grupos">
-                <div class="boton-grupos">
-                    <p>Grupo: 61B</p> 
-                </div>
-                <div class="boton">
-                    <img src="../statics/img/boton-list-alumn.png">
-                </div>
-            </div>          
-            <?php
-                $filtra = mysqli_query($conexion, "SELECT * FROM perfil WHERE rol = 'E'");
-
-                while($perfil = mysqli_fetch_assoc($filtra)) {
+                while($tarea = mysqli_fetch_assoc($filtra)) {
                     echo "
-                        <div class='alumno'> 
-                        <a href='vista-perf-alumnos.php'>
-                        <p>" . $perfil['nombre'] . "
-                        " . $perfil['apellido_paterno'] . "
-                        " . $perfil['apellido_materno'] . "</p>
-                        </a>
+                        <div id='listact'>
+                        <p>Actividad: </p>    
+                        <p>" . $tarea['nombre_actividad'] . "</p>
+                        <p>" . $tarea['descripcion'] . "</p>
+                        <p>Fecha entrega:" . $tarea['fecha_entrega'] . "</p>
                         </div>";
                 }
-            ?>
-        </div>
+        ?>
 
-        <div id="barra-lateral">
-            <div class="perfil_prof">
-                <p>PERFIL DEL PROFESOR </p>
-            </div>
-            <div  class="calendario">
-                <img src="../statics/img/Calendario-2027.png">
-            </div>
         </div>
     </main>
-    <!------------------------FOOTER --------------------------------->
+    <!-------------------------FOOTER------------------------------------------------------>
     <?php
             include 'footer.php';
-    ?> 
+    ?>
 </body>
+</html>
