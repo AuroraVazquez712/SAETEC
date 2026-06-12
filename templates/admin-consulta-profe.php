@@ -1,21 +1,31 @@
 <?php
+        include '../dynamics/config.php';
+        $conexion = connect();
+        
         $nombre= "";
         $apellido_paterno= "";
         $correo= "";
         $rfc="";
         $grupo="";
-        if(isset($_POST["nombre"])){
+        if(isset($_POST["registro"])){
             $nombre= $_POST["nombre"];
             $apellido_paterno= $_POST["apellidopat"];
+            $apellido_materno= $_POST["apellidomat"];
             $correo= $_POST["correo"];
+            $fecha_nacimiento= $_POST["fecha_nacimiento"];
             $rfc=$_POST["rfc"];
             $grupo= $_POST["grupo"];
 
         //Base de datos, aquí guardamos o algo así 
-    }else{
-        echo "No hemos enviado el form aún";
-    }
+        $insertar_datos= "INSERT INTO perfil (rol, nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
+                            VALUES('P','$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
+        $inster= mysqli_query($conexion, $insertar_datos);
+
+        }else{
+            echo "No hemos enviado el form aún";
+        }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -74,9 +84,6 @@
                 <div class="profe">
                     <p><i><?php echo "$nombre";?></i></p>
                 </div>
-                <div class="profe">
-                    <p>Carlos</p>
-                </div>
             </div>
         </div>
         <div id="datos-profe">
@@ -94,6 +101,7 @@
             <div>
         </div>
     </main>
+    <!---------------FOOTER------------>
     <?php
             include 'footer.php';
     ?>
