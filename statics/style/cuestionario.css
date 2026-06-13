@@ -10,6 +10,9 @@ header {
     align-items: center;        
     justify-content: space-between;
 }
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
 
 .iconos {
     width: 70px;
@@ -106,3 +109,4 @@ footer{
     color: #FFFFFF;
     text-decoration: none;
 }
+
