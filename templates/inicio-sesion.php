@@ -179,44 +179,23 @@
     <?php
         include 'barra-lateral.php';
     ?>
-    <div class="contenedor-general" style="margin-top: 50px;">
-        <header class="form-header">
-            <h2>Edición de foto de perfil</h2>
-        </header>
-            
-            <div class="vista-previa">
-                <?php
-                    $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil-usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
-                    }else{
-                        $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
-                    }
-                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
-                ?>
+    <br>
+    <!-------------------------------------CONTENIDO----------------------------------------->
+    <p>INICIO DE SESIÓN</p>
+    <!--Formulario de ingreso de datos-->
+    <form action= "inicio-sesion.php" method ="POST">
 
-                <a href="perfil-alumno.php" class="btn-editar">Regresar al perfil</a>
+        <label for="usuario">Ingrese su usuario:</label>
+        <input name="usuario" type="text" placeholder="no. de cuenta" required>
 
-            </div>
-    </div>
+        <label for="contrasenha">Ingrese su contraseña:</label>
+        <input name="contrasenha" type="password" placeholder="ddmmaaaa" required>
+        <br>
+        <input type="submit" id="envio-datos" value="Iniciar sesión">
+    </form>
     <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
     ?>
-            <br>
-            <p>INICIO DE SESIÓN</p>
-            <!--Formulario de ingreso de datos-->
-            <form action= "inicio-sesion.php" method ="POST">
-
-                <label for="usuario">Ingrese su usuario:</label>
-                <input name="usuario" type="text" placeholder="no. de cuenta" required>
-
-                <label for="contrasenha">Ingrese su contraseña:</label>
-                <input name="contrasenha" type="password" placeholder="ddmmaaaa" required>
-                <br>
-                <input type="submit" id="envio-datos" value="Iniciar sesión">
-            </form>
-        </div>
-    </div>
 </body>
 </html>
