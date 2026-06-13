@@ -79,9 +79,9 @@
             <div id="lista-profes">
                 <?php  
                     $sql="SELECT * FROM grupo";
-                    $filtra = mysqli_query($conexion, $sql);
+                    $filtra =mysqli_query($conexion, $sql);
 
-                    while($grupo = mysqli_fetch_assoc($filtra)) {
+                    while($grupo =mysqli_fetch_assoc($filtra)) {
                         echo "
                         <div class='alumno'> 
                             <p>" . $grupo['nombre_grupo'] . "
