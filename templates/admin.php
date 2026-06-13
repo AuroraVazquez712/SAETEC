@@ -76,6 +76,11 @@
                         <p><u>CONSULTA PROFESORES</u></p>
                     </a>
                 </div>
+                <div id="grupo">
+                    <a href="./crea_grupo.php">
+                        <p><u>AGREGA GRUPOS</u></p>
+                    </a>
+                </div>
             </div>
             <div class="extras">
                 <div id="material">
