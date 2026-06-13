@@ -8,6 +8,8 @@
         $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
         return $conexion;
     } 
+<<<<<<< HEAD
+<<<<<<< HEAD
     $conexion = connect ();
     ?>
     
@@ -39,3 +41,11 @@
         echo "<br>";
     }
     ?>
+=======
+?>
+>>>>>>> main
+=======
+    $conexion = connect ();
+
+    ?>
+>>>>>>> main

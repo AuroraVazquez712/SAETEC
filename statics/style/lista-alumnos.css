@@ -196,12 +196,7 @@ main{
     font-size: 30px;
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-.boton img{
-    width: 85px;
-    margin-left: 10px;
-
+    
 }
 
 #lista-alumnos {
@@ -211,7 +206,10 @@ main{
     width: 100%;
     align-items:center;
 }
-
+.sub{
+    width: 20%;
+    height: auto;
+}
 .alumno{
     background-color: rgb(210, 210, 210);
     box-shadow: 3px 3px 8px rgb(163, 163, 163);

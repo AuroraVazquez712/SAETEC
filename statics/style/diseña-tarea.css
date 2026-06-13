@@ -180,121 +180,46 @@ main{
     justify-content: flex-start;
     gap: 15px;
 }
-
 #margen-content{
-    width: 100%;
+    width: 80%;
     height: 100%; 
     box-sizing: border-box;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 0%;
 }
 
-#publi-nueva-tarea{
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 10px;
-
-}
-.boton{
-    display: flex;
-    color: white;
-    font-size: 55px;
-    width: 70px;
-    width: adjust;
-    cursor: pointer;
-    border-radius: 60px;
+.tit{
+    background-color:#E6B72D;
+    border-radius: 20px;
+    padding: 5px;
+    color: #0D1650;
+    font-size: 65px;
     align-items: center;
-    justify-content: center;
-    background-color: #E6B72D;
-}
-.titu{
-    display: flex;
-    padding: 10px;
-    font-size: 50px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    background-color: #1226AA;
-    box-shadow: 3px 3px 8px rgb(129, 128, 128);
-}
-.titu h2 {
-    color: white;
-    font-size: 50px;
-    margin-left: 25px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-#toggle {
-    display: none;
-}
-
-#text-tarea{
-    display: none;
-    width: 98%;
-}
-
-
-#text-tarea textarea{
-    width: 90%;
-    height: 120px;
-    font-size: 15px;
-}
-
-.publicar{
-    color:white;
-    background-color: #E6B72D;
-    cursor: pointer;
-    border: none;
-    font-size: 18px;
-    border-radius: 20px;
-}
-
-#toggle:checked ~ #publi-nueva-tarea #text-tarea{
-    display: block
-}
-
-.name_desc{
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#tarea-publi {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 10px;
-}
-.bloque{
-    width: 35%;
-}
-.publicadas {
-    width: fit-content;
-    display: flex;
-    padding: 1px;
-    border-radius: 45px;
-    background-color: #FF671D;
-    box-shadow: 3px 3px 8px rgb(129, 128, 128);
-}
-
-.publicadas h3{
-    font-size: 30px;
-    margin-left: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-#tareas{
-    width: 90%;
-    margin-left:5%;
-    margin-right: 5%;
-    background-color: rgb(210, 210, 210);
-    box-shadow: 3px 3px 8px rgb(163, 163, 163);
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-#tareas p{
+    text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
-    margin-left: 15px;
 }
-#tareas a{
-    font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.nom_act{
+    font-size: 45px;
+    color: #0D1650;
+    margin-left: 30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.desc{
+    font-size: 35px;
+    color: #0D1650;
+    margin-left: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#diseña{ 
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.grupo{
+    margin-left: 45px;
+    }
+.publicar{
+    font-size: 25px;
     cursor: pointer;
 }

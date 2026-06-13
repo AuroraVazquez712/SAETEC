@@ -1,15 +1,7 @@
 <?php
-    const DBHOST = "localhost";
-    const DBUSER = "root";
-    const PASSWORD = "";
-    const DB = "SAETEC";
-
-    function connect () {
-        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
-        return $conexion;
-    } 
-    $conexion = connect ();
-    ?>
+    include '../dynamics/config.php';
+    $conexion = connect();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -82,26 +74,47 @@
 
             <div id="grupos">
                 <div class="boton-grupos">
-                    <p>Grupo: 61B</p> 
+                    <p>Grupo: </p> 
                 </div>
                 <div class="boton">
-                    <img src="../statics/img/boton-list-alumn.png">
+                    <a href="./formalu.php">
+                        <img class="sub" src="../statics/img/boton-list-alumn.png">
+                    </a>
                 </div>
-            </div>          
+            </div>
             <?php
-                $filtra = mysqli_query($conexion, "SELECT * FROM perfil WHERE rol = 'E'");
-
-                while($perfil = mysqli_fetch_assoc($filtra)) {
-                    echo "
-                        <div class='alumno'> 
-                        <a href='vista-perf-alumnos.php'>
-                        <p>" . $perfil['nombre'] . "
-                        " . $perfil['apellido_paterno'] . "
-                        " . $perfil['apellido_materno'] . "</p>
-                        </a>
-                        </div>";
+                //$_SESSION["tipo_perfil"] = consulta["rol"];
+                $_SESSION["tipo_perfil"] = 'P';
+                $tipo_perfil_pro = $_SESSION["tipo_perfil"];
+                        
+                $sql = "";
+                if($tipo_perfil_pro == 'A'){
+                    $sql = "SELECT * FROM perfil WHERE rol ='E'";
+                    $filtra = mysqli_query($conexion, $sql);
+                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                        echo "
+                            <div class='alumno'> 
+                            <p>" . $perfil['nombre'] . "
+                            " . $perfil['apellido_paterno'] . "
+                            " . $perfil['apellido_materno'] . "</p>
+                            </div>";
+                    }
                 }
-            ?>
+                else if ($tipo_perfil_pro == 'P'){
+                    $sql = "SELECT * FROM perfil WHERE id_grupo ='1'";
+                    $filtra = mysqli_query($conexion, $sql);
+                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                        echo "
+                            <div class='alumno'> 
+                            <p>" . $perfil['nombre'] . "
+                            " . $perfil['apellido_paterno'] . "
+                            " . $perfil['apellido_materno'] . "</p>
+                            </div>";
+                    }//$id_profesor = $_SESSION["id_perfil"];
+                    /*$sql0 = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = $id_profesor";
+                    $query2 = mysqli_query($link, $sql0);*/
+                }
+        ?>
         </div>
 
         <div id="barra-lateral">
@@ -118,3 +131,4 @@
             include 'footer.php';
     ?> 
 </body>
+</html>
