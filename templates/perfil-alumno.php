@@ -1,22 +1,26 @@
 <?php
-
+    header('Content-Type: text/html; charset=utf-8');
+    // Corrobora si INICIÓ SESIÓN
     session_start();
-    // Corrobora si INICIO SESIÓN
-/*
-    if (isset($_SESSION['rol']) ){
+
+    require '../dynamics/config.php';
+    $con = connect();
+
+    if (isset($_SESSION["rol"]) ){
         if ($_SESSION['rol'] == "E"){
-            header("Location: alumno.php");
+            //header("Location: alumno.php");
         }
 
     } else {
-        // no tiene rol, pal login
-        header("Location: formalu.php");
+        // REGRESA A LOGIN
+        header("Location: inicio-sesion.php");
     }
 
     $nombre = $_SESSION["nombre_completo"];
     $correo = $_SESSION["correo"];
     $nocta = $_SESSION["nocta"];
-    $grupo =  $_SESSION["grupo"];*/
+    $grupo =  $_SESSION["grupo"];
+    $id_perfil = $_SESSION["id_perfil"];
 
 ?>
 
@@ -87,6 +91,7 @@
         ?>
         <!----------------------------------------CONTENIDO------------------------------------------->
         <div id="cont-general">
+<<<<<<< HEAD
             <div id="barra-lateral">
                 <?php
                     $ruta_imagen="";
@@ -123,10 +128,46 @@
                 <div>
 >>>>>>> main
             </div>
+=======
+        <div id="barra-lateral">
+            <?php
+                $ruta_imagen="";
+
+                //CONSULTA
+                $consulta = "SELECT foto_perfil FROM perfil WHERE id_perfil = $id_perfil";
+                $conecta = mysqli_query($con, $consulta);
+                $consulta_fotoperfil = mysqli_fetch_assoc($conecta);
+
+                $ruta = $consulta_fotoperfil['foto_perfil'];
+
+                if(file_exists("$ruta")){
+                    $ruta_imagen= "$ruta";
+                }else{
+                    $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
+                }
+                echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
+            ?>
+            <a href="cambio-foto.php">
+                <button>Cambiar imagen del perfil</button>
+            </a>
+            <p>Historial académico</p>
+            <p>Actualización de datos</p>
+            <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
+>>>>>>> main
         </div>
-        <!------------------------FOOTER --------------------------------->
-        <?php
-                include 'footer.php';
-        ?> 
+        <div id="datos-alumno">
+            <div>
+
+            </div>
+            <h3><?php echo "Nombre: $nombre";?></h3>
+            <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
+            <p name="no-cuenta"><?php echo "No. de cuenta: $nocta"; ?></p>
+            <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
+        </div>
+    </div>
+    <!------------------------FOOTER --------------------------------->
+    <?php
+            include 'footer.php';
+    ?> 
     </body>
 </html>

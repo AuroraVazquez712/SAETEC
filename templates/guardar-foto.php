@@ -1,12 +1,29 @@
 <?php   
+    // Corrobora si INICIÓ SESIÓN
+    session_start();
+
+    require  '../dynamics/config.php';
+    $con = connect();
+
+    // VARIABLES DE SESIÓN
+    $usuario = $_SESSION["nocta"];
+    $id_perfil_ini = $_SESSION["id_perfil"];
+    
+    
+    $ruta = '../statics/img/' . $usuario . '-foto-perfil.jpg';
+
     if(isset($_FILES['foto_perfil']))
     {
         $archivo = $_FILES['foto_perfil'];
         $nombre_archivo = $archivo['name'];
         $ruta_temporal = $archivo['tmp_name'];
 
-        move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
+        move_uploaded_file($ruta_temporal, $ruta);
+
+        $guarda_ruta = "UPDATE perfil SET foto_perfil = '$ruta' WHERE id_perfil = $id_perfil_ini";
+        mysqli_query( $con, $guarda_ruta);
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +39,7 @@
 </head>
 <body>
     <!<!-------------------------------------BARRA DE BUSQUEDA----------------------------------------->
-        < <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -64,8 +81,6 @@
             </div>
         </div>
     </header>
-<<<<<<< HEAD
-=======
 <<<<<<<< HEAD:templates/inicio-sesion.php
     <!--Cuerpo después de la barra de busqueda-->
     <div class="cont-general">
@@ -88,7 +103,6 @@
                 <p class="tienes-cuenta">¿No tienes una cuenta?</p>
                 <p  class="crea-cuenta">Crea una</p>
 ========
->>>>>>> main
         <!------------------------BARRA DE NAVEGACIÓN------------------------>
     <?php
             include 'barrapro.php';
@@ -105,8 +119,8 @@
             <div class="vista-previa">
                 <?php
                     $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil-usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
+                    if(file_exists("$ruta")){
+                        $ruta_imagen= "$ruta";
                     }else{
                         $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
                     }
@@ -114,10 +128,7 @@
                 ?>
 
                 <a href="perfil-alumno.php" class="btn-editar">Regresar al perfil</a>
-<<<<<<< HEAD
-=======
 >>>>>>>> 76d027077be124cfddca986a76f86fa57ca3b088:templates/guardar-foto.php
->>>>>>> main
             </div>
     </div>
     <!------------------------FOOTER --------------------------------->

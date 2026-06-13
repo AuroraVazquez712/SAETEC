@@ -1,3 +1,7 @@
+<?php   
+    // Corrobora si INICIO SESIÓN
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,7 @@
 </head>
 <body>
     <!<!-------------------------------------BARRA DE BUSQUEDA----------------------------------------->
-        < <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
