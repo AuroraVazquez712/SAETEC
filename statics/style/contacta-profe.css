@@ -183,7 +183,7 @@ main {
 }
 #datos{
     margin-left: 10%;
-    
+    border: 1px solid rgb(255, 255, 255);
 }
 .titulo{
     font-size: 6.2vb;

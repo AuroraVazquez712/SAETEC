@@ -1,3 +1,15 @@
+<?php
+    header('Content-Type: text/html; charset=utf-8');
+    // Corrobora si INICIÓ SESIÓN
+    session_start();
+
+    require '../dynamics/config.php';
+    $con = connect();
+
+    $correo = $_SESSION["correo"];
+    $nombre = $_SESSION["nombre_completo"];
+?>
+<!-----------------------VISTA DE ALUMNO PARA CONTACTO--------------------------------->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +22,7 @@
 </head>
 <body>
     <!---------------ENCABEZADO--------------------------->
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -67,16 +79,18 @@
         <div id="img_perfil">
                 <img src="../statics/img/puma.png" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
         </div>  
-        <div id="alumno">
+        <form id="alumno" method="GET">
             <div id="datos">
                 <p class="titulo">Contacta a tu profesor</p>    
-                    <p class="correo">super_duper_ultra_mega_cool_email.com</p>
-                <p class="titulo">Mensaje </p>
+                    <p name="nombre"><?php echo "Alumn@: $nombre";?></p>
+                    <p name="correo"><?php echo "Correo: $correo";?></p>
+                    <input class="texto-ingresado" placeholder="Comience a escribir">
+                    <input type="submit" id="envio-comentario" value="Enviar comentario">
             </div>
             <div id="comentario">
-                <p>Los amo Angie y Carlos, bsos</p>
+                <p name="texto-ingresado"><?php echo "Texto recibido: $correo";?></p>
             </div>
-        </div>
+        </form method="GET">
     </div>
     <!------------------------FOOTER --------------------------------->
     <?php

@@ -1,14 +1,3 @@
-
-<?php   
-    if(isset($_FILES['foto_perfil']))
-    {
-        $archivo = $_FILES['foto_perfil'];
-        $nombre_archivo = $archivo['name'];
-        $ruta_temporal = $archivo['tmp_name'];
-
-        move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
-    }
-?>
 <?php
     session_start();
 
@@ -119,17 +108,7 @@
     <title>SAETEC</title>
 </head>
 <body>
-    <!<!-------------------------------------BARRA DE BUSQUEDA----------------------------------------->
-        < <header>
-        <div id="iconos_unam">
-            <div class="logo-unam">
-                <a href="https://www.unam.mx/">
 
-    <link rel="stylesheet" href="../statics/style/inicio-sesion.css">
-    <link rel="stylesheet" href="../statics/style/syle.css">
-
-    <title>SAETEC</title>
-</head>
 <!--Barra de búsqueda-->
 <body>
     <header>
@@ -192,29 +171,7 @@
         </div>
     </header>
 
-    <!--Cuerpo después de la barra de busqueda-->
-    <div class="cont-general">
-        <div id="img-puma">
-            <img id="img-inisesion" src="../statics/img/puma-telefono.jpg" alt="Puma con un teléfono">
-        </div>
-        <div id="form-inisesion">
-
-            <p>INICIO DE SESIÓN</p>
-            <!--Formulario de ingreso de datos-->
-            <form method="POST">
-                <p>Ingrese su usuario:</p>
-                <input type="text" placeholder="no. de cuenta">
-                <p>Ingrese su contraseña:</p>
-                <input type="text" placeholder="dd/mm/aaaa">
-                <br>
-                <button type="submit" id="envio-datos">Enviar</button>
-            </form method="POST">
-            <br>
-            <div>
-                <p class="tienes-cuenta">¿No tienes una cuenta?</p>
-                <p  class="crea-cuenta">Crea una</p>
-
-        <!------------------------BARRA DE NAVEGACIÓN------------------------>
+    <!------------------------BARRA DE NAVEGACIÓN------------------------>
     <?php
             include 'barrapro.php';
     ?>
