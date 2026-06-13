@@ -91,44 +91,6 @@
         ?>
         <!----------------------------------------CONTENIDO------------------------------------------->
         <div id="cont-general">
-<<<<<<< HEAD
-            <div id="barra-lateral">
-                <?php
-                    $ruta_imagen="";
-                    if(file_exists("../statics/img/perfil-usuario.jpg")){
-                        $ruta_imagen= "../statics/img/perfil-usuario.jpg";
-                    }else{
-                        $ruta_imagen="../statics/img/imagen-predeterminada.jpeg";
-                    }
-                    echo "<img src= '$ruta_imagen' class= 'profile-pic'>";
-                ?>
-                <a href="cambio-foto.php">
-                    <button>Cambiar imagen del perfil</button>
-                </a>
-                <p>Historial académico</p>
-                <p>Actualización de datos</p>
-                <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
-            </div>
-            <div id="datos-alumno">
-<<<<<<< HEAD
-                <div>
-
-                </div>
-                <h3><?php echo "Nombre: $nombre";?></h3>
-                <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
-                <p name="no-cuenta"><?php echo "No. de cuenta: $nocta"; ?></p>
-                <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
-=======
-                <div >
-                    <h3><?php echo "Nombre: " . $_SESSION["nombre"];?></h3>
-                    <p name="correo-usuario"><?php echo "Correo: " . $_SESSION["correo"] ; ?> </p>
-                    <p name="no-cuenta"><?php echo "Perfil: " . $_SESSION["id_perfil"] ; ?></p>
-                    <p name="grupo"><?php echo "Grupo: " . $_SESSION["grupo"] ; ?></p>
-
-                <div>
->>>>>>> main
-            </div>
-=======
         <div id="barra-lateral">
             <?php
                 $ruta_imagen="";
@@ -153,7 +115,6 @@
             <p>Historial académico</p>
             <p>Actualización de datos</p>
             <p name="grupo"><?php echo "Grupo: $grupo"; ?></p>
->>>>>>> main
         </div>
         <div id="datos-alumno">
             <div>

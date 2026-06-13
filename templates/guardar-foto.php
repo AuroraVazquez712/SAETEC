@@ -81,28 +81,6 @@
             </div>
         </div>
     </header>
-<<<<<<<< HEAD:templates/inicio-sesion.php
-    <!--Cuerpo después de la barra de busqueda-->
-    <div class="cont-general">
-        <div id="img-puma">
-            <img id="img-inisesion" src="../statics/img/puma-telefono.jpg" alt="Puma con un teléfono">
-        </div>
-        <div id="form-inisesion">
-            <p>INICIO DE SESIÓN</p>
-            <!--Formulario de ingreso de datos-->
-            <form method="POST">
-                <p>Ingrese su usuario:</p>
-                <input type="text" placeholder="no. de cuenta">
-                <p>Ingrese su contraseña:</p>
-                <input type="text" placeholder="dd/mm/aaaa">
-                <br>
-                <button type="submit" id="envio-datos">Enviar</button>
-            </form method="POST">
-            <br>
-            <div>
-                <p class="tienes-cuenta">¿No tienes una cuenta?</p>
-                <p  class="crea-cuenta">Crea una</p>
-========
         <!------------------------BARRA DE NAVEGACIÓN------------------------>
     <?php
             include 'barrapro.php';
@@ -128,7 +106,6 @@
                 ?>
 
                 <a href="perfil-alumno.php" class="btn-editar">Regresar al perfil</a>
->>>>>>>> 76d027077be124cfddca986a76f86fa57ca3b088:templates/guardar-foto.php
             </div>
     </div>
     <!------------------------FOOTER --------------------------------->
