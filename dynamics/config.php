@@ -9,6 +9,7 @@
         return $conexion;
     } 
 <<<<<<< HEAD
+<<<<<<< HEAD
     $conexion = connect ();
     ?>
     
@@ -42,4 +43,9 @@
     ?>
 =======
 ?>
+>>>>>>> main
+=======
+    $conexion = connect ();
+
+    ?>
 >>>>>>> main

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
     <meta name="description" content="Mi página de encabezado">
-    <link rel="stylesheet" href="../statics/style/formalu.css">
+    <link rel="stylesheet" href="../statics/style/gracias.css">
     <title>Formulario del alumno</title>
 </head>
 <body>
@@ -51,59 +51,18 @@
             </div>
         </div>
     </header>
-    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+    <!----------------------------BARRA DE NAVEGACIÓN----------------------------->
     <?php
             include 'barrapro.php';
     ?> 
     <br>
-    <!-------------------------------------------FORMS------------>
-    <form action="formalu-confirmar.php" method="POST">
-        <div class="form-grid">
-
-            <div class="input-group">
-                <label for="id_perfil">Número de cuenta:</label>
-                <input type="text" name="nocta" id="ipt-id_perfil" placeholder="123456789" required>
-            </div>
-
-            <div class="input-group">
-                <label for="nombre">Nombre(s):</label>
-                <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
-            </div>
-
-            <div class="input-group">
-                <label for="apellidopat">Apellido paterno:</label>
-                <input type="text" name="apellidopat" id="ipt-apellidopat" placeholder="Escribe tu apellido" required>
-            </div>
-
-            <div class="input-group">
-                <label for="apellidomat">Apellido materno:</label>
-                <input type="text" name="apellidomat" id="ipt-apellidomat" placeholder="Escribe tu apellido">
-            </div>
-
-            <div class="input-group">
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="ipt-correo" placeholder="hola@gmail.com" required>
-            </div>
-
-            <div class="input-group">
-                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                <input type="date" name="fecha_nacimiento" id="ipt-fecha_nacimiento" required>
-            </div>
-
-            <div class="input-group">
-                <label for="grupo">Grupo:</label>
-                <select name="grupo" id="ipt-grupo" required>
-                    <option value="" disabled selected>Elige tu grupo...</option>
-                    <option value="1">61B</option>
-                    <option value="2">61D</option>
-                </select>
-            </div>
-
-        </div>
-        
-        <button type="submit" name="registro" class="btn-submit">Confirmar</button>
-    </form>
-    <!------------------------FOOTER --------------------------------->
+    <!---------------------------------CONTENIDO---------------------------------->
+    <div class="agradecimiento">Gracias por responder</div>
+    <img class="pulgar_arriba" src ="../statics/img/goku.jpg">
+    <button type="aceptar" class="btn_aceptar">
+        <a href="./alumno.php">Aceptar</a>
+    </button>
+    <!-----------------------------------FOOTER----------------------------------->
     <?php
             include 'footer.php';
     ?> 
