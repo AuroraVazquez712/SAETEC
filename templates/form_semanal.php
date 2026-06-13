@@ -94,7 +94,7 @@
     
     <main>
         <form id="contenido" method="POST">
-            <div id=""sentir_estudiante>
+            <div id="sentir_estudiante">
                 <label>Esta semana me sentí:</label>
                     <div class="radio-group">
                         <input type="radio" name="emocion" id="ipt-feliz" value="1" hidden>

@@ -1,5 +1,18 @@
 <?php
-    session_start();
+    /*session_start();
+    include 'config.php';
+    $rol;
+    switch ($rol) {
+        case 'E'
+
+            break;
+
+        case 'P'
+            break;
+
+        case 'A'
+            break;
+    }*/
 
     if (isset($_POST["usuario"]))
     {
@@ -17,6 +30,7 @@
         // en las variables de sesión
 
         // Si no, revisamos la tabla de profesor
+    
 
         // Query para bsucar si el usuario está en 'estudiante'
         $query = "SELECT  id_estudiante, id_grupo, nocta FROM estudiante WHERE nocta = '$usuario'";
