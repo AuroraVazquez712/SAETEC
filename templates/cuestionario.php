@@ -91,9 +91,7 @@
                 <label for="nocta">Número de cuenta:</label>
                 <input type="text" name="nocta" id="ipt-nocta" placeholder="123456789" required>
             </div>
-            <?php
-                
-            ?>
+
             <div class="input-group full-width">
                 <label>Grupo:</label>
                 <div class="radio-group">
@@ -173,7 +171,6 @@
                 </div>
             </div>
         </div>
-
         <button type="submit" class="btn-submit">Confirmar</button>
     </form>
     

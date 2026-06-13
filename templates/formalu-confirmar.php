@@ -1,4 +1,5 @@
 <?php 
+
     include '../dynamics/config.php';
     $conexion = connect();
     session_start();
@@ -89,6 +90,7 @@
                                     VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
 
                     $inster= mysqli_query($conexion, $insertar_datos);
+
                     //}
                     // El ultimo id insertado en la base
                     // $last_id
@@ -141,4 +143,4 @@
             include 'footer.php';
     ?> 
 </body>
-</html>
+</html>ss
