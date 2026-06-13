@@ -79,9 +79,22 @@
     <!----------------------------------------CONTENIDO------------------------------------------->
     <?php
         $id_actividad = $_GET['id'];
+        //1,3
+        // $grupos = $_POST[select_grupo];
+        /*
+        foreach($grupos as $grupo){
+            $sql1 = "SELECT id_estudiante FROM estudiante WHERE id_grupo = $grupo";
+            $query1 = mysqli_query($conexion, $sql1);
+            while($row = mysqli_fetch_assoc($query1)){
+                $id_estudiante = $row['id_estudiante'];
+                // acá va el insert into
+            }
+        }
+        */
+        
         if(isset($_POST['crea_asignacion'])) {
             $insertar = "INSERT INTO asignacion (id_actividad,id_estudiante) VALUES ('$id_actividad',)";
-            $asignar = mysqli_querry($conexion, $insertar);
+            $asignar = mysqli_query($conexion, $insertar);
         }
     ?>
     <main>
@@ -98,7 +111,7 @@
             ?>
             <div id="diseña">
                 <form method="POST" action="">
-                    <input type="radio" class="grupo" name="select_grupo" value="61B">
+                    <input type="radio" class="grupo" name="select_grupo[]" value="61B">
                     <label for="61B">61B</label><br>
                     <input type="radio" class="grupo" name="select_grupo" value="61D">
                     <label for="61D">61D</label><br>
