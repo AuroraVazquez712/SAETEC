@@ -64,7 +64,7 @@
     <!-------------------------------------------FORMS------------>
     <div class="container" style="margin-top: 50px;">
         <header class="form-header">
-            <h2>¡Alumno Registrado!</h2>
+            <h2>¡Grupo Registrado!</h2>
         </header>
 
         <div class="alumno-registro" style="background: #f8f9fa; padding: 20px; border-left: 5px solid #3f2f83; border-radius: 5px;">
@@ -75,18 +75,15 @@
                 if (isset($_POST['registro'])){
                     // logica de validacion de los datos y guardado de estos
                     //$id_perfil= $_POST["id_perfil"];
-                    $nocta = $_POST["nocta"];
-                    $nombre= $_POST["nombre"];
-                    $apellido_paterno= $_POST["apellidopat"];
-                    $apellido_materno= $_POST["apellidomat"];
-                    $correo= $_POST["correo"];
-                    $fecha_nacimiento= $_POST["fecha_nacimiento"];
-                    $grupo= $_POST["grupo"];
-
+                    $grupo = $_POST["grupo"];
+                    $plantel= $_POST["plantel"];
+                    $cupo= $_POST["cupo"];
+                    $salon= $_POST["salon"];
+                    $id_profesor=$_POST["id_profesor"];
                     //Guardar en base de datos 
 
-                    $insertar_datos= "INSERT INTO perfil (nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
-                                    VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
+                    $insertar_datos= "INSERT INTO grupo (nombre_grupo, plantel, cupo, salon, id_profesor)
+                                    VALUES('$grupo', '$plantel', '$cupo', '$salon', '$id_profesor')";
 
                     $inster= mysqli_query($conexion, $insertar_datos);
                     //}
@@ -96,8 +93,8 @@
 
                     // Ahora insertamos el resto de los datos en la tabla 
                     // estudiante. Acá ya usamos el nocta, id_grupo y id_perfil
-                    $sql2 = "INSERT INTO estudiante (id_estudiante, id_grupo, nocta)
-                        VALUES ($id_perfil, $grupo, $nocta);
+                    $sql2 = "INSERT INTO grupo (id_grupo)
+                        VALUES ($id_perfil);
                     ";
                     $query2 = mysqli_query($conexion, $sql2);
 
@@ -105,32 +102,17 @@
                     if($inster){
                         // Guardar las variables que usaremos en otras vistas en variables de sesion
                         $_SESSION["id_perfil"] = $id_perfil;
-                        $_SESSION["nocta"]=$nocta;
-                        $_SESSION["nombre"] = $nombre;
-                        $_SESSION["apellidopat"]=$apellido_paterno;
-                        $_SESSION["apellidomat"]=$apellido_materno;
-                        $_SESSION["correo"]=$correo;
-                        $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
                         $_SESSION["grupo"]=$grupo;
+                        $_SESSION["plantel"] = $plantel;
+                        $_SESSION["cupo"]=$cupo;
+                        $_SESSION["salon"]=$salon;
 
-                        echo "<p> No. de cuenta: $nocta </p>";
-                        echo "<p> Nombre: $nombre</p>";
-                        echo "<p> Apellido Paterno: $apellido_paterno </p>";
-                        echo "<p> Apellido Materno: $apellido_materno</p>";
-                        echo "<p> Correo: $correo</p>";
-                        echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
-                        echo "<p> Grupo: $grupo</p>";
+                        echo "<p> Grupo: $grupo </p>";
+                        echo "<p> Plantel: $plantel</p>";
+                        echo "<p> Cupo: $cupo </p>";
+                        echo "<p> Salón: $salon</p>";
                     }
                 }
-
-                echo "<form action = './perfil-alumno.php' method='post'>
-                        <input type = 'submit'>
-                    </form>
-                ";
-
-                echo "<form action='./lista-alumnos.php' method='post' style='display:none'>
-                        <input type='submit'>
-                    </form>";
             ?>
         </div>
         

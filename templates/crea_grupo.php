@@ -1,3 +1,8 @@
+<?php 
+    include '../dynamics/config.php';
+    $conexion = connect();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -59,7 +64,7 @@
     <!-------------------------------------------FORMS------------>
     <div id="contenedor">
         <div id="grupo">
-            <p><u>AGREGA GRUPOS</u></p>
+            <a href="./admin.php"><u>AGREGA GRUPOS</u></a>
         </div>
         <div class="botones">
             <div id="añade">
@@ -72,22 +77,18 @@
                 </div>
             </div>
             <div id="lista-profes">
-        
-                <?php  /* 
-                    $sql = "SELECT * FROM perfil WHERE rol = 'P'";
+                <?php  
+                    $sql="SELECT * FROM grupo";
                     $filtra = mysqli_query($conexion, $sql);
 
-                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                    while($grupo = mysqli_fetch_assoc($filtra)) {
                         echo "
-                        <form method='POST' action=''>
-                            <input type='hidden' name='id_perfil' value='" . $perfil['id_perfil'] . "'>
-                            <button type='submit' class='alumno' name='ver_profe'>
-                                    <p>" . $perfil['nombre'] . " 
-                                    " . $perfil['apellido_paterno'] . " 
-                                    " . $perfil['apellido_materno'] . "</p> 
-                            </button>
-                        </form>";
-                    }  */  
+                        <div class='alumno'> 
+                            <p>" . $grupo['nombre_grupo'] . "
+                            Salón: " . $grupo['salon'] . "
+                            Cupo: " . $grupo['cupo'] . "</p>
+                        </div>";
+                    } 
                 ?>
             </div>
         </div>

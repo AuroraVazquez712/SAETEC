@@ -100,7 +100,7 @@
     <main>
         <div id="contenedor">
             <div id="prof">
-                <p><u>CONSULTA PROFESORES</u></p>
+                <a href=./admin.php><u>CONSULTA PROFESORES</u></a>
             </div>
             <div class="botones">
                 <div id="añade">

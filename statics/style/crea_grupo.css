@@ -144,6 +144,9 @@ main{
     display: flex;
     flex-direction: row;
 }
+a:visited{
+    color: #FFFFFF;
+}
 #contenedor{
     display: flex;
     flex-direction: column;

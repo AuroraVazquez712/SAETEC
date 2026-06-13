@@ -1,3 +1,8 @@
+<?php 
+    include '../dynamics/config.php';
+    $conexion = connect();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -58,7 +63,7 @@
     <br>
     <!-------------------------------------------FORMS------------>
     <div id="grupo">
-        <p><u>AGREGA GRUPOS</u></p>
+        <a href="./admin.php"><u>AGREGA GRUPOS</u></a>
     </div>
     <form action="./forms-grupo-confirmar.php" method="POST">
         <div class="form-grid">
@@ -83,9 +88,24 @@
                 <label for="salon">Salón :</label>
                 <input type="text" name="salon" id="ipt-salon" placeholder="LACEC" required>
             </div>
-            
+            <div class="input-group">
+                <label for="profesor">Profesor:</label>
+                <select name="id_profesor" id="ipt-profesor" required>
+                    <option value="" disabled selected>Elige un profesor...</option>
+                    <?php
+                        $sql = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno FROM perfil WHERE rol = 'P'";
+                        $query = mysqli_query($conexion, $sql);
+                        while ($profe = mysqli_fetch_assoc($query)) {
+                            echo "<option value='" . $profe['id_perfil'] . "'>"
+                                . $profe['nombre'] . " "
+                                . $profe['apellido_paterno'] . " "
+                                . $profe['apellido_materno']
+                                . "</option>";
+                        }
+                    ?>
+                </select>
+            </div>    
         </div>
-        
         <button type="submit" name="registro" class="btn-submit">Confirmar</button>
     </form>
     <!------------------------FOOTER --------------------------------->
