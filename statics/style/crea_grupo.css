@@ -6,7 +6,7 @@ body {
     margin: 0%;
     padding: 0%;
 }
-/*==============================================HEADER========================================================*/
+/*===========================HEADER================================*/
 header {
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -18,40 +18,28 @@ header {
 .iconos {
     width: 70px;
     height: 70px;
-    object-fit: contain;
 }
-#iconos_unam {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-#iconos_unam .iconos{
-    width: 70px;
-    height: 70px;
-}
+
 #titulo_encabezado {
     color: #0D1650;
     font-size: 3.5rem;
-    font-weight: 400;
-    flex: 1;
-    text-align: center;
+    font-weight: 400;         
 }
 
 #titulo_encabezado p {
-    margin: 0%; 
+    margin: 0; 
 }
 
 #iconos_ete {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-shrink: 0;
 }
+
 #iconos_ete .iconos {
     width: 70px;
     height: 50px;
 }
-
 /*============================================BARRA DE NAVEGACIÓN===========================================*/
 .nav{
     width: 100%;
@@ -94,13 +82,12 @@ header {
 #btn-menu {
     display: none;
 }
-
 .container-menu {
     position: absolute;
     background: #0d16507e;
     z-index: 2;
     width: 100%;
-    height: 150vh;
+    height: 125vh;
     top: 0;
     left: 0;
     transition: all 1000ms ease;
@@ -112,7 +99,7 @@ header {
 .cont-menu {
     max-width: 350px;
     background: #dad9d9;
-    height: 135vh;
+    height: 110vh;
     transition: all 2000ms ease;
     transform: translateX(-100%);
     box-shadow: 2px 2px 8px rgb(4, 5, 53);
@@ -152,7 +139,7 @@ header {
     cursor: pointer;
     font-size: 25px;
 }
-/*================================================BODY=============================================*/
+/*===========================BODY================================*/
 main{
     display: flex;
     flex-direction: row;
@@ -162,14 +149,7 @@ main{
     flex-direction: column;
     width: 70%;
 }
-a {
-    color:#FFfFFF; 
-}
-
-a:visited {
-    color:#FFFFFF;
-}
-.titulos #alumn{
+#grupo{
     background-color: #0D1650;
     font-family: 'encabezado';
     width: 100%;
@@ -177,100 +157,69 @@ a:visited {
     color: #FFFFFF;
     font-size: 3vh;
     text-align: center;
-    font-size: 10vh;
-    box-shadow: 2px 2px 5px rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.titulos #alumn:hover{
-        transform: scale(0.9);
-}
-
-.titulos #prof{
-    background-color: #0D1650;
-    font-family: 'encabezado';
-    width: 100%;
-    height: 25vh;
-    color: #FFFFFF;
-    font-size: 3vh;
-    text-align: center;
-    font-size: 10vh;
+    font-size: 13vh;
     margin-top: 3%;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.titulos #prof:hover{
-        transform: scale(0.9);
+.botones{
+    display: flex;
+    flex-direction: row;
+    margin-left: 6%;
+    margin-bottom: 4%;
 }
-
-.titulos #grupo{
+#añade{
     background-color: #0D1650;
-    font-family: 'encabezado';
-    width: 100%;
-    height: 25vh;
-    color: #FFFFFF;
-    font-size: 3vh;
-    text-align: center;
-    font-size: 10vh;
-    margin-top: 3%;
-    box-shadow: 2px 2px 5px rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.titulos #grupo:hover{
-        transform: scale(0.9);
-}
-
-
-#material{
-    background-color:#E5B62B;
-    text-align:end;
-    width: 100%;
-    height: 20vh;
-    font-size: 6vh;
-    margin-top: 3%; 
-    border-color: #0e0202;
-    box-shadow: 2px 2px 5px rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 25px;
     color: #FFFF;
-}
-#material:hover{
-    transform: scale(0.9);
-}
-#tips{
-    background-color: #1226AA;
-    width: 100%;
-    height: 20vh;
-    color:#FFFFFF;
-    text-align: center;
-    font-size: 5.5vh;
-    margin-top: 3%;  
-    border-color: #0e0202;
+    margin-top: 8%;
+    width: 8vh;
+    height: 8vb;
+    border-radius: 100%;
+    border-color: #FFFFFF;
+    margin-right: 7%;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    color:#FFFFFF;
 }
-#tips:hover{
-    transform: scale(0.9);
+#borra{
+    background-color: #0D1650;
+    font-size: 25px;
+    color: #FFFF;
+    margin-top: 8%;
+    width: 8vh;
+    height: 8vb;
+    border-radius: 100%;
+    border-color: #FFFFFF;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#calendario{
-    display:flex;
-    justify-content: center
+#lista-profes {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
 }
-img{
-    width:70%;
-    height:70%;
+.alumno{
+    background-color: rgb(210, 210, 210);
+    box-shadow: 3px 3px 8px rgb(163, 163, 163);
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
 }
+.alumno:hover{
+    background-color: #E6B72D;
+}
+.alumno p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    margin-left: 15px;
+}
+
 /*--------------------------FOOTER--------------------------*/
 footer{
     background-color: #0D1650;
@@ -286,4 +235,3 @@ footer{
     color: #FFFFFF;
     text-decoration: none;
 }
-

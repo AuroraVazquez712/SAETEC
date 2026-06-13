@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
-    <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/admin.css">
-
-    <title>SAETEC: Admin</title>
+    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
+    <meta name="description" content="Mi página de encabezado">
+    <link rel="stylesheet" href="../statics/style/crea_grupo.css">
+    <title>Crea grupo</title>
 </head>
 <body>
-    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
@@ -53,55 +51,50 @@
             </div>
         </div>
     </header>
-
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-        include 'barrapro.php';
-    ?>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <?php
-        include 'barra-lateral.php';
-    ?>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    <main>
-        <div id="contenedor">
-            <div class="titulos">
-                <div id="alumn">
-                    <a href="./lista-alumnos.php">
-                        <p><u>CONSULTA ALUMNOS</u></p>
-                    </a>
+            include 'barrapro.php';
+    ?> 
+    <br>
+    <!-------------------------------------------FORMS------------>
+    <div id="contenedor">
+        <div id="grupo">
+            <p><u>AGREGA GRUPOS</u></p>
+        </div>
+        <div class="botones">
+            <div id="añade">
+                <a href="./forms-grupo.php">
+                    <p><strong>+</strong></p>
+                </a>
                 </div>
-                <div id="prof">
-                    <a href="./admin-consulta-profe.php">
-                        <p><u>CONSULTA PROFESORES</u></p>
-                    </a>
-                </div>
-                <div id="grupo">
-                    <a href="./crea_grupo.php">
-                        <p><u>AGREGA GRUPOS</u></p>
-                    </a>
+                <div id="borra">
+                    <p><strong>-</strong></p>
                 </div>
             </div>
-            <div class="extras">
-                <div id="material">
-                    <a href="./material_extra.php">
-                            <p>Material extra</p>
-                    </a>
-                </div>
-                <div id="tips">
-                    <a href="./tips.php">
-                        <p>¡¡Asegura el éxito en la ETE!!</p>
-                    </a>
-                </div>
+            <div id="lista-profes">
+        
+                <?php  /* 
+                    $sql = "SELECT * FROM perfil WHERE rol = 'P'";
+                    $filtra = mysqli_query($conexion, $sql);
+
+                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                        echo "
+                        <form method='POST' action=''>
+                            <input type='hidden' name='id_perfil' value='" . $perfil['id_perfil'] . "'>
+                            <button type='submit' class='alumno' name='ver_profe'>
+                                    <p>" . $perfil['nombre'] . " 
+                                    " . $perfil['apellido_paterno'] . " 
+                                    " . $perfil['apellido_materno'] . "</p> 
+                            </button>
+                        </form>";
+                    }  */  
+                ?>
             </div>
         </div>
-        <div id="calendario">
-            <img src="../statics/img/calendario.png" alt="Calendario de la ENP 2024-2025"> 
-        </div>
-    </main>
+    </div>
+    <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
-    ?>
-    
+    ?> 
 </body>
 </html>

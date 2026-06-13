@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
-    <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/admin.css">
-
-    <title>SAETEC: Admin</title>
+    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
+    <meta name="description" content="Mi página de encabezado">
+    <link rel="stylesheet" href="../statics/style/forms-grupo.css">
+    <title>Formulario de grupos</title>
 </head>
 <body>
-    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
@@ -53,55 +51,46 @@
             </div>
         </div>
     </header>
-
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-        include 'barrapro.php';
-    ?>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <?php
-        include 'barra-lateral.php';
-    ?>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    <main>
-        <div id="contenedor">
-            <div class="titulos">
-                <div id="alumn">
-                    <a href="./lista-alumnos.php">
-                        <p><u>CONSULTA ALUMNOS</u></p>
-                    </a>
-                </div>
-                <div id="prof">
-                    <a href="./admin-consulta-profe.php">
-                        <p><u>CONSULTA PROFESORES</u></p>
-                    </a>
-                </div>
-                <div id="grupo">
-                    <a href="./crea_grupo.php">
-                        <p><u>AGREGA GRUPOS</u></p>
-                    </a>
-                </div>
+            include 'barrapro.php';
+    ?> 
+    <br>
+    <!-------------------------------------------FORMS------------>
+    <div id="grupo">
+        <p><u>AGREGA GRUPOS</u></p>
+    </div>
+    <form action="./forms-grupo-confirmar.php" method="POST">
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label for="grupo">Nombre del grupo:</label>
+                <input type="text" name="grupo" id="ipt-grupo" placeholder="61B/61D" required>
             </div>
-            <div class="extras">
-                <div id="material">
-                    <a href="./material_extra.php">
-                            <p>Material extra</p>
-                    </a>
-                </div>
-                <div id="tips">
-                    <a href="./tips.php">
-                        <p>¡¡Asegura el éxito en la ETE!!</p>
-                    </a>
-                </div>
+            <div class="input-group">
+                <label for="plantel">Plantel:</label>
+                <select name="plantel" id="ipt-plantel" required>
+                    <option value="" disabled selected>Elige tu plantel...</option>
+                    <option value="Escuela Nacional Preparatoria No. 6 Antonio Caso">
+                        Escuela Nacional Preparatoria No. 6 Antonio Caso</option>
+                </select>
             </div>
+            <div class="input-group">
+                <label for="cupo">Cupo: </label>
+                <input type="number" name="cupo" id="ipt-cupo" placeholder="50" required>
+            </div>
+            <div class="input-group">
+                <label for="salon">Salón :</label>
+                <input type="text" name="salon" id="ipt-salon" placeholder="LACEC" required>
+            </div>
+            
         </div>
-        <div id="calendario">
-            <img src="../statics/img/calendario.png" alt="Calendario de la ENP 2024-2025"> 
-        </div>
-    </main>
+        
+        <button type="submit" name="registro" class="btn-submit">Confirmar</button>
+    </form>
+    <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
-    ?>
-    
+    ?> 
 </body>
 </html>
