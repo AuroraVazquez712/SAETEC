@@ -39,12 +39,12 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/" target="_blank">
+                <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
+                <a href="https://www.ete.enp.unam.mx/" target="_blank">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -66,30 +66,37 @@
     </nav>
     <br>
     <main>
-        <div id="seleccion-perf">
-            <h2>¿Quien anda ahí?</h2>
-        </div>
-        <div class="fila">
-            <div class="bloque">
-                <a href="./inicio-sesion.php">
-                    <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 60%;">
-                    <p>Administrador</p>
-                </a>
+        <form method="POST">
+            <div id="seleccion-perf">
+                <label>¿Quien anda ahí?</label>
+                    <div class="radio-perf">
+                        <input type="radio" name="rol" id="ipt-admin" value="1" hidden>
+                        <label for="ipt-admin">
+                            <a href="./inicio-sesion.php">
+                                <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 20%;">
+                                Administrador
+                            </a>
+                        </label>
+
+                        <input type="radio" name="rol" id="ipt-estudiante" value="2" hidden>
+                        <label for="ipt-estudiante">
+                            <a href="./inicio-sesion.php">
+                                <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 20%;">
+                                Estudiante
+                            </a>
+                        </label>
+
+                        <input type="radio" name="rol" id="ipt-estudiante" value="2" hidden>
+                        <label for="ipt-estudiante">
+                            <a href="./inicio-sesion.php">
+                                <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 20%;">
+                                Profesor
+                            </a>
+                        </label>
+                    </div>
+                </label>
             </div>
-            <div class="bloque">
-                <a href="./inicio-sesion.php">
-                    <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 60%;">
-                    <p>Estudiante</p>
-                </a>
-            </div>
-            <div class="bloque">
-                <a href="./inicio-sesion.php">
-                    <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 60%;">
-                    <p>Profesor</p>
-                </a>
-            </div>
-        </div>
+        </form>
     </main>
-    
 </body>
 </html>
