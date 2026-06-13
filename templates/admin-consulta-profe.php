@@ -5,7 +5,7 @@
         $nombre= "";
         $apellido_paterno= "";
         $correo= "";
-        $rfc="";
+        $no_trabajador="";
         $grupo="";
         if(isset($_POST["registro"])){
             $nombre= $_POST["nombre"];
@@ -13,16 +13,61 @@
             $apellido_materno= $_POST["apellidomat"];
             $correo= $_POST["correo"];
             $fecha_nacimiento= $_POST["fecha_nacimiento"];
-            $rfc=$_POST["rfc"];
+            $no_trabajador=$_POST["no_trabajador"];
             $grupo= $_POST["grupo"];
 
-        //Base de datos, aquí guardamos o algo así 
-        $insertar_datos= "INSERT INTO perfil (rol, nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
-                            VALUES('P','$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
-        $inster= mysqli_query($conexion, $insertar_datos);
+            //Base de datos, aquí guardamos o algo así 
+            $insertar_datos= "INSERT INTO perfil (rol, nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
+                                VALUES('P','$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
+            $inster= mysqli_query($conexion, $insertar_datos);
 
+            $id_perfil = mysqli_insert_id($conexion);
+            // Ahora insertamos el resto de los datos en la tabla 
+            $sql2 = "INSERT INTO profesor (id_profesor, no_trabajador)
+                    VALUES ($id_perfil, '$no_trabajador');
+                    ";
+            $query2 = mysqli_query($conexion, $sql2);
+
+            $sql3=" INSERT INTO grupo (id_profesor, nombre_grupo)
+                    VALUES ($id_perfil, '$grupo');
+                    ";
+            $query3= mysqli_query($conexion, $sql3);
+            
+        
         }else{
             echo "No hemos enviado el form aún";
+        }
+        //Cambiar la vista por cada profe
+        if (isset($_POST["ver_profe"])){
+
+            $id_perfil=($_POST["id_perfil"]);
+
+            $sql4= "SELECT * FROM perfil WHERE id_perfil=$id_perfil AND rol = 'P'";
+            $query4 = mysqli_query($conexion, $sql4);
+            $resp4 = mysqli_fetch_assoc($query4);
+            //echo "<br>" ;
+            //var_dump($resp4);
+
+            $sql5= "SELECT * FROM profesor WHERE id_profesor=$id_perfil";
+            $query5 = mysqli_query($conexion, $sql5);
+            $resp5 = mysqli_fetch_assoc($query5);
+            //echo "<br>" ;
+            //var_dump($resp5);
+
+            $sql6= "SELECT * FROM grupo WHERE id_profesor=$id_perfil";
+            $query6 = mysqli_query($conexion, $sql6 );
+            $resp6 = mysqli_fetch_assoc($query6);
+            //echo "<br>" ;
+            //var_dump($resp6);
+
+            if ($resp4 && $resp5 && $resp6)
+            {
+                $nombre= $resp4['nombre'];
+                $apellido_paterno= $resp4['apellido_paterno'];
+                $correo= $resp4['correo'];
+                $no_trabajador= $resp5['no_trabajador'];
+                $grupo= $resp6['nombre_grupo'];
+            }   
         }
 ?>
 
@@ -81,9 +126,22 @@
                 </div>
             </div>
             <div id="lista-profes">
-                <div class="profe">
-                    <p><i><?php echo "$nombre";?></i></p>
-                </div>
+                <?php   
+                    $sql = "SELECT * FROM perfil WHERE rol = 'P'";
+                    $filtra = mysqli_query($conexion, $sql);
+
+                    while($perfil = mysqli_fetch_assoc($filtra)) {
+                        echo "
+                        <form method='POST' action=''>
+                            <input type='hidden' name='id_perfil' value='" . $perfil['id_perfil'] . "'>
+                            <button type='submit' class='alumno' name='ver_profe'>
+                                    <p>" . $perfil['nombre'] . " 
+                                    " . $perfil['apellido_paterno'] . " 
+                                    " . $perfil['apellido_materno'] . "</p> 
+                            </button>
+                        </form>";
+                    }    
+                ?>
             </div>
         </div>
         <div id="datos-profe">
@@ -93,7 +151,7 @@
             <div id="datos-profe_esp">
                 <div>
                     <p name="correo-usuario"><?php echo "Correo: $correo";?></p>
-                    <p name="rfc"><?php echo "RFC: $rfc";?></p>
+                    <p name="rfc"><?php echo "No. trabajador: $no_trabajador";?></p>
                 </div>
             </div>
             <div id="grupo">
