@@ -68,7 +68,8 @@ CREATE TABLE perfil (
     apellido_materno VARCHAR(30),
     fecha_nacimiento DATE NOT NULL,
     correo CHAR(50) NOT NULL,
-    contrasenha VARCHAR(100)
+    contrasenha VARCHAR(100),
+    foto_perfil VARCHAR(100)
 );
 
 INSERT INTO perfil 
