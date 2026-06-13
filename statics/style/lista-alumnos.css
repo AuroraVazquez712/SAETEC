@@ -175,6 +175,7 @@ main{
     color: #E6E8E9;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 #grupos {
     display: flex;
     margin-top: 2%;
@@ -197,11 +198,7 @@ main{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
 }
-.boton img{
-    width: 85px;
-    margin-left: 10px;
 
-}
 #lista-alumnos {
     display: flex;
     flex-direction: column;
@@ -209,14 +206,22 @@ main{
     width: 100%;
     align-items:center;
 }
+.sub{
+    width: 20%;
+    height: auto;
+}
 .alumno{
     background-color: rgb(210, 210, 210);
     box-shadow: 3px 3px 8px rgb(163, 163, 163);
     width: 100%;
     margin-bottom: 20px;
 }
+.alumno:hover{
+    background-color: #E6B72D;
+}
 .alumno p{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
     margin-left: 15px;
 }
 #barra-lateral {

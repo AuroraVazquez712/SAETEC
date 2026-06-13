@@ -23,6 +23,7 @@
     $id_perfil = $_SESSION["id_perfil"];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,16 +80,17 @@
             </div>
         </div>
     </header>
-    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <?php
-        include 'barrapro.php';
-    ?>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <?php
-        include 'barra-lateral.php';
-    ?>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    <div id="cont-general">
+        </header>
+        <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+        <?php
+            include 'barrapro.php';
+        ?>
+        <!-------------------------------------BARRA LATERAL----------------------------------------->
+        <?php
+            include 'barra-lateral.php';
+        ?>
+        <!----------------------------------------CONTENIDO------------------------------------------->
+        <div id="cont-general">
         <div id="barra-lateral">
             <?php
                 $ruta_imagen="";

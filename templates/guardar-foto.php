@@ -1,5 +1,5 @@
 <?php   
-    // Corrobora si INICIO SESIÓN
+    // Corrobora si INICIÓ SESIÓN
     session_start();
 
     require  '../dynamics/config.php';
@@ -39,7 +39,7 @@
 </head>
 <body>
     <!<!-------------------------------------BARRA DE BUSQUEDA----------------------------------------->
-        < <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">

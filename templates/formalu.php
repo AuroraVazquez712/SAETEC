@@ -57,13 +57,12 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action="perfil-alumno.php" method="POST">
-    <!--<form action="formalu-confirmar.php" method="POST">--->
+    <form action="formalu-confirmar.php" method="POST">
         <div class="form-grid">
 
             <div class="input-group">
-                <label for="id_perfil">Número de cuenta:</label>
-                <input type="text" name="id_perfil" id="ipt-id_perfil" placeholder="123456789" required>
+                <label for="nocta">Número de cuenta:</label>
+                <input type="text" name="nocta" id="ipt-id_perfil" placeholder="123456789" required>
             </div>
 
             <div class="input-group">
@@ -93,12 +92,16 @@
 
             <div class="input-group">
                 <label for="grupo">Grupo:</label>
-                <input type="text" name="grupo" id="ipt-grupo">
+                <select name="grupo" id="ipt-grupo" required>
+                    <option value="" disabled selected>Elige tu grupo...</option>
+                    <option value="1">61B</option>
+                    <option value="2">61D</option>
+                </select>
             </div>
 
         </div>
         
-        <button type="submit" class="btn-submit">Confirmar</button>
+        <button type="submit" name="registro" class="btn-submit">Confirmar</button>
     </form>
     <!------------------------FOOTER --------------------------------->
     <?php

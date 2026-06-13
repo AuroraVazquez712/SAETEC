@@ -162,7 +162,13 @@ main{
     flex-direction: column;
     width: 70%;
 }
+a {
+    color:#FFfFFF; 
+}
 
+a:visited {
+    color:#FFFFFF;
+}
 .titulos #alumn{
     background-color: #0D1650;
     font-family: 'encabezado';

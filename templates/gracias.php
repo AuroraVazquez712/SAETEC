@@ -1,22 +1,12 @@
-<?php
-    
-    $servidor = "localhost";
-    $user = "root";
-    $password = "";
-    $data_base = "saetec";
-
-    $link = mysqli_connect ($servidor, $user, $password, $data_base);
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: StatHorses">
+    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
     <meta name="description" content="Mi página de encabezado">
-    <link rel="stylesheet" href="../statics/style/act.css">
-    <title>Mis actividades</title>
+    <link rel="stylesheet" href="../statics/style/gracias.css">
+    <title>Formulario del alumno</title>
 </head>
 <body>
     <header>
@@ -61,53 +51,20 @@
             </div>
         </div>
     </header>
-    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
+    <!----------------------------BARRA DE NAVEGACIÓN----------------------------->
     <?php
-        include 'barrapro.php';
-    ?>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <?php
-        include 'barra-lateral.php';
-    ?>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    <main>
-        <div class="cuadrado">Mis actividades</div>
-        <div id="columna">
-            <div class="grupo">Grupo 61D</div>
-        <?php
-                $filtra = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
-
-                while($tarea = mysqli_fetch_assoc($filtra)) {
-                    echo "
-                        <div id='listact'>
-                        <p>Actividad: </p>    
-                        <p>" . $tarea['nombre_actividad'] . "</p>
-                        <p>" . $tarea['descripcion'] . "</p>
-                        <p>Fecha entrega:" . $tarea['fecha_entrega'] . "</p>
-                        </div>";
-                }
-        ?>
-
-        <div id="actividades">
-            <div class="tareas">
-                <h1>Tareas</h1>
-                <p>Entregadas:</p>
-                <p>Faltantes:</p>
-            </div>
-
-            <div class="calificaciones">
-                <h1>Calificaciones</h1>
-                    <p>Modulo 1:</p>
-                    <p>Modulo 2:</p>
-                    <p>Modulo 3:</p>
-                    <p>Modulo 4:</p>
-                    <p>Modulo 5:</p>
-            </div>
-        </div>
-    </main>
-    <!-------------------------FOOTER------------------------------------------------------>
+            include 'barrapro.php';
+    ?> 
+    <br>
+    <!---------------------------------CONTENIDO---------------------------------->
+    <div class="agradecimiento">Gracias por responder</div>
+    <img class="pulgar_arriba" src ="../statics/img/goku.jpg">
+    <button type="aceptar" class="btn_aceptar">
+        <a href="./alumno.php">Aceptar</a>
+    </button>
+    <!-----------------------------------FOOTER----------------------------------->
     <?php
             include 'footer.php';
-    ?>
+    ?> 
 </body>
 </html>

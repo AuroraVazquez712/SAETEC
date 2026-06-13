@@ -75,7 +75,7 @@
     <main>
         <div id="contenido">
             <div id="forms">
-                <a  href="./formalu.php">
+                <a  href="./cuestionario.php">
                     <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
                 </a>
             </div>

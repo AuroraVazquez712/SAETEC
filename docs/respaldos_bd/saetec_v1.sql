@@ -88,6 +88,7 @@ CREATE TABLE `perfil` (
   `fecha_nacimiento` date NOT NULL,
   `correo` char(50) NOT NULL,
   `contrasenha` varchar(100) DEFAULT NULL,
+  `foto_perfil` varchar(100) DEFAULT NULL
   PRIMARY KEY (`id_perfil`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
