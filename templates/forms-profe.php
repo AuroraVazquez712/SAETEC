@@ -96,14 +96,6 @@
                 <input type="text" name="no_trabajador" id="no_trabajador" placeholder="123456789"  required>
             </div>
 
-            <div class="input-group">
-                <label for="grupo">Grupo:</label>
-                <select name="grupo" id="ipt-grupo" required>
-                    <option value="" disabled selected>Elige tu grupo...</option>
-                    <option value="61B">61B</option>
-                    <option value="61D">61D</option>
-                </select>
-            </div>
 
         </div>
         
