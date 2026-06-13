@@ -1,8 +1,8 @@
 <?php 
     include '../dynamics/config.php';
     $conexion = connect();
+    session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
     <meta name="description" content="Mi página de encabezado">
-    <link rel="stylesheet" href="../statics/style/formalu.css">
-    <title>Formulario del profesor</title>
+    <link rel="stylesheet" href="../statics/style/crea_grupo.css">
+    <title>Crea grupo</title>
 </head>
 <body>
     <header>
@@ -62,48 +62,37 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action="admin-consulta-profe.php" method="POST">
-    <!--<form action="formalu-confirmar.php" method="POST">--->
-        <div class="form-grid">
-
-            <div class="input-group">
-                <label for="nombre">Nombre(s):</label>
-                <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
-            </div>
-
-            <div class="input-group">
-                <label for="apellidopat">Apellido paterno:</label>
-                <input type="text" name="apellidopat" id="ipt-apellidopat" placeholder="Escribe tu apellido" required>
-            </div>
-
-            <div class="input-group">
-                <label for="apellidopat">Apellido materno:</label>
-                <input type="text" name="apellidomat" id="ipt-apellidomat" placeholder="Escribe tu apellido" required>
-            </div>
-
-            <div class="input-group">
-                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                <input type="date" name="fecha_nacimiento" id="ipt-fecha_nacimiento" required>
-            </div>
-
-            <div class="input-group">
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="ipt-correo" placeholder="hola@gmail.com" required>
-            </div>
-
-            <div class="input-group">
-                <label for="no_trabajador">No. de trabajador</label>
-                <input type="text" name="no_trabajador" id="no_trabajador" placeholder="123456789"  required>
-            </div>
-
-
+    <div id="contenedor">
+        <div id="grupo">
+            <a href="./admin.php"><u>AGREGA GRUPOS</u></a>
         </div>
-        
-        <button type="submit" class="btn-submit" name="registro">Confirmar</button>
+        <div class="botones">
+            <div id="añade">
+                <a href="./forms-grupo.php">
+                    <p><strong>+</strong></p>
+                </a>
+                </div>
+                <div id="borra">
+                    <p><strong>-</strong></p>
+                </div>
+            </div>
+            <div id="lista-profes">
+                <?php  
+                    $sql="SELECT * FROM grupo";
+                    $filtra =mysqli_query($conexion, $sql);
 
-    </form>
-    <!-------------------------CONEXION A BASE----------------------->
-
+                    while($grupo =mysqli_fetch_assoc($filtra)) {
+                        echo "
+                        <div class='alumno'> 
+                            <p>" . $grupo['nombre_grupo'] . "
+                            Salón: " . $grupo['salon'] . "
+                            Cupo: " . $grupo['cupo'] . "</p>
+                        </div>";
+                    } 
+                ?>
+            </div>
+        </div>
+    </div>
     <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';

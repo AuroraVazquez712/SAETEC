@@ -81,7 +81,7 @@
                     $apellido_materno= $_POST["apellidomat"];
                     $correo= $_POST["correo"];
                     $fecha_nacimiento= $_POST["fecha_nacimiento"];
-                    $grupo= $_POST["grupo"];
+                    $grupo= $_POST["id_grupo"];
 
                     //Guardar en base de datos 
 

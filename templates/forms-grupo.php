@@ -1,8 +1,8 @@
 <?php 
     include '../dynamics/config.php';
     $conexion = connect();
+    session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
     <meta name="description" content="Mi página de encabezado">
-    <link rel="stylesheet" href="../statics/style/formalu.css">
-    <title>Formulario del profesor</title>
+    <link rel="stylesheet" href="../statics/style/forms-grupo.css">
+    <title>Formulario de grupos</title>
 </head>
 <body>
     <header>
@@ -62,48 +62,52 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action="admin-consulta-profe.php" method="POST">
-    <!--<form action="formalu-confirmar.php" method="POST">--->
+    <div id="grupo">
+        <a href="./admin.php"><u>AGREGA GRUPOS</u></a>
+    </div>
+    <form action="./forms-grupo-confirmar.php" method="POST">
         <div class="form-grid">
 
             <div class="input-group">
-                <label for="nombre">Nombre(s):</label>
-                <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
+                <label for="grupo">Nombre del grupo:</label>
+                <input type="text" name="grupo" id="ipt-grupo" placeholder="61B/61D" required>
             </div>
-
             <div class="input-group">
-                <label for="apellidopat">Apellido paterno:</label>
-                <input type="text" name="apellidopat" id="ipt-apellidopat" placeholder="Escribe tu apellido" required>
+                <label for="plantel">Plantel:</label>
+                <select name="plantel" id="ipt-plantel" required>
+                    <option value="" disabled selected>Elige tu plantel...</option>
+                    <option value="Escuela Nacional Preparatoria No. 6 Antonio Caso">
+                        Escuela Nacional Preparatoria No. 6 Antonio Caso</option>
+                </select>
             </div>
-
             <div class="input-group">
-                <label for="apellidopat">Apellido materno:</label>
-                <input type="text" name="apellidomat" id="ipt-apellidomat" placeholder="Escribe tu apellido" required>
+                <label for="cupo">Cupo: </label>
+                <input type="number" name="cupo" id="ipt-cupo" placeholder="50" required>
             </div>
-
             <div class="input-group">
-                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                <input type="date" name="fecha_nacimiento" id="ipt-fecha_nacimiento" required>
+                <label for="salon">Salón :</label>
+                <input type="text" name="salon" id="ipt-salon" placeholder="LACEC" required>
             </div>
-
             <div class="input-group">
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="ipt-correo" placeholder="hola@gmail.com" required>
-            </div>
-
-            <div class="input-group">
-                <label for="no_trabajador">No. de trabajador</label>
-                <input type="text" name="no_trabajador" id="no_trabajador" placeholder="123456789"  required>
-            </div>
-
-
+                <label for="profesor">Profesor:</label>
+                <select name="id_profesor" id="ipt-profesor" required>
+                    <option value="" disabled selected>Elige un profesor...</option>
+                    <?php
+                        $sql = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno FROM perfil WHERE rol = 'P'";
+                        $query = mysqli_query($conexion, $sql);
+                        while ($profe = mysqli_fetch_assoc($query)) {
+                            echo "<option value='" . $profe['id_perfil'] . "'>"
+                                . $profe['nombre'] . " "
+                                . $profe['apellido_paterno'] . " "
+                                . $profe['apellido_materno']
+                                . "</option>";
+                        }
+                    ?>
+                </select>
+            </div>    
         </div>
-        
-        <button type="submit" class="btn-submit" name="registro">Confirmar</button>
-
+        <button type="submit" name="registro" class="btn-submit">Confirmar</button>
     </form>
-    <!-------------------------CONEXION A BASE----------------------->
-
     <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
