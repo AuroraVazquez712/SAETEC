@@ -1,3 +1,8 @@
+<?php 
+    include '../dynamics/config.php';
+    $conexion=connect();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -91,13 +96,20 @@
             </div>
 
             <div class="input-group">
-                <label for="grupo">Grupo:</label>
-                <select name="grupo" id="ipt-grupo" required>
-                    <option value="" disabled selected>Elige tu grupo...</option>
-                    <option value="1">61B</option>
-                    <option value="2">61D</option>
-                </select>
-            </div>
+            <label for="grupo">Grupo:</label>
+            <select name="id_grupo" id="ipt-grupo" required>
+                <option value="" disabled selected>Elige un grupo...</option>
+                <?php
+                    $sql= "SELECT id_grupo, nombre_grupo, salon FROM grupo";
+                    $query= mysqli_query($conexion, $sql);
+                    while ($grupos = mysqli_fetch_assoc($query)) {
+                        echo "<option value='" . $grupos['id_grupo'] . "'>"
+                            . $grupos['nombre_grupo'] . 
+                            "Salón" . $grupos['salon']. "</option>";
+                    }
+                ?>
+            </select>
+        </div>
 
         </div>
         

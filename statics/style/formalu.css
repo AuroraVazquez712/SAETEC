@@ -151,6 +151,26 @@ header {
     cursor: pointer;
     font-size: 25px;
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+    background-color:#e6e8e993;
+    width: 80%;
+    height: auto;
+    margin:5%;
+    margin-left:10%;
+    align-items: left;
+    box-shadow: 2px 2px 8px rgb(4, 5, 53);
+    font-size:20px;
+}
+.input-group{
+    margin: 2.5%;
+}
+button{
+    margin: 2.5%;
+    width: 9%;
+}
 /*--------------------------FOOTER--------------------------*/
 footer{
     background-color: #0D1650;
