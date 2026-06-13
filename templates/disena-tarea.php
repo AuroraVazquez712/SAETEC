@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Star horses">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/diseña-tarea.css">
+    <link rel="stylesheet" href="../statics/style/disena-tarea.css">
     <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
 
     <title>SAETEC: Alumno</title>
@@ -83,13 +83,13 @@
             $grupos = $_POST['select_grupo'];
 
             foreach($grupos as $grupo){
-                $sql1 = "SELECT id_estudiante FROM estudiante WHERE id_grupo = '$grupo'";
+                $sql1 = "SELECT id_estudiante FROM estudiante WHERE id_grupo = $grupo";
                 $query1 = mysqli_query($conexion, $sql1);
 
             while($row = mysqli_fetch_assoc($query1)){
                     $id_estudiante = $row['id_estudiante'];
 
-                $insertar = "INSERT INTO asignacion (id_actividad,id_estudiante,calificacion) VALUES ('$id_actividad','$id_estudiante',0)";
+                $insertar = "INSERT INTO asignacion (id_actividad,id_estudiante) VALUES ($id_actividad,$id_estudiante)";
                 $asignar = mysqli_query($conexion, $insertar);
                 }
             }

@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<?php   
-    if(isset($_FILES['foto_perfil']))
-    {
-        $archivo = $_FILES['foto_perfil'];
-        $nombre_archivo = $archivo['name'];
-        $ruta_temporal = $archivo['tmp_name'];
-
-        move_uploaded_file($ruta_temporal, '../statics/img/perfil-usuario.jpg');
-    }
-?>
-=======
->>>>>>> main
 <?php
     session_start();
 

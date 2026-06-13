@@ -123,7 +123,7 @@
                             <p>" . $tarea['descripcion'] . "</p>
                             <p>Fecha entrega: </p>
                             <p>" . $tarea['fecha_entrega'] . "</p>
-                            <a href='diseña-tarea.php?id=" . $tarea['id_actividad'] ."'>Diseña tarea</a>
+                            <a href='disena-tarea.php?id=" . $tarea['id_actividad'] ."'>Diseña tarea</a>
                         </div>";
                 }
             ?>

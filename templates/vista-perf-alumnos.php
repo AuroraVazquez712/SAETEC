@@ -100,7 +100,6 @@
 
             <div id="escolar">
                 <div class="tareas">
-                    <a href="calif-tareas.php">
                     <h3>Tareas</h3>
                     <p>Entregadas:</p>
                     <p>Faltantes:</p>
