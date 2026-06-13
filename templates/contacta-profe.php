@@ -84,11 +84,18 @@
                 <p class="titulo">Contacta a tu profesor</p>    
                     <p name="nombre"><?php echo "Alumn@: $nombre";?></p>
                     <p name="correo"><?php echo "Correo: $correo";?></p>
-                    <input class="texto-ingresado" placeholder="Comience a escribir">
+                    <input class="texto_ingresado" name="contacto-profe" placeholder="Comience a escribir">
                     <input type="submit" id="envio-comentario" value="Enviar comentario">
             </div>
             <div id="comentario">
-                <p name="texto-ingresado"><?php echo "Texto recibido: $correo";?></p>
+                <?php
+                    if(isset($_GET["contacto-profe"])){
+                        $texto_ingresado = $_GET["contacto-profe"];
+                        echo "<p name='texto_ingresado'>Texto recibido: $texto_ingresado</p>";
+
+                    }
+                    
+                ?>
             </div>
         </form method="GET">
     </div>
