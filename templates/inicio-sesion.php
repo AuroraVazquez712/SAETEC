@@ -62,7 +62,7 @@
         // Si el codigo llega aquí, no era estudiante
         // Debemos revisar que sea profe o admin
 
-        $query = "SELECT * FROM profesor WHERE no_trabajador = '$usuario'";
+        $query = "SELECT * FROM profesor WHERE no_trabajador = $usuario";
         $result = mysqli_query($con, $query);
         $num_registros = mysqli_num_rows($result);
         if($num_registros > 0){
