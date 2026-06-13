@@ -28,8 +28,8 @@
                     ";
             $query2 = mysqli_query($conexion, $sql2);
 
-            $sql3=" INSERT INTO grupo (id_profesor, nombre_grupo)
-                    VALUES ($id_perfil, '$grupo');
+            $sql3=" INSERT INTO grupo (id_profesor, nombre_grupo, plantel, cupo, salon)
+                    VALUES ($id_perfil, '$grupo', 'Escuela Nacional Preparatoria No. 6 Antonio Caso', '50', 'LACEC');
                     ";
             $query3= mysqli_query($conexion, $sql3);
             

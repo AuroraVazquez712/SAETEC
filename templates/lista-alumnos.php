@@ -101,7 +101,7 @@
                     }
                 }
                 else if ($tipo_perfil_pro == 'P'){
-                    $sql = "SELECT * FROM perfil WHERE id_grupo ='1'";
+                    $sql = "SELECT * FROM estudiante WHERE id_grupo ='1'";
                     $filtra = mysqli_query($conexion, $sql);
                     while($perfil = mysqli_fetch_assoc($filtra)) {
                         echo "

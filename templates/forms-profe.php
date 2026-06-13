@@ -93,7 +93,7 @@
 
             <div class="input-group">
                 <label for="no_trabajador">No. de trabajador</label>
-                <input type="text" name="no_trabajador" id="no_trabajador" placeholder="ABC1234"  required>
+                <input type="text" name="no_trabajador" id="no_trabajador" placeholder="123456789"  required>
             </div>
 
             <div class="input-group">
