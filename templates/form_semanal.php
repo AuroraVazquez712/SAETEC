@@ -125,7 +125,7 @@
                 </div>
                 <div class="resp">
                     <label for="fecha_emision">Fecha de envio:</label>
-                    <input  class="date" type="date" name="fecha_emision" id="ipt-fecha_nacimiento" required>
+                    <input type="date" name="fecha_emision" id="ipt-fecha_emision" required>
                 </div>
             </div>
             <div id="enviar">

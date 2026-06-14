@@ -1,18 +1,8 @@
 <?php
-    /*session_start();
-    include 'config.php';
-    $rol;
-    switch ($rol) {
-        case 'E'
+    
+    session_start();
 
-            break;
-
-        case 'P'
-            break;
-
-        case 'A'
-            break;
-    }*/
+    include '../dynamics/config.php';
 
     if (isset($_POST["usuario"]))
     {
@@ -189,7 +179,7 @@
     <nav class="nav">
         <div class="container">
             <nav class="menu">
-                <a href="./index.html">Inicio</a>
+                <a href="./index.php">Inicio</a>
                 <a href="./inicio-sesion.php">Perfil</a>
                 <a href="./inicio-sesion.php">Acerca</a>
                 <a href="./inicio-sesion.php">Creditos</a>
