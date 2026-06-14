@@ -67,20 +67,17 @@
     <!--------------------------------------------------CONTENIDO---------------------------------->
     <main>
         <div id="bloque-list">
-            <div class="lista_alum">
-                <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos" title="añadir alumno">
-
+            <div id="grupo">
+                <a class="tit" href="./admin.php"><u>LISTA ALUMNOS</u></a>
             </div>
 
-            <div id="grupos">
-                <div class="boton-grupos">
-                    <p>Grupo: </p> 
-                </div>
-                <div class="boton">
+            <div id="anade">
+                <div id="añade">
                     <a href="./formalu.php">
-                        <img class="sub" src="../statics/img/boton-list-alumn.png">
+                        <p><strong>+</strong></p>
                     </a>
                 </div>
+                <p> Añade Alumnos </p>
             </div>
             <?php
                 //$_SESSION["tipo_perfil"] = consulta["rol"];
@@ -88,6 +85,7 @@
                 $tipo_perfil_pro = $_SESSION["tipo_perfil"];
                         
                 $sql = "";
+                //Búsqueda con el perfil Admin
                 if($tipo_perfil_pro == 'A'){
                     $sql = "SELECT * FROM perfil WHERE rol ='E'";
                     $filtra = mysqli_query($conexion, $sql);
@@ -99,20 +97,41 @@
                             " . $perfil['apellido_materno'] . "</p>
                             </div>";
                     }
-                }
+                }//Búsqueda con el perfil profesor
                 else if ($tipo_perfil_pro == 'P'){
-                    $sql = "SELECT * FROM estudiante WHERE id_grupo ='1'";
-                    $filtra = mysqli_query($conexion, $sql);
-                    while($perfil = mysqli_fetch_assoc($filtra)) {
-                        echo "
-                            <div class='alumno'> 
-                            <p>" . $perfil['nombre'] . "
-                            " . $perfil['apellido_paterno'] . "
-                            " . $perfil['apellido_materno'] . "</p>
+
+                    $id_profesor= 3;
+                    //Grupos que coincidan con la id del profesor
+                    $sql= "SELECT * FROM grupo WHERE id_profesor= $id_profesor";
+                    $query= mysqli_query($conexion, $sql);
+                    //var_dump($query);
+                    while($grupo= mysqli_fetch_assoc($query)){
+
+                        $id_grupo = $grupo['id_grupo'];
+
+                        echo "<div class='boton-grupos'>
+                            <p> Grupo: " .$grupo['nombre_grupo']. "<p>
+                        </div>";
+                        //Estudiantes que coincidan con la id del grupo que tenga el profesor
+                        $sql2="SELECT id_estudiante FROM estudiante WHERE id_grupo=$id_grupo";
+                        $query2= mysqli_query($conexion, $sql2);
+                        //var_dump($query2);
+                        while($estudiante= mysqli_fetch_assoc($query2)){
+
+                            $id_estudiante=$estudiante['id_estudiante'];
+                            //var_dump($id_estudiante);
+                            //datos de los alumnos que coincidan con la id del perfil
+                            $sql3="SELECT nombre, apellido_paterno, apellido_materno FROM perfil WHERE id_perfil=$id_estudiante";
+                            $query3= mysqli_query($conexion, $sql3);
+                            //var_dump($query3);
+                            $datos_alumno= mysqli_fetch_assoc($query3);
+                            echo "<div class='alumno'>
+                                <p>" .$datos_alumno['nombre']. "
+                                " .$datos_alumno['apellido_paterno']. "
+                                " .$datos_alumno['apellido_materno']. "</p>
                             </div>";
-                    }//$id_profesor = $_SESSION["id_perfil"];
-                    /*$sql0 = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = $id_profesor";
-                    $query2 = mysqli_query($link, $sql0);*/
+                        }
+                    }
                 }
         ?>
         </div>
