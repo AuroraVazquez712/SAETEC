@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Frida Garcia">
+    <meta name="autor" content="Equipo 4: Frida Garcia/Aurora Vazquez">
     <meta name="description" content="Lista de Alumnos">
     <link rel="stylesheet" href="../statics/style/lista-alumnos.css">
     <title>SAETEC: Lista de alumnos</title>
@@ -121,15 +121,19 @@
                             $id_estudiante=$estudiante['id_estudiante'];
                             //var_dump($id_estudiante);
                             //datos de los alumnos que coincidan con la id del perfil
-                            $sql3="SELECT nombre, apellido_paterno, apellido_materno FROM perfil WHERE id_perfil=$id_estudiante";
+                            $sql3="SELECT id_perfil, nombre, apellido_paterno, apellido_materno FROM perfil WHERE id_perfil=$id_estudiante";
                             $query3= mysqli_query($conexion, $sql3);
                             //var_dump($query3);
                             $datos_alumno= mysqli_fetch_assoc($query3);
-                            echo "<div class='alumno'>
-                                <p>" .$datos_alumno['nombre']. "
-                                " .$datos_alumno['apellido_paterno']. "
-                                " .$datos_alumno['apellido_materno']. "</p>
-                            </div>";
+                            echo "
+                            <form method='POST' action='info_alumno.php'>
+                                <input type='hidden' name='id_perfil' value='" . $datos_alumno['id_perfil'] . "'>
+                                <button type='submit' class='alumno' name='ver_profe'>
+                                        <p>" . $datos_alumno['nombre'] . " 
+                                        " . $datos_alumno['apellido_paterno'] . " 
+                                        " . $datos_alumno['apellido_materno'] . "</p> 
+                                </button>
+                            </form>";
                         }
                     }
                 }

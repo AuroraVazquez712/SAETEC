@@ -1,6 +1,6 @@
 <?php
     include '../dynamics/config.php';
-    $id_estudiante = 1;
+    $id_estudiante = 11;
 ?> 
 <?php
     if (isset($_POST["cuesta_trabajo"])) {
