@@ -294,7 +294,10 @@ main{
     margin-left: 15px;
 }
 #tareas a{
-    font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
+    margin-left: 20px;
+    margin-top: -10px;
+    color: #0D1650;
 }

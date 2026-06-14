@@ -116,14 +116,12 @@
 
                 while($tarea = mysqli_fetch_assoc($filtra)) {
                     echo "
-                        <div id='tareas'>
-                            <p>Actividad: </p>    
-                            <p>" . $tarea['nombre_actividad'] . "</p>
-                            <p>Descripcion: </p>
-                            <p>" . $tarea['descripcion'] . "</p>
-                            <p>Fecha entrega: </p>
-                            <p>" . $tarea['fecha_entrega'] . "</p>
+                        <div id='tareas'>   
+                            <p>Nombre: " . $tarea['nombre_actividad'] . "</p>
+                            <p>Descripcion: " . $tarea['descripcion'] . "</p>
+                            <p>Fecha entrega: " . $tarea['fecha_entrega'] . "</p>
                             <a href='disena-tarea.php?id=" . $tarea['id_actividad'] ."'>Diseña tarea</a>
+                            <br> <a href='calif-act.php?id=" . $tarea['id_actividad'] ."'>Califica actividad</a>
                         </div>";
                 }
             ?>

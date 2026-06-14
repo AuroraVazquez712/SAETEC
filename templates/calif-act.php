@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Star horses">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/diseña-tarea.css">
+    <link rel="stylesheet" href="../statics/style/calif-act.css">
     <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
 
     <title>SAETEC: Alumno</title>
@@ -79,45 +79,54 @@
     <!----------------------------------------CONTENIDO------------------------------------------->
     <?php
         $id_actividad = $_GET['id'];
-        //1,3
-        // $grupos = $_POST[select_grupo];
-        /*
-        foreach($grupos as $grupo){
-            $sql1 = "SELECT id_estudiante FROM estudiante WHERE id_grupo = $grupo";
-            $query1 = mysqli_query($conexion, $sql1);
-            while($row = mysqli_fetch_assoc($query1)){
-                $id_estudiante = $row['id_estudiante'];
-                // acá va el insert into
+        if(isset($_POST['calificar'])) {
+            $calificaciones = $_POST['calificacion'];
+            $asignaciones = $_POST['id_asignacion'];
+
+            foreach($asignaciones as $cali => $id_asignacion) {
+                $calif = $calificaciones[$cali];
+                $asigna = "UPDATE asignacion SET calificacion = $calif WHERE id_asignacion = $id_asignacion";
+                mysqli_query($conexion, $asigna);
             }
-        }
-        */
-        
-        if(isset($_POST['crea_asignacion'])) {
-            $insertar = "INSERT INTO asignacion (id_actividad,id_estudiante) VALUES ('$id_actividad',)";
-            $asignar = mysqli_query($conexion, $insertar);
         }
     ?>
     <main>
         <div id="margen-content">   
-            <h1 class="tit">Diseña la actividad:</h1>
+            <h1 class="tit">Califica tu actividad:</h1>
             <?php
-                $query_act = mysqli_query($conexion, "SELECT *  FROM actividad WHERE id_actividad = '$id_actividad'");
+                $query_act = mysqli_query($conexion, "SELECT * FROM actividad WHERE id_actividad = '$id_actividad'");
                 $actividad = mysqli_fetch_assoc($query_act);
 
                 echo"
-                <h2 class='nom_act'>" . $actividad['nombre_actividad'] . "</h2> 
-                <p class='desc'>" . $actividad['descripcion'] . "</p>
+                <h2 class='nom_act'>" . $actividad['nombre_actividad'] . " 
+                :" . $actividad['descripcion'] . "</h2>
                 ";
+            ?> 
+            <form action="?id=<?php echo $id_actividad; ?>" method="POST">
+            <?php
+                $consulta_grupos = "SELECT DISTINCT estudiante.id_grupo, grupo.nombre_grupo FROM asignacion JOIN estudiante ON asignacion.id_estudiante = estudiante.id_estudiante JOIN grupo ON estudiante.id_grupo = grupo.id_grupo WHERE asignacion.id_actividad = $id_actividad";
+                $query_grupos = mysqli_query($conexion, $consulta_grupos);                
+                while($grupo = mysqli_fetch_assoc($query_grupos)) {
+                    $id_grupo = $grupo['id_grupo'];
+
+                    $lista_alumnos = "SELECT asignacion.id_asignacion, asignacion.calificacion, perfil.nombre, perfil.apellido_paterno, perfil.apellido_materno FROM asignacion JOIN perfil ON asignacion.id_estudiante = perfil.id_perfil JOIN estudiante ON asignacion.id_estudiante = estudiante.id_estudiante WHERE asignacion.id_actividad = '$id_actividad' AND estudiante.id_grupo = '$id_grupo'";
+                    $query_alumnos = mysqli_query($conexion, $lista_alumnos);
+
+                    echo"
+                    <br><div class='grupo'>Grupo " . $grupo['nombre_grupo'] . "</div>
+                    ";
+
+                    while($asignacion = mysqli_fetch_assoc($query_alumnos)) {
+                        echo"<div id='lista-alumnos'>
+                            <span class='alumno'>" . $asignacion['nombre'] . " " . $asignacion['apellido_paterno'] . " " . $asignacion['apellido_materno'] . "</span>
+                            <input type='number' name='calificacion[]' value='" . $asignacion['calificacion'] . "' min='0' max='10'>
+                            <input type='hidden' name='id_asignacion[]' value='" . $asignacion['id_asignacion'] . "'>
+                            <button type='submit' name='calificar' class='boton'>Calificar</button></div>
+                        ";
+                    }
+                }
             ?>
-            <div id="diseña">
-                <form method="POST" action="">
-                    <input type="radio" class="grupo" name="select_grupo[]" value="61B">
-                    <label for="61B">61B</label><br>
-                    <input type="radio" class="grupo" name="select_grupo" value="61D">
-                    <label for="61D">61D</label><br>
-                    <br><input class="publicar" type="submit" name="crea_asignacion" value="Publicar ">
-                </form> 
-            </div>
+            </form>
         </div>
     </main>
     <!-------------------------FOOTER------------------------------------------------------>
