@@ -110,7 +110,7 @@
                         $id_grupo = $grupo['id_grupo'];
 
                         echo "<div class='boton-grupos'>
-                            <p> Grupo: " .$grupo['nombre_grupo']. "<p>
+                            <p><strong> Grupo: </strong> " .$grupo['nombre_grupo']. "<p>
                         </div>";
                         //Estudiantes que coincidan con la id del grupo que tenga el profesor
                         $sql2="SELECT id_estudiante FROM estudiante WHERE id_grupo=$id_grupo";
