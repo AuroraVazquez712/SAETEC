@@ -157,7 +157,7 @@ main {
 }
 #contenido {
     width: 80vw;
-    height: 105vh;
+    height: 115vh;
     margin: 0 auto; 
     margin-left: 50vb;
     margin-top: 5vb;
@@ -204,6 +204,10 @@ textarea{
     width: 60vh;
     margin: 2.5vb;
 } 
+.date{
+    width: 10%;
+    margin-bottom: 3%;
+}
 .resp{
     display: flex;
     flex-direction: column;
