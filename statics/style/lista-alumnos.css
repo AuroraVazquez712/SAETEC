@@ -37,7 +37,9 @@ header {
     flex: 1;
     text-align: center;
 }
-
+#titulo_encabezado a {
+    text-decoration: none;
+}
 #titulo_encabezado p {
     margin: 0%; 
 }
