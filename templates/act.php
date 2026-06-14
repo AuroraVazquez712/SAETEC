@@ -9,6 +9,9 @@
         return $conexion;
     } 
     $conexion = connect ();
+
+    //Supongamos que esta es la variable de sesion
+    $id_estudiante = 1;
     ?>
 
 <!DOCTYPE html>
@@ -91,6 +94,10 @@
                 }
         ?>
 
+        <!-- Aquí debemos contar todas las asignaciones que tiene el estudiante con el que se inció sesión. 
+            Revisaremos cuales de ellas ya fueron calificadas, esas serán las entregadas. Las que no han sido 
+            Calificadas, son las faltantes. 
+        -->
         <div id="actividades">
             <div class="tareas">
                 <h1>Tareas</h1>
