@@ -54,8 +54,8 @@ DROP TABLE IF EXISTS `administrador`;
 CREATE TABLE `administrador` (
   `id_administrador` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_administrador` text NOT NULL,
-  `contrasenha` text NOT NULL,
-  PRIMARY KEY (`id_administrador`)
+  PRIMARY KEY (`id_administrador`),
+  CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `perfil` (`id_perfil`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,7 +65,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (1,'fersagood','02022002');
+INSERT INTO `administrador` VALUES (1,'fersagood');
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
