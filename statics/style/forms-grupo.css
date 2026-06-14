@@ -1,8 +1,12 @@
+@font-face {
+    font-family: 'encabezado' ;
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
 body {
     margin: 0%;
     padding: 0%;
 }
-/*===========================HEADER================================*/
+/*==============================================HEADER========================================================*/
 header {
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -48,10 +52,6 @@ header {
     height: 50px;
 }
 
-.input-group {
-    padding: 1%;
-    align-items: center;
-}
 /*============================================BARRA DE NAVEGACIÓN===========================================*/
 .nav{
     width: 100%;
@@ -94,6 +94,7 @@ header {
 #btn-menu {
     display: none;
 }
+
 .container-menu {
     position: absolute;
     background: #0d16507e;
@@ -151,7 +152,25 @@ header {
     cursor: pointer;
     font-size: 25px;
 }
-
+/*================================================BODY=============================================*/
+#grupo{
+    background-color: #0D1650;
+    font-family: 'encabezado';
+    width: 100%;
+    height: 25vh;
+    color: #FFFFFF;
+    font-size: 3vh;
+    text-align: center;
+    font-size: 10vh;
+    margin-top: 3%;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#grupo:hover{
+        transform: scale(0.9);
+}
 form{
     display: flex;
     flex-direction: column;
@@ -170,6 +189,12 @@ form{
 button{
     margin: 2.5%;
     width: 9%;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #FFFFFF;
 }
 /*--------------------------FOOTER--------------------------*/
 footer{
