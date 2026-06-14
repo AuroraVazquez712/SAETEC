@@ -6,8 +6,10 @@
     require '../dynamics/config.php';
     $con = connect();
 
+    //$nombre_apellido = $_SESSION["nombre_apellido"];
     $correo = $_SESSION["correo"];
-    $nombre = $_SESSION["nombre_completo"];
+    $nombre_completo = $_SESSION["nombre_completo"];
+
 ?>
 <!-----------------------VISTA DE ALUMNO PARA CONTACTO--------------------------------->
 <!DOCTYPE html>
@@ -82,19 +84,22 @@
         <form id="alumno" method="GET">
             <div id="datos">
                 <p class="titulo">Contacta a tu profesor</p>    
-                    <p name="nombre"><?php echo "Alumn@: $nombre";?></p>
+                    <p name="nombre"><?php echo "Alumn@: $nombre_completo";?></p>
                     <p name="correo"><?php echo "Correo: $correo";?></p>
-                    <input class="texto_ingresado" name="contacto-profe" placeholder="Comience a escribir">
+                    <input type="text" class="texto_ingresado" name="contacto-profe" placeholder="Comience a escribir">
                     <input type="submit" id="envio-comentario" value="Enviar comentario">
             </div>
+            <?php
+                if(isset($_GET["contacto-profe"])){
+                    $texto_ingresado = $_GET["contacto-profe"];
+                    $_SESSION["contactos"][] = $texto_ingresado;
+                }
+                ?>
             <div id="comentario">
                 <?php
-                    if(isset($_GET["contacto-profe"])){
-                        $texto_ingresado = $_GET["contacto-profe"];
-                        echo "<p name='texto_ingresado'>Texto recibido: $texto_ingresado</p>";
-
+                    foreach($_SESSION["contactos"] as $consultas){
+                        echo "<p>$nombre_completo:<br>$consultas</p>";
                     }
-                    
                 ?>
             </div>
         </form method="GET">
