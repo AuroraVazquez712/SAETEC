@@ -99,7 +99,7 @@
         <div id="margen-content">   
             <h1 class="tit">Diseña la actividad:</h1>
             <?php
-                $query_act = mysqli_query($conexion, "SELECT *  FROM actividad WHERE id_actividad = '$id_actividad'");
+                $query_act = mysqli_query($conexion, "SELECT *  FROM actividad WHERE id_actividad = $id_actividad");
                 $actividad = mysqli_fetch_assoc($query_act);
 
                 echo"
