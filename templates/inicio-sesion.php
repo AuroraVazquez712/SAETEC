@@ -76,7 +76,7 @@
         // Si el codigo llega aquí, no era estudiante
         // Debemos revisar que sea profe o admin
 
-        $query = "SELECT * FROM profesor WHERE no_trabajador = '$usuario'";
+        $query = "SELECT * FROM profesor WHERE no_trabajador = $usuario";
         $result = mysqli_query($con, $query);
         $num_registros = mysqli_num_rows($result);
         if($num_registros > 0){
@@ -171,12 +171,12 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/" target="_blank">
+                <a href="https://www.ete.enp.unam.mx/CM.html">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
+                <a href="https://www.ete.enp.unam.mx/">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>

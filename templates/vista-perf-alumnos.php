@@ -9,7 +9,7 @@
     <title>SAETEC: Lista de alumnos</title>
 </head>
 <body>
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -37,12 +37,12 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/">
+                <a href="https://www.ete.enp.unam.mx/CM.html">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html">
+                <a href="https://www.ete.enp.unam.mx/">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -103,6 +103,7 @@
                     <h3>Tareas</h3>
                     <p>Entregadas:</p>
                     <p>Faltantes:</p>
+                    </a>
                 </div>
 
             <div class="Calificaciones">

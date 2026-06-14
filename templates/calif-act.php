@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Star horses">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/publi-tarea.css">
+    <link rel="stylesheet" href="../statics/style/calif-act.css">
     <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
 
     <title>SAETEC: Alumno</title>
@@ -77,71 +77,58 @@
         include 'barra-lateral.php';
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
-    
-    <main>
-        <div id="margen-content">
-            <input type="checkbox" id="toggle">
-            <div id="publi-nueva-tarea"> 
-                <div id="nueva-tarea"> 
-                    <div id="bloque">
-                        <div class="titu">
-                        <label for="toggle">    
-                                <div class="boton">+</div>
-                        </label>
-                            <h2>Publica una nueva tarea</h2>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="text-tarea">
-                    <form method="POST" action="">
-                        <label class="name_desc" >Nombre actividad:</label><br>
-                        <input type="text" id="nombre_actividad" name="nombre_actividad"><br>
-                        <label class="name_desc" >Descripción:</label><br>
-                        <textarea placeholder="Descripcion de nueva tarea:" id="descripcion" name="descripcion" > </textarea>
-                        <br><label class="name_desc" >Fecha de entrega:</label><br>
-                        <input type="date" id="fecha_entrega" name="fecha_entrega"><br>
-                        <br><input class="publicar" type="submit" name="crea_act" value="Publicar ">
-                    </form>
-                </div>
-            </div>
-            <div id="tarea-publi"> 
-                <div id="bloque"></div>
-                    <div class="publicadas">
-                        <h3>Tareas publicadas:</h3>
-                    </div>
-                </div>
-            <?php
-                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
-
-                while($tarea = mysqli_fetch_assoc($filtra)) {
-                    echo "
-                        <div id='tareas'>   
-                            <p>Nombre: " . $tarea['nombre_actividad'] . "</p>
-                            <p>Descripcion: " . $tarea['descripcion'] . "</p>
-                            <p>Fecha entrega: " . $tarea['fecha_entrega'] . "</p>
-                            <a href='disena-tarea.php?id=" . $tarea['id_actividad'] ."'>Diseña tarea</a>
-                            <br> <a href='calif-act.php?id=" . $tarea['id_actividad'] ."'>Califica actividad</a>
-                        </div>";
-                }
-            ?>
-            </div>
-        </div>
-    </main>
-
-        
     <?php
+        $id_actividad = $_GET['id'];
+        if(isset($_POST['calificar'])) {
+            $calificaciones = $_POST['calificacion'];
+            $asignaciones = $_POST['id_asignacion'];
 
-        if(isset($_POST['crea_act'])) {
-            $nombre_actividad= $_POST['nombre_actividad'];
-            $descripcion= $_POST['descripcion'];
-            $fecha_entrega= $_POST['fecha_entrega'];
-
-            $insertar_datos = "INSERT INTO actividad (id_profesor,nombre_actividad ,descripcion ,fecha_entrega ) VALUES (1, '$nombre_actividad','$descripcion','$fecha_entrega')";
-            
-            $ejecutar_insertar = mysqli_query ($conexion,$insertar_datos);
+            foreach($asignaciones as $cali => $id_asignacion) {
+                $calif = $calificaciones[$cali];
+                $asigna = "UPDATE asignacion SET calificacion = $calif WHERE id_asignacion = $id_asignacion";
+                mysqli_query($conexion, $asigna);
+            }
         }
     ?>
+    <main>
+        <div id="margen-content">   
+            <h1 class="tit">Califica tu actividad:</h1>
+            <?php
+                $query_act = mysqli_query($conexion, "SELECT * FROM actividad WHERE id_actividad = '$id_actividad'");
+                $actividad = mysqli_fetch_assoc($query_act);
+
+                echo"
+                <h2 class='nom_act'>" . $actividad['nombre_actividad'] . " 
+                :" . $actividad['descripcion'] . "</h2>
+                ";
+            ?> 
+            <form action="?id=<?php echo $id_actividad; ?>" method="POST">
+            <?php
+                $consulta_grupos = "SELECT DISTINCT estudiante.id_grupo, grupo.nombre_grupo FROM asignacion JOIN estudiante ON asignacion.id_estudiante = estudiante.id_estudiante JOIN grupo ON estudiante.id_grupo = grupo.id_grupo WHERE asignacion.id_actividad = $id_actividad";
+                $query_grupos = mysqli_query($conexion, $consulta_grupos);                
+                while($grupo = mysqli_fetch_assoc($query_grupos)) {
+                    $id_grupo = $grupo['id_grupo'];
+
+                    $lista_alumnos = "SELECT asignacion.id_asignacion, asignacion.calificacion, perfil.nombre, perfil.apellido_paterno, perfil.apellido_materno FROM asignacion JOIN perfil ON asignacion.id_estudiante = perfil.id_perfil JOIN estudiante ON asignacion.id_estudiante = estudiante.id_estudiante WHERE asignacion.id_actividad = '$id_actividad' AND estudiante.id_grupo = '$id_grupo'";
+                    $query_alumnos = mysqli_query($conexion, $lista_alumnos);
+
+                    echo"
+                    <br><div class='grupo'>Grupo " . $grupo['nombre_grupo'] . "</div>
+                    ";
+
+                    while($asignacion = mysqli_fetch_assoc($query_alumnos)) {
+                        echo"<div id='lista-alumnos'>
+                            <span class='alumno'>" . $asignacion['nombre'] . " " . $asignacion['apellido_paterno'] . " " . $asignacion['apellido_materno'] . "</span>
+                            <input type='number' name='calificacion[]' value='" . $asignacion['calificacion'] . "' min='0' max='10'>
+                            <input type='hidden' name='id_asignacion[]' value='" . $asignacion['id_asignacion'] . "'>
+                            <button type='submit' name='calificar' class='boton'>Calificar</button></div>
+                        ";
+                    }
+                }
+            ?>
+            </form>
+        </div>
+    </main>
     <!-------------------------FOOTER------------------------------------------------------>
     <?php
             include 'footer.php';

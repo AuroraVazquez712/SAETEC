@@ -21,7 +21,9 @@ header {
     font-size: 3.5rem;
     font-weight: 400;         
 }
-
+#titulo_encabezado a {
+    text-decoration: none;
+}
 #titulo_encabezado p {
     margin: 0; 
 }

@@ -2,26 +2,29 @@
     const DBHOST = "localhost";
     const DBUSER = "root";
     const PASSWORD = "";
-    const DB = "saetec";
+    const DB = "SAETEC";
 
     function connect () {
         $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
         return $conexion;
     } 
     $conexion = connect ();
-    ?>
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: StatHorses">
-    <meta name="description" content="Mi página de encabezado">
-    <link rel="stylesheet" href="../statics/style/act.css">
-    <title>Mis actividades</title>
+    <meta name="autor" content="Equipo 4: Star horses">
+    <meta name="description" content="Vista del Alumno">
+    <link rel="stylesheet" href="../statics/style/disena-tarea.css">
+    <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
+
+    <title>SAETEC: Alumno</title>
 </head>
 <body>
+    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
@@ -64,6 +67,7 @@
             </div>
         </div>
     </header>
+
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
         include 'barrapro.php';
@@ -73,38 +77,48 @@
         include 'barra-lateral.php';
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
-    <main>
-        <div class="cuadrado">Mis actividades</div>
-        <div id="columna">
-            <div class="grupo">Grupo 61D</div>
-        <?php
-                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+    <?php
+        $id_actividad = $_GET['id'];
+        if(isset($_POST['crea_asignacion'])) {
+            $grupos = $_POST['select_grupo'];
 
-                while($tarea = mysqli_fetch_assoc($filtra)) {
-                    echo "
-                        <div id='listact'>
-                        <p>Actividad: </p>    
-                        <p>" . $tarea['nombre_actividad'] . "</p>
-                        <p>" . $tarea['descripcion'] . "</p>
-                        <p>Fecha entrega:" . $tarea['fecha_entrega'] . "</p>
-                        </div>";
+            foreach($grupos as $grupo){
+                $sql1 = "SELECT id_estudiante FROM estudiante WHERE id_grupo = $grupo";
+                $query1 = mysqli_query($conexion, $sql1);
+
+            while($row = mysqli_fetch_assoc($query1)){
+                    $id_estudiante = $row['id_estudiante'];
+
+                $insertar = "INSERT INTO asignacion (id_actividad,id_estudiante) VALUES ($id_actividad,$id_estudiante)";
+                $asignar = mysqli_query($conexion, $insertar);
                 }
-        ?>
+            }
+        }
+    ?>
+    <main>
+        <div id="margen-content">   
+            <h1 class="tit">Diseña la actividad:</h1>
+            <?php
+                $query_act = mysqli_query($conexion, "SELECT *  FROM actividad WHERE id_actividad = $id_actividad");
+                $actividad = mysqli_fetch_assoc($query_act);
 
-        <div id="actividades">
-            <div class="tareas">
-                <h1>Tareas</h1>
-                <p>Entregadas:</p>
-                <p>Faltantes:</p>
-            </div>
-
-            <div class="calificaciones">
-                <h1>Calificaciones</h1>
-                    <p>Modulo 1:</p>
-                    <p>Modulo 2:</p>
-                    <p>Modulo 3:</p>
-                    <p>Modulo 4:</p>
-                    <p>Modulo 5:</p>
+                echo"
+                <h2 class='nom_act'>" . $actividad['nombre_actividad'] . "</h2> 
+                <p class='desc'>Descripcion:" . $actividad['descripcion'] . "</p>
+                ";
+            ?>
+            <div id="diseña">
+                <form method="POST" action="">
+                    <?php
+                        $query_grupos = mysqli_query($conexion, "SELECT *  FROM grupo");
+                        while($grupo = mysqli_fetch_assoc($query_grupos)){
+                            echo"
+                            <input type='checkbox' name='select_grupo[]' value='" . $grupo['id_grupo'] . "'>
+                            <label>" . $grupo['nombre_grupo'] . "</label><br>";
+                        }
+                    ?>
+                    <br><input class="publicar" type="submit" name="crea_asignacion" value="Publicar ">
+                </form> 
             </div>
         </div>
     </main>
