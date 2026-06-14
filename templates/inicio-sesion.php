@@ -1,8 +1,6 @@
 <?php
-    
-    session_start();
-
     include '../dynamics/config.php';
+<<<<<<< HEAD
 
     if (isset($_POST["usuario"]))
     {
@@ -118,6 +116,9 @@
     } 
 
 
+=======
+    include './credencial.php';
+>>>>>>> feature/diego
 ?>
 <!DOCTYPE html>
 <html lang="en">

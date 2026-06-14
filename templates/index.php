@@ -1,5 +1,6 @@
 <?php
-    include 'crdencial.php';
+    include '../dynamics/config.php';
+    include './credencial.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
