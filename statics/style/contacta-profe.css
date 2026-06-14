@@ -161,8 +161,8 @@ main {
     min-height: 60vh;
 }
 #contenedor {
-    width: 80vw;
-    height: 70vh;
+    width: 100%;
+    height: 100%;
     background-color: #0D1650;
     color: #FFFFFF;
     margin: 0 auto; 
@@ -172,18 +172,23 @@ main {
 #alumno{
     display:flex;
     padding-top: 1.5%;
-    flex-direction: column;
+    flex-direction: row;
     padding-left: 3%;
 
 }
 #img_perfil{
     padding-left: 4%;
-    padding-top: 10%;
+    padding-top: 5%;
     transform: scale(1.4);
 }
 #datos{
     margin-left: 10%;
     border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 40%;
+    padding: 20px;
+    margin: 100px 0px 20px 27px;
+    height: 50%;
 }
 .titulo{
     font-size: 6.2vb;
@@ -193,9 +198,17 @@ main {
 .correo{
     font-size: 30px;
 }
-#comentario{
-    padding-left: 10vh;
+#comentario {
+    width: 60%;
+    height: 400px;
     font-size: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 0px 0px 30px;
+    margin: 15px 40px 30px 70px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 20px;
 }
 /*--------------------------FOOTER--------------------------*/
 footer{
