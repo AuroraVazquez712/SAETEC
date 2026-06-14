@@ -80,7 +80,7 @@ CREATE TABLE `asignacion` (
   `id_asignacion` int(11) NOT NULL AUTO_INCREMENT,
   `id_actividad` int(11) NOT NULL,
   `id_estudiante` int(11) NOT NULL,
-  `calificacion` int(11) NOT NULL,
+  `calificacion` int(11),
   PRIMARY KEY (`id_asignacion`),
   KEY `id_actividad` (`id_actividad`),
   KEY `id_estudiante` (`id_estudiante`),
