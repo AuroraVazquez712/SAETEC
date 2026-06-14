@@ -141,9 +141,6 @@
         </div>
 
         <div id="barra-lateral">
-            <div class="perfil_prof">
-                <p>PERFIL DEL PROFESOR </p>
-            </div>
             <div  class="calendario">
                 <img src="../statics/img/Calendario-2027.png">
             </div>
