@@ -79,32 +79,46 @@
     <main>
         <div class="cuadrado">Mis actividades</div>
         <div id="columna">
-            <div class="grupo">Grupo 61D</div>
-        <?php
-                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
-                while($tarea = mysqli_fetch_assoc($filtra)) {
-                    echo "
-                        <div id='listact'>
+        <?php
+            $query_grupo = mysqli_query($conexion, "SELECT grupo.nombre_grupo FROM estudiante JOIN grupo ON estudiante.id_grupo = grupo.id_grupo WHERE estudiante.id_estudiante = $id_estudiante");
+            $grupo = mysqli_fetch_assoc($query_grupo);
+            echo"
+                <div class='grupo'>
+                <p>" . $grupo['nombre_grupo'] . "</p>
+            </div>";
+                
+            $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+
+            while($tarea = mysqli_fetch_assoc($filtra)) {
+                echo "
+                    <div id='listact'>
                         <p>Actividad: </p>    
                         <p>" . $tarea['nombre_actividad'] . "</p>
                         <p>" . $tarea['descripcion'] . "</p>
                         <p>Fecha entrega:" . $tarea['fecha_entrega'] . "</p>
-                        </div>";
-                }
+                    </div>";
+            }
         ?>
 
-        <!-- Aquí debemos contar todas las asignaciones que tiene el estudiante con el que se inció sesión. 
-            Revisaremos cuales de ellas ya fueron calificadas, esas serán las entregadas. Las que no han sido 
-            Calificadas, son las faltantes. 
-        -->
-        <div id="actividades">
-            <div class="tareas">
-                <h1>Tareas</h1>
-                <p>Entregadas:</p>
-                <p>Faltantes:</p>
-            </div>
+        <?php
+            $query_entregadas = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NOT NULL");
+            $entregadas = mysqli_fetch_assoc($query_entregadas);
 
+            $query_faltantes = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NULL");
+            $faltantes = mysqli_fetch_assoc($query_faltantes);
+        ?>
+        <div id="actividades">
+            <div class="bloque-tareas">
+                <h1>Tareas</h1>
+                <?php
+                    echo"
+                        <div class='tareas'>
+                            <p>Entregadas:". $entregadas['total'] . "</p>
+                            <p>Faltantes:". $faltantes['total'] . "</p>
+                        </div>";
+                ?>
+            </div>
             <div class="calificaciones">
                 <h1>Calificaciones</h1>
                     <p>Modulo 1:</p>
