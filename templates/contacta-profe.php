@@ -9,7 +9,7 @@
     //$nombre_apellido = $_SESSION["nombre_apellido"];
     $correo = $_SESSION["correo"];
     $nombre_completo = $_SESSION["nombre_completo"];
-
+    $id_estudiante = $_SESSION["id_perfil"];
 ?>
 <!-----------------------VISTA DE ALUMNO PARA CONTACTO--------------------------------->
 <!DOCTYPE html>
@@ -81,7 +81,7 @@
         <div id="img_perfil">
                 <img src="../statics/img/puma.png" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
         </div>  
-        <form id="alumno" method="GET">
+        <form id="alumno" method="POST">
             <div id="datos">
                 <p class="titulo">Contacta a tu profesor</p>    
                     <p name="nombre"><?php echo "Alumn@: $nombre_completo";?></p>
@@ -90,15 +90,23 @@
                     <input type="submit" id="envio-comentario" value="Enviar comentario">
             </div>
             <?php
-                if(isset($_GET["contacto-profe"])){
-                    $texto_ingresado = $_GET["contacto-profe"];
+                if(isset($_POST["contacto-profe"])){
+                    $texto_ingresado = $_POST["contacto-profe"];
                     $_SESSION["contactos"][] = $texto_ingresado;
+                    
+                    $dia = date("Y-m-d");
+                    $hora = date("H:i:s");
+
+                    $query2= "INSERT INTO comentario (id_estudiante, comentario, fecha_publicacion)
+                    VALUES ('$id_estudiante','$texto_ingresado', '$dia')";
+                    $result = mysqli_query($con, $query2);
                 }
-                ?>
+            ?>
             <div id="comentario">
                 <?php
                     foreach($_SESSION["contactos"] as $consultas){
-                        echo "<p>$nombre_completo:<br>$consultas</p>";
+                        $dia = date("d-m-Y");
+                        echo "<p>$nombre_completo ($dia):<br>$consultas</p>";
                     }
                 ?>
             </div>

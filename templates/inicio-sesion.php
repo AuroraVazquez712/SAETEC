@@ -99,6 +99,7 @@
         // Verificar ci es E, A o P
         if ($registro1 && $registro2)
         {
+            $_SESSION["nombre_apellido"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"];
             $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
             $_SESSION["correo"] = $registro2["correo"];
             $_SESSION["nocta"] = $registro1["nocta"];
