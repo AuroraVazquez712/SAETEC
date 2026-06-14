@@ -1,3 +1,6 @@
+<?php
+    include 'crdencial.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,7 +60,7 @@
     <nav class="nav">
         <div class="container">
             <nav class="menu">
-                <a href="./index.html">Inicio</a>
+                <a href="./index.php">Inicio</a>
                 <a href="./inicio-sesion.php">Alumno</a>
                 <a href="./inicio-sesion.php">Profesor</a>
                 <a href="./inicio-sesion.php">Admin</a>
@@ -70,27 +73,27 @@
             <div id="seleccion-perf">
                 <label>¿Quien anda ahí?</label>
                     <div class="radio-perf">
-                        <input type="radio" name="rol" id="ipt-admin" value="1" hidden>
-                        <label for="ipt-admin">
+                        <input type="radio" name="rol" id="ipt-admin" value="A" hidden>
+                        <label class="imagen" for="ipt-admin">
                             <a href="./inicio-sesion.php">
                                 <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 20%;">
-                                Administrador
+                                <span class="nombre-imagen">Administrador</span>
                             </a>
                         </label>
 
-                        <input type="radio" name="rol" id="ipt-estudiante" value="2" hidden>
-                        <label for="ipt-estudiante">
+                        <input type="radio" name="rol" id="ipt-estudiante" value="E" hidden>
+                        <label class="imagen" for="ipt-estudiante">
                             <a href="./inicio-sesion.php">
                                 <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 20%;">
-                                Estudiante
+                                <span class="nombre-imagen">Estudiante</span>
                             </a>
                         </label>
 
-                        <input type="radio" name="rol" id="ipt-estudiante" value="2" hidden>
-                        <label for="ipt-estudiante">
+                        <input type="radio" name="rol" id="ipt-estudiante" value="P" hidden>
+                        <label class="imagen" for="ipt-estudiante">
                             <a href="./inicio-sesion.php">
                                 <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 20%;">
-                                Profesor
+                                <span class="nombre-imagen">Profesor</span>
                             </a>
                         </label>
                     </div>

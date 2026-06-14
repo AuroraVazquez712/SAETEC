@@ -85,11 +85,12 @@ input{
     margin: 25px 150px 0px 0px;
 }
 #envio-datos{
+    display: flex;
     background-color:#FF671D;
-    color: white;
-    width: 100px;
+    width: 250px;
     height: 30px;
     margin-top: 20px;
+    color: white;
     border-radius: 20%;
     font-size: 20px;
     transition: 0.5s;
@@ -97,7 +98,7 @@ input{
 #envio-datos:hover{
     cursor: pointer;
     font-weight: bold;
-    width: 100px;
+    width: 255px;
     height: 35px;
     font-size: 18px;
 }
