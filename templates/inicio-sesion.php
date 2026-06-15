@@ -1,13 +1,12 @@
 <?php
 include '../dynamics/config.php';
+$conexion = connect();
 if (isset($_POST["usuario"]))
-    include '../dynamics/config.php';
 
     if (isset($_POST["usuario"]))
     {
-        require  '../dynamics/config.php';
-        $con = connect();
-
+        //require  '../dynamics/config.php';
+        
         $usuario = trim($_POST["usuario"]);
         $contrasenha = trim($_POST["contrasenha"]);
         $hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
@@ -115,7 +114,6 @@ if (isset($_POST["usuario"]))
             $error = "No coinciden usuario o contraseña";
         }
     }   
-    include './credencial.php';
     include './login.php';
 ?>
 <!DOCTYPE html>
