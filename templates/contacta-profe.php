@@ -9,7 +9,7 @@
     //$nombre_apellido = $_SESSION["nombre_apellido"];
     $correo = $_SESSION["correo"];
     $nombre_completo = $_SESSION["nombre_completo"];
-    $id_estudiante = $_SESSION["id_perfil"];
+    $id_estudiante_ini = $_SESSION["id_perfil"];
 ?>
 <!-----------------------VISTA DE ALUMNO PARA CONTACTO--------------------------------->
 <!DOCTYPE html>
@@ -94,23 +94,30 @@
                     $texto_ingresado = $_POST["contacto-profe"];
                     $_SESSION["contactos"][] = $texto_ingresado;
                     
-                    $dia = date("Y-m-d");
-                    $hora = date("H:i:s");
+                    $fecha = date("Y-m-d");
 
                     $query2= "INSERT INTO comentario (id_estudiante, comentario, fecha_publicacion)
-                    VALUES ('$id_estudiante','$texto_ingresado', '$dia')";
+                    VALUES ('$id_estudiante_ini','$texto_ingresado', '$fecha')";
                     $result = mysqli_query($con, $query2);
                 }
             ?>
             <div id="comentario">
                 <?php
-                    foreach($_SESSION["contactos"] as $consultas){
-                        $dia = date("d-m-Y");
-                        echo "<p>$nombre_completo ($dia):<br>$consultas</p>";
+                    $query = "SELECT id_estudiante, comentario, fecha_publicacion FROM comentario 
+                    WHERE id_estudiante = '$id_estudiante_ini' ORDER BY fecha_publicacion DESC";
+                    $result = mysqli_query($con, $query);
+                    
+                    while($registro = mysqli_fetch_assoc($result))
+                    {
+                        $id_estudiante = $registro["id_estudiante"];
+                        $comentario = $registro["comentario"];
+                        $fecha = $registro["fecha_publicacion"];
+
+                        echo "<p>$nombre_completo ($fecha):<br>$comentario</p>";
                     }
                 ?>
             </div>
-        </form method="GET">
+        </form>
     </div>
     <!------------------------FOOTER --------------------------------->
     <?php
