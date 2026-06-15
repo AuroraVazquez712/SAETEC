@@ -34,9 +34,8 @@
             <div class="logo-475años">
                 <img class="iconos"src="../statics/img/logo-475años.png" alt="Escuedo de la UNAM">
             </div>
-        </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>

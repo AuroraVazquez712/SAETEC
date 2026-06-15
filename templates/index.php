@@ -1,9 +1,6 @@
 <?php
-<<<<<<< HEAD
     include './credencial.php';
-=======
     include '../dynamics/config.php';
->>>>>>> main
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -40,17 +37,13 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-<<<<<<< HEAD
                 <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
-=======
-                <a href="https://www.ete.enp.unam.mx/CM.html">
->>>>>>> main
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
