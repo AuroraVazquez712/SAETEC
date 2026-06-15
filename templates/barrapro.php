@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <nav class="nav">
     <div class="container">
         <div class="btn-menu">
