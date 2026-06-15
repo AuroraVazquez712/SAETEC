@@ -1,10 +1,6 @@
-<?php   
-    // Corrobora si INICIO SESIÓN
+<?php
     session_start();
-    //var_dump( $_SESSION["rol"]);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
