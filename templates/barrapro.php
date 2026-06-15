@@ -5,7 +5,7 @@
         </div>
         <nav class="menu">
             <?php
-            session_start();
+            //session_start();
             $ruta_inicio = "";
             //var_dump($_SESSION);
             //A, E, P
