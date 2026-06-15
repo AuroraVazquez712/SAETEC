@@ -218,6 +218,7 @@ main{
     box-shadow: 3px 3px 8px rgb(163, 163, 163);
 }
 #lista-alumnos{
+<<<<<<< HEAD
     flex-direction: column;
     padding: 5px;
     width: 90%;
@@ -229,6 +230,18 @@ main{
     margin-bottom: 20px;
 }
 .alumno{
+=======
+    display: flex;
+    align-items: center;
+    background-color: rgb(210, 210, 210);
+    box-shadow: 3px 3px 8px rgb(163, 163, 163);
+    margin-bottom: 7px;
+    padding: 5px;
+    gap: 8px;
+}
+.alumno{
+    margin-right: 72%;
+>>>>>>> feature/diego
     margin-left: 15px;
     font-size: 22px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
