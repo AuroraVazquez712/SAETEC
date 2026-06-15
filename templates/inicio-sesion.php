@@ -1,6 +1,14 @@
 <?php
+<<<<<<< HEAD
 include '../dynamics/config.php';
  if (isset($_POST["usuario"]))
+=======
+    include '../dynamics/config.php';
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    if (isset($_POST["usuario"]))
+>>>>>>> main
     {
         require  '../dynamics/config.php';
         $con = connect();
@@ -111,7 +119,19 @@ include '../dynamics/config.php';
         } else {
             $error = "No coinciden usuario o contraseña";
         }
+<<<<<<< HEAD
     }  
+=======
+    } 
+
+
+=======
+    include './credencial.php';
+>>>>>>> feature/diego
+=======
+    include './login.php';
+>>>>>>> feature/diego
+>>>>>>> main
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -192,8 +212,29 @@ include '../dynamics/config.php';
             <!--Formulario de ingreso de datos-->
             <form action= "inicio-sesion.php" method ="POST">
 
-                <label for="usuario">Ingrese su usuario:</label>
-                <input name="usuario" type="text" placeholder="no. de cuenta" required>
+                <?php
+                    switch ($_SESSION["tipo_usuario"])
+                    {
+                        case $_SESSION["tipo_usuario"] = 'A':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="nombre de usuario" required>
+                <?php
+                            break;
+                        case $_SESSION["tipo_usuario"] = 'E':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="no. de cuenta" required>
+                <?php
+                            break;
+                        case $_SESSION["tipo_usuario"] = 'P':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="no. de trabajador" required>
+                <?php
+                            break;
+                    }
+                ?>
 
                 <label for="contrasenha">Ingrese su contraseña:</label>
                 <input name="contrasenha" type="password" placeholder="ddmmaaaa" required>

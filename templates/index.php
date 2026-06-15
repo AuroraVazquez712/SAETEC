@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
     include './credencial.php';
+=======
+    include '../dynamics/config.php';
+>>>>>>> main
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -42,7 +46,11 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
+<<<<<<< HEAD
                 <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
+=======
+                <a href="https://www.ete.enp.unam.mx/CM.html">
+>>>>>>> main
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
@@ -69,31 +77,31 @@
     </nav>
     <br>
     <main>
-        <form method="POST">
+        <form method="GET">
             <div id="seleccion-perf">
                 <label>¿Quien anda ahí?</label>
                     <div class="radio-perf">
                         <input type="radio" name="rol" id="ipt-admin" value="A" hidden>
                         <label class="imagen" for="ipt-admin">
-                            <a href="./inicio-sesion.php">
+                            <a href="./inicio-sesion.php?rol=A">
                                 <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 20%;">
-                                <span class="nombre-imagen">Administrador</span>
+                                Administrador
                             </a>
                         </label>
 
                         <input type="radio" name="rol" id="ipt-estudiante" value="E" hidden>
                         <label class="imagen" for="ipt-estudiante">
-                            <a href="./inicio-sesion.php">
+                            <a href="./inicio-sesion.php?rol=E">
                                 <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 20%;">
-                                <span class="nombre-imagen">Estudiante</span>
+                                Estudiante
                             </a>
                         </label>
 
                         <input type="radio" name="rol" id="ipt-estudiante" value="P" hidden>
                         <label class="imagen" for="ipt-estudiante">
-                            <a href="./inicio-sesion.php">
+                            <a href="./inicio-sesion.php?rol=P">
                                 <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 20%;">
-                                <span class="nombre-imagen">Profesor</span>
+                                Profesor
                             </a>
                         </label>
                     </div>
