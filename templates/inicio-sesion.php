@@ -1,6 +1,6 @@
 <?php
     include '../dynamics/config.php';
-    include './credencial.php';
+    include './login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,8 +81,29 @@
             <!--Formulario de ingreso de datos-->
             <form action= "inicio-sesion.php" method ="POST">
 
-                <label for="usuario">Ingrese su usuario:</label>
-                <input name="usuario" type="text" placeholder="no. de cuenta" required>
+                <?php
+                    switch ($_SESSION["tipo_usuario"])
+                    {
+                        case $_SESSION["tipo_usuario"] = 'A':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="nombre de usuario" required>
+                <?php
+                            break;
+                        case $_SESSION["tipo_usuario"] = 'E':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="no. de cuenta" required>
+                <?php
+                            break;
+                        case $_SESSION["tipo_usuario"] = 'P':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="no. de trabajador" required>
+                <?php
+                            break;
+                    }
+                ?>
 
                 <label for="contrasenha">Ingrese su contraseña:</label>
                 <input name="contrasenha" type="password" placeholder="ddmmaaaa" required>

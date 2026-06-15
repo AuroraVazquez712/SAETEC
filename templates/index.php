@@ -77,7 +77,7 @@
                         <label class="imagen" for="ipt-admin">
                             <a href="./inicio-sesion.php?rol=A">
                                 <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 20%;">
-                                <span class="nombre-imagen">Administrador</span>
+                                Administrador
                             </a>
                         </label>
 
@@ -85,7 +85,7 @@
                         <label class="imagen" for="ipt-estudiante">
                             <a href="./inicio-sesion.php?rol=E">
                                 <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 20%;">
-                                <span class="nombre-imagen">Estudiante</span>
+                                Estudiante
                             </a>
                         </label>
 
@@ -93,7 +93,7 @@
                         <label class="imagen" for="ipt-estudiante">
                             <a href="./inicio-sesion.php?rol=P">
                                 <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 20%;">
-                                <span class="nombre-imagen">Profesor</span>
+                                Profesor
                             </a>
                         </label>
                     </div>

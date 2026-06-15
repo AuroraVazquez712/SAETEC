@@ -3,10 +3,9 @@
     session_start();
 
     // Nos preguntamos si eligió tipo de usuario
-    $rol = "";
     if(isset($_GET["rol"])) {
         var_dump($_GET);
-        $rol = $_GET["rol"];
+        $_SESSION["tipo_usuario"] = $_GET["rol"];
     } else {
         echo "No hay POST";
         //header("Location: index.php");
@@ -37,7 +36,7 @@
 
         // Ahora, con base en el rol del usuario, vamos a buscar en su tabla específica si existe el usuario
 
-        switch ($rol) {
+        switch ($_SESSION["tipo_usuario"]) {
             // El caso de administrador
             case $rol = "A":
                 $query = "SELECT id_administrador, nombre_administrador FROM administrador WHERE nombre_administrador ='$usuario'";
@@ -61,12 +60,14 @@
                         $_SESSION["nombre_administrador"] = $registro1["nombre_administrador"];
                         $_SESSION["id_perfil"] = $registro2["id_perfil"];
                         $_SESSION["rol"] = 'A';
-                        header("Location: perfil-alumno.php");
+                        header("Location: admin.php");
                         exit;
                     }
                 } else {
-                    // No hay registros asociados a ese nombre de administrador
-                    // Mandar mensaje de error
+                    echo "<p>No se encontró a un administrador con ese nombre de usuario</p>";
+                    // No existe en la tabla un administrador con ese nombre de usuario
+                    // Por hacer: mandar mensaje de error
+                    $error = "No se ha encontrado al administrador";
                 }
                 break;
             // El caso del estudiante
@@ -109,8 +110,10 @@
                         exit;
                     }
                 } else {
+                    echo "<p>No se encontró a un estudiante con ese número de cuenta</p>";
                     // No existe en la tabla un estudiante con ese numero de cuenta
                     // Por hacer: mandar mensaje de error
+                    $error = "No se ha encontrado al estudiante";
                     
                 }
                 break;
@@ -154,9 +157,10 @@
                         exit;
                     }
                 } else {
+                    echo "<p>No se encontró a un profesor con ese número de trabajador</p>";
                     // No existe un registro en la tabla de profe con ese numero de trabajador
                     // Por hacer: mandar mensaje de error
-                    // $error = "No se ha encontrado al profesor";
+                    $error = "No se ha encontrado al profesor";
                 }
                 break;
         }

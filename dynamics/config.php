@@ -9,5 +9,4 @@
         return $conexion;
     } 
     $conexion = connect();
-
     ?>

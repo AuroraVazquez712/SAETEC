@@ -1,11 +1,5 @@
 <?php
-    
-    $servidor = "localhost";
-    $user = "root";
-    $password = "";
-    $data_base = "saetec";
-
-    $link = mysqli_connect ($servidor, $user, $password, $data_base);
+    include '../dynamics/config.php'
 ?>
 
 <!DOCTYPE html>
