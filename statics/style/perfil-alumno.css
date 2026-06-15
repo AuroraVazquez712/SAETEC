@@ -97,6 +97,7 @@ header {
     font-style: italic;
 }
 .cont-menu nav a {
+    text-decoration: none;
     display: block;
     text-decoration:none;
     padding: 30px;
