@@ -66,26 +66,32 @@
                     <div class="radio-perf">
                         <input type="radio" name="rol" id="ipt-admin" value="A" hidden>
                         <label class="imagen" for="ipt-admin">
-                            <a href="./inicio-sesion.php?rol=A">
-                                <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 20%;">
-                                Administrador
-                            </a>
+                            <div id="content">
+                                <a href="./inicio-sesion.php?rol=A">
+                                    <img src="../statics/img/admin-icon.png" alt="Icono perfil administrador" style="width: 100%;">
+                                </a>
+                                <a href="./inicio-sesion.php?rol=A">Administrador </a>
+                            </div>
                         </label>
 
                         <input type="radio" name="rol" id="ipt-estudiante" value="E" hidden>
                         <label class="imagen" for="ipt-estudiante">
-                            <a href="./inicio-sesion.php?rol=E">
-                                <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 20%;">
-                                Estudiante
-                            </a>
+                            <div id="content">
+                                <a href="./inicio-sesion.php?rol=E">
+                                    <img src="../statics/img/alumn-icon.png" alt="Icono perfil estudiante" style="width: 100%;">
+                                </a>
+                                <a href="./inicio-sesion.php?rol=E"> Estudiante </a>
+                            </div>
                         </label>
 
                         <input type="radio" name="rol" id="ipt-estudiante" value="P" hidden>
                         <label class="imagen" for="ipt-estudiante">
-                            <a href="./inicio-sesion.php?rol=P">
-                                <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 20%;">
-                                Profesor
-                            </a>
+                            <div id="content">
+                                <a href="./inicio-sesion.php?rol=P">
+                                    <img src="../statics/img/prof-icon.png" alt="Icono perfil profesor" style="width: 100%;">
+                                </a>
+                                <a href="./inicio-sesion.php?rol=P">Profesor</a>
+                            </div>
                         </label>
                     </div>
                 </label>
