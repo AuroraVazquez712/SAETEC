@@ -1,27 +1,6 @@
 <?php
     header('Content-Type: text/html; charset=utf-8');
-    // Corrobora si INICIÓ SESIÓN
-    session_start();
-
-    require '../dynamics/config.php';
-    $con = connect();
-
-    if (isset($_SESSION["rol"]) ){
-        if ($_SESSION['rol'] == "E"){
-            //header("Location: alumno.php");
-        }
-
-    } else {
-        // REGRESA A LOGIN
-        header("Location: inicio-sesion.php");
-    }
-
-    $nombre = $_SESSION["nombre_completo"];
-    $correo = $_SESSION["correo"];
-    $nocta = $_SESSION["nocta"];
-    $grupo =  $_SESSION["grupo"];
-    $id_perfil = $_SESSION["id_perfil"];
-
+    include '../dynamics/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -90,6 +69,31 @@
             include 'barra-lateral.php';
         ?>
         <!----------------------------------------CONTENIDO------------------------------------------->
+        <?php
+            
+            // Corrobora si INICIÓ SESIÓN
+            //session_start();
+
+            
+            $con = connect();
+
+            if (isset($_SESSION["rol"]) ){
+                if ($_SESSION['rol'] == "E"){
+                    //header("Location: alumno.php");
+                }
+
+            } else {
+                // REGRESA A LOGIN
+                header("Location: inicio-sesion.php");
+            }
+
+            $nombre = $_SESSION["nombre_completo"];
+            $correo = $_SESSION["correo"];
+            $nocta = $_SESSION["nocta"];
+            $grupo =  $_SESSION["grupo"];
+            $id_perfil = $_SESSION["id_perfil"];
+
+        ?>
         <div id="cont-general">
         <div id="barra-lateral">
             <?php
