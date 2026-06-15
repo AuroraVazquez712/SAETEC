@@ -1,6 +1,6 @@
 <?php
 include '../dynamics/config.php';
-$conexion = connect();
+$con = connect();
 if (isset($_POST["usuario"]))
 
     if (isset($_POST["usuario"]))
