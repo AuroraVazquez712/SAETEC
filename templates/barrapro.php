@@ -1,5 +1,6 @@
 <?php
-    //session_start();
+    include 'login.php';
+    $ruta_inicio = "";
 ?>
 <nav class="nav">
     <div class="container">
@@ -8,12 +9,10 @@
         </div>
         <nav class="menu">
             <?php
-            //session_start();
-            $ruta_inicio = "";
             //var_dump($_SESSION);
             //A, E, P
             
-            switch ($_SESSION["tipo_usuario"]) {
+            switch ($_SESSION["rol"]) {
                 case 'A':
                     $ruta_inicio = './admin.php';
                     break;

@@ -106,7 +106,7 @@
                         $_SESSION["id_perfil"] = $registro2["id_perfil"];
                         $_SESSION["rol"] = "E";
                         setcookie("usuario", $registro1["nocta"], time() + (86400)); // 1 dia = 86400 segundos, expirará en un dia
-                        header("Location: perfil-alumno.php");
+                        header("Location: alumno.php");
                         exit;
                     }
                 } else {
