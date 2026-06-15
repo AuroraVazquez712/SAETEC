@@ -1,5 +1,4 @@
 <?php
-    include '../dynamics/config.php';
     include './credencial.php';
 ?>
 <!DOCTYPE html>
@@ -43,20 +42,12 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-<<<<<<< HEAD:templates/index.php
                 <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
-=======
-                <a href="https://www.ete.enp.unam.mx/CM.html">
->>>>>>> 4e8ff9a56c40c4805c417a1b4b42e65677238463:templates/index.html
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-<<<<<<< HEAD:templates/index.php
                 <a href="https://www.ete.enp.unam.mx/" target="_blank">
-=======
-                <a href="https://www.ete.enp.unam.mx/">
->>>>>>> 4e8ff9a56c40c4805c417a1b4b42e65677238463:templates/index.html
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>

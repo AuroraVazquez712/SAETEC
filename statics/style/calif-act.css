@@ -147,6 +147,7 @@ header {
     line-height: 70px;
 }
 .container .menu a {
+    text-decoration: none;
     display: inline-block;
     padding: 30px;
     line-height: normal;
