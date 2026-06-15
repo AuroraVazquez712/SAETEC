@@ -1,11 +1,14 @@
 <?php
-    
-    $servidor = "localhost";
-    $user = "root";
-    $password = "";
-    $data_base = "saetec";
+    const DBHOST = "localhost";
+    const DBUSER = "root";
+    const PASSWORD = "";
+    const DB = "SAETEC";
 
-    $link = mysqli_connect ($servidor, $user, $password, $data_base);
+    function connect () {
+        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
+        return $conexion;
+    } 
+    $conexion = connect ();
 ?>
 
 <!DOCTYPE html>
@@ -44,18 +47,18 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/">
+                <a href="https://www.ete.enp.unam.mx/CM.html">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html">
+                <a href="https://www.ete.enp.unam.mx/">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -109,17 +112,16 @@
                     </div>
                 </div>
             <?php
-                $filtra = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
                 while($tarea = mysqli_fetch_assoc($filtra)) {
                     echo "
-                        <div id='tareas'>
-                        <p>Actividad: </p>    
-                        <p>" . $tarea['nombre_actividad'] . "</p>
-                        <p>Descripcion: </p>
-                        <p>" . $tarea['descripcion'] . "</p>
-                        <p>Fecha entrega: </p>
-                        <p>" . $tarea['fecha_entrega'] . "</p>
+                        <div id='tareas'>   
+                            <p>Nombre: " . $tarea['nombre_actividad'] . "</p>
+                            <p>Descripcion: " . $tarea['descripcion'] . "</p>
+                            <p>Fecha entrega: " . $tarea['fecha_entrega'] . "</p>
+                            <a href='disena-tarea.php?id=" . $tarea['id_actividad'] ."'>Diseña tarea</a>
+                            <br> <a href='calif-act.php?id=" . $tarea['id_actividad'] ."'>Califica actividad</a>
                         </div>";
                 }
             ?>
@@ -135,9 +137,9 @@
             $descripcion= $_POST['descripcion'];
             $fecha_entrega= $_POST['fecha_entrega'];
 
-            $insertar_datos = "INSERT INTO actividad (id_profesor,nombre_actividad ,descripcion ,fecha_entrega ) VALUES (4, '$nombre_actividad','$descripcion','$fecha_entrega')";
+            $insertar_datos = "INSERT INTO actividad (id_profesor,nombre_actividad ,descripcion ,fecha_entrega ) VALUES (1, '$nombre_actividad','$descripcion','$fecha_entrega')";
             
-            $ejecutar_insertar = mysqli_query ($link,$insertar_datos);
+            $ejecutar_insertar = mysqli_query ($conexion,$insertar_datos);
         }
     ?>
     <!-------------------------FOOTER------------------------------------------------------>

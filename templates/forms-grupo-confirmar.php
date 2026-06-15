@@ -1,17 +1,17 @@
 <?php 
     include '../dynamics/config.php';
     $conexion = connect();
+    session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
+    <meta name="autor" content="Equipo 4: Equipo 4: Aurora Vazquez">
     <meta name="description" content="Mi página de encabezado">
     <link rel="stylesheet" href="../statics/style/formalu.css">
-    <title>Formulario del profesor</title>
+    <title>Confirmar grupo</title>
 </head>
 <body>
     <header>
@@ -62,48 +62,62 @@
     ?> 
     <br>
     <!-------------------------------------------FORMS------------>
-    <form action="admin-consulta-profe.php" method="POST">
-    <!--<form action="formalu-confirmar.php" method="POST">--->
-        <div class="form-grid">
+    <div class="container" style="margin-top: 50px;">
+        <header class="form-header">
+            <h2>¡Grupo Registrado!</h2>
+        </header>
 
-            <div class="input-group">
-                <label for="nombre">Nombre(s):</label>
-                <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
-            </div>
+        <div class="alumno-registro" style="background: #f8f9fa; padding: 20px; border-left: 5px solid #3f2f83; border-radius: 5px;">
+            <h3>Datos del alumno:</h3>
+            
+            <!-- Aquí va el PHP para mostrar los datos recibidos -->
+            <?php
+                if (isset($_POST['registro'])){
+                    // logica de validacion de los datos y guardado de estos
+                    //$id_perfil= $_POST["id_perfil"];
+                    $grupo = $_POST["grupo"];
+                    $plantel= $_POST["plantel"];
+                    $cupo= $_POST["cupo"];
+                    $salon= $_POST["salon"];
+                    $id_profesor=$_POST["id_profesor"];
+                    //Guardar en base de datos 
 
-            <div class="input-group">
-                <label for="apellidopat">Apellido paterno:</label>
-                <input type="text" name="apellidopat" id="ipt-apellidopat" placeholder="Escribe tu apellido" required>
-            </div>
+                    $insertar_datos= "INSERT INTO grupo (nombre_grupo, plantel, cupo, salon, id_profesor)
+                                    VALUES('$grupo', '$plantel', '$cupo', '$salon', '$id_profesor')";
 
-            <div class="input-group">
-                <label for="apellidopat">Apellido materno:</label>
-                <input type="text" name="apellidomat" id="ipt-apellidomat" placeholder="Escribe tu apellido" required>
-            </div>
+                    $inster= mysqli_query($conexion, $insertar_datos);
+                    //}
+                    // El ultimo id insertado en la base
+                    // $last_id
+                    $id_perfil = mysqli_insert_id($conexion);
 
-            <div class="input-group">
-                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                <input type="date" name="fecha_nacimiento" id="ipt-fecha_nacimiento" required>
-            </div>
+                    // Ahora insertamos el resto de los datos en la tabla 
+                    // estudiante. Acá ya usamos el nocta, id_grupo y id_perfil
+                    $sql2 = "INSERT INTO grupo (id_grupo)
+                        VALUES ($id_perfil);
+                    ";
+                    $query2 = mysqli_query($conexion, $sql2);
 
-            <div class="input-group">
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="ipt-correo" placeholder="hola@gmail.com" required>
-            </div>
+                    // nos preguntamos si sí se insertó el registro
+                    if($inster){
+                        // Guardar las variables que usaremos en otras vistas en variables de sesion
+                        $_SESSION["id_perfil"] = $id_perfil;
+                        $_SESSION["grupo"]=$grupo;
+                        $_SESSION["plantel"] = $plantel;
+                        $_SESSION["cupo"]=$cupo;
+                        $_SESSION["salon"]=$salon;
 
-            <div class="input-group">
-                <label for="no_trabajador">No. de trabajador</label>
-                <input type="text" name="no_trabajador" id="no_trabajador" placeholder="123456789"  required>
-            </div>
-
-
+                        echo "<p> Grupo: $grupo </p>";
+                        echo "<p> Plantel: $plantel</p>";
+                        echo "<p> Cupo: $cupo </p>";
+                        echo "<p> Salón: $salon</p>";
+                    }
+                }
+            ?>
         </div>
         
-        <button type="submit" class="btn-submit" name="registro">Confirmar</button>
-
-    </form>
-    <!-------------------------CONEXION A BASE----------------------->
-
+        <br>
+    </div>
     <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';

@@ -36,7 +36,9 @@ header {
     flex: 1;
     text-align: center;
 }
-
+#titulo_encabezado a {
+    text-decoration: none;
+}
 #titulo_encabezado p {
     margin: 0%; 
 }
@@ -98,6 +100,7 @@ header {
     font-style: italic;
 }
 .cont-menu nav a {
+    text-decoration: none;
     display: block;
     text-decoration:none;
     padding: 30px;
@@ -222,7 +225,6 @@ main{
     margin-left: 25px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
 #toggle {
     display: none;
 }
@@ -293,4 +295,12 @@ main{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px;
     margin-left: 15px;
+}
+#tareas a{
+    font-size: 25px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: -10px;
+    color: #0D1650;
 }

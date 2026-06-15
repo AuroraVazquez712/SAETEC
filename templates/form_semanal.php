@@ -1,6 +1,6 @@
 <?php
     include '../dynamics/config.php';
-    $id_estudiante = 1;
+    $id_estudiante = 17;
 ?> 
 <?php
     if (isset($_POST["cuesta_trabajo"])) {
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>
@@ -94,7 +94,7 @@
     
     <main>
         <form id="contenido" method="POST">
-            <div id=""sentir_estudiante>
+            <div id="sentir_estudiante">
                 <label>Esta semana me sentí:</label>
                     <div class="radio-group">
                         <input type="radio" name="emocion" id="ipt-feliz" value="1" hidden>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="resp">
                     <label for="fecha_emision">Fecha de envio:</label>
-                    <input type="date" name="fecha_emision" id="ipt-fecha_nacimiento" required>
+                    <input type="date" name="fecha_emision" id="ipt-fecha_emision" required>
                 </div>
             </div>
             <div id="enviar">

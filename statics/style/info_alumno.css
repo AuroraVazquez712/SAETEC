@@ -1,14 +1,12 @@
-/*------------Estilo de fuentes------------*/
 @font-face {
-    font-family: 'nom-usuario';
-    src: url(../fonts/times-sans-serif.ttf) format(truetype);
+    font-family: 'encabezado' ;
+    src: url(../fonts/BebasNeue-Regular.ttf);
 }
-/*------------Estilo de etiquetas generales------------*/
 body {
     margin: 0%;
     padding: 0%;
 }
-
+/*==============================================HEADER========================================================*/
 header {
     background-color: #E6E8E9;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -16,7 +14,7 @@ header {
     align-items: center;        
     justify-content: space-between;
 }
-/*------------Barra de búsqueda------------*/   
+
 .iconos {
     width: 70px;
     height: 70px;
@@ -56,10 +54,117 @@ header {
     height: 50px;
 }
 
+/*============================================BARRA DE NAVEGACIÓN===========================================*/
+.nav{
+    width: 100%;
+    height: 100px;
+    left: 0%;
+    background-color: #e6e8e993;
+}
+.container {
+    width:90%;
+    max-width:1200px;
+    margin: auto;
+}
+.container .btn-menu {
+    float:left;
+    line-height: 100px;
+}
+.container .btn-menu label {
+    color: #0f0101;
+    font-size:45px;
+    cursor: pointer;
+}
+.container .menu {
+    float: right;
+    line-height: 70px;
+}
+.container .menu a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 30px;
+    line-height: normal;
+    color: #0e0202;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: all 200ms ease;
+    font-size:25px;
+}
+.container .menu a:hover {
+    border-bottom: 6px solid #E6E8E9;
+    padding-bottom: 3px;
+    
+}
+/*===========================================BODY=================================================*/
+main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: stretch;
+    gap:1%;
+    
+}
+#form-semanal{
+    background-color: #c9caca;
+    border-color: #0e0202;
+    width: 70%;
+    height: 100%;
+    margin-left: 3%;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    
+}
+
+#experiencia{
+    background-color: #8d8d8d51;
+    border-color: #0e0202;
+    width: 130%;
+    height: auto;
+    margin-right: 3%;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+#grupo{
+    background-color: #0D1650;
+    font-family: 'encabezado';
+    width: 100%;
+    height:20%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size:60px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#form-semanal #grupo{
+    font-size: 50px;
+}
+.tit:visited{
+    color:#FFFFFF;
+}
+a{
+    text-decoration: none;
+}
+#datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-size: 20px;
+    margin-left: 5%;
+}
+#emocion{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-size: 25px;
+    margin-left: 5%;
+}
+#emocion p{
+    margin:4%;
+}
 /*===========================================ASIDE=================================================*/
 #btn-menu {
     display: none;
 }
+
 .container-menu {
     position: absolute;
     background: #0d16507e;
@@ -97,7 +202,6 @@ header {
     font-style: italic;
 }
 .cont-menu nav a {
-    text-decoration: none;
     display: block;
     text-decoration:none;
     padding: 30px;
@@ -118,81 +222,8 @@ header {
     cursor: pointer;
     font-size: 25px;
 }
-#nombre-usuario{
-    font-family: 'nom-usuario', sans-serif;
-    font-size: 55px;
-}
-/*--------------------------PERFIL ALUMNO----------------------------------*/
-#cont-general{
-    display: flex;
-    width: 100%;
-}
-#cont-general p{
-    font-size: 20px;
-}
-#datos-alumno{
-    display: block;
-    border: 1px solid #000000;
-    margin: 10px;
-    padding: 30px;
-}
-#datos-alumno h3{
-    background-color: #0D1650;
-    color: #FFFFFF;
-    border-radius: 50px;
-    font-family: 'nom-usuario';
-    font-size: 50px;
-    padding: 18px;
-    padding-left: 30px;
-}
-#datos-alumno p{
-    padding-left: 60px;
-    font-size: 30px;
-}
-#datos-alumno{
-    width: 1000px;
-    height: 100%;
-    padding-left: 100px;
-}
-#datos-alumno p{
-    background-color: #0D1650;
-    color: #FFFFFF;
-    border-radius: 50px;
-    font-size: 20px;
-    padding: 15px;
-    padding-left: 30px;
-}
-/*--------------------------BARRA LATERAL, PERFIL--------------------------*/
-#barra-lateral{
-    width: 600px;
-    height: 100%;
-    background-color: #0D1650;
-    color: #FFFFFF;
-    padding: 30px;
-    margin-right: 20px;
-    font-size: 30px;
-}
-#barra-lateral p{
-    margin-left: 40px;
-}
-#barra-lateral button{
-    background-color: #FF671D;
-    color: #FFFFFF;
-    font-size: 15px;
-    border-radius: 15px;
-    margin-left: 40px;
-    padding: 10px;
-    cursor: pointer;
-}
-.profile-pic{
-    border-radius: 100px;
-    margin: 20px;
-    margin-left: 40px;
-    width: 150px;
-    height: 150px;
-    max-width: 150px;
-    border: 5px solid #0D1650;
-}
+/*================================================BODY=============================================*/
+
 /*--------------------------FOOTER--------------------------*/
 footer{
     background-color: #0D1650;

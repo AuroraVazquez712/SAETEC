@@ -45,6 +45,31 @@ INSERT INTO `actividad` VALUES (1,1,'Serie de Karel',NULL,'2026-06-08');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `administrador`
+--
+
+DROP TABLE IF EXISTS `administrador`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `administrador` (
+  `id_administrador` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_administrador` text NOT NULL,
+  PRIMARY KEY (`id_administrador`),
+  CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `perfil` (`id_perfil`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `administrador`
+--
+
+LOCK TABLES `administrador` WRITE;
+/*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
+INSERT INTO `administrador` VALUES (1,'fersagood');
+/*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `asignacion`
 --
 
@@ -55,7 +80,7 @@ CREATE TABLE `asignacion` (
   `id_asignacion` int(11) NOT NULL AUTO_INCREMENT,
   `id_actividad` int(11) NOT NULL,
   `id_estudiante` int(11) NOT NULL,
-  `calificacion` int(11) NOT NULL,
+  `calificacion` int(11),
   PRIMARY KEY (`id_asignacion`),
   KEY `id_actividad` (`id_actividad`),
   KEY `id_estudiante` (`id_estudiante`),
@@ -120,7 +145,7 @@ CREATE TABLE `cuestionario` (
   PRIMARY KEY (`id_cuestionario`),
   KEY `id_estudiante` (`id_estudiante`),
   CONSTRAINT `cuestionario_ibfk_1` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiante` (`id_estudiante`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,9 +154,7 @@ CREATE TABLE `cuestionario` (
 
 LOCK TABLES `cuestionario` WRITE;
 /*!40000 ALTER TABLE `cuestionario` DISABLE KEYS */;
-
---INSERT INTO `cuestionario` VALUES (1,1,'Disenho','Feliz','Disenhar con CSS','2026-06-08');
-
+INSERT INTO `cuestionario` VALUES (2,1,'todo',1,'todo','nada','2026-06-11'),(3,1,'todo',1,'todo','nada','2026-06-12'),(4,1,'Todo',1,'nada','A','2026-06-12'),(5,1,'todo',1,'todo','a','2026-06-12');
 /*!40000 ALTER TABLE `cuestionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +183,6 @@ INSERT INTO `dificultad` VALUES (1,'tiempo'),(2,'desconocimiento'),(3,'falta de 
 UNLOCK TABLES;
 
 --
-
 -- Table structure for table `emocion`
 --
 
@@ -183,6 +205,8 @@ LOCK TABLES `emocion` WRITE;
 INSERT INTO `emocion` VALUES (1,'feliz'),(2,'mas o menos'),(3,'triste'),(4,'cansado');
 /*!40000 ALTER TABLE `emocion` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
 -- Table structure for table `estudiante`
 --
 
@@ -219,7 +243,7 @@ CREATE TABLE `estudiante` (
 
 LOCK TABLES `estudiante` WRITE;
 /*!40000 ALTER TABLE `estudiante` DISABLE KEYS */;
-INSERT INTO `estudiante` VALUES (1,2,3,5,2,4,325156992),(2,1,2,5,2,2,325295949);
+INSERT INTO `estudiante` VALUES (1,2,3,5,3,1,325156992),(2,1,2,5,2,2,325295949);
 /*!40000 ALTER TABLE `estudiante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -317,6 +341,7 @@ CREATE TABLE `perfil` (
   `fecha_nacimiento` date NOT NULL,
   `correo` char(50) NOT NULL,
   `contrasenha` varchar(100) DEFAULT NULL,
+  `foto_perfil` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_perfil`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -327,7 +352,7 @@ CREATE TABLE `perfil` (
 
 LOCK TABLES `perfil` WRITE;
 /*!40000 ALTER TABLE `perfil` DISABLE KEYS */;
-INSERT INTO `perfil` VALUES (1,'E','Diego','Salcedo','Pérez','2009-03-21','diegod@saetec.com','21032009'),(2,'E','Frida','García','Hernández','2009-07-07','friifayer@saetec.com','07072009');
+INSERT INTO `perfil` VALUES (1,'E','Diego','Salcedo','Pérez','2009-03-21','diegod@saetec.com','21032009',NULL),(2,'E','Frida','García','Hernández','2009-07-07','friifayer@saetec.com','07072009',NULL);
 /*!40000 ALTER TABLE `perfil` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -418,4 +443,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-10 22:45:10
+-- Dump completed on 2026-06-13  0:14:57

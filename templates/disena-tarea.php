@@ -1,13 +1,27 @@
+<?php
+    const DBHOST = "localhost";
+    const DBUSER = "root";
+    const PASSWORD = "";
+    const DB = "SAETEC";
+
+    function connect () {
+        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
+        return $conexion;
+    } 
+    $conexion = connect ();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
+    <meta name="autor" content="Equipo 4: Star horses">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/admin.css">
+    <link rel="stylesheet" href="../statics/style/disena-tarea.css">
+    <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
 
-    <title>SAETEC: Admin</title>
+    <title>SAETEC: Alumno</title>
 </head>
 <body>
     <!---------------ENCABEZADO--------------------------->
@@ -63,45 +77,54 @@
         include 'barra-lateral.php';
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
+    <?php
+        $id_actividad = $_GET['id'];
+        if(isset($_POST['crea_asignacion'])) {
+            $grupos = $_POST['select_grupo'];
+
+            foreach($grupos as $grupo){
+                $sql1 = "SELECT id_estudiante FROM estudiante WHERE id_grupo = $grupo";
+                $query1 = mysqli_query($conexion, $sql1);
+
+            while($row = mysqli_fetch_assoc($query1)){
+                    $id_estudiante = $row['id_estudiante'];
+
+                $insertar = "INSERT INTO asignacion (id_actividad,id_estudiante) VALUES ($id_actividad,$id_estudiante)";
+                $asignar = mysqli_query($conexion, $insertar);
+                }
+            }
+        }
+    ?>
     <main>
-        <div id="contenedor">
-            <div class="titulos">
-                <div id="alumn">
-                    <a href="./lista-alumnos.php">
-                        <p><u>CONSULTA ALUMNOS</u></p>
-                    </a>
-                </div>
-                <div id="prof">
-                    <a href="./admin-consulta-profe.php">
-                        <p><u>CONSULTA PROFESORES</u></p>
-                    </a>
-                </div>
-                <div id="grupo">
-                    <a href="./crea_grupo.php">
-                        <p><u>AGREGA GRUPOS</u></p>
-                    </a>
-                </div>
+        <div id="margen-content">   
+            <h1 class="tit">Diseña la actividad:</h1>
+            <?php
+                $query_act = mysqli_query($conexion, "SELECT *  FROM actividad WHERE id_actividad = $id_actividad");
+                $actividad = mysqli_fetch_assoc($query_act);
+
+                echo"
+                <h2 class='nom_act'>" . $actividad['nombre_actividad'] . "</h2> 
+                <p class='desc'>Descripcion:" . $actividad['descripcion'] . "</p>
+                ";
+            ?>
+            <div id="diseña">
+                <form method="POST" action="">
+                    <?php
+                        $query_grupos = mysqli_query($conexion, "SELECT *  FROM grupo");
+                        while($grupo = mysqli_fetch_assoc($query_grupos)){
+                            echo"
+                            <input type='checkbox' name='select_grupo[]' value='" . $grupo['id_grupo'] . "'>
+                            <label>" . $grupo['nombre_grupo'] . "</label><br>";
+                        }
+                    ?>
+                    <br><input class="publicar" type="submit" name="crea_asignacion" value="Publicar ">
+                </form> 
             </div>
-            <div class="extras">
-                <div id="material">
-                    <a href="./material_extra.php">
-                            <p>Material extra</p>
-                    </a>
-                </div>
-                <div id="tips">
-                    <a href="./tips.php">
-                        <p>¡¡Asegura el éxito en la ETE!!</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div id="calendario">
-            <img src="../statics/img/calendario.png" alt="Calendario de la ENP 2024-2025"> 
         </div>
     </main>
+    <!-------------------------FOOTER------------------------------------------------------>
     <?php
             include 'footer.php';
     ?>
-    
 </body>
 </html>

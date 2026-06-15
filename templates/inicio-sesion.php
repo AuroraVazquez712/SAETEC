@@ -1,11 +1,12 @@
 <?php
-    session_start();
+include '../dynamics/config.php';
+$con = connect();
+if (isset($_POST["usuario"]))
 
     if (isset($_POST["usuario"]))
     {
-        require  '../dynamics/config.php';
-        $con = connect();
-
+        //require  '../dynamics/config.php';
+        
         $usuario = trim($_POST["usuario"]);
         $contrasenha = trim($_POST["contrasenha"]);
         $hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
@@ -62,7 +63,7 @@
         // Si el codigo llega aquí, no era estudiante
         // Debemos revisar que sea profe o admin
 
-        $query = "SELECT * FROM profesor WHERE no_trabajador = '$usuario'";
+        $query = "SELECT * FROM profesor WHERE no_trabajador = $usuario";
         $result = mysqli_query($con, $query);
         $num_registros = mysqli_num_rows($result);
         if($num_registros > 0){
@@ -71,7 +72,6 @@
         }
 
         // Cuando haya admin, haremos lo mismo
-        
 
 
 
@@ -95,7 +95,6 @@
         $result3 = mysqli_query( $con, $query3);
         $registro3 = mysqli_fetch_assoc($result3);
 
-        
         // Verificar ci es E, A o P
         if ($registro1 && $registro2)
         {
@@ -112,9 +111,8 @@
         } else {
             $error = "No coinciden usuario o contraseña";
         }
-    } 
-
-
+    }   
+    include './login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -152,18 +150,18 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/" target="_blank">
+                <a href="https://www.ete.enp.unam.mx/CM.html">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html" target="_blank">
+                <a href="https://www.ete.enp.unam.mx/">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -176,7 +174,7 @@
     <nav class="nav">
         <div class="container">
             <nav class="menu">
-                <a href="./index.html">Inicio</a>
+                <a href="./index.php">Inicio</a>
                 <a href="./inicio-sesion.php">Perfil</a>
                 <a href="./inicio-sesion.php">Acerca</a>
                 <a href="./inicio-sesion.php">Creditos</a>
@@ -195,14 +193,36 @@
             <!--Formulario de ingreso de datos-->
             <form action= "inicio-sesion.php" method ="POST">
 
-                <label for="usuario">Ingrese su usuario:</label>
-                <input name="usuario" type="text" placeholder="no. de cuenta" required>
+                <?php
+                    switch ($_SESSION["tipo_usuario"])
+                    {
+                        case $_SESSION["tipo_usuario"] = 'A':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="nombre de usuario" required>
+                <?php
+                            break;
+                        case $_SESSION["tipo_usuario"] = 'E':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="no. de cuenta" required>
+                <?php
+                            break;
+                        case $_SESSION["tipo_usuario"] = 'P':
+                ?>
+                            <label for="usuario">Ingrese su usuario:</label>
+                            <input name="usuario" type="text" placeholder="no. de trabajador" required>
+                <?php
+                            break;
+                    }
+                ?>
 
                 <label for="contrasenha">Ingrese su contraseña:</label>
                 <input name="contrasenha" type="password" placeholder="ddmmaaaa" required>
                 <br>
                 <input type="submit" id="envio-datos" value="Iniciar sesión">
             </form>
+            <p>Si no tienes cuenta <a href="./formalu.php">Crea una</a></p>
         </div>
     </div>
     <!-----------------------------------FOOTER----------------------------------->
@@ -210,4 +230,3 @@
             include 'footer.php';
     ?> 
 </body>
-</html>

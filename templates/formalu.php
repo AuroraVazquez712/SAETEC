@@ -1,3 +1,7 @@
+<?php 
+    include '../dynamics/config.php';
+    $conexion = connect();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,18 +35,18 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/">
+                <a href="https://www.ete.enp.unam.mx/CM.html">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html">
+                <a href="https://www.ete.enp.unam.mx/">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -91,13 +95,20 @@
             </div>
 
             <div class="input-group">
-                <label for="grupo">Grupo:</label>
-                <select name="grupo" id="ipt-grupo" required>
-                    <option value="" disabled selected>Elige tu grupo...</option>
-                    <option value="1">61B</option>
-                    <option value="2">61D</option>
-                </select>
-            </div>
+            <label for="grupo">Grupo:</label>
+            <select name="id_grupo" id="ipt-grupo" required>
+                <option value="" disabled selected>Elige un grupo...</option>
+                <?php
+                    $sql= "SELECT id_grupo, nombre_grupo, salon FROM grupo";
+                    $query= mysqli_query($conexion, $sql);
+                    while ($grupos = mysqli_fetch_assoc($query)) {
+                        echo "<option value='" . $grupos['id_grupo'] . "'>"
+                            . $grupos['nombre_grupo'] . 
+                            "Salón" . $grupos['salon']. "</option>";
+                    }
+                ?>
+            </select>
+        </div>
 
         </div>
         
