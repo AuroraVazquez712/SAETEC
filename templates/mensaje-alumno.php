@@ -112,7 +112,7 @@
                         echo "<p class = 'nombre-estudiante'>$nombre_completo ($fecha):<br>$comentario</p>";
                         echo "<p class = 'comentario-general'>$comentario</p>";
 
-                        $id_respuesta = "respuesta-profe_".$registro['id_comentario'];
+                        $id_respuesta = "respuesta-profe_".$id_comentario;
                         // Recibe la respuesta del profesor y la inserta en la tabla 'respuesta'
                         if(isset($_POST[$id_respuesta])){
                             $respuesta_profe = $_POST[$id_respuesta];

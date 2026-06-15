@@ -1,20 +1,18 @@
-<?php
-    //session_start();
+<?php 
+    include '../dynamics/config.php';
+    $conexion = connect();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Aurora Vazquez">
-    <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/alumno.css">
-    <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
-
-    <title>SAETEC: Alumno</title>
+    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
+    <meta name="description" content="Mi página de encabezado">
+    <link rel="stylesheet" href="../statics/style/formalu.css">
+    <title>Formulario del alumno</title>
 </head>
 <body>
-    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
@@ -57,49 +55,31 @@
             </div>
         </div>
     </header>
-
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-        include 'barrapro.php';
-    ?>
-    <!-------------------------------------BARRA LATERAL----------------------------------------->
-    <?php
-        include 'barra-lateral.php';
-    ?>
-    <!----------------------------------------CONTENIDO------------------------------------------->
-    
-    <main>
-        <div id="contenido">
-            <div id="forms">
-                <a  href="./cuestionario.php">
-                    <img src="../statics/img/forms.png" class="responsive-img" alt="Imagen animada de un puma que te pide completar tu perfil">
-                </a>
+            include 'barrapro.php';
+    ?> 
+    <br>
+    <!-------------------------------------------FORMS------------>
+    <form action="formalu-confirmar.php" method="POST">
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label for="nocta">Ingresa tu nombre de usuario:</label>
+                <input type="text" name="nocta" id="ipt-id_perfil" placeholder="123456789" required>
             </div>
-            <div id="material">
-                <div class="extras">
-                    <a href="./material_extra.php">
-                        <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
-                    </a>
-                </div>
-                <div class="contacto">
-                    <a href="./contacta-profe.php"> 
-                        <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
-                    </a>
-                </div>
+
+            <div class="input-group">
+                <label for="nombre">Ingresa tu contraseña</label>
+                <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
             </div>
-            <div id="coments">
-                <div id="tips">
-                    <a href="./tips.php">
-                        <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
-                    </a>
-                </div>
-            </div>
+            
         </div>
-        
-    </main>
+        <button type="submit" name="registro" class="btn-submit">Confirmar</button>
+    </form>
+    <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
-    ?>
-    
+    ?> 
 </body>
 </html>
