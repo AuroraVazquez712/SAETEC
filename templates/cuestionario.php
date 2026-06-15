@@ -2,7 +2,7 @@
     include '../dynamics/config.php';
     $nocta ="325156992";
     $grupo ="61D";
-    $id_estudiante = 11;
+    $id_estudiante = 17;
 ?> 
 <?php
     if (isset($_POST["interes"])) {
