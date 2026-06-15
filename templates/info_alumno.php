@@ -3,7 +3,7 @@
     $conexion = connect();
     session_start();
 
-    $id_perfil=1;
+    $id_perfil=17;
     //Perfil
     $sql="SELECT nombre, apellido_paterno, apellido_materno FROM perfil WHERE id_perfil=$id_perfil";
     $query= mysqli_query($conexion, $sql);

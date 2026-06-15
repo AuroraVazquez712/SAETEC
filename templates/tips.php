@@ -10,7 +10,7 @@
     <title>SAETEC</title>
 </head>
 <body>
-     <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/">
@@ -64,7 +64,7 @@
     <main>
         <div id="margen-content">
             <div id="tit-tips">
-                <h1>¡10 tips para concluir con exito la ETE!</h1>
+                <p>¡10 tips para concluir con exito la ETE!</p>
             </div>
 
             <div id="10-tips">
@@ -73,70 +73,85 @@
                     <div class="num-tip">
                     <h2> 1 </h2>
                 </div>
-                    <p> Tip 1</p>
+                    <p> Procura ser constante con los temas vistos en clase, el aprendizaje es progresivo, 
+                        por lo que si te rezagas en algún punto, puede resultar difícil comprender lo que sigue.</p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 2 </h2>
                 </div>
-                    <p> Tip 2</p>
+                    <p>No te quedes con dudas. Todos aprendemos en conjunto, muchas veces la pregnta que tú tienes también
+                        la puede compartir otro de tus compañeros. Este es un ambiente de confianza, así que expresar las 
+                        inquietudes nos fortalecen a todos. </p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 3 </h2>
                 </div>
-                    <p> Tip 3</p>
+                    <p>Revisa tus tiempos, prioridades, ocupaciones y tareas. La opción técnica exige dedicación y constancia,
+                        por lo que una buena organización permite aprovechar el tiempo de estudio.</p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 4 </h2>
                 </div>
-                    <p> Tip 4</p>
+                    <p>Planifica con anticipación el tiempo que dedicarás a la entrega de tareas o proyectos. Saber organizarte evita 
+                        que trabajes bajo presión, lo cual, te permitirá obtener un resultado de calidad. 
+                    </p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 5 </h2>
                 </div>
-                    <p> Tip 5</p>
+                    <p>Reforzar lo visto en clase de manera autónoma es fundamental para progresar.
+                        En nuestro espacio de <a href="./material_extra.php">Material extra</a> encontrarás bibliografía y prácicas
+                        diseñadas para que continues aprendiendo.
+                    </p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 6 </h2>
                 </div>
-                    <p> Tip 6</p>
+                    <p>Aprende a trabajar en equipo y escucha las opiniones de los demás.
+                        Cada aportación es valiosa, y en conjunto, pueden enriquecer el aprendizaje.
+                    </p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 7 </h2>
                 </div>
-                    <p> Tip 7</p>
+                    <p>Aprender a programar requiere práctica constante, por lo que 
+                        no atrasarse con las actividades y tareas vistas en clase, es fundamental.</p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 8 </h2>
                 </div>
-                    <p> Tip 8</p>
+                    <p>Evita faltar a clases, nunca sabes de lo que te puedes estar perdiendo. </p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 9 </h2>
                 </div>
-                    <p> Tip 9</p>
+                    <p>Conoce a tus compañeros, muchas veces comparten intereses, grupos o gustos similares.
+                        Ellos, pueden convertirse en tus mejores amigos  y acompañarte a lo largo de la carrera
+                    </p>
                 </div>
 
                 <div class="tip">
                     <div class="num-tip">
                     <h2> 10 </h2>
                 </div>
-                    <p> Tip 10</p>
+                    <p>Busca el apoyo de tus profesores y compañeros. El ambiente de confianza, permite que cada dificultad sea una
+                        oportunidad para aprender y avanzar. </p>
                 </div>
 
             </div>

@@ -1,14 +1,9 @@
 <?php
-<<<<<<< HEAD
 include '../dynamics/config.php';
- if (isset($_POST["usuario"]))
-=======
+if (isset($_POST["usuario"]))
     include '../dynamics/config.php';
-<<<<<<< HEAD
-<<<<<<< HEAD
 
     if (isset($_POST["usuario"]))
->>>>>>> main
     {
         require  '../dynamics/config.php';
         $con = connect();
@@ -119,19 +114,9 @@ include '../dynamics/config.php';
         } else {
             $error = "No coinciden usuario o contraseña";
         }
-<<<<<<< HEAD
-    }  
-=======
-    } 
-
-
-=======
+    }   
     include './credencial.php';
->>>>>>> feature/diego
-=======
     include './login.php';
->>>>>>> feature/diego
->>>>>>> main
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -241,6 +226,7 @@ include '../dynamics/config.php';
                 <br>
                 <input type="submit" id="envio-datos" value="Iniciar sesión">
             </form>
+            <p>Si no tienes cuenta <a href="./formalu.php">Crea una</a></p>
         </div>
     </div>
     <!-----------------------------------FOOTER----------------------------------->

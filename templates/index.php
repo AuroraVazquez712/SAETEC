@@ -1,6 +1,6 @@
 <?php
-    include './credencial.php';
     include '../dynamics/config.php';
+    include './login.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.php">
+            <a href="./index.html">
                 <p>SAETEC</p>
             </a>
         </div>
@@ -58,16 +58,6 @@
         </div>
     </header>
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
-    <nav class="nav">
-        <div class="container">
-            <nav class="menu">
-                <a href="./index.php">Inicio</a>
-                <a href="./inicio-sesion.php">Alumno</a>
-                <a href="./inicio-sesion.php">Profesor</a>
-                <a href="./inicio-sesion.php">Admin</a>
-            </nav>
-        </div>
-    </nav>
     <br>
     <main>
         <form method="GET">

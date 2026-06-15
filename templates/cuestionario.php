@@ -61,7 +61,7 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.php">
+            <a href="./index.html">
                 <p>SAETEC</p>
             </a>
         </div>

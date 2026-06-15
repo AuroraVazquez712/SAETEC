@@ -79,11 +79,11 @@ header {
     cursor: pointer;
 }
 
-img {
+.imagen {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;  
+    object-fit: circle;
     margin-bottom: 10px;
 }
 
@@ -141,7 +141,7 @@ footer{
     display: flex;
     justify-content: space-between;
     text-align: left;
-    color: #FFF;
+    color: #FFFFFF;
     font: bold 15px sans-serif;
     padding: 55px 50px;
     margin-top: 80px;
