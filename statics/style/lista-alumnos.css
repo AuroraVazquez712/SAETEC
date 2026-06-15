@@ -80,6 +80,7 @@ header {
     line-height: 70px;
 }
 .container .menu a {
+    text-decoration: none;
     display: inline-block;
     padding: 30px;
     line-height: normal;
@@ -179,9 +180,20 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
 }
 
 
+=======
+}
+a:visited{
+    color:#FFFFFF;
+}
+a{
+    text-decoration: none;
+}
+
+>>>>>>> feature/diego
 #anade {
     display: flex;
     flex-direction:row;

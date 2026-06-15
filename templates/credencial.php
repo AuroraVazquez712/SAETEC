@@ -5,7 +5,7 @@
         $rol = $_POST["rol"];
         switch ($rol) {
             case $rol = "A":
-                
+
                 break;
             case $rol = "E":
 

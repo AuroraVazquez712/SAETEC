@@ -1,18 +1,6 @@
 <?php
-    const DBHOST = "localhost";
-    const DBUSER = "root";
-    const PASSWORD = "";
-    const DB = "saetec";
-
-    function connect () {
-        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
-        return $conexion;
-    } 
-    $conexion = connect ();
-
-    //Supongamos que esta es la variable de sesion
-    $id_estudiante = 1;
-    ?>
+    include '../dynamics/config.php'
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,8 +67,10 @@
     <main>
         <div class="cuadrado">Mis actividades</div>
         <div id="columna">
-
+            <div class="grupo">Grupo 61D</div>
         <?php
+                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+
             $query_grupo = mysqli_query($conexion, "SELECT grupo.nombre_grupo FROM estudiante JOIN grupo ON estudiante.id_grupo = grupo.id_grupo WHERE estudiante.id_estudiante = $id_estudiante");
             $grupo = mysqli_fetch_assoc($query_grupo);
             echo"
@@ -104,7 +94,18 @@
         <?php
             $query_entregadas = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NOT NULL");
             $entregadas = mysqli_fetch_assoc($query_entregadas);
-
+        ?>
+        <!-- Aquí debemos contar todas las asignaciones que tiene el estudiante con el que se inció sesión. 
+            Revisaremos cuales de ellas ya fueron calificadas, esas serán las entregadas. Las que no han sido 
+            Calificadas, son las faltantes. 
+        -->
+        <div id="actividades">
+            <div class="tareas">
+                <h1>Tareas</h1>
+                <p>Entregadas:</p>
+                <p>Faltantes:</p>
+            </div>
+        <?php
             $query_faltantes = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NULL");
             $faltantes = mysqli_fetch_assoc($query_faltantes);
         ?>

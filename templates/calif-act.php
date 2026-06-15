@@ -1,14 +1,5 @@
 <?php
-    const DBHOST = "localhost";
-    const DBUSER = "root";
-    const PASSWORD = "";
-    const DB = "SAETEC";
-
-    function connect () {
-        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
-        return $conexion;
-    } 
-    $conexion = connect ();
+    include 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -78,6 +69,7 @@
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
     <?php
+        $_SESSION["id_actividad"];
         $id_actividad = $_GET['id'];
         if(isset($_POST['calificar'])) {
             $calificaciones = $_POST['calificacion'];
@@ -85,7 +77,7 @@
 
             foreach($asignaciones as $cali => $id_asignacion) {
                 $calif = $calificaciones[$cali];
-                if($calif == '') {
+                if($calif = '') {
                     $asigna = "UPDATE asignacion SET calificacion = NULL WHERE id_asignacion = $id_asignacion";
                 } 
                 else {

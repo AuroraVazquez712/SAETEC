@@ -89,19 +89,19 @@ input{
 #envio-datos{
     display: flex;
     background-color:#FF671D;
-    width: 250px;
-    height: 30px;
+    width: 150px;
+    height: 40px;
     margin-top: 20px;
     color: white;
-    border-radius: 20%;
+    border-radius: 1cm;
     font-size: 20px;
     transition: 0.5s;
 }
 #envio-datos:hover{
     cursor: pointer;
     font-weight: bold;
-    width: 255px;
-    height: 35px;
+    width: 155px;
+    height: 45px;
     font-size: 18px;
 }
 /*--------------------------FOOTER--------------------------*/
@@ -110,7 +110,7 @@ footer{
     display: flex;
     justify-content: space-between;
     text-align: left;
-    color: #FFF;
+    color: #FFFFFF;
     font: bold 15px sans-serif;
     padding: 55px 50px;
     margin-top: 80px;
