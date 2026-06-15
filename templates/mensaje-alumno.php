@@ -81,59 +81,62 @@
         <div id="img_perfil">
                 <img src="../statics/img/puma.png" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
         </div>  
-        <form id="alumno">
-            <div id="datos" method="POST">
+        <form id="alumno" method="POST">
+            <div id="datos" >
                 <p class="titulo">Dudas, comentarios y opiniones de los alumnos</p>    
                     <p name="nombre"><?php echo "Profesor@: $nombre_profesor";?></p>
                     <p name="correo"><?php echo "Correo: $correo";?></p>
             </div>
             <div id="comentario">
-                <form method="POST">
-                    <?php
-                        $query = "SELECT id_comentario, id_estudiante, comentario, fecha_publicacion FROM comentario 
-                        ORDER BY fecha_publicacion DESC";
-                        $result = mysqli_query($con, $query);
+                <?php
+                    $query = "SELECT id_comentario, id_estudiante, comentario, fecha_publicacion FROM comentario 
+                    ORDER BY fecha_publicacion DESC";
+                    $result = mysqli_query($con, $query);
+                    
+                    // Va leyendo los registros de los alumnos y los despliega junto a un textarea y un input
+                    while($registro = mysqli_fetch_assoc($result))
+                    {
+                        $id_comentario = $registro['id_comentario'];
+                        $id_estudiante = $registro["id_estudiante"];
+                        $comentario = $registro["comentario"];
+                        $fecha = $registro["fecha_publicacion"];
+
+
+                        $query2 = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno FROM perfil WHERE id_perfil = '$id_estudiante'";
+                        $result2 = mysqli_query($con, $query2);
+                        $registro2 = mysqli_fetch_assoc($result2);
+
+                        $nombre_completo = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
                         
-                        // Va leyendo los registros de los alumnos y los despliega junto a un textarea y un input
-                        while($registro = mysqli_fetch_assoc($result))
-                        {
-                            $id_estudiante = $registro["id_estudiante"];
-                            $comentario = $registro["comentario"];
-                            $fecha = $registro["fecha_publicacion"];
+                        // Despliega el nombre, fecha y mensaje, su input para contestar y el botón de envio
+                        echo "<p>$nombre_completo ($fecha):<br>$comentario</p>";
+                        
 
-                            $query2 = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno FROM perfil WHERE id_perfil = '$id_estudiante'";
-                            $result2 = mysqli_query($con, $query2);
-                            $registro2 = mysqli_fetch_assoc($result2);
+                        $id_respuesta = "respuesta-profe_".$registro['id_comentario'];
+                        // Recibe la respuesta del profesor y la inserta en la tabla 'respuesta'
+                        if(isset($_POST[$id_respuesta])){
+                            $respuesta_profe = $_POST[$id_respuesta];
 
-                            $nombre_completo = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
+                            $fecha = date("Y-m-d");
+                            $query_insercion = "INSERT INTO respuesta (id_comentario, comentario, fecha_publicacion) 
+                            VALUES ($id_comentario,'$respuesta_profe','$fecha')";
+                            $result_insercion = mysqli_query($con, $query_insercion);                            
+                            //echo "<p>$nombre_profesor ($fecha):<br>$respuesta_profe</p>";
                             
-                            // Despliega el nombre, fecha y mensaje, su input para contestar y el botón de envio
-                            echo "<p>$nombre_completo ($fecha):<br>$comentario</p>";
-                            echo "<textarea name ='respuesta-profe_".$registro['id_comentario']."' placeholder='Envie un mensaje''></textarea>";
-                            echo "<input type='submit' id='envio-respuesta'>";
-
-                            $id_comentario = $registro['id_comentario'];
-                            $id_respuesta = "respuesta-profe_".$registro['id_comentario'];
-                            // Recibe la respuesta del profesor y la inserta en la tabla 'respuesta'
-                            if(isset($_POST[$id_respuesta])){
-                                $respuesta_profe = $_POST[$id_respuesta];
-
-                                $fecha = date("Y-m-d");
-
-                                $query = "INSERT INTO respuesta (respuesta, fecha_publicacion) 
-                                VALUES ('$respuesta_profe',''$fecha)";
-
-                                $result = mysqli_query($con, $query);
-
-                                $query2 = "SELECT respuesta, fecha_publicacion FROM respuesta
-                                WHERE id_comentario = '$id_comentario'";
-                                $result2 = mysqli_query($con, $query2);
-
-                                echo "<p>$nombre_profesor ($fecha):<br>$respuesta_profe</p>";
-                            }
                         }
-                    ?>
-                </form>
+                        $query2 = "SELECT comentario, fecha_publicacion FROM respuesta
+                            WHERE id_comentario = '$id_comentario'";
+                        $result2 = mysqli_query($con, $query2);
+                        while($registros3 = mysqli_fetch_assoc($result2)){
+                            $hora_respuesta = $registros3["fecha_publicacion"];
+                            $respuesta_al_comentario = $registros3["comentario"] ;
+                            echo "<p>$nombre_profesor ($hora_respuesta):<br>$respuesta_al_comentario</p>";
+                        }
+                        echo "<textarea name ='respuesta-profe_".$registro['id_comentario']."' placeholder='Envie un mensaje''></textarea>";
+                        echo "<input type='submit' id='envio-respuesta'>";
+                    }
+                    mysqli_close($con);
+                ?>
             </div>
         </form>
     </div>
