@@ -31,7 +31,7 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>

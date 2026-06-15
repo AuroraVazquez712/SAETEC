@@ -1,18 +1,10 @@
 <?php
     include '../dynamics/config.php';
-<<<<<<< HEAD
-    $nocta ="325156992";
-    $grupo ="61D";
-    $id_estudiante = 17;
-?> 
-<?php
-=======
     session_start();
     $_SESSION["nocta"];
     $_SESSION["grupo"];
     $_SESSION["id_perfil"];
 
->>>>>>> feature/diego
     if (isset($_POST["interes"])) {
         var_dump($_POST);
         $id_estudiante = $_SESSION["id_perfil"];
