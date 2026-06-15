@@ -232,6 +232,7 @@
                 <br>
                 <input type="submit" id="envio-datos" value="Iniciar sesión">
             </form>
+            <p>Si no tienes cuenta <a href="./formalu.php">Crea una</a></p>
         </div>
     </div>
     <!-----------------------------------FOOTER----------------------------------->
