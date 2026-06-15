@@ -68,7 +68,7 @@
     <main>
         <div id="bloque-list">
             <div id="grupo">
-                <a class="tit" href="./admin.php"><u>LISTA ALUMNOS</u></a>
+                <p><u>LISTA ALUMNOS</u></p>
             </div>
 
             <div id="anade">
