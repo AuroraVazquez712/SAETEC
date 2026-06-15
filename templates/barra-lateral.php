@@ -18,7 +18,9 @@
                     <hr>
                     <a href="#">Modificar datos</a>
                     <hr>
-                    <a href="act.html">Lista de actividades</a>
+                    <a href="act.php">Lista de actividades</a>
+                    <hr>
+                    <a href="index.php">Cerrar sesión</a>
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>
