@@ -41,12 +41,12 @@
         </div>
         <div id="iconos_ete">
             <div class="logo-compu">
-                <a href="https://www.ete.enp.unam.mx/">
+                <a href="https://www.ete.enp.unam.mx/CM.html">
                     <img class="iconos" src="../statics/img/logo_compu.jpeg" alt="Escudo de el Estudio Tecnico Especializado en Computacion">
                 </a>
             </div>
             <div class="logo-ete"></div>
-                <a href="https://www.ete.enp.unam.mx/CM.html">
+                <a href="https://www.ete.enp.unam.mx/">
                     <img class="iconos" src="../statics/img/logo-ete.png" alt="Escudo de los Estudios Tecnicos de la UNAM">
                 </a>
             </div>
@@ -69,7 +69,7 @@
         <div id="columna">
             <div class="grupo">Grupo 61D</div>
         <?php
-                $filtra = mysqli_query($link, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
                 while($tarea = mysqli_fetch_assoc($filtra)) {
                     echo "
@@ -82,6 +82,10 @@
                 }
         ?>
 
+        <!-- Aquí debemos contar todas las asignaciones que tiene el estudiante con el que se inció sesión. 
+            Revisaremos cuales de ellas ya fueron calificadas, esas serán las entregadas. Las que no han sido 
+            Calificadas, son las faltantes. 
+        -->
         <div id="actividades">
             <div class="tareas">
                 <h1>Tareas</h1>

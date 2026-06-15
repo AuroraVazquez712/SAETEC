@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Star horses">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/publi-tarea.css">
+    <link rel="stylesheet" href="../statics/style/disena-tarea.css">
     <link rel="stylesheet" href="../statics/style/barra-busqueda-head.css">
 
     <title>SAETEC: Alumno</title>
@@ -77,71 +77,51 @@
         include 'barra-lateral.php';
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
-    
-    <main>
-        <div id="margen-content">
-            <input type="checkbox" id="toggle">
-            <div id="publi-nueva-tarea"> 
-                <div id="nueva-tarea"> 
-                    <div id="bloque">
-                        <div class="titu">
-                        <label for="toggle">    
-                                <div class="boton">+</div>
-                        </label>
-                            <h2>Publica una nueva tarea</h2>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="text-tarea">
-                    <form method="POST" action="">
-                        <label class="name_desc" >Nombre actividad:</label><br>
-                        <input type="text" id="nombre_actividad" name="nombre_actividad"><br>
-                        <label class="name_desc" >Descripción:</label><br>
-                        <textarea placeholder="Descripcion de nueva tarea:" id="descripcion" name="descripcion" > </textarea>
-                        <br><label class="name_desc" >Fecha de entrega:</label><br>
-                        <input type="date" id="fecha_entrega" name="fecha_entrega"><br>
-                        <br><input class="publicar" type="submit" name="crea_act" value="Publicar ">
-                    </form>
-                </div>
-            </div>
-            <div id="tarea-publi"> 
-                <div id="bloque"></div>
-                    <div class="publicadas">
-                        <h3>Tareas publicadas:</h3>
-                    </div>
-                </div>
-            <?php
-                $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
+    <?php
+        $id_actividad = $_GET['id'];
+        if(isset($_POST['crea_asignacion'])) {
+            $grupos = $_POST['select_grupo'];
 
-                while($tarea = mysqli_fetch_assoc($filtra)) {
-                    echo "
-                        <div id='tareas'>   
-                            <p>Nombre: " . $tarea['nombre_actividad'] . "</p>
-                            <p>Descripcion: " . $tarea['descripcion'] . "</p>
-                            <p>Fecha entrega: " . $tarea['fecha_entrega'] . "</p>
-                            <a href='disena-tarea.php?id=" . $tarea['id_actividad'] ."'>Diseña tarea</a>
-                            <br> <a href='calif-act.php?id=" . $tarea['id_actividad'] ."'>Califica actividad</a>
-                        </div>";
+            foreach($grupos as $grupo){
+                $sql1 = "SELECT id_estudiante FROM estudiante WHERE id_grupo = $grupo";
+                $query1 = mysqli_query($conexion, $sql1);
+
+            while($row = mysqli_fetch_assoc($query1)){
+                    $id_estudiante = $row['id_estudiante'];
+
+                $insertar = "INSERT INTO asignacion (id_actividad,id_estudiante) VALUES ($id_actividad,$id_estudiante)";
+                $asignar = mysqli_query($conexion, $insertar);
                 }
+            }
+        }
+    ?>
+    <main>
+        <div id="margen-content">   
+            <h1 class="tit">Diseña la actividad:</h1>
+            <?php
+                $query_act = mysqli_query($conexion, "SELECT *  FROM actividad WHERE id_actividad = $id_actividad");
+                $actividad = mysqli_fetch_assoc($query_act);
+
+                echo"
+                <h2 class='nom_act'>" . $actividad['nombre_actividad'] . "</h2> 
+                <p class='desc'>Descripcion:" . $actividad['descripcion'] . "</p>
+                ";
             ?>
+            <div id="diseña">
+                <form method="POST" action="">
+                    <?php
+                        $query_grupos = mysqli_query($conexion, "SELECT *  FROM grupo");
+                        while($grupo = mysqli_fetch_assoc($query_grupos)){
+                            echo"
+                            <input type='checkbox' name='select_grupo[]' value='" . $grupo['id_grupo'] . "'>
+                            <label>" . $grupo['nombre_grupo'] . "</label><br>";
+                        }
+                    ?>
+                    <br><input class="publicar" type="submit" name="crea_asignacion" value="Publicar ">
+                </form> 
             </div>
         </div>
     </main>
-
-        
-    <?php
-
-        if(isset($_POST['crea_act'])) {
-            $nombre_actividad= $_POST['nombre_actividad'];
-            $descripcion= $_POST['descripcion'];
-            $fecha_entrega= $_POST['fecha_entrega'];
-
-            $insertar_datos = "INSERT INTO actividad (id_profesor,nombre_actividad ,descripcion ,fecha_entrega ) VALUES (1, '$nombre_actividad','$descripcion','$fecha_entrega')";
-            
-            $ejecutar_insertar = mysqli_query ($conexion,$insertar_datos);
-        }
-    ?>
     <!-------------------------FOOTER------------------------------------------------------>
     <?php
             include 'footer.php';
