@@ -2,6 +2,10 @@
     font-family: 'encabezado' ;
     src: url(../fonts/BebasNeue-Regular.ttf);
 }
+@font-face {
+    font-family: 'cuerpo' ;
+    src: url(../fonts/times-sans-serif.ttf);
+}
 body {
     margin: 0%;
     padding: 0%;
@@ -182,26 +186,53 @@ main {
 #img_perfil{
     padding-left: 4%;
     padding-top: 5%;
+    margin-left: 4%;
     transform: scale(1.4);
 }
 #datos{
     margin-left: 10%;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
-    width: 40%;
+    width: auto;
     padding: 20px;
-    margin: 100px 0px 20px 27px;
-    height: 50%;
+    margin: 70px 0px 80px 50px;
+    height: auto;
+}
+#datos p{
+    width: 100%;
+    margin-left: 10px;
+}
+#datos input{
+    margin: 5px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+.enviar-datos{
+    background-color: #FF671D;
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
+}
+.enviar-datos:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 .titulo{
     font-size: 6.2vb;
     font-family: 'encabezado';
     width: 60vh;
+    margin: 20px;
+}
+.info-alumno{
+    font-size: 18px;
+    font-family: 'cuerpo';
 }
 .correo{
     font-size: 30px;
 }
-#comentario {
+#comentario{
     width: 60%;
     height: 400px;
     font-size: 25px;
@@ -212,6 +243,30 @@ main {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 20px;
+}
+.nombre-estudiante{
+    color: #ffffff;
+    font-size: 17px;
+    background-color:#FF671D;
+    width: 90%;
+    padding: 8px;
+    border-radius: 5px;
+}
+.nombre-profesor{
+    color: #ffffff;
+    font-size: 17px;
+    background-color:#E6B72D;
+    width: 90%;
+    padding: 8px;
+    border-radius: 5px;
+}
+.comentario-general{
+    width: 80%;
+    font-size: 20px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
 }
 /*--------------------------FOOTER--------------------------*/
 footer{

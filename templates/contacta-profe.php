@@ -84,10 +84,10 @@
         <form id="alumno" method="POST">
             <div id="datos">
                 <p class="titulo">Contacta a tu profesor</p>    
-                    <p name="nombre"><?php echo "Alumn@: $nombre_completo";?></p>
-                    <p name="correo"><?php echo "Correo: $correo";?></p>
+                    <p class="info-alumno" name="nombre"><?php echo "Alumn@: $nombre_completo";?></p>
+                    <p class="info-alumno" name="correo"><?php echo "Correo: $correo";?></p>
                     <input type="text" class="texto_ingresado" name="contacto-profe" placeholder="Comience a escribir">
-                    <input type="submit" id="envio-comentario" value="Enviar comentario">
+                    <input class="enviar-datos" type="submit" id="envio-comentario" value="Enviar comentario">
             </div>
             <?php
                 if(isset($_POST["contacto-profe"])){
@@ -113,7 +113,8 @@
                         $comentario = $registro["comentario"];
                         $fecha = $registro["fecha_publicacion"];
 
-                        echo "<p>$nombre_completo ($fecha):<br>$comentario</p>";
+                        echo "<p class = 'nombre-estudiante'>$nombre_completo ($fecha):<br></p>";
+                        echo "<p class = 'comentario-general'>$comentario</p>";
                     }
                 ?>
             </div>

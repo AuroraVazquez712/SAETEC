@@ -84,8 +84,8 @@
         <form id="alumno" method="POST">
             <div id="datos" >
                 <p class="titulo">Dudas, comentarios y opiniones de los alumnos</p>    
-                    <p name="nombre"><?php echo "Profesor@: $nombre_profesor";?></p>
-                    <p name="correo"><?php echo "Correo: $correo";?></p>
+                    <p class="info-profesor" name="nombre"><?php echo "Profesor@: $nombre_profesor";?></p>
+                    <p class="info-profesor" name="correo"><?php echo "Correo: $correo";?></p>
             </div>
             <div id="comentario">
                 <?php
@@ -109,8 +109,8 @@
                         $nombre_completo = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
                         
                         // Despliega el nombre, fecha y mensaje, su input para contestar y el botón de envio
-                        echo "<p>$nombre_completo ($fecha):<br>$comentario</p>";
-                        
+                        echo "<p class = 'nombre-estudiante'>$nombre_completo ($fecha):<br>$comentario</p>";
+                        echo "<p class = 'comentario-general'>$comentario</p>";
 
                         $id_respuesta = "respuesta-profe_".$registro['id_comentario'];
                         // Recibe la respuesta del profesor y la inserta en la tabla 'respuesta'
@@ -120,8 +120,7 @@
                             $fecha = date("Y-m-d");
                             $query_insercion = "INSERT INTO respuesta (id_comentario, comentario, fecha_publicacion) 
                             VALUES ($id_comentario,'$respuesta_profe','$fecha')";
-                            $result_insercion = mysqli_query($con, $query_insercion);                            
-                            //echo "<p>$nombre_profesor ($fecha):<br>$respuesta_profe</p>";
+                            $result_insercion = mysqli_query($con, $query_insercion);
                             
                         }
                         $query2 = "SELECT comentario, fecha_publicacion FROM respuesta
@@ -130,10 +129,14 @@
                         while($registros3 = mysqli_fetch_assoc($result2)){
                             $hora_respuesta = $registros3["fecha_publicacion"];
                             $respuesta_al_comentario = $registros3["comentario"] ;
-                            echo "<p>$nombre_profesor ($hora_respuesta):<br>$respuesta_al_comentario</p>";
+                            
+                            // echo para los datos del profesor y su respuesta al comentario
+                            echo "<p class = 'nombre-profesor'>$nombre_profesor ($hora_respuesta):<br></p>";
+                            echo "<p class = 'comentario-general'>$respuesta_al_comentario</p>";
                         }
-                        echo "<textarea name ='respuesta-profe_".$registro['id_comentario']."' placeholder='Envie un mensaje''></textarea>";
-                        echo "<input type='submit' id='envio-respuesta'>";
+                        // Despliega text area e input para enviar la respuesta
+                        echo "<textarea class='texto_ingresado' name ='respuesta-profe_".$registro['id_comentario']."' placeholder='Envie un mensaje''></textarea>";
+                        echo "<input type='submit' class='enviar-datos' id='envio-respuesta' value='Enviar respuesta'>";
                     }
                     mysqli_close($con);
                 ?>
