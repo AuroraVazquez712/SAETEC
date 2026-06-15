@@ -1,7 +1,7 @@
 <?php
-include '../dynamics/config.php';
-$con = connect();
-if (isset($_POST["usuario"]))
+    include '../dynamics/config.php';
+    $con = connect();
+/*if (isset($_POST["usuario"]))
 
     if (isset($_POST["usuario"]))
     {
@@ -111,7 +111,7 @@ if (isset($_POST["usuario"]))
         } else {
             $error = "No coinciden usuario o contraseña";
         }
-    }   
+    }*/
     include './login.php';
 ?>
 <!DOCTYPE html>
