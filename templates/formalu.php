@@ -108,6 +108,12 @@
                     }
                 ?>
             </select>
+
+            <div class="input-group">
+                <label for="contrasenha">Contraseña</label>
+                <input type="password" name="contraseña" id="ipt-contrasenha" require>
+            </div>
+
         </div>
 
         </div>
