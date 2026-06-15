@@ -100,7 +100,8 @@
                 }//Búsqueda con el perfil profesor
                 else if ($tipo_perfil_pro == 'P'){
 
-                    $id_profesor= 9;
+                    // Ya puedes usar la sesión $_SESSION["id_perfil"]
+                    $id_profesor= 1;
                     //Grupos que coincidan con la id del profesor
                     $sql= "SELECT * FROM grupo WHERE id_profesor= $id_profesor";
                     $query= mysqli_query($conexion, $sql);
