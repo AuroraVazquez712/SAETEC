@@ -1,5 +1,7 @@
 <?php
-    include 'config.php';
+    include '../dynamics/config.php';
+    $conexion = connect();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +71,7 @@
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
     <?php
-        $_SESSION["id_actividad"];
+        //$_SESSION["id_actividad"];
         $id_actividad = $_GET['id'];
         if(isset($_POST['calificar'])) {
             $calificaciones = $_POST['calificacion'];
@@ -91,7 +93,7 @@
         <div id="margen-content">   
             <h1 class="tit">Califica tu actividad:</h1>
             <?php
-                $query_act = mysqli_query($conexion, "SELECT * FROM actividad WHERE id_actividad = '$id_actividad'");
+                $query_act = mysqli_query($conexion, "SELECT * FROM actividad WHERE id_actividad = $id_actividad");
                 $actividad = mysqli_fetch_assoc($query_act);
 
                 echo"
@@ -101,27 +103,49 @@
             ?> 
             <form action="?id=<?php echo $id_actividad; ?>" method="POST">
             <?php
-                $consulta_grupos = "SELECT DISTINCT estudiante.id_grupo, grupo.nombre_grupo FROM asignacion JOIN estudiante ON asignacion.id_estudiante = estudiante.id_estudiante JOIN grupo ON estudiante.id_grupo = grupo.id_grupo WHERE asignacion.id_actividad = $id_actividad";
-                $query_grupos = mysqli_query($conexion, $consulta_grupos);                
-                while($grupo = mysqli_fetch_assoc($query_grupos)) {
-                    $id_grupo = $grupo['id_grupo'];
+                $consulta_asignaciones = "SELECT * FROM asignacion WHERE id_actividad = $id_actividad";
+                $query_asignaciones = mysqli_query($conexion, $consulta_asignaciones);
 
-                    $lista_alumnos = "SELECT asignacion.id_asignacion, asignacion.calificacion, perfil.nombre, perfil.apellido_paterno, perfil.apellido_materno FROM asignacion JOIN perfil ON asignacion.id_estudiante = perfil.id_perfil JOIN estudiante ON asignacion.id_estudiante = estudiante.id_estudiante WHERE asignacion.id_actividad = '$id_actividad' AND estudiante.id_grupo = '$id_grupo'";
-                    $query_alumnos = mysqli_query($conexion, $lista_alumnos);
+                $grupo_actual = null;
 
+                while($asignacion = mysqli_fetch_assoc($query_asignaciones)) {
+                    $id_estudiante = $asignacion['id_estudiante'];
+                    $consulta_estudiante = "SELECT id_grupo FROM estudiante WHERE id_estudiante = $id_estudiante";
+                    $query_estudiante = mysqli_query($conexion, $consulta_estudiante);
+                    $estudiante = mysqli_fetch_assoc($query_estudiante);
+                    $id_grupo = $estudiante['id_grupo'];
+
+                    $consulta_grupo = "SELECT nombre_grupo FROM grupo WHERE id_grupo = $id_grupo";
+                    $query_grupo = mysqli_query($conexion, $consulta_grupo);
+                    $grupo = mysqli_fetch_assoc($query_grupo);
+                    $nombre_grupo = $grupo['nombre_grupo'];
+
+                    $consulta_perfil = "SELECT * FROM perfil WHERE id_perfil = $id_estudiante";
+                    $query_perfil = mysqli_query($conexion, $consulta_perfil);
+                    $perfil = mysqli_fetch_assoc($query_perfil);
+
+                    if($grupo_actual != $id_grupo) {
+                        if($grupo_actual != null) 
+                        echo "</div>";
+                        echo"
+                        <div class='bloque-grupo'>
+                        <div class='grupo'>Grupo " . $nombre_grupo . "
+                        </div>";
+                        $grupo_actual = $id_grupo;
+                        }
                     echo"
-                    <br><div class='grupo'>Grupo " . $grupo['nombre_grupo'] . "</div>
-                    ";
-
-                    while($asignacion = mysqli_fetch_assoc($query_alumnos)) {
-                        echo"<div id='lista-alumnos'>
-                            <span class='alumno'>" . $asignacion['nombre'] . " " . $asignacion['apellido_paterno'] . " " . $asignacion['apellido_materno'] . "</span>
-                            <input type='number' name='calificacion[]' value='" . $asignacion['calificacion'] . "' min='0' max='10'>
-                            <input type='hidden' name='id_asignacion[]' value='" . $asignacion['id_asignacion'] . "'>
-                            <button type='submit' name='calificar' class='boton'>Calificar</button></div>
-                        ";
-                    }
+                    <div id='lista-alumnos'>
+                    <span class='alumno'>" . $perfil['nombre'] . " " . $perfil['apellido_paterno'] . " " . $perfil['apellido_materno'] . "</span>
+                    <input type='number' name='calificacion[]' value='" . $asignacion['calificacion'] . "' min='0' max='10'>
+                    <input type='hidden' name='id_asignacion[]' value='" . $asignacion['id_asignacion'] . "'>
+                    <button type='submit' name='calificar' class='boton'>Calificar</button>
+                    </div>";
                 }
+                if($grupo_actual != null) 
+                echo"
+                <br><div class='grupo'>Grupo " . $grupo['nombre_grupo'] . "</div>
+                ";
+                
             ?>
             </form>
         </div>
