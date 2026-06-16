@@ -5,11 +5,26 @@
         <div class="container-menu">
             <div class="cont-menu">
                 <nav>
-                    <?php
-                        //session_start();
-                        $tunombre = $_SESSION["nombre_completo"];
-                        echo "Hola $tunombre";
-                    ?>
+                    <h2>
+                        <?php
+                            //session_start();
+                            switch ($_SESSION["rol"]) {
+                                case $_SESSION["rol"] = 'A':
+                                    $tunombre = $_SESSION["nombre_administrador"];
+                                    echo "Hola $tunombre";
+                                    break;
+                                case $_SESSION["rol"] = 'E':
+                                    $tunombre = $_SESSION["nombre_completo"];
+                                    echo "Hola $tunombre";
+                                    break;
+                                case $_SESSION["rol"] = 'P':
+                                    $tunombre = $_SESSION["nombre_completo"];
+                                    echo "Hola $tunombre";
+                                    break;
+                            }
+                        ?>
+                    </h2>
+                    <hr>
                     <a href="./perfil-alumno.php">Mi perfil</a>
                     <hr>
                     <a href="./vista-perf-alumnos.php">Mis calificaciones</a>
