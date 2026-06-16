@@ -70,7 +70,7 @@
             </div>
 
             <div class="input-group">
-                <label for="nombre">Ingresa tu contraseña</label>
+                <label for="nombre">Ingresa tu nueva contraseña</label>
                 <input type="text" name="nombre" id="ipt-nombre" placeholder="Escribe tu(s) nombre(s)" required>
             </div>
             
