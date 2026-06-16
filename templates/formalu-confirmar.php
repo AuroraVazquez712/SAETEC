@@ -115,7 +115,6 @@
                         $_SESSION["correo"]=$correo;
                         $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
                         $_SESSION["grupo"]=$grupo;
-                        $_SESSION[""]
 
                         echo "<p> No. de cuenta: $nocta </p>";
                         echo "<p> Nombre: $nombre</p>";
