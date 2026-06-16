@@ -26,7 +26,8 @@
         return $passwordHasheada;
     }
     // usamos la variable de sesion $id_perfil = $_SESSION["id_perfil"] para saber en que fila actualizar
-    $id_perfil = $_SESSION["id_perfil"];
+    //$id_perfil = $_SESSION["id_perfil"];
+    $id_perfil= 3;
     $error="";
     $exito="";
     // Podemos definir un formulario en esta página cuyo action sea esta misma, por lo que debemos preguntarnos 
