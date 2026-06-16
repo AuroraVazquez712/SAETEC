@@ -173,6 +173,9 @@ main{
 .tarea:hover{
     transform:scale(0.9);
 }
+.estaditicas:hover{
+    transform: scale(0.9);
+}
 .extras:hover{
     transform: scale(0.9);
 }

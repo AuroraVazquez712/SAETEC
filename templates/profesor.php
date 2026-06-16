@@ -74,6 +74,11 @@
                         <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos">
                     </a>
                 </div>
+                <div class="estaditicas">
+                    <a href="">
+                        <img src="../statics/img/estadic.png" alt="Imagen con texto para acceder a estadisticas">
+                    </a>
+                </div>
                 <div class="tarea">
                     <a href="./publi-tarea.php">
                         <img src="../statics/img/publi_tarea.png" alt="Imagen con texto publicar tarea">
