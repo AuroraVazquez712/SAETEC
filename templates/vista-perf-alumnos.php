@@ -1,5 +1,17 @@
 <?php
+    include '../dynamics/config.php';
+    $conexion = connect();
     session_start();
+    $nombre = $_SESSION["nombre_completo"];
+    $correo = $_SESSION["correo"];
+    $nocta = $_SESSION["nocta"];
+    $grupo =  $_SESSION["grupo"];
+    $id_perfil = 2;
+
+    $sql = "SELECT calificacion FROM asignacion WHERE id_estudiante=$id_perfil";
+    $query = mysqli_query($conexion, $sql);
+    $resp_estudiante=mysqli_fetch_assoc($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -68,19 +80,19 @@
     <main>
         <div id="margen">
             <div id="nom-alumn">
-                <h2>Nombre del alumno</h2>
+                <h2>Nombre del alumno: <?php echo "$nombre";?></h2>
             </div>
 
             <div id="bloq-info">
                 <div id="info">
                     <div class="datos"> 
-                        <p> E-mail:</p>
+                        <p> E-mail: <?php echo "$correo";?></p>
                     </div>
                     <div class="datos"> 
-                        <p> No. de cuenta:</p>
+                        <p> No. de cuenta: <?php echo "$nocta";?></p>
                     </div>
                     <div class="datos">
-                        <p>Telefono:</p>
+                        <p>Grupo: <?php echo "$grupo";?></p>
                     </div>
                 </div>
 
@@ -102,20 +114,28 @@
 
 
             <div id="escolar">
+                <?php
+                    $id_estudiante=1;
+                    $query_entregadas = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NOT NULL");
+                    $entregadas = mysqli_fetch_assoc($query_entregadas);
+
+                    $query_faltantes = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NULL");
+                    $faltantes = mysqli_fetch_assoc($query_faltantes);
+                ?>
                 <div class="tareas">
                     <h3>Tareas</h3>
-                    <p>Entregadas:</p>
-                    <p>Faltantes:</p>
+                    <p>Entregadas: <?php echo $entregadas['total'];?></p>
+                    <p>Faltantes: <?php echo $faltantes['total'];?></p>
                     </a>
                 </div>
 
             <div class="Calificaciones">
                 <h3>Calificaciones</h3>
-                    <p>Modulo 1:</p>
-                    <p>Modulo 2:</p>
-                    <p>Modulo 3:</p>
-                    <p>Modulo 4:</p>
-                    <p>Modulo 5:</p>
+                    <p>Modulo 1: <?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 2:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 3:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 4:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 5:<?php echo $resp_estudiante['calificacion'] ?></p>
                 </div>
         </div>
     </main>

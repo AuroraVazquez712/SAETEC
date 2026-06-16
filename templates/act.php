@@ -70,7 +70,7 @@
         <div class="cuadrado">Mis actividades</div>
         <div id="columna">
         <?php
-            $id_estudiante=1;
+            $id_estudiante = $_SESSION["id_perfil"];
             //1 es provicional en lo q se pone el de la sesion uwuwu
             $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
@@ -104,6 +104,7 @@
 
             $query_faltantes = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NULL");
             $faltantes = mysqli_fetch_assoc($query_faltantes);
+
         ?>
         <div id="actividades">
             <div class="bloque-tareas">

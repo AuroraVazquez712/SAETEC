@@ -83,11 +83,11 @@
         ?>
         <div id="contenido">
             <div id="grupo">
-                <a><u>ESTADISTICA</u></a>
+                <a href="./profesor.php"><u>ESTADISTICA</u></a>
             </div>
             <?php if (!empty($result)) {?>
                 <table>
-                    <h1>Interes en artes</h1>
+                    <h1>Interés en artes</h1>
                     <thead>
                         <tr>
                             <th>estudiante</th>
