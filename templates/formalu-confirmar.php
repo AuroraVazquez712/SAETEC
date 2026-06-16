@@ -85,8 +85,12 @@
 
                     //Guardar en base de datos 
 
-                    $insertar_datos= "INSERT INTO perfil (nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
-                                    VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
+                    // creamos la contraseña sin hashear
+                    $contrasenha = substr($fecha_nacimiento, -2, 2) . substr($fecha_nacimiento, -5, 2) . substr($fecha_nacimiento, 0, 4);
+                    $hash_contrasenha = password_hash($contrasenha, PASSWORD_DEFAULT);
+
+                    $insertar_datos= "INSERT INTO perfil (nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento, contrasenha)
+                                    VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento', '$hash_contrasenha')";
 
                     $inster= mysqli_query($conexion, $insertar_datos);
                     //}
