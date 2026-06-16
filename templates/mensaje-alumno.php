@@ -1,7 +1,5 @@
 <?php
     header('Content-Type: text/html; charset=utf-8');
-    // Corrobora si INICIÓ SESIÓN
-    session_start();
 
     require '../dynamics/config.php';
     $con = connect();

@@ -1,8 +1,12 @@
 <?php 
     include '../dynamics/config.php';
     $conexion = connect();
+<<<<<<< HEAD
+    var_dump($_SESSION);
+=======
     session_start();
     //var_dump($_SESSION);
+>>>>>>> 86f98767bebb3fade0ac5e8680090b5830386667
 
     //Debemos aplicarle trim, hashearla
     function esPasswordSegura($pass) {
