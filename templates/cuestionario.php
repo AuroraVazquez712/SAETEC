@@ -1,5 +1,6 @@
 <?php
     include '../dynamics/config.php';
+    $conexion = connect();
     session_start();
     $_SESSION["nocta"];
     $_SESSION["grupo"];
