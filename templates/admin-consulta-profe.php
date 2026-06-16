@@ -1,7 +1,8 @@
 <?php
         include '../dynamics/config.php';
         $conexion = connect();
-        
+        session_start();
+
         $nombre= "";
         $apellido_paterno= "";
         $correo= "";
