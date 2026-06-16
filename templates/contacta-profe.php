@@ -1,6 +1,4 @@
 <?php
-    header('Content-Type: text/html; charset=utf-8');
-    // Corrobora si INICIÓ SESIÓN
     session_start();
 
     require '../dynamics/config.php';
@@ -68,7 +66,7 @@
 
     <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
-            include 'barrapro.php';
+        include 'barrapro.php';
     ?>
     <br>
     <!------------------------------------BARRA LATERAL----------------------------------------->
