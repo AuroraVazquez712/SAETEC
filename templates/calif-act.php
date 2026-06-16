@@ -73,19 +73,19 @@
     <?php
         //$_SESSION["id_actividad"];
         $id_actividad = $_GET['id'];
-        if(isset($_POST['calificar'])) {
+        if(isset($_POST['calificacion'])) {
             $calificaciones = $_POST['calificacion'];
             $asignaciones = $_POST['id_asignacion'];
 
             foreach($asignaciones as $cali => $id_asignacion) {
                 $calif = $calificaciones[$cali];
-                if($calif = '') {
+                if($calif == '') {
                     $asigna = "UPDATE asignacion SET calificacion = NULL WHERE id_asignacion = $id_asignacion";
                 } 
                 else {
                     $asigna = "UPDATE asignacion SET calificacion = $calif WHERE id_asignacion = $id_asignacion";
                 }
-                //mysqli_query($conexion, $asigna);
+                mysqli_query($conexion, $asigna);
             }
         }
     ?>
