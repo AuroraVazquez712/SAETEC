@@ -104,6 +104,7 @@
 
             $query_faltantes = mysqli_query($conexion, "SELECT COUNT(*) as total FROM asignacion WHERE id_estudiante = $id_estudiante AND calificacion IS NULL");
             $faltantes = mysqli_fetch_assoc($query_faltantes);
+
         ?>
         <div id="actividades">
             <div class="bloque-tareas">
