@@ -1,6 +1,7 @@
 <?php
     session_start();
     $ruta_inicio = "";
+    
 ?>
 <nav class="nav">
     <div class="container">

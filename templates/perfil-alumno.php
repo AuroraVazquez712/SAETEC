@@ -19,7 +19,7 @@
 </head>
     <body>
         <!--Barra de búsqueda-->
-        <header>
+    <header>
         <div id="iconos_unam">
             <div class="logo-unam">
                 <a href="https://www.unam.mx/" target="_blank">
