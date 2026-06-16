@@ -109,33 +109,33 @@
                 </table>
             <?php } ?>
 
-        <?php
-        $query = "SELECT id_estudiante, id_interes FROM estudiante WHERE id_interes = 3";
-        $result = mysqli_query($con, $query);
-        ?>
-            <?php if (!empty($result)) {?>
-                <table>
-                    <h1>Interes en tecnología</h1>
-                    <thead>
-                        <tr>
-                            <th>estudiante</th>
-                            <th>interes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            foreach ($result as $fila) {
-                                $alumno = $fila["id_estudiante"];
-                                $interes = $fila["id_interes"];
-                        ?>
-                                <tr>
-                                    <td><?php echo "$alumno"; ?></td>
-                                    <td><?php echo "$interes"; ?></td>
-                                </tr>
-                        <?php }?>
-                    </tbody>
-                </table>
-            <?php } ?>
+            <?php
+            $query = "SELECT id_estudiante, id_interes FROM estudiante WHERE id_interes = 3";
+            $result = mysqli_query($con, $query);
+            ?>
+                <?php if (!empty($result)) {?>
+                    <table>
+                        <h1>Interes en tecnología</h1>
+                        <thead>
+                            <tr>
+                                <th>estudiante</th>
+                                <th>interes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach ($result as $fila) {
+                                    $alumno = $fila["id_estudiante"];
+                                    $interes = $fila["id_interes"];
+                            ?>
+                                    <tr>
+                                        <td><?php echo "$alumno"; ?></td>
+                                        <td><?php echo "$interes"; ?></td>
+                                    </tr>
+                            <?php }?>
+                        </tbody>
+                    </table>
+                <?php } ?>
         </div>
 
     
