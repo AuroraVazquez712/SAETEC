@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Equipo 4: Aurora Vazquez">
     <meta name="description" content="Vista del Alumno">
-    <link rel="stylesheet" href="../statics/style/profesor.css">
+    <link rel="stylesheet" href="../statics/style/estadistica.css">
     <title>SAETEC: Alumno</title>
 </head>
 <body>
@@ -67,49 +67,12 @@
     <!----------------------------------------CONTENIDO------------------------------------------->
     <main>
         <div id="contenido">
-            <div id="lista">
-                <div class="lista_alum">
-                    <a href="./lista-alumnos.php">
-                        <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos">
-                    </a>
-                </div>
-                <div class="estaditicas">
-                    <a href="./estadistica.php">
-                        <img src="../statics/img/estadic.png" alt="Imagen con texto para acceder a estadisticas">
-                    </a>
-                </div>
-                <div class="tarea">
-                    <a href="./publi-tarea.php">
-                        <img src="../statics/img/publi_tarea.png" alt="Imagen con texto publicar tarea">
-                    </a>
-                </div>
-            </div>
-            <div id="material">
-                <div class="extras">
-                    <a href="./material_extra.php">
-                        <img src="../statics/img/material_extra.png" alt="Imgen animada para ver material extra">
-                    </a>                
-                </div>
-                <div class="contacto">
-                    <a href="./mensaje-alumno.php">
-                        <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
-                    </a>
-                </div>
-            </div>
-            <div id="coments">
-                <a href="./tips.php">
-                    <img src="../statics/img/tips_alumnos.png" alt="Imagen animada para ver tips para sobrevvivir a la ete">
-                </a>            
+            <div id="grupo">
+                <a><u>ESTADISTICA</u></a>
             </div>
         
-        <div id="calendario">
-            <div id="cal">
-                <img src="../statics/img/calendario.png" alt="Calenadrio enp">
-            </div>
-            <div>
-                <p>Algo mash</p>
-            </div>
         </div>
+
     
     </main>
     <!------------------------FOOTER --------------------------------->
