@@ -4,7 +4,7 @@
     session_start();
 
     // Debemos usar aquí la variable $_POST["id_perfil"], porque de lista-alumnos.php se envía un formulario
-    $id_perfil=17;
+    $id_perfil=1;
     //Perfil
     $sql="SELECT nombre, apellido_paterno, apellido_materno FROM perfil WHERE id_perfil=$id_perfil";
     $query= mysqli_query($conexion, $sql);

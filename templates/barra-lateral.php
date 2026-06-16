@@ -18,7 +18,20 @@
                     <hr>
                     <a href="./actualizar-contrasenha.php">Modificar datos</a>
                     <hr>
-                    <a href="act.html">Lista de actividades</a>
+                    <a href="act.php">Lista de actividades</a>
+                    <hr>
+                    <?php
+                        session_destroy();
+                        $cerrar = session_destroy();
+                        if ($cerrar=true) {
+                    ?>
+                    <a href="index.php" name="cierre">
+                        Cerrar Sesión
+                    </a>
+                    <?php
+                        }
+                        echo "Se cerró tu sesión, te esperamos";
+                    ?>
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>

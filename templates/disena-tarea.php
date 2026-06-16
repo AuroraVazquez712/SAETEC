@@ -1,14 +1,6 @@
 <?php
-    const DBHOST = "localhost";
-    const DBUSER = "root";
-    const PASSWORD = "";
-    const DB = "SAETEC";
-
-    function connect () {
-        $conexion = mysqli_connect(DBHOST, DBUSER, PASSWORD, DB);
-        return $conexion;
-    } 
-    $conexion = connect ();
+    include '../dynamics/config.php';
+    $conexion = connect();
 ?>
 
 <!DOCTYPE html>

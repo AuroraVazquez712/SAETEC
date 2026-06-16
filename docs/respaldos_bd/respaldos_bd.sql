@@ -80,7 +80,7 @@ CREATE TABLE `asignacion` (
   `id_asignacion` int(11) NOT NULL AUTO_INCREMENT,
   `id_actividad` int(11) NOT NULL,
   `id_estudiante` int(11) NOT NULL,
-  `calificacion` int(11),
+  `calificacion` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_asignacion`),
   KEY `id_actividad` (`id_actividad`),
   KEY `id_estudiante` (`id_estudiante`),
@@ -352,7 +352,7 @@ CREATE TABLE `perfil` (
 
 LOCK TABLES `perfil` WRITE;
 /*!40000 ALTER TABLE `perfil` DISABLE KEYS */;
-INSERT INTO `perfil` VALUES (1,'E','Diego','Salcedo','Pérez','2009-03-21','diegod@saetec.com','21032009',NULL),(2,'E','Frida','García','Hernández','2009-07-07','friifayer@saetec.com','07072009',NULL);
+INSERT INTO `perfil` VALUES (1,'E','Diego','Salcedo','Pérez','2009-03-21','diegod@saetec.com','$2y$10$hnhQ9RynOCpwRtZ/2...RuAxobzb4o6Ax6jd.Lv6tcqu.IVIA57/O',NULL),(2,'E','Frida','García','Hernández','2009-07-07','friifayer@saetec.com','$2y$10$5EdIBkdHkphRNV07YASruuCAWuOKJzv.uekp3oxwt47o.Wd/2CKCG',NULL);
 /*!40000 ALTER TABLE `perfil` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -443,4 +443,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-13  0:14:57
+-- Dump completed on 2026-06-16  2:33:23
