@@ -1,6 +1,8 @@
 <?php 
     include '../dynamics/config.php';
     $conexion = connect();
+    session_start();
+    //var_dump($_SESSION);
 
     //Debemos aplicarle trim, hashearla
     function esPasswordSegura($pass) {
@@ -24,7 +26,11 @@
         return $passwordHasheada;
     }
     // usamos la variable de sesion $id_perfil = $_SESSION["id_perfil"] para saber en que fila actualizar
+<<<<<<< HEAD
     $id_perfil= 4; //$_SESSION["id_perfil"]
+=======
+    $id_perfil = $_SESSION["id_perfil"];
+>>>>>>> main
     $error="";
     $exito="";
     // Podemos definir un formulario en esta página cuyo action sea esta misma, por lo que debemos preguntarnos 

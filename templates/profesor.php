@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -65,7 +65,6 @@
         include 'barra-lateral.php';
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
-    
     <main>
         <div id="contenido">
             <div id="lista">
@@ -92,7 +91,9 @@
                     </a>                
                 </div>
                 <div class="contacto">
-                    <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
+                    <a href="./mensaje-alumno.php">
+                        <img src="../statics/img/contacta_profesor.png" alt="Imagen animada para contactar al profesor">
+                    </a>
                 </div>
             </div>
             <div id="coments">
