@@ -1,5 +1,16 @@
 <?php
+    include '../dynamics/config.php';
+    $conexion = connect();
     session_start();
+
+    $id_perfil=2;
+
+    $sql= "SELECT calificacion FROM asignacion WHERE id_estudiante=$id_perfil";
+    $query= mysqli_query($conexion, $sql);
+    $resp_estudiante= mysqli_fetch_assoc($query);
+    var_dump($resp_estudiante);
+    //Grupo
+ 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -111,11 +122,11 @@
 
             <div class="Calificaciones">
                 <h3>Calificaciones</h3>
-                    <p>Modulo 1:</p>
-                    <p>Modulo 2:</p>
-                    <p>Modulo 3:</p>
-                    <p>Modulo 4:</p>
-                    <p>Modulo 5:</p>
+                    <p>Modulo 1: <?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 2:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 3:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 4:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 5:<?php echo $resp_estudiante['calificacion'] ?></p>
                 </div>
         </div>
     </main>
