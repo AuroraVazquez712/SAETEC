@@ -10,7 +10,6 @@ body {
     margin: 0%;
     padding: 0%;
 }
-
 /*==============================================HEADER========================================================*/
 header {
     background-color: #E6E8E9;
@@ -41,9 +40,7 @@ header {
     flex: 1;
     text-align: center;
 }
-#titulo_encabezado a {
-    text-decoration: none;
-}
+
 #titulo_encabezado p {
     margin: 0%; 
 }
@@ -85,7 +82,6 @@ header {
     line-height: 70px;
 }
 .container .menu a {
-    text-decoration: none;
     display: inline-block;
     padding: 30px;
     line-height: normal;
@@ -186,14 +182,14 @@ main {
 #img_perfil{
     padding-left: 4%;
     padding-top: 5%;
-    margin-left: 4%;
+    margin-left: 3%;
     transform: scale(1.4);
 }
 #datos{
     margin-left: 10%;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
-    width: auto;
+    width: 30%;
     padding: 20px;
     margin: 70px 0px 80px 50px;
     height: auto;
@@ -202,7 +198,7 @@ main {
     width: 100%;
     margin-left: 10px;
 }
-#datos input{
+#comentario input{
     margin: 5px;
     padding: 5px;
     padding-right: 10px;
@@ -210,29 +206,20 @@ main {
     border-radius: 20px;
     font-size: 16px;
 }
-.enviar-datos{
-    background-color: #FF671D;
-    color: #FFFFFF;
-    transition: transform 0.3s ease;
-}
-.enviar-datos:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-}
 .titulo{
     font-size: 6.2vb;
     font-family: 'encabezado';
     width: 60vh;
     margin: 20px;
 }
-.info-alumno{
+.info-profesor{
     font-size: 18px;
     font-family: 'cuerpo';
 }
 .correo{
     font-size: 30px;
 }
-#comentario{
+#comentario {
     width: 60%;
     height: 400px;
     font-size: 25px;
@@ -287,7 +274,6 @@ main {
     transform: scale(1.1);
     cursor: pointer;
 }
-
 /*--------------------------FOOTER--------------------------*/
 footer{
     background-color: #0D1650;

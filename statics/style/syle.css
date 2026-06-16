@@ -17,6 +17,10 @@ header {
     align-items: center;        
     justify-content: space-between;
 }
+button{
+    background: none;
+    border: none;
+}
 /*------------Barra de búsqueda------------*/   
 .iconos {
     width: 70px;
@@ -117,6 +121,7 @@ header {
 }
 .bloque:hover{
     transform: scale(1.1);
+    cursor: pointer;
 }
 .nav{
     width: 100%;
