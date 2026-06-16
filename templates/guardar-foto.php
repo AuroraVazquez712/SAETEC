@@ -1,6 +1,6 @@
 <?php   
     // Corrobora si INICIÓ SESIÓN
-
+    session_start();
     require  '../dynamics/config.php';
     $con = connect();
 
