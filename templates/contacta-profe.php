@@ -103,19 +103,64 @@
             ?>
             <div id="comentario">
                 <?php
-                    $query = "SELECT id_estudiante, comentario, fecha_publicacion FROM comentario 
-                    WHERE id_estudiante = '$id_estudiante_ini' ORDER BY fecha_publicacion DESC";
+                    $query = "SELECT id_comentario, id_estudiante, comentario, fecha_publicacion 
+                    FROM comentario WHERE id_estudiante = '$id_estudiante_ini' ORDER BY fecha_publicacion DESC";
                     $result = mysqli_query($con, $query);
                     
                     while($registro = mysqli_fetch_assoc($result))
                     {
+                        $id_comentario = $registro['id_comentario'];
                         $id_estudiante = $registro["id_estudiante"];
                         $comentario = $registro["comentario"];
                         $fecha = $registro["fecha_publicacion"];
 
                         echo "<p class = 'nombre-estudiante'>$nombre_completo ($fecha):<br></p>";
                         echo "<p class = 'comentario-general'>$comentario</p>";
+
+                        // Se muestran las repuestas del profesor de acuerdo al id_comentario
+                        $query_respuesta = "SELECT comentario, fecha_publicacion
+                        FROM respuesta WHERE id_comentario = '$id_comentario'";
+                        $result_respuesta = mysqli_query($con, $query_respuesta);
+
+                        // Se despliegan las respuestas relacionadas con los mensajes del alumno
+                        while($respuesta = mysqli_fetch_assoc($result_respuesta)){
+                            $fecha_publicacion = $respuesta['fecha_publicacion'];
+                            $respuesta_profesor = $respuesta['comentario'];
+
+                            // Revisar la variable con la que se guarda la clase en la que se encuentra el alumno
+                            echo "<p class = 'nombre-profesor'>hola ($fecha_publicacion):<br></p>";
+                            echo "<p class = 'comentario-general'>$respuesta_profesor</p>";
+                        }
+
+                        // Identificador para las respuestas del profesor
+                        $id_respuesta = "respuesta-profe_$id_comentario";
+                        if(isset($_POST[$id_respuesta]) && !empty($_POST[$id_respuesta])){
+                            $respuesta_alumno = $_POST[$id_respuesta];
+
+                            $hora_respuesta = date("Y-m-d");
+                            $query_insercion = "INSERT INTO respuesta (id_comentario, comentario, fecha_publicacion) 
+                            VALUES ($id_comentario,'$respuesta_alumno','$fecha')";
+                            $result_insercion = mysqli_query($con, $query_insercion);
+
+                        }
+                        $query2 = "SELECT comentario, fecha_publicacion FROM respuesta
+                            WHERE id_comentario = '$id_comentario'";
+                        $result2 = mysqli_query($con, $query2);
+
+                        while($registros3 = mysqli_fetch_assoc($result2)){
+                            $hora_respuesta = $registros3["fecha_publicacion"];
+                            $respuesta_al_comentario = $registros3["comentario"] ;
+                        
+                            echo "<p class = 'nombre-estudiante'>$nombre_completo ($hora_respuesta):<br></p>";
+                            echo "<p class = 'comentario-general'>$respuesta_al_comentario</p>";
+                        }
+                        // Se agrega otro input para que el alumno pueda seguir contestando
+                        echo "<form method='POST'>";
+                        echo "<textarea class='texto_ingresado' name ='respuesta-profe_".$id_comentario."' placeholder='Envie un mensaje''></textarea>";
+                        echo "<input type='submit' class='enviar-datos' id='envio-respuesta' value='Enviar respuesta'>";
+                        echo "</form>";
                     }
+                    mysqli_close($con);
                 ?>
             </div>
         </form>

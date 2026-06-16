@@ -268,6 +268,26 @@ main {
     padding: 5px;
     padding-left: 10px;
 }
+.texto_ingresado{
+    width: 60%;
+    height: 8%;
+    font-size: 14px;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 7px;
+    padding-left: 10px;
+}
+.enviar-datos{
+    background-color: #FF671D;
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+}
+.enviar-datos:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/*-
 /*--------------------------FOOTER--------------------------*/
 footer{
     background-color: #0D1650;
