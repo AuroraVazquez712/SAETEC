@@ -1,6 +1,6 @@
 <?php
-    include 'login.php';
     $ruta_inicio = "";
+    
 ?>
 <nav class="nav">
     <div class="container">

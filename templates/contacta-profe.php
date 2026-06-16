@@ -89,24 +89,46 @@
                     <input type="text" class="texto_ingresado" name="contacto-profe" placeholder="Comience a escribir">
                     <input class="enviar-datos" type="submit" id="envio-comentario" value="Enviar comentario">
             </div>
+        </form>
+
             <?php
+                $fecha = date("Y-m-d");
+                // Si se envió el formulario de primer comentario (del lado izquierdo)
                 if(isset($_POST["contacto-profe"])){
                     $texto_ingresado = $_POST["contacto-profe"];
+                    // El mensaje se pushea a un arreglo de una variable de sesión
                     $_SESSION["contactos"][] = $texto_ingresado;
                     
                     $fecha = date("Y-m-d");
 
+                    // Insertamos los datos, de acuerdo a los datos de la sesión
                     $query2= "INSERT INTO comentario (id_estudiante, comentario, fecha_publicacion)
                     VALUES ('$id_estudiante_ini','$texto_ingresado', '$fecha')";
                     $result = mysqli_query($con, $query2);
                 }
+
+                // Si se envió un input de respuesta a un comentario, se inserta
+                if(isset($_POST["id_comentario"])){
+                    var_dump("Entró a la insercion de respuesta");
+                    $id_comentario = $_POST["id_comentario"];
+                    $id_respuesta = "respuesta-profe_$id_comentario";
+                    $respuesta_alumno = $_POST[$id_respuesta];
+
+                    $hora_respuesta = date("Y-m-d");
+                    $query_insercion = "INSERT INTO respuesta (id_comentario, comentario, fecha_publicacion) 
+                    VALUES ($id_comentario,'$respuesta_alumno','$fecha')";
+                    echo $query_insercion;
+                    $result_insercion = mysqli_query($con, $query_insercion);
+
+                }
             ?>
             <div id="comentario">
                 <?php
+                    // Obtenemos todos los comentarios de la base
                     $query = "SELECT id_comentario, id_estudiante, comentario, fecha_publicacion 
                     FROM comentario WHERE id_estudiante = '$id_estudiante_ini' ORDER BY fecha_publicacion DESC";
                     $result = mysqli_query($con, $query);
-                    
+                    // Iteramos cada comentario
                     while($registro = mysqli_fetch_assoc($result))
                     {
                         $id_comentario = $registro['id_comentario'];
@@ -155,18 +177,8 @@
                             echo "<p class = 'comentario-general'>$respuesta_profesor</p>";
                         }
 
-                        // Identificador para las respuestas del profesor
-                        $id_respuesta = "respuesta-profe_$id_comentario";
-                        if(isset($_POST[$id_respuesta]) && !empty($_POST[$id_respuesta])){
-                            $respuesta_alumno = $_POST[$id_respuesta];
-
-                            $hora_respuesta = date("Y-m-d");
-                            $query_insercion = "INSERT INTO respuesta (id_comentario, comentario, fecha_publicacion) 
-                            VALUES ($id_comentario,'$respuesta_alumno','$fecha')";
-                            $result_insercion = mysqli_query($con, $query_insercion);
-
-                        }
-                        $query2 = "SELECT comentario, fecha_publicacion FROM respuesta
+                        
+                        /*$query2 = "SELECT comentario, fecha_publicacion FROM respuesta
                             WHERE id_comentario = '$id_comentario'";
                         $result2 = mysqli_query($con, $query2);
 
@@ -176,9 +188,10 @@
                         
                             echo "<p class = 'nombre-estudiante'>$nombre_completo ($hora_respuesta):<br></p>";
                             echo "<p class = 'comentario-general'>$respuesta_al_comentario</p>";
-                        }
+                        }*/
                         // Se agrega otro input para que el alumno pueda seguir contestando
                         echo "<form method='POST'>";
+                        echo "<input type='hidden' class='enviar-datos' id='envio-respuesta' name='id_comentario' value='$id_comentario'>";
                         echo "<textarea class='texto_ingresado' name ='respuesta-profe_".$id_comentario."' placeholder='Envie un mensaje''></textarea>";
                         echo "<input type='submit' class='enviar-datos' id='envio-respuesta' value='Enviar respuesta'>";
                         echo "</form>";
@@ -186,7 +199,6 @@
                     mysqli_close($con);
                 ?>
             </div>
-        </form>
     </div>
     <!------------------------FOOTER --------------------------------->
     <?php
