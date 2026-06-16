@@ -1,6 +1,7 @@
 <?php
     include '../dynamics/config.php';
     $conexion = connect();
+    session_start();
 
     if (isset($_POST["interes"])) {
         var_dump($_POST);
@@ -19,8 +20,6 @@
         } else {
             echo "Nada";
         }
-    } else {
-        echo "No se ha enviado nada";
     }
 ?>
 <!DOCTYPE html>
