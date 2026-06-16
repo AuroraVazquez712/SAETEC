@@ -180,7 +180,7 @@
                     }
 
                     if ($registro2) {
-                            if (password_verify($contrasenha, $registro2["contrasenha"])) {
+                        if (password_verify($contrasenha, $registro2["contrasenha"])) {
                             $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
                             $_SESSION["correo"] = $registro2 ["correo"];
                             $_SESSION["no_trabajador"] = $registro1["no_trabajador"];
