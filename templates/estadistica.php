@@ -1,5 +1,16 @@
 <?php
+    include '../dynamics/config.php';
+    $con = connect();
     session_start();
+
+    if (isset($_POST["interes"])) {
+        var_dump($_POST);
+        $id_estudiante = $_SESSION["id_perfil"];
+        $id_interes = $_POST["interes"];
+        $id_dificultad = $_POST["dificultad"];
+        $id_razon = $_POST["razon_ingreso"];
+        $id_habito = $_POST["habito_estudio"];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -66,18 +77,72 @@
     ?>
     <!----------------------------------------CONTENIDO------------------------------------------->
     <main>
+        <?php
+            $query = "SELECT id_estudiante, id_interes FROM estudiante WHERE id_interes = 2";
+            $result = mysqli_query($con, $query);
+        ?>
         <div id="contenido">
             <div id="grupo">
                 <a><u>ESTADISTICA</u></a>
             </div>
-        
+            <?php if (!empty($result)) {?>
+                <table>
+                    <h1>Interes en artes</h1>
+                    <thead>
+                        <tr>
+                            <th>estudiante</th>
+                            <th>interes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach ($result as $fila) {
+                                $alumno = $fila["id_estudiante"];
+                                $interes = $fila["id_interes"];
+                        ?>
+                                <tr>
+                                    <td><?php echo "$alumno"; ?></td>
+                                    <td><?php echo "$interes"; ?></td>
+                                </tr>
+                        <?php }?>
+                    </tbody>
+                </table>
+            <?php } ?>
+
+        <?php
+        $query = "SELECT id_estudiante, id_interes FROM estudiante WHERE id_interes = 3";
+        $result = mysqli_query($con, $query);
+        ?>
+            <?php if (!empty($result)) {?>
+                <table>
+                    <h1>Interes en tecnología</h1>
+                    <thead>
+                        <tr>
+                            <th>estudiante</th>
+                            <th>interes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach ($result as $fila) {
+                                $alumno = $fila["id_estudiante"];
+                                $interes = $fila["id_interes"];
+                        ?>
+                                <tr>
+                                    <td><?php echo "$alumno"; ?></td>
+                                    <td><?php echo "$interes"; ?></td>
+                                </tr>
+                        <?php }?>
+                    </tbody>
+                </table>
+            <?php } ?>
         </div>
 
     
     </main>
     <!------------------------FOOTER --------------------------------->
     <?php
-            include 'footer.php';
+        include 'footer.php';
     ?> 
 </body>
 </html>
