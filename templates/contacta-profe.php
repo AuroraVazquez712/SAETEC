@@ -1,6 +1,7 @@
 <?php
     header('Content-Type: text/html; charset=utf-8');
     require '../dynamics/config.php';
+    session_start();
     $con = connect();
 
     $correo = $_SESSION["correo"];

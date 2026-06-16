@@ -112,6 +112,9 @@
     <?php
             include 'barrapro.php';
     ?> 
+    <?php
+        include 'barra-lateral.php';
+    ?>
     <br>
     <!-------------------------------------------FORMS------------>
     <form action="" method="POST">

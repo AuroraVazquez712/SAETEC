@@ -7,8 +7,7 @@
                 <nav>
                     <?php
                         //session_start();
-                        $_SESSION["nombre completo"];
-                        $tunombre = $_SESSION["nombre completo"];
+                        $tunombre = $_SESSION["nombre_completo"];
                         echo "Hola $tunombre";
                     ?>
                     <a href="./perfil-alumno.php">Mi perfil</a>
@@ -25,6 +24,8 @@
                     <hr>
                     <a href="act.php">Lista de actividades</a>
                     <hr>
+                    <a href="cerrar-sesion.php">Cerrar sesión</a>
+
                     
                 </nav>
                 <label for="btn-menu">✖️</label>
