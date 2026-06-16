@@ -1,7 +1,6 @@
 <?php
     include '../dynamics/config.php';
     $conexion = connect();
-    session_start();
 
     if (isset($_POST["interes"])) {
         var_dump($_POST);

@@ -1,7 +1,6 @@
 <?php
     include '../dynamics/config.php';
     $conexion = connect();
-
 ?>
 
 <!DOCTYPE html>
