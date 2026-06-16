@@ -2,9 +2,6 @@
     include '../dynamics/config.php';
     $conexion = connect();
     session_start();
-    $_SESSION["nocta"];
-    $_SESSION["grupo"];
-    $_SESSION["id_perfil"];
 
     if (isset($_POST["interes"])) {
         var_dump($_POST);
@@ -13,10 +10,8 @@
         $id_dificultad = $_POST["dificultad"];
         $id_razon = $_POST["razon_ingreso"];
         $id_habito = $_POST["habito_estudio"];
-        $query = "insert into estudiante (id_interes, id_dificultad, 
-        id_razon, id_habito)
-        values ('$id_interes', '$id_dificultad', 
-        '$id_razon', '$id_habito')";
+        $query = "UPDATE estudiante SET id_interes = $id_interes, id_dificultad = $id_dificultad,
+        id_razon = $id_razon, id_habito = $id_habito WHERE id_estudiante = $id_estudiante";
         //echo "<br>$query";
         $result = mysqli_query($conexion, $query);
         if ($result) {
