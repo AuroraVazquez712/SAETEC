@@ -1,7 +1,7 @@
 <?php 
     include '../dynamics/config.php';
+    include './login.php'
     $conexion = connect();
-    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -112,6 +112,7 @@
                         $_SESSION["correo"]=$correo;
                         $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
                         $_SESSION["grupo"]=$grupo;
+                        $_SESSION[""]
 
                         echo "<p> No. de cuenta: $nocta </p>";
                         echo "<p> Nombre: $nombre</p>";
@@ -120,7 +121,7 @@
                         echo "<p> Correo: $correo</p>";
                         echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
                         echo "<p> Grupo: $grupo</p>";
-                        //echo "<p> Contraseña: $c</p>";
+                        echo "<p> Contraseña: $contrasenha</p>";
                     }
                 }
 
