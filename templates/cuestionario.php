@@ -13,9 +13,9 @@
         $id_dificultad = $_POST["dificultad"];
         $id_razon = $_POST["razon_ingreso"];
         $id_habito = $_POST["habito_estudio"];
-        $query = "insert into cuestionario (id_perfil, interes, dificultad, 
-        razon_ingreso, habito_estudio)
-        values ('$id_estudiante', '$id_interes', '$id_dificultad', 
+        $query = "insert into estudiante (id_interes, id_dificultad, 
+        id_razon, id_habito)
+        values ('$id_interes', '$id_dificultad', 
         '$id_razon', '$id_habito')";
         //echo "<br>$query";
         $result = mysqli_query($conexion, $query);

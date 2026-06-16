@@ -120,7 +120,7 @@
                         echo "<p> Correo: $correo</p>";
                         echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
                         echo "<p> Grupo: $grupo</p>";
-                        echo "<p> Contraseña: $c</p>"
+                        //echo "<p> Contraseña: $c</p>";
                     }
                 }
 
