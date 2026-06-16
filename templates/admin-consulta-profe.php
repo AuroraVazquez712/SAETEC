@@ -14,9 +14,13 @@
             $fecha_nacimiento= $_POST["fecha_nacimiento"];
             $no_trabajador=$_POST["no_trabajador"];
 
+            //Se define la contraseña con 
+            $contrasenha = substr($fecha_nacimiento, -2, 2) . substr($fecha_nacimiento, -5, 2) . substr($fecha_nacimiento, 0, 4);
+            $hash_contrasenha = password_hash($contrasenha, PASSWORD_DEFAULT);
+
             //Base de datos, aquí guardamos o algo así 
-            $insertar_datos= "INSERT INTO perfil (rol, nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento)
-                                VALUES('P','$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento')";
+            $insertar_datos= "INSERT INTO perfil (rol, nombre, apellido_paterno, apellido_materno, correo, fecha_nacimiento, contrasenha)
+                                VALUES('P','$nombre', '$apellido_paterno', '$apellido_materno', '$correo', '$fecha_nacimiento', '$hash_contrasenha')";
             $inster= mysqli_query($conexion, $insertar_datos);
 
             $id_perfil = mysqli_insert_id($conexion);

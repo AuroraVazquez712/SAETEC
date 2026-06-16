@@ -1,7 +1,10 @@
 <?php 
     include '../dynamics/config.php';
-    $conexion = connect();
+<<<<<<< HEAD
     session_start();
+=======
+>>>>>>> c5ee9e0c221d82db42272afb4eb7572d08e006f0
+    $conexion = connect();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -106,7 +109,7 @@
                     $query2 = mysqli_query($conexion, $sql2);
 
                     // nos preguntamos si sí se insertó el registro
-                    if($inster){
+                    if($inster) {
                         // Guardar las variables que usaremos en otras vistas en variables de sesion
                         $_SESSION["id_perfil"] = $id_perfil;
                         $_SESSION["nocta"]=$nocta;
@@ -116,6 +119,7 @@
                         $_SESSION["correo"]=$correo;
                         $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
                         $_SESSION["grupo"]=$grupo;
+                        
 
                         echo "<p> No. de cuenta: $nocta </p>";
                         echo "<p> Nombre: $nombre</p>";
@@ -124,7 +128,6 @@
                         echo "<p> Correo: $correo</p>";
                         echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
                         echo "<p> Grupo: $grupo</p>";
-                        //echo "<p> Contraseña: $c</p>";
                     }
                 }
 
