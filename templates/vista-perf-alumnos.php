@@ -6,7 +6,12 @@
     $correo = $_SESSION["correo"];
     $nocta = $_SESSION["nocta"];
     $grupo =  $_SESSION["grupo"];
-    $id_perfil = $_SESSION["id_perfil"];
+    $id_perfil = 2;
+
+    $sql = "SELECT calificacion FROM asignacion WHERE id_estudiante=$id_perfil";
+    $query = mysqli_query($conexion, $sql);
+    $resp_estudiante=mysqli_fetch_assoc($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
