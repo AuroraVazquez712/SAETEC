@@ -126,11 +126,11 @@
 
             <div class="Calificaciones">
                 <h3>Calificaciones</h3>
-                    <p>Modulo 1:</p>
-                    <p>Modulo 2:</p>
-                    <p>Modulo 3:</p>
-                    <p>Modulo 4:</p>
-                    <p>Modulo 5:</p>
+                    <p>Modulo 1: <?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 2:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 3:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 4:<?php echo $resp_estudiante['calificacion'] ?></p>
+                    <p>Modulo 5:<?php echo $resp_estudiante['calificacion'] ?></p>
                 </div>
         </div>
     </main>

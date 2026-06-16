@@ -70,7 +70,7 @@
         <div class="cuadrado">Mis actividades</div>
         <div id="columna">
         <?php
-            $id_estudiante=1;
+            $id_estudiante = $_SESSION["id_perfil"];
             //1 es provicional en lo q se pone el de la sesion uwuwu
             $filtra = mysqli_query($conexion, "SELECT * FROM actividad ORDER BY id_actividad DESC");
 
