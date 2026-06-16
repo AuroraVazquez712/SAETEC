@@ -33,7 +33,6 @@
 
     // Nos preguntamos si eligió tipo de usuario
     if(isset($_GET["rol"])) {
-        var_dump($_GET);
         $_SESSION["tipo_usuario"] = $_GET["rol"];
     } else {
         //echo "No hay POST";
