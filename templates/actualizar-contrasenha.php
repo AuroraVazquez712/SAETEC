@@ -1,7 +1,6 @@
 <?php 
     include '../dynamics/config.php';
     $conexion = connect();
-    session_start();
     var_dump($_SESSION);
 
     //Debemos aplicarle trim, hashearla
