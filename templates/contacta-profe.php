@@ -5,7 +5,7 @@
     $con = connect();
 
     $correo = $_SESSION["correo"];
-    $nombre_completo = $_SESSION["nombre_completo"];
+    $nombre_completo = $_SESSION["nombre completo"];
     $id_estudiante_ini = $_SESSION["id_perfil"];
 ?>
 <!-----------------------VISTA DE ALUMNO PARA CONTACTO--------------------------------->
