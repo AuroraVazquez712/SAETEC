@@ -180,20 +180,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
 }
 
 
-=======
-}
-a:visited{
-    color:#FFFFFF;
-}
-a{
-    text-decoration: none;
-}
-
->>>>>>> feature/diego
 #anade {
     display: flex;
     flex-direction:row;

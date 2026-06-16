@@ -16,7 +16,7 @@
                     <hr>
                     <a href="../docs/2019_Acuerdo_Rectoria_02.pdf">Políticas de seguridad</a>
                     <hr>
-                    <a href="#">Modificar datos</a>
+                    <a href="./actualizar-contrasenha.php">Modificar datos</a>
                     <hr>
                     <a href="act.html">Lista de actividades</a>
                 </nav>
