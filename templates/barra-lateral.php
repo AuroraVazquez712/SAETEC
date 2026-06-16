@@ -20,7 +20,13 @@
                     <hr>
                     <a href="act.php">Lista de actividades</a>
                     <hr>
-                    <a href="index.php">Cerrar sesión</a>
+                    <!--<a href="index.php">-->
+                        <?php
+                            session_abort();
+                            echo "<p>Cerrar Sesión</p>"
+                        ?>
+                    </a>
+                    
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>
