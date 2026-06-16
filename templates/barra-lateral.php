@@ -21,8 +21,8 @@
                     <a href="act.php">Lista de actividades</a>
                     <hr>
                     <?php
-                        session_abort();
-                        $cerrar = session_abort();
+                        session_destroy();
+                        $cerrar = session_destroy();
                         if ($cerrar=true) {
                     ?>
                     <a href="index.php" name="cierre">
