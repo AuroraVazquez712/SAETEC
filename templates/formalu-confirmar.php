@@ -1,6 +1,9 @@
 <?php 
     include '../dynamics/config.php';
+<<<<<<< HEAD
     session_start();
+=======
+>>>>>>> c5ee9e0c221d82db42272afb4eb7572d08e006f0
     $conexion = connect();
 ?>
 <!DOCTYPE html>
