@@ -1,6 +1,5 @@
 <?php 
     include '../dynamics/config.php';
-    session_start();
     $conexion = connect();
 ?>
 <!DOCTYPE html>
