@@ -6,7 +6,6 @@
     require '../dynamics/config.php';
     $con = connect();
 
-    //$nombre_apellido = $_SESSION["nombre_apellido"];
     $correo = $_SESSION["correo"];
     $nombre_completo = $_SESSION["nombre_completo"];
     $id_estudiante_ini = $_SESSION["id_perfil"];
@@ -90,7 +89,6 @@
                     <input class="enviar-datos" type="submit" id="envio-comentario" value="Enviar comentario">
             </div>
         </form>
-
             <?php
                 $fecha = date("Y-m-d");
                 // Si se envió el formulario de primer comentario (del lado izquierdo)
@@ -109,7 +107,7 @@
 
                 // Si se envió un input de respuesta a un comentario, se inserta
                 if(isset($_POST["id_comentario"])){
-                    var_dump("Entró a la insercion de respuesta");
+               //     var_dump("Entró a la insercion de respuesta");
                     $id_comentario = $_POST["id_comentario"];
                     $id_respuesta = "respuesta-profe_$id_comentario";
                     $respuesta_alumno = $_POST[$id_respuesta];
@@ -117,7 +115,7 @@
                     $hora_respuesta = date("Y-m-d");
                     $query_insercion = "INSERT INTO respuesta (id_comentario, comentario, fecha_publicacion) 
                     VALUES ($id_comentario,'$respuesta_alumno','$fecha')";
-                    echo $query_insercion;
+                    // echo $query_insercion;
                     $result_insercion = mysqli_query($con, $query_insercion);
 
                 }
@@ -177,18 +175,6 @@
                             echo "<p class = 'comentario-general'>$respuesta_profesor</p>";
                         }
 
-                        
-                        /*$query2 = "SELECT comentario, fecha_publicacion FROM respuesta
-                            WHERE id_comentario = '$id_comentario'";
-                        $result2 = mysqli_query($con, $query2);
-
-                        while($registros3 = mysqli_fetch_assoc($result2)){
-                            $hora_respuesta = $registros3["fecha_publicacion"];
-                            $respuesta_al_comentario = $registros3["comentario"] ;
-                        
-                            echo "<p class = 'nombre-estudiante'>$nombre_completo ($hora_respuesta):<br></p>";
-                            echo "<p class = 'comentario-general'>$respuesta_al_comentario</p>";
-                        }*/
                         // Se agrega otro input para que el alumno pueda seguir contestando
                         echo "<form method='POST'>";
                         echo "<input type='hidden' class='enviar-datos' id='envio-respuesta' name='id_comentario' value='$id_comentario'>";
