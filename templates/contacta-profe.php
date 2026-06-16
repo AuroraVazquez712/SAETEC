@@ -127,8 +127,31 @@
                             $fecha_publicacion = $respuesta['fecha_publicacion'];
                             $respuesta_profesor = $respuesta['comentario'];
 
+                            // Debe realizar la consulta del perfil para consultar el id_grupo asociado con la entidad 'profesor'
+                            $query_info = "SELECT id_grupo FROM estudiante WHERE id_estudiante = $id_estudiante";
+                            $result_info = mysqli_query($con, $query_info);
+                            $informacion = mysqli_fetch_assoc($result_info);
+                            $id_grupo = $informacion['id_grupo'];
+
+                            // Realiza la consulta a la tabla profesor utilizan el id_grupo
+                            $query_profesor = "SELECT id_profesor FROM grupo WHERE id_grupo = $id_grupo";
+                            $result_profesor = mysqli_query($con, $query_profesor);
+                            $info_profesor = mysqli_fetch_assoc($result_profesor);
+                            $id_profesor = $info_profesor['id_profesor'];
+
+                            // Consulta final para desplegar el nombre
+                            $query_nom_profesor = "SELECT id_perfil, nombre, apellido_paterno, apellido_materno FROM perfil 
+                            WHERE id_perfil = $id_profesor";
+
+                            $result_nom = mysqli_query($con, $query_nom_profesor);
+                            $datos_profesor = mysqli_fetch_assoc($result_nom);
+
+                            // Nombre del profesor
+                            $nombre_profesor = $datos_profesor['nombre'] . " " . 
+                            $datos_profesor['apellido_paterno'] . " " . $datos_profesor['apellido_materno'];
+
                             // Revisar la variable con la que se guarda la clase en la que se encuentra el alumno
-                            echo "<p class = 'nombre-profesor'>hola ($fecha_publicacion):<br></p>";
+                            echo "<p class = 'nombre-profesor'>$nombre_profesor ($fecha_publicacion):<br></p>";
                             echo "<p class = 'comentario-general'>$respuesta_profesor</p>";
                         }
 
