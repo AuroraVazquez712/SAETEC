@@ -53,7 +53,7 @@
 
         $hash = hasheacion($contrasenha);
         //$valida = verificar($login);
-        var_dump($hash);
+        //var_dump($hash);
         //exit();
         //Debe agregarse un usuario administrador, y profesor para checar credenciales
 
