@@ -1,6 +1,5 @@
 <?php 
     include '../dynamics/config.php';
-    include './login.php'
     $conexion = connect();
 ?>
 <!DOCTYPE html>
