@@ -1,30 +1,60 @@
 <?php
+    function seguridad ($contrasenha) {
+        $contrasenha = $_POST["contrasenha"];
+        if (strlen($contrasenha<= 8))
+            return false;
+        $tieneNum = false;
+        for ($i=0; $i<=$contrasenha; $i++) {
+            if (ctype_digit($contrasenha[$i]))
+                $tieneNum = true;
+        }
+        return $tieneNum;
+    }
+
+    function hasheacion($contrasenha) {
+        $contrasenha = $_POST["contrasenha"];
+        $hashear = password_hash($contrasenha, PASSWORD_DEFAULT);
+        return $hashear;
+    }
+
+    function verificar ($contrasenha, $hash_base) {
+        if ($contrasenha == $hash_base) {
+            echo "<p>¡Contraseña correcta!, Bienvenido al sistema</p>";
+            return true;
+        } else {
+            echo "<p>¡Contraseña incorrecta!, Intentalo de nuevo</p>";
+            return false;
+        }
+    }
+
     require_once '../dynamics/config.php';
     session_start();
+
 
     // Nos preguntamos si eligió tipo de usuario
     if(isset($_GET["rol"])) {
         var_dump($_GET);
         $_SESSION["tipo_usuario"] = $_GET["rol"];
     } else {
-        echo "No hay POST";
+        //echo "No hay POST";
         //header("Location: index.php");
         //exit;
     }
-
-    
-
-
     // Este if dice si ya se envió formulario
     if (isset($_POST["usuario"]))
     {
         $con = connect();
+        
 
         // Recibir y limpiar la entrada del usuario:
         $usuario = trim($_POST["usuario"]);
         $contrasenha = trim($_POST["contrasenha"]);
-        $hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
+        //$hasheo = password_hash($contrasenha, PASSWORD_DEFAULT);
 
+        $hash = hasheacion($contrasenha);
+        //$valida = verificar($login);
+        var_dump($hash);
+        //exit();
         //Debe agregarse un usuario administrador, y profesor para checar credenciales
 
         // Primero revisamos que el registro esté en la tabla estudiante
@@ -55,13 +85,16 @@
                     $registro2 = mysqli_fetch_assoc($result2);
 
                     if ($registro2) {
-                        $_SESSION["nombre completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
-                        $_SESSION["correo"] = $registro2["correo"];
-                        $_SESSION["nombre_administrador"] = $registro1["nombre_administrador"];
-                        $_SESSION["id_perfil"] = $registro2["id_perfil"];
-                        $_SESSION["rol"] = 'A';
-                        header("Location: admin.php");
-                        exit;
+                        if (password_verify($contrasenha, $registro2["contrasenha"])) {
+                            $_SESSION["nombre completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
+                            $_SESSION["correo"] = $registro2["correo"];
+                            $_SESSION["nombre_administrador"] = $registro1["nombre_administrador"];
+                            $_SESSION["id_perfil"] = $registro2["id_perfil"];
+                            $_SESSION["rol"] = 'A';
+                            header("Location: admin.php");
+                            exit;
+                        }
+                        
                     }
                 } else {
                     echo "<p>No se encontró a un administrador con ese nombre de usuario</p>";
@@ -99,15 +132,17 @@
                     $registro3 = mysqli_fetch_assoc($result3);
 
                     if ($registro2) {
-                        $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
-                        $_SESSION["correo"] = $registro2["correo"];
-                        $_SESSION["nocta"] = $registro1["nocta"];
-                        $_SESSION["grupo"] = $registro3["nombre_grupo"];
-                        $_SESSION["id_perfil"] = $registro2["id_perfil"];
-                        $_SESSION["rol"] = "E";
-                        setcookie("usuario", $registro1["nocta"], time() + (86400)); // 1 dia = 86400 segundos, expirará en un dia
-                        header("Location: alumno.php");
-                        exit;
+                        if (password_verify($contrasenha, $registro2["contrasenha"])) {
+                            $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
+                            $_SESSION["correo"] = $registro2["correo"];
+                            $_SESSION["nocta"] = $registro1["nocta"];
+                            $_SESSION["grupo"] = $registro3["nombre_grupo"];
+                            $_SESSION["id_perfil"] = $registro2["id_perfil"];
+                            $_SESSION["rol"] = "E";
+                            setcookie("usuario", $registro1["nocta"], time() + (86400)); // 1 dia = 86400 segundos, expirará en un dia
+                            header("Location: alumno.php");
+                            exit;
+                        }
                     }
                 } else {
                     echo "<p>No se encontró a un estudiante con ese número de cuenta</p>";
@@ -146,15 +181,17 @@
                     }
 
                     if ($registro2) {
-                        $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
-                        $_SESSION["correo"] = $registro2 ["correo"];
-                        $_SESSION["no_trabajador"] = $registro1["no_trabajador"];
-                        $_SESSION["id_perfil"] = $registro2["id_perfil"];
-                        $_SESSION["grupos"] = $grupos;
-                        $_SESSION["rol"] = "P";
-                        // Por hacer: Poner la cookie tal como en el estudiante
-                        header("Location: profesor.php");
-                        exit;
+                            if (password_verify($contrasenha, $registro2["contrasenha"])) {
+                            $_SESSION["nombre_completo"] = $registro2["nombre"] . " " . $registro2["apellido_paterno"] . " " . $registro2["apellido_materno"];
+                            $_SESSION["correo"] = $registro2 ["correo"];
+                            $_SESSION["no_trabajador"] = $registro1["no_trabajador"];
+                            $_SESSION["id_perfil"] = $registro2["id_perfil"];
+                            $_SESSION["grupos"] = $grupos;
+                            $_SESSION["rol"] = "P";
+                            // Por hacer: Poner la cookie tal como en el estudiante
+                            header("Location: profesor.php");
+                            exit;
+                        }
                     }
                 } else {
                     echo "<p>No se encontró a un profesor con ese número de trabajador</p>";
@@ -165,4 +202,6 @@
                 break;
         }
     }
+    
+    
 ?>
