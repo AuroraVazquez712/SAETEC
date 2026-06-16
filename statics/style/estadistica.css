@@ -179,6 +179,27 @@ a{
 a:visited{
     color: #FFFFFF;
 }
+table {
+  table-layout: fixed;
+  width: 20%;
+  border-collapse: collapse;
+  border: 3px solid #0D1650;
+  margin:5%;
+}
+h1{
+    font-family:'encabezado';
+    font-size:60px;
+    margin:5%;
+}
+th,td {
+  padding: 20px;
+  border-collapse: collapse;
+  border: 3px solid #0D1650;
+  font-size: 20px;
+}
+th{
+    background-color:#E6E8E9;
+}
 /*--------------------------FOOTER--------------------------*/
 footer{
     background-color: #0D1650;
