@@ -6,12 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autor" content="Equipo 4: Diego Ivan Salcedo Perez">
-    <meta name="description" content="Mi página de encabezado">
-    <link rel="stylesheet" href="../statics/style/gracias.css">
-    <title>Formulario del alumno</title>
+    <meta name="autor" content="Equipo 4: Aurora Vazquez">
+    <meta name="description" content="Vista del Alumno">
+    <link rel="stylesheet" href="../statics/style/estadistica.css">
+    <title>SAETEC: Alumno</title>
 </head>
 <body>
+    <!---------------ENCABEZADO--------------------------->
     <header>
         <div id="iconos_unam">
             <div class="logo-unam">
@@ -54,18 +55,27 @@
             </div>
         </div>
     </header>
-    <!----------------------------BARRA DE NAVEGACIÓN----------------------------->
+    <!------------------------BARRA DE NAVEGACIÓN--------------------------------->
     <?php
             include 'barrapro.php';
-    ?> 
+    ?>
     <br>
-    <!---------------------------------CONTENIDO---------------------------------->
-    <div class="agradecimiento">Gracias por responder</div>
-    <img class="pulgar_arriba" src ="../statics/img/goku.jpg">
-    <button type="aceptar" class="btn_aceptar">
-        <a href="./alumno.php">Aceptar</a>
-    </button>
-    <!-----------------------------------FOOTER----------------------------------->
+    <!-------------------------------------BARRA LATERAL----------------------------------------->
+    <?php
+        include 'barra-lateral.php';
+    ?>
+    <!----------------------------------------CONTENIDO------------------------------------------->
+    <main>
+        <div id="contenido">
+            <div id="grupo">
+                <a><u>ESTADISTICA</u></a>
+            </div>
+        
+        </div>
+
+    
+    </main>
+    <!------------------------FOOTER --------------------------------->
     <?php
             include 'footer.php';
     ?> 

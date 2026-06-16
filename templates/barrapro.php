@@ -1,6 +1,7 @@
 <?php
+    // Importante: Aquí no se debe ejecutar session_start(), se debe hacer en la pagina 
+    // desde la que se llama a esta barra.
     $ruta_inicio = "";
-    
 ?>
 <nav class="nav">
     <div class="container">

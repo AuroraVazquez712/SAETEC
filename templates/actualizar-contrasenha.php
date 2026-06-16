@@ -2,7 +2,7 @@
     include '../dynamics/config.php';
     $conexion = connect();
     session_start();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
 
     //Debemos aplicarle trim, hashearla
     function esPasswordSegura($pass) {
@@ -112,6 +112,9 @@
     <?php
             include 'barrapro.php';
     ?> 
+    <?php
+        include 'barra-lateral.php';
+    ?>
     <br>
     <!-------------------------------------------FORMS------------>
     <form action="" method="POST">

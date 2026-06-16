@@ -1,6 +1,7 @@
 <?php 
     include '../dynamics/config.php';
     $conexion = connect();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -111,7 +112,7 @@
 
             <div class="input-group">
                 <label for="contrasenha">Contraseña</label>
-                <input type="password" name="contraseña" id="ipt-contrasenha" require>
+                <input type="password" name="contrasenha" id="ipt-contrasenha" require>
             </div>
 
         </div>

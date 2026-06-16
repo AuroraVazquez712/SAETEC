@@ -105,7 +105,7 @@
                     $query2 = mysqli_query($conexion, $sql2);
 
                     // nos preguntamos si sí se insertó el registro
-                    if($inster){
+                    if($inster) {
                         // Guardar las variables que usaremos en otras vistas en variables de sesion
                         $_SESSION["id_perfil"] = $id_perfil;
                         $_SESSION["nocta"]=$nocta;
@@ -115,7 +115,6 @@
                         $_SESSION["correo"]=$correo;
                         $_SESSION["fecha_nacimiento"]=$fecha_nacimiento;
                         $_SESSION["grupo"]=$grupo;
-                        $_SESSION[""]
 
                         echo "<p> No. de cuenta: $nocta </p>";
                         echo "<p> Nombre: $nombre</p>";
@@ -124,7 +123,6 @@
                         echo "<p> Correo: $correo</p>";
                         echo "<p> Fecha de nacimiento: $fecha_nacimiento</p>";
                         echo "<p> Grupo: $grupo</p>";
-                        echo "<p> Contraseña: $contrasenha</p>";
                     }
                 }
 

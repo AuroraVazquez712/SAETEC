@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -71,6 +71,11 @@
                 <div class="lista_alum">
                     <a href="./lista-alumnos.php">
                         <img src="../statics/img/lista_alumnos.png" alt="Imagen para acceder a la lista de alumnos">
+                    </a>
+                </div>
+                <div class="estaditicas">
+                    <a href="./estadistica.php">
+                        <img src="../statics/img/estadic.png" alt="Imagen con texto para acceder a estadisticas">
                     </a>
                 </div>
                 <div class="tarea">

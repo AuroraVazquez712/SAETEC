@@ -1,6 +1,8 @@
 <?php
     include '../dynamics/config.php';
-    $id_estudiante = 17;
+    $conexion = connect();
+    session_start();
+    $id_estudiante = $_SESSION["id_perfil"];
 ?> 
 <?php
     if (isset($_POST["cuesta_trabajo"])) {
@@ -22,8 +24,6 @@
         } else {
             echo "Nada";
         }
-    } else {
-        echo "No se ha enviado nada";
     }
 ?>
 <!DOCTYPE html>

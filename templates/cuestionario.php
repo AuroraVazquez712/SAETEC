@@ -20,8 +20,6 @@
         } else {
             echo "Nada";
         }
-    } else {
-        echo "No se ha enviado nada";
     }
 ?>
 <!DOCTYPE html>
@@ -57,7 +55,7 @@
             </div>
         </div>
         <div id="titulo_encabezado">
-            <a href="./index.html">
+            <a href="./index.php">
                 <p>SAETEC</p>
             </a>
         </div>

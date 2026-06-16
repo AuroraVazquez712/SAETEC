@@ -5,7 +5,11 @@
         <div class="container-menu">
             <div class="cont-menu">
                 <nav>
-                    <h2>324308734</h2>
+                    <?php
+                        //session_start();
+                        $tunombre = $_SESSION["nombre_completo"];
+                        echo "Hola $tunombre";
+                    ?>
                     <a href="./perfil-alumno.php">Mi perfil</a>
                     <hr>
                     <a href="./vista-perf-alumnos.php">Mis calificaciones</a>
@@ -20,18 +24,9 @@
                     <hr>
                     <a href="act.php">Lista de actividades</a>
                     <hr>
-                    <?php
-                        /*session_destroy();
-                        $cerrar = session_destroy();
-                        if ($cerrar=true) {*/
-                    ?>
-                    <a href="index.php" name="cierre">
-                        Cerrar Sesión
-                    </a>
-                    <?php
-                       /* }
-                        echo "Se cerró tu sesión, te esperamos";*/
-                    ?>
+                    <a href="cerrar-sesion.php">Cerrar sesión</a>
+
+                    
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>
