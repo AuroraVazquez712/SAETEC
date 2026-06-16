@@ -85,7 +85,7 @@
                 else {
                     $asigna = "UPDATE asignacion SET calificacion = $calif WHERE id_asignacion = $id_asignacion";
                 }
-                mysqli_query($conexion, $asigna);
+                //mysqli_query($conexion, $asigna);
             }
         }
     ?>
