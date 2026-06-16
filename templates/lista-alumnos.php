@@ -1,6 +1,7 @@
 <?php
     include '../dynamics/config.php';
     $conexion = connect();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -101,7 +102,7 @@
                 else if ($tipo_perfil_pro == 'P'){
 
                     // Ya puedes usar la sesión $_SESSION["id_perfil"]
-                    $id_profesor= 3;//$_SESSION["id_perfil"];
+                    $id_profesor = $_SESSION["id_perfil"];
                     //Grupos que coincidan con la id del profesor
                     $sql= "SELECT * FROM grupo WHERE id_profesor= $id_profesor";
                     $query= mysqli_query($conexion, $sql);
