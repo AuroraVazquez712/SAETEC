@@ -18,7 +18,7 @@
                     <hr>
                     <a href="./actualizar-contrasenha.php">Modificar datos</a>
                     <hr>
-                    <a href="act.html">Lista de actividades</a>
+                    <a href="./act.php">Lista de actividades</a>
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>
